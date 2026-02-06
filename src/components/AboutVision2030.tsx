@@ -157,15 +157,6 @@ export function AboutVision2030() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const getVisibleCards = () => {
-    const cards = [];
-    for (let i = 0; i < visibleSlides; i++) {
-      const index = (currentIndex + i) % visionPoints.length;
-      cards.push(visionPoints[index]);
-    }
-    return cards;
-  };
-
   return (
     <section
       ref={sectionRef}

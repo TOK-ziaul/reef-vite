@@ -3,7 +3,6 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
   ArrowRight,
-  ExternalLink,
   Image as ImageIcon,
   Headphones,
   Map,
@@ -428,7 +427,7 @@ export function WidgetsSection() {
                         {/* Right: Image */}
                         <div className="rounded-2xl overflow-hidden shadow-lg">
                           <ImageWithFallback
-                            src={card.image}
+                            src={card.image ?? ''}
                             alt={card.title}
                             className="w-full h-64 object-cover"
                           />

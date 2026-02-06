@@ -1,11 +1,5 @@
 import { useState } from "react";
-import {
-  Search,
-  ExternalLink,
-  Menu,
-  X,
-  ChevronDown,
-} from "lucide-react";
+import { Search, ExternalLink, Menu, X, ChevronDown } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 import { useNavigation } from "../context/NavigationContext";
 import { MegaMenuSectors } from "./MegaMenuSectors";
@@ -13,19 +7,17 @@ import { DropdownAbout } from "./DropdownAbout";
 import { DropdownSustainability } from "./DropdownSustainability";
 import { DropdownMediaCenter } from "./DropdownMediaCenter";
 import { DropdownSupport } from "./DropdownSupport";
-import reefLogo from "figma:asset/8d6ea4f855c162b1fefcf1c9d2f58bbdd9f470ba.png";
+const reefLogo = "https://placehold.co/200x200?text=Logo";
 
 export function Header() {
   const { language, toggleLanguage, t } = useLanguage();
   const { navigateTo } = useNavigation();
-  const [activeMenu, setActiveMenu] = useState<string | null>(
-    null,
-  );
+  const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [mobileActiveMenu, setMobileActiveMenu] = useState<
-    string | null
-  >(null);
-  const [hoverTimeout, setHoverTimeout] = useState<NodeJS.Timeout | null>(null);
+  const [mobileActiveMenu, setMobileActiveMenu] = useState<string | null>(null);
+  const [hoverTimeout, setHoverTimeout] = useState<ReturnType<
+    typeof setTimeout
+  > | null>(null);
 
   const handleMouseEnter = (itemKey: string, hasDropdown: boolean) => {
     if (hoverTimeout) {
@@ -43,7 +35,7 @@ export function Header() {
     }, 300); // Increased delay to allow clicking on dropdown items
     setHoverTimeout(timeout);
   };
-  
+
   const handleMenuClose = () => {
     if (hoverTimeout) {
       clearTimeout(hoverTimeout);
@@ -100,23 +92,14 @@ export function Header() {
       href: "#",
       hasDropdown: true,
       component: DropdownSustainability,
-      mobileItems: [
-        "initiatives",
-        "impactStats",
-        "reefAcademy",
-      ],
+      mobileItems: ["initiatives", "impactStats", "reefAcademy"],
     },
     {
       key: "mediaCenter",
       href: "#",
       hasDropdown: true,
       component: DropdownMediaCenter,
-      mobileItems: [
-        "newsPress",
-        "photoVideo",
-        "events",
-        "galleryBook",
-      ],
+      mobileItems: ["newsPress", "photoVideo", "events", "galleryBook"],
     },
     {
       key: "support",
@@ -153,9 +136,7 @@ export function Header() {
             <div
               key={item.key}
               className="relative"
-              onMouseEnter={() =>
-                handleMouseEnter(item.key, item.hasDropdown)
-              }
+              onMouseEnter={() => handleMouseEnter(item.key, item.hasDropdown)}
               onMouseLeave={handleMouseLeave}
             >
               <a
@@ -166,7 +147,7 @@ export function Header() {
                     handleNavigation(item.key);
                   }
                 }}
-                className="flex items-center gap-1 text-[#052F2A] hover:text-[#035938] transition-colors"
+                className="flex items-center gap-1 hover:text-[#52BC88] text-[#035938] transition-colors"
               >
                 {t(item.key)}
                 {item.hasDropdown && (
@@ -187,14 +168,14 @@ export function Header() {
         {/* Desktop Right Side Actions */}
         <div className="hidden lg:flex items-center gap-4">
           {/* Search Icon */}
-          <button className="p-2 hover:bg-gray-100 rounded-lg transition-colors text-[#052F2A]">
+          <button className="p-2 hover:bg-[#52BC88]/10 rounded-lg transition-colors text-[#52BC88]">
             <Search className="w-5 h-5" />
           </button>
 
           {/* Language Toggle */}
           <button
             onClick={toggleLanguage}
-            className="px-3 py-1 border-2 border-[#035938] text-[#035938] rounded-lg hover:bg-[#035938] hover:text-white transition-all duration-200"
+            className="px-3 py-1 border-2 border-[#52BC88] text-[#52BC88] rounded-lg hover:bg-[#035938] hover:text-white hover:border-[#035938] transition-all duration-200"
           >
             {language === "en" ? "AR" : "EN"}
           </button>
@@ -214,7 +195,7 @@ export function Header() {
           {/* Language Toggle */}
           <button
             onClick={toggleLanguage}
-            className="px-3 py-1 border-2 border-[#035938] text-[#035938] rounded-lg hover:bg-[#035938] hover:text-white transition-all duration-200"
+            className="px-3 py-1 border-2 border-[#52BC88] text-[#52BC88] rounded-lg hover:bg-[#035938] hover:text-white hover:border-[#035938] transition-all duration-200"
           >
             {language === "en" ? "AR" : "EN"}
           </button>
@@ -222,7 +203,7 @@ export function Header() {
           {/* Hamburger Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 hover:bg-gray-100 rounded-lg transition-colors text-[#052F2A]"
+            className="p-2 hover:bg-[#52BC88]/10 rounded-lg transition-colors text-[#52BC88]"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? (
@@ -254,45 +235,37 @@ export function Header() {
           {/* Mobile Navigation Items */}
           <nav className="space-y-2">
             {navItems.map((item) => (
-              <div
-                key={item.key}
-                className="border-b border-gray-100 pb-2"
-              >
+              <div key={item.key} className="border-b border-gray-100 pb-2">
                 {item.hasDropdown ? (
                   <div>
                     <button
                       onClick={() =>
                         setMobileActiveMenu(
-                          mobileActiveMenu === item.key
-                            ? null
-                            : item.key,
+                          mobileActiveMenu === item.key ? null : item.key,
                         )
                       }
-                      className="w-full flex items-center justify-between py-3 text-[#052F2A] hover:text-[#035938] transition-colors"
+                      className="w-full flex items-center justify-between py-3 text-[#52BC88] hover:text-[#035938] transition-colors"
                     >
                       <span>{t(item.key)}</span>
                       <ChevronDown
                         className={`w-5 h-5 transition-transform ${
-                          mobileActiveMenu === item.key
-                            ? "rotate-180"
-                            : ""
+                          mobileActiveMenu === item.key ? "rotate-180" : ""
                         }`}
                       />
                     </button>
-                    {mobileActiveMenu === item.key &&
-                      item.mobileItems && (
-                        <div className="pl-4 space-y-2 pb-2">
-                          {item.mobileItems.map((subItem) => (
-                            <a
-                              key={subItem}
-                              href="#"
-                              className="block py-2 text-sm text-[#052F2A]/70 hover:text-[#035938] transition-colors"
-                            >
-                              {t(subItem)}
-                            </a>
-                          ))}
-                        </div>
-                      )}
+                    {mobileActiveMenu === item.key && item.mobileItems && (
+                      <div className="pl-4 space-y-2 pb-2">
+                        {item.mobileItems.map((subItem) => (
+                          <a
+                            key={subItem}
+                            href="#"
+                            className="block py-2 text-sm text-[#52BC88]/90 hover:text-[#035938] transition-colors"
+                          >
+                            {t(subItem)}
+                          </a>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 ) : (
                   <a
@@ -301,7 +274,7 @@ export function Header() {
                       e.preventDefault();
                       handleNavigation(item.key);
                     }}
-                    className="block py-3 text-[#052F2A] hover:text-[#035938] transition-colors"
+                    className="block py-3 text-[#52BC88] hover:text-[#035938] transition-colors"
                   >
                     {t(item.key)}
                   </a>
@@ -313,7 +286,7 @@ export function Header() {
           {/* Mobile Actions */}
           <div className="mt-6 space-y-3">
             {/* Search Button */}
-            <button className="w-full flex items-center justify-center gap-2 p-3 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors text-[#052F2A]">
+            <button className="w-full flex items-center justify-center gap-2 p-3 border border-[#52BC88]/40 rounded-lg hover:bg-[#52BC88]/10 transition-colors text-[#52BC88]">
               <Search className="w-5 h-5" />
               <span>{t("search")}</span>
             </button>

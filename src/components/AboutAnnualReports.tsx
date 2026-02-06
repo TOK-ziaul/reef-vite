@@ -102,7 +102,7 @@ export function AboutAnnualReports() {
           {reports.map((report, index) => (
             <div
               key={index}
-              ref={(el) => (cardsRef.current[index] = el)}
+              ref={(el) => { cardsRef.current[index] = el; }}
               className="group perspective-1000"
             >
               <div className="relative h-full bg-white rounded-3xl p-8 border border-gray-200/50 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">

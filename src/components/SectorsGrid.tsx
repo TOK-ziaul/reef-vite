@@ -4,7 +4,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
   Droplet,
   Coffee,
-  Flower2,
   Apple,
   Milk,
   Wheat,
@@ -290,39 +289,6 @@ export function SectorsGrid() {
       </div>
     );
   }
-  // Magnetic hover effect
-  const handleMouseMove = (
-    e: React.MouseEvent<HTMLDivElement>,
-  ) => {
-    const card = e.currentTarget;
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left - rect.width / 2;
-    const y = e.clientY - rect.top - rect.height / 2;
-
-    gsap.to(card, {
-      x: x * 0.08,
-      y: y * 0.08,
-      rotationY: x * 0.02,
-      rotationX: -y * 0.02,
-      duration: 0.5,
-      ease: "power2.out",
-      transformPerspective: 1000,
-    });
-  };
-
-  const handleMouseLeave = (
-    e: React.MouseEvent<HTMLDivElement>,
-  ) => {
-    const card = e.currentTarget;
-    gsap.to(card, {
-      x: 0,
-      y: 0,
-      rotationY: 0,
-      rotationX: 0,
-      duration: 0.7,
-      ease: "elastic.out(1, 0.6)",
-    });
-  };
 
   return (
     <section className="py-20 bg-gradient-to-b from-white to-[#F9F7EF] relative overflow-hidden">

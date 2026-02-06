@@ -1,6 +1,6 @@
 import { useLanguage } from '../context/LanguageContext';
 import { motion } from 'motion/react';
-import { Building2, MapPin, Database, Target, CheckCircle2 } from 'lucide-react';
+import { Building2, MapPin, Database, Target } from 'lucide-react';
 
 export function LivestockProjects() {
   const { language } = useLanguage();

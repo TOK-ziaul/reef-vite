@@ -1,18 +1,18 @@
 import svgPaths from "./svg-odrh94l9f2";
-import imgAbstractShape81WhiteOnTransparent3 from "figma:asset/23440ba66ca589b847cb747552c3873d85c30819.png";
-import imgImage2471 from "figma:asset/0d88c2852859cf7abb4e9a6bb2ed0b6fca433410.png";
-import imgRectangle3458 from "figma:asset/bab7ce24e0d8ff3445ecc6c0330bddfe5523aea2.png";
-import imgGooglePng19644 from "figma:asset/66d0a3a48742ec8212f741aca7185f26022b5bdc.png";
-import imgGooglePng19645 from "figma:asset/90945e55e28a58982fdd0b91df81985522d39e92.png";
-import imgImage2469 from "figma:asset/8fa449ebc96c58b08cbc7b4bd0d2b8cdf07cfd35.png";
-import imgImage2487 from "figma:asset/82dc1451c5787f9a967685cc0e5c7fa97ce1ebb6.png";
-import imgImage2488 from "figma:asset/7a04f3d1de62282b9fbaf7551df2c3bdbd287304.png";
-import imgUnsplashZz5LQeVsmy1 from "figma:asset/d243c296fe0d6ada4879bc70ae19e22df78bb912.png";
-import imgUnsplash7BaHm9REyUw2 from "figma:asset/58608650694552191a5981bef9b49a2a2478c5ed.png";
-import imgUnsplash7BaHm9REyUw3 from "figma:asset/fa7f9a9147b983cfae3726dca2ca14d689a2243d.png";
-import imgUnsplashFI4PhbSNlL9 from "figma:asset/643cc384fc7c51000b4992705de309758685843d.png";
-import imgPortraitYoungHandsomeManJeanShirtSmilingLookingCamera2 from "figma:asset/2fa471879eb065ead2642df308cb465420cf2217.png";
-import imgUnsplashDt60OksDTx9 from "figma:asset/34e409551c2680016eaee670051715535d2fc945.png";
+const imgAbstractShape81WhiteOnTransparent3 = "https://placehold.co/400x300?text=Image";
+const imgImage2471 = "https://placehold.co/400x300?text=Image";
+const imgRectangle3458 = "https://placehold.co/400x300?text=Image";
+const imgGooglePng19644 = "https://placehold.co/200x200?text=Logo";
+const imgGooglePng19645 = "https://placehold.co/200x200?text=Logo";
+const imgImage2469 = "https://placehold.co/400x300?text=Image";
+const imgImage2487 = "https://placehold.co/400x300?text=Image";
+const imgImage2488 = "https://placehold.co/400x300?text=Image";
+const imgUnsplashZz5LQeVsmy1 = "https://placehold.co/400x300?text=Image";
+const imgUnsplash7BaHm9REyUw2 = "https://placehold.co/400x300?text=Image";
+const imgUnsplash7BaHm9REyUw3 = "https://placehold.co/400x300?text=Image";
+const imgUnsplashFI4PhbSNlL9 = "https://placehold.co/400x300?text=Image";
+const imgPortraitYoungHandsomeManJeanShirtSmilingLookingCamera2 = "https://placehold.co/400x300?text=Portrait";
+const imgUnsplashDt60OksDTx9 = "https://placehold.co/400x300?text=Image";
 import { imgRectangle3353, imgUnsplash7BaHm9REyUw, imgImage2581, imgImage5, imgBitmap, imgUnsplashZz5LQeVsmy, imgUnsplash7BaHm9REyUw1, imgUnsplashFI4PhbSNlL8, imgUnsplashDt60OksDTx8 } from "./svg-gfzm7";
 
 function Bg() {

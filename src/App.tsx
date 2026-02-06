@@ -7,12 +7,12 @@ import { SectorPage } from "./pages/SectorPage";
 function AppContent() {
   const { currentPage, currentSectorId } = useNavigation();
 
-  console.log(
-    "AppContent - currentPage:",
-    currentPage,
-    "currentSectorId:",
-    currentSectorId,
-  ); // Debug log
+  // console.log(
+  //   "AppContent - currentPage:",
+  //   currentPage,
+  //   "currentSectorId:",
+  //   currentSectorId,
+  // );
 
   if (currentPage === "home") return <HomePage />;
   if (currentPage === "about") return <AboutPage />;
@@ -26,7 +26,9 @@ export default function App() {
   return (
     <LanguageProvider>
       <NavigationProvider>
-        <AppContent />
+        <div className="w-full min-w-0 bg-white">
+          <AppContent />
+        </div>
       </NavigationProvider>
     </LanguageProvider>
   );

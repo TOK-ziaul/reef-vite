@@ -5,7 +5,6 @@ import {
   TrendingUp,
   Users,
   Sprout,
-  MapPin,
   Coins,
   Building2,
 } from "lucide-react";
@@ -18,7 +17,7 @@ export function KeyNumbers() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const numbersRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLDivElement>(null);
-  const [hoveredIndex, setHoveredIndex] = useState<
+  const [, setHoveredIndex] = useState<
     number | null
   >(null);
 

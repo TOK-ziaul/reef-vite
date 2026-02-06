@@ -111,7 +111,7 @@ export function AboutWhatWeOffer() {
           {offerings.map((offer, index) => (
             <div
               key={index}
-              ref={(el) => (cardsRef.current[index] = el)}
+              ref={(el) => { cardsRef.current[index] = el; }}
               className="group relative perspective-1000"
             >
               {/* Card with 3D Effect */}

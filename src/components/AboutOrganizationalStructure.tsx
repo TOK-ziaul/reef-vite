@@ -2,7 +2,6 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLanguage } from "../context/LanguageContext";
-import { Network, Users, Target, Shield, TrendingUp, Layers } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -80,15 +79,6 @@ export function AboutOrganizationalStructure() {
       );
     }
   }, []);
-
-  const organizationalNodes = [
-    { icon: Target, titleKey: "orgNodeOperationalEfficiency", gradient: "from-[#035938] to-[#52BC88]" },
-    { icon: Users, titleKey: "orgNodeClearResponsibilities", gradient: "from-[#52BC88] to-[#F1BC28]" },
-    { icon: Network, titleKey: "orgNodeRoleIntegration", gradient: "from-[#F1BC28] to-[#035938]" },
-    { icon: TrendingUp, titleKey: "orgNodeStrategicAchievement", gradient: "from-[#035938] to-[#52BC88]" },
-    { icon: Layers, titleKey: "orgNodeQualityEnhancement", gradient: "from-[#52BC88] to-[#F1BC28]" },
-    { icon: Shield, titleKey: "orgNodeGovernanceStandards", gradient: "from-[#F1BC28] to-[#035938]" },
-  ];
 
   return (
     <section

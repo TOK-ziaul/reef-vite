@@ -1,7 +1,7 @@
 import { useLanguage } from '../context/LanguageContext';
 
 export function StickyNotesSection() {
-  const { t } = useLanguage();
+  useLanguage();
 
   const notes = [
     {

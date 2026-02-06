@@ -123,7 +123,7 @@ export function LivestockKeyAreas() {
             return (
               <div
                 key={index}
-                ref={(el) => (cardsRef.current[index] = el)}
+                ref={(el) => { cardsRef.current[index] = el; }}
                 className="group relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
               >
                 {/* Image */}

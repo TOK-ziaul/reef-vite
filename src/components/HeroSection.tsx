@@ -2,7 +2,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { ArrowRight, Sparkles } from 'lucide-react';
 
 export function HeroSection() {
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
 
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-white">

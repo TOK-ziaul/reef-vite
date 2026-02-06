@@ -32,12 +32,6 @@ export function CoffeeStats() {
     { name: language === 'ar' ? 'نجران' : 'Najran', value: 22, percentage: 0.5 },
   ];
 
-  const productionData = [
-    { year: '2020', value: 800, color: '#035938' },
-    { year: '2024', value: 2300, color: '#52BC88', growth: '33%' },
-    { year: '2026', value: 7000, color: '#F1BC28', isTarget: true },
-  ];
-
   return (
     <div ref={sectionRef} className="py-20 relative overflow-hidden bg-gradient-to-br from-[#F9F7EF] via-white to-[#F9F7EF]">
       {/* Left Side Fade Mask */}

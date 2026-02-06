@@ -7,7 +7,7 @@ export function LivestockWorkAxes() {
   const { t, language } = useLanguage();
   const [activeIndex, setActiveIndex] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
-  const autoScrollTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const autoScrollTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isInView, setIsInView] = useState(false);
 

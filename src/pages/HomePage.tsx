@@ -8,10 +8,11 @@ import { Footer } from "../components/Footer";
 
 export function HomePage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white mx-auto ">
       <Header />
       <HeroSlider />
       <KeyNumbers />
+
       <SectorsGrid />
       <WidgetsSection />
       <LatestNews />

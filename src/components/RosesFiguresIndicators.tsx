@@ -4,8 +4,8 @@ import { useState, useEffect } from 'react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
 export function RosesFiguresIndicators() {
-  const { t, language } = useLanguage();
-  const [isVisible, setIsVisible] = useState(false);
+  const { t } = useLanguage();
+  const [, setIsVisible] = useState(false);
   const [hoveredRegion, setHoveredRegion] = useState<string | null>(null);
   const [hoveredProduct, setHoveredProduct] = useState<string | null>(null);
 
@@ -298,7 +298,7 @@ export function RosesFiguresIndicators() {
             <div className="relative h-[500px] bg-gradient-to-br from-[#035938]/5 to-[#52BC88]/5 rounded-3xl overflow-hidden border border-[#52BC88]/20">
               {/* Saudi Arabia Map Image */}
               <ImageWithFallback 
-                src="figma:asset/8d17d9e3c0f9102c62899739d37492f2e780de86.png"
+                src="https://placehold.co/600x500?text=Map"
                 alt="Saudi Arabia Map"
                 className="absolute inset-0 w-full h-full object-contain p-8"
               />

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Sparkles, Target, CheckCircle2, TrendingUp, ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface FruitsProjectsCreativeProps {
@@ -7,7 +7,7 @@ interface FruitsProjectsCreativeProps {
 }
 
 export function FruitsProjectsCreative({ t, language }: FruitsProjectsCreativeProps) {
-  const [hoveredProject, setHoveredProject] = useState<number | null>(null);
+  const [, setHoveredProject] = useState<number | null>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const isRTL = language === 'ar';
 

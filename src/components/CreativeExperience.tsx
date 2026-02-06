@@ -2,7 +2,7 @@ import { Check } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export function CreativeExperience() {
-  const { t } = useLanguage();
+  useLanguage();
 
   const experiences = [
     { 

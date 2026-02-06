@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useState, ReactNode } from "react";
+import { createContext, useContext, useState } from "react";
+import type { ReactNode } from "react";
 
 interface LanguageContextType {
   language: "en" | "ar";
@@ -193,9 +194,6 @@ const translations = {
     sector2Point3: "Product Marketing",
 
     sector3Title: "Roses & Aromatic Plants",
-    rosesHeroTitle: "Sector of Rose Cultivation Development and Rose Trade",
-    sector3Desc:
-      "Developing the production of roses and aromatic plants in the Kingdom's regions to increase added value and exports",
     sector3Point1: "Farm Development",
     sector3Point2: "Supporting Manufacturing Operations",
     sector3Point3: "Enhancing Marketing Opportunities",
@@ -764,12 +762,6 @@ const translations = {
     
     // Footer - Detailed
     overview: "Overview",
-    aboutProgram: "About the Program",
-    visionMission: "Vision & Mission",
-    objectives: "Strategic Objectives",
-    whatWeOffer: "What We Offer",
-    achievements: "Achievements",
-    annualReports: "Annual Reports",
     mediaCenter: "Media Center",
     
     sectorsServices: "Sectors & Services",
@@ -808,12 +800,6 @@ const translations = {
 
     // Beekeeping Page
     beekeepingHeroTitle: "Beekeeping Sector",
-    beekeepingIntro1:
-      "The beekeeping sector represents one of the vital pillars in the Reef Saudi Arabia Program, as it contributes to supporting the rural economy, preserving the environment, and providing exceptional local products with high added value. The program aims to empower beekeepers by providing technical, financial, and training support, while focusing on improving production quality and adopting best practices in beekeeping.",
-    beekeepingIntro2:
-      "Saudi honey is distinguished by its high purity and diverse types that reflect the richness of the local natural environment. Through partnerships with local and international experts, the program works to develop beekeepers' skills and enhance sustainable and environmentally friendly production practices.",
-    beekeepingIntro3:
-      "The program also contributes to raising awareness of the importance of beekeeping as a sustainable agricultural activity and a source of natural honey with health and economic benefits. Beekeeper communities receive continuous support in marketing their products and building a trusted local and international brand.",
 
     // Roses & Aromatic Plants Sector
     rosesIntro1:
@@ -1189,9 +1175,6 @@ const translations = {
     sector2Point3: "تسويق المنتجات",
 
     sector3Title: "الورد والنباتات العطرية",
-    rosesHeroTitle: "Sector of Rose Cultivation Development and Rose Trade",
-    sector3Desc:
-      "Developing the production of roses and aromatic plants in the Kingdom's regions to increase added value and exports",
     sector3Point1: "تطوير المزارع",
     sector3Point2: "دعم عمليات التصنيع",
     sector3Point3: "تعزيز فرص التسويق",
@@ -1760,12 +1743,6 @@ const translations = {
     
     // Footer - Detailed
     overview: "نظرة عامة",
-    aboutProgram: "عن البرنامج",
-    visionMission: "الرؤية والرسالة",
-    objectives: "الأهداف الاستراتيجية",
-    whatWeOffer: "ما نقدمه",
-    achievements: "الإنجازات",
-    annualReports: "التقارير السنوية",
     mediaCenter: "مركز الإعلام",
     
     sectorsServices: "القطاعات والخدمات",
@@ -1804,12 +1781,6 @@ const translations = {
 
     // Beekeeping Page
     beekeepingHeroTitle: "قطاع تربية النحل",
-    beekeepingIntro1:
-      "يُمثل قطاع تربية النحل أحد الركائز الحيوية في برنامج ريف السعودية، حيث يسهم في دعم الاقتصاد الريفي، والحفاظ على البيئة، وتوفير منتجات محلية استثنائية ذات قيمة مضافة عالية. يهدف البرنامج إلى تمكين مربي النحل من خلال تقديم الدعم الفني والمالي والتدريبي، مع التركيز على تحسين جودة الإنتاج واعتماد أفضل الممارسات في تربية النحل.",
-    beekeepingIntro2:
-      "يتميز العسل السعودي بنقائه العالي وأنواعه المتنوعة التي تعكس غنى البيئة الطبيعية المحلية. ومن خلال الشراكات مع الخبراء المحليين والدوليين، يعمل البرنامج على تطوير مهارات مربي النحل وتعزيز ممارسات إنتاج مستدامة وصديقة للبيئة.",
-    beekeepingIntro3:
-      "كما يساهم البرنامج في رفع الوعي بأهمية تربية النحل كنشاط زراعي مستدام ومصدر للعسل الطبيعي ذي الفوائد الصحية والاقتصادية. يحظى مجتمعات مربي النحل بدعم مستمر في تسويق منتجاتهم وبناء علامة تجارية محلية ودولية موثوقة.",
 
     // Roses & Aromatic Plants Sector
     rosesIntro1:
@@ -1916,7 +1887,6 @@ const translations = {
     objective2: "إنشاء منشآت متخصصة لاستخلاص زيت الورد وماء الورد.",
     objective3: "دعم وتطوير صناعة العطور المحلية.",
     objective4: "تمكين تصدير منتجات الورد والنباتات العطرية إلى أسواق الخليج والعالم، بما يسهم في تحقيق أهداف رؤية السعودية 2030.",
-    target: "الهدف",
 
     keyImplementedActivities: "الأنشطة الرئيسية المنفذة في قطاع الورد والنباتات العطرية",
     

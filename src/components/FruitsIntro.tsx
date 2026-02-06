@@ -1,5 +1,4 @@
 import { useLanguage } from '../context/LanguageContext';
-import { Apple, TrendingUp, Package, Store } from 'lucide-react';
 
 export function FruitsIntro() {
   const { t } = useLanguage();

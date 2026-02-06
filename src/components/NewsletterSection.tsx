@@ -1,8 +1,8 @@
-import { ArrowRight, Send } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export function NewsletterSection() {
-  const { t } = useLanguage();
+  useLanguage();
 
   return (
     <section className="py-24 bg-[#052F2A] relative overflow-hidden">

@@ -4,20 +4,18 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLanguage } from "../context/LanguageContext";
 import { Building2, TrendingUp, FlaskConical, Briefcase, ArrowRight } from "lucide-react";
 
-// Import government partner logos
-import logoMewa from "figma:asset/7ede2dec5d0b0a3ea003a9742003ae278397e1d5.png";
-import logoHRSD from "figma:asset/86dd8d29d01e34c5cf7422b7b924688a2a83aace.png";
-import logoEconomy from "figma:asset/bac29bf124fc1f6285104a5ec9434c2a1da6d2ff.png";
-import logoTourism from "figma:asset/ae49748f97219aac58fec8406f38c1d59077d8f8.png";
-import logoEducation from "figma:asset/9aa76220c549d8b9efa21a0ce90c2187f800a66f.png";
-import logoMonshaat from "figma:asset/335646da69ac2c12d89ef729bab321f5f128ef85.png";
-
-// Import development partner logos
-import logoADF from "figma:asset/2ccf5d81deca4c0f370f7785238226575fe73cca.png";
-import logoSDB from "figma:asset/d36214064e42e80b5ac28ada6b54b2016a2ac1ab.png";
-import logoADFCircle from "figma:asset/6c0e4a408c1d81322377dd96fa70d9d728201b46.png";
-import logoReefFoundation from "figma:asset/d3d69fe497ddb699859d92b2a011f3eb78752ef4.png";
-import logoGreenInitiative from "figma:asset/533e0d56e66d34034f8a4e4966d8a20a88cb8f10.png";
+// Dummy partner logos
+const logoMewa = "https://placehold.co/200x200?text=Logo";
+const logoHRSD = "https://placehold.co/200x200?text=Logo";
+const logoEconomy = "https://placehold.co/200x200?text=Logo";
+const logoTourism = "https://placehold.co/200x200?text=Logo";
+const logoEducation = "https://placehold.co/200x200?text=Logo";
+const logoMonshaat = "https://placehold.co/200x200?text=Logo";
+const logoADF = "https://placehold.co/200x200?text=Logo";
+const logoSDB = "https://placehold.co/200x200?text=Logo";
+const logoADFCircle = "https://placehold.co/200x200?text=Logo";
+const logoReefFoundation = "https://placehold.co/200x200?text=Logo";
+const logoGreenInitiative = "https://placehold.co/200x200?text=Logo";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -261,8 +259,8 @@ export function AboutPartners() {
                     
                     <div className="relative z-10 h-full flex items-center justify-center">
                       <img
-                        src={partner.logo}
-                        alt={t(partner.key)}
+                        src={typeof partner === 'object' ? partner.logo : ''}
+                        alt={typeof partner === 'object' ? t(partner.key) : ''}
                         className="w-full h-auto max-h-20 object-contain transform group-hover:scale-110 transition-transform duration-500"
                       />
                     </div>
@@ -313,8 +311,8 @@ export function AboutPartners() {
                   
                   <div className="relative z-10 flex items-center justify-center" style={{ minHeight: "100px" }}>
                     <img
-                      src={partner.logo}
-                      alt={t(partner.key)}
+                      src={typeof partner === 'object' ? partner.logo : ''}
+                      alt={typeof partner === 'object' ? t(partner.key) : ''}
                       className="w-full h-auto max-h-20 object-contain transform group-hover:scale-110 transition-transform duration-500"
                     />
                   </div>
@@ -370,7 +368,7 @@ export function AboutPartners() {
                         fontFamily: language === "ar" ? "'Loew Next Arabic', sans-serif" : "inherit",
                       }}
                     >
-                      {t(partner)}
+                      {t(typeof partner === 'string' ? partner : partner.key)}
                     </span>
                   </div>
 
@@ -423,7 +421,7 @@ export function AboutPartners() {
                         fontFamily: language === "ar" ? "'Loew Next Arabic', sans-serif" : "inherit",
                       }}
                     >
-                      {t(partner)}
+                      {t(typeof partner === 'string' ? partner : partner.key)}
                     </span>
                   </div>
 

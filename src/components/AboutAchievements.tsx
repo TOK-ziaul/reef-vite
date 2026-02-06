@@ -23,15 +23,15 @@ import {
   Sparkles,
 } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-import unAwardImage from "figma:asset/1fb458941d23468358ce71e67df193b427fb5c2f.png";
-import princessAwardImage from "figma:asset/91f1780c2ca3ae643d0b9c74b419509491ec3c5d.png";
-import innovationAwardImage from "figma:asset/0b71e9b068d89dbb10d5515c00468e3da9cec14f.png";
-import digitalAwardImage from "figma:asset/f71166a6b8b07a294decc181a16d569eff356f0c.png";
-import hailAwardImage from "figma:asset/0120f78caeebaf8cf1f829663e4c8969896779d3.png";
-import guinnessLogo from "figma:asset/80816316b0447028fb91f9c9f83852001dc1271f.png";
-import isoLogo from "figma:asset/42c1ad57380cd60e130b31f615a420aabcd645ab.png";
-import iso9001Image from "figma:asset/81bf7e56f7cb8d55f9bbf074c919a8c2e6143e52.png";
-import iso56002Image from "figma:asset/80b7549fadf93242624f320f52c43b55cdabe468.png";
+const unAwardImage = "https://placehold.co/400x300?text=Award";
+const princessAwardImage = "https://placehold.co/400x300?text=Award";
+const innovationAwardImage = "https://placehold.co/400x300?text=Award";
+const digitalAwardImage = "https://placehold.co/400x300?text=Award";
+const hailAwardImage = "https://placehold.co/400x300?text=Award";
+const guinnessLogo = "https://placehold.co/200x200?text=Logo";
+const isoLogo = "https://placehold.co/200x200?text=Logo";
+const iso9001Image = "https://placehold.co/400x300?text=ISO";
+const iso56002Image = "https://placehold.co/400x300?text=ISO";
 
 gsap.registerPlugin(ScrollTrigger);
 

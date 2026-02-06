@@ -281,7 +281,7 @@ export function RosesProjects() {
           {/* Projects List */}
           <div className="space-y-0">
             {keyProjects.map((project, index) => {
-              const Icon = project.icon;
+              void project.icon;
               const isHovered = hoveredIndex === index;
 
               return (

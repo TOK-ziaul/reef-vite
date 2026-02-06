@@ -2,7 +2,7 @@ import { ArrowUpRight, MapPin } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export function ProjectsShowcase() {
-  const { t } = useLanguage();
+  useLanguage();
 
   const projects = [
     {

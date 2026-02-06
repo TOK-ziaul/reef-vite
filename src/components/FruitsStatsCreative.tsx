@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { TrendingUp, Users, MapPin, Sparkles, Calendar } from 'lucide-react';
+import { useState } from 'react';
+import { TrendingUp, Users, MapPin, Sparkles } from 'lucide-react';
 
 interface FruitsStatsCreativeProps {
   t: (key: string) => string;
@@ -8,22 +8,6 @@ interface FruitsStatsCreativeProps {
 
 export function FruitsStatsCreative({ t, language }: FruitsStatsCreativeProps) {
   const [hoveredRegion, setHoveredRegion] = useState<string | null>(null);
-
-  const regions = [
-    { name: language === 'ar' ? 'نجران' : 'Najran', count: '3,984', color: '#035938', size: 'large' },
-    { name: language === 'ar' ? 'عسير' : 'Asir', count: '2,617', color: '#52BC88', size: 'large' },
-    { name: language === 'ar' ? 'جازان' : 'Jazan', count: '589', color: '#F1BC28', size: 'medium' },
-    { name: language === 'ar' ? 'الباحة' : 'Al-Baha', count: '577', color: '#035938', size: 'medium' },
-    { name: language === 'ar' ? 'مكة المكرمة' : 'Makkah', count: '478', color: '#52BC88', size: 'medium' },
-    { name: language === 'ar' ? 'حائل' : 'Hail', count: '255', color: '#F1BC28', size: 'small' },
-    { name: language === 'ar' ? 'الرياض' : 'Riyadh', count: '160', color: '#035938', size: 'small' },
-    { name: language === 'ar' ? 'المنطقة الشرقية' : 'Eastern Region', count: '109', color: '#52BC88', size: 'small' },
-    { name: language === 'ar' ? 'تبوك' : 'Tabuk', count: '100', color: '#F1BC28', size: 'small' },
-    { name: language === 'ar' ? 'القصيم' : 'Qassim', count: '78', color: '#035938', size: 'small' },
-    { name: language === 'ar' ? 'المدينة المنورة' : 'Madinah', count: '59', color: '#52BC88', size: 'small' },
-    { name: language === 'ar' ? 'الجوف' : 'Al-Jouf', count: '49', color: '#F1BC28', size: 'small' },
-    { name: language === 'ar' ? 'الحدود الشمالية' : 'Northern Borders', count: '5', color: '#035938', size: 'small' },
-  ];
 
   return (
     <div className="mb-20 relative overflow-hidden">

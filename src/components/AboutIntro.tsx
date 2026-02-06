@@ -2,7 +2,6 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLanguage } from "../context/LanguageContext";
-import exampleImage from 'figma:asset/7a446831d05085f02e69d73709abbd57258ef80e.png';
 
 gsap.registerPlugin(ScrollTrigger);
 

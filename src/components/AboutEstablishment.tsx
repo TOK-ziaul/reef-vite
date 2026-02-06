@@ -272,7 +272,7 @@ export function AboutEstablishment() {
           {stats.map((stat, index) => (
             <div
               key={index}
-              ref={(el) => (statsRefs.current[index] = el)}
+              ref={(el) => { statsRefs.current[index] = el; }}
               className="group relative backdrop-blur-xl bg-white/10 rounded-2xl p-6 border border-white/20 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 text-center overflow-hidden"
             >
               <div className={`absolute inset-0 bg-gradient-to-br ${stat.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500`} />

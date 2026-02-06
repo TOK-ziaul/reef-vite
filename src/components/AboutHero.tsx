@@ -2,12 +2,10 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLanguage } from "../context/LanguageContext";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
-
 gsap.registerPlugin(ScrollTrigger);
 
 export function AboutHero() {
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
   const heroRef = useRef<HTMLDivElement>(null);
   const imageContainerRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);

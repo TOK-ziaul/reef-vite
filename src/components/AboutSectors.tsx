@@ -7,7 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export function AboutSectors() {
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
   const sectionRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -126,7 +126,7 @@ export function AboutSectors() {
           {sectors.map((sector, index) => (
             <div
               key={index}
-              ref={(el) => (cardsRef.current[index] = el)}
+              ref={(el) => { cardsRef.current[index] = el; }}
               className="group relative"
             >
               {/* Glassmorphism Card */}

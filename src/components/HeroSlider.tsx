@@ -1,9 +1,5 @@
-import { useState, useEffect, useRef, useMemo } from "react";
-import {
-  ChevronLeft,
-  ChevronRight,
-  ArrowRight,
-} from "lucide-react";
+import { useState, useEffect, useRef, useMemo, type ReactElement } from "react";
+import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLanguage } from "../context/LanguageContext";
@@ -93,18 +89,15 @@ export function HeroSlider() {
       buttonsRef.current,
       badgeRef.current,
     ].filter(Boolean);
-    
+
     if (elements.length > 0) {
-      tl.to(
-        elements,
-        {
-          opacity: 0,
-          y: 30,
-          duration: 0.4,
-          stagger: 0.05,
-          ease: "power2.in",
-        },
-      );
+      tl.to(elements, {
+        opacity: 0,
+        y: 30,
+        duration: 0.4,
+        stagger: 0.05,
+        ease: "power2.in",
+      });
     }
 
     // Animate new content in
@@ -112,8 +105,8 @@ export function HeroSlider() {
       tl.fromTo(
         badgeRef.current,
         { opacity: 0, scale: 0.8, y: -20 },
-        { opacity: 1, scale: 1, y: 0, duration: 0.6, ease: 'back.out(1.7)' },
-        '+=0.2'
+        { opacity: 1, scale: 1, y: 0, duration: 0.6, ease: "back.out(1.7)" },
+        "+=0.2",
       );
     }
 
@@ -121,14 +114,14 @@ export function HeroSlider() {
       tl.fromTo(
         titleRef.current,
         { opacity: 0, y: 50, rotationX: -15 },
-        { 
-          opacity: 1, 
-          y: 0, 
+        {
+          opacity: 1,
+          y: 0,
           rotationX: 0,
-          duration: 0.8, 
-          ease: 'power3.out',
+          duration: 0.8,
+          ease: "power3.out",
         },
-        '-=0.3'
+        "-=0.3",
       );
     }
 
@@ -136,26 +129,26 @@ export function HeroSlider() {
       tl.fromTo(
         descRef.current,
         { opacity: 0, y: 30 },
-        { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' },
-        '-=0.5'
+        { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" },
+        "-=0.5",
       );
     }
 
     if (buttonsRef.current) {
-      const buttons = buttonsRef.current.querySelectorAll('button');
+      const buttons = buttonsRef.current.querySelectorAll("button");
       if (buttons.length > 0) {
         tl.fromTo(
           buttons,
           { opacity: 0, y: 20, scale: 0.9 },
-          { 
-            opacity: 1, 
-            y: 0, 
+          {
+            opacity: 1,
+            y: 0,
             scale: 1,
-            duration: 0.6, 
+            duration: 0.6,
             stagger: 0.1,
-            ease: 'back.out(1.7)',
+            ease: "back.out(1.7)",
           },
-          '-=0.4'
+          "-=0.4",
         );
       }
     }
@@ -165,10 +158,9 @@ export function HeroSlider() {
       gsap.fromTo(
         overlayRef.current,
         { opacity: 0.5 },
-        { opacity: 1, duration: 1, ease: 'power2.inOut' }
+        { opacity: 1, duration: 1, ease: "power2.inOut" },
       );
     }
-
   }, [currentSlide]);
 
   // Parallax effect on scroll for current slide only
@@ -199,9 +191,7 @@ export function HeroSlider() {
   }, [currentSlide]);
 
   // Magnetic hover effect for buttons
-  const handleMouseMove = (
-    e: React.MouseEvent<HTMLButtonElement>,
-  ) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement>) => {
     const button = e.currentTarget;
     const rect = button.getBoundingClientRect();
     const x = e.clientX - rect.left - rect.width / 2;
@@ -215,9 +205,7 @@ export function HeroSlider() {
     });
   };
 
-  const handleMouseLeave = (
-    e: React.MouseEvent<HTMLButtonElement>,
-  ) => {
+  const handleMouseLeave = (e: React.MouseEvent<HTMLButtonElement>) => {
     gsap.to(e.currentTarget, {
       x: 0,
       y: 0,
@@ -231,16 +219,14 @@ export function HeroSlider() {
   };
 
   const prevSlide = () => {
-    setCurrentSlide(
-      (prev) => (prev - 1 + slides.length) % slides.length,
-    );
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
   // Compute title: highlight 2nd word normally, but for slide 0 highlight 2nd+3rd as a run
   const highlightedTitle = useMemo(() => {
     const text = t(slides[currentSlide].title) || "";
     const parts = text.split(/(\s+)/);
-    const result: Array<string | number | JSX.Element> = [];
+    const result: Array<string | number | ReactElement> = [];
 
     // Build set of word indexes to highlight.
     // Rules:
@@ -316,8 +302,7 @@ export function HeroSlider() {
               className=""
               style={
                 {
-                  background:
-                    "linear-gradient(90deg,#F1BC28,#FFFFFF)",
+                  background: "linear-gradient(90deg,#F1BC28,#FFFFFF)",
                   WebkitBackgroundClip: "text" as any,
                   backgroundClip: "text" as any,
                   color: "transparent",
@@ -342,7 +327,7 @@ export function HeroSlider() {
 
   return (
     <section
-      className="relative h-screen overflow-hidden -mt-20 pt-20"
+      className="relative h-[calc(100vh-60px)] overflow-hidden  "
       ref={slideRef}
     >
       {/* Animated gradient blobs */}
@@ -358,9 +343,7 @@ export function HeroSlider() {
           <div
             key={index}
             className={`absolute inset-0 transition-opacity duration-1000 ${
-              index === currentSlide
-                ? "opacity-100 z-10"
-                : "opacity-0 z-0"
+              index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"
             }`}
           >
             {/* Background Image with Ken Burns effect */}
@@ -441,43 +424,38 @@ export function HeroSlider() {
                   </p>
 
                   {/* Animated buttons with magnetic effect */}
-                  <div
-                    ref={buttonsRef}
-                    className="flex gap-3 flex-wrap"
-                  >
-                    {slides[currentSlide].buttons.map(
-                      (button, btnIndex) => (
-                        <button
-                          key={btnIndex}
-                          onMouseMove={handleMouseMove}
-                          onMouseLeave={handleMouseLeave}
-                          className={`group relative px-6 py-3 ${
-                            button.primary
-                              ? "bg-[#F1BC28] text-[#052F2A]"
-                              : "bg-white/10 backdrop-blur-md border-2 border-white/30 text-white"
-                          } rounded-full transition-all duration-300 flex items-center gap-3 overflow-hidden`}
-                          style={{
-                            boxShadow: button.primary
-                              ? "0 10px 40px rgba(241, 188, 40, 0.3)"
-                              : "0 10px 40px rgba(255, 255, 255, 0.1)",
-                          }}
-                        >
-                          {/* Shine effect */}
-                          <div className="absolute  hero-nav-arrow  inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                  <div ref={buttonsRef} className="flex gap-3 flex-wrap">
+                    {slides[currentSlide].buttons.map((button, btnIndex) => (
+                      <button
+                        key={btnIndex}
+                        onMouseMove={handleMouseMove}
+                        onMouseLeave={handleMouseLeave}
+                        className={`group relative px-6 py-3 ${
+                          button.primary
+                            ? "bg-[#F1BC28] text-[#052F2A]"
+                            : "bg-white/10 backdrop-blur-md border-2 border-white/30 text-white"
+                        } rounded-full transition-all duration-300 flex items-center gap-3 overflow-hidden`}
+                        style={{
+                          boxShadow: button.primary
+                            ? "0 10px 40px rgba(241, 188, 40, 0.3)"
+                            : "0 10px 40px rgba(255, 255, 255, 0.1)",
+                        }}
+                      >
+                        {/* Shine effect */}
+                        <div className="absolute  hero-nav-arrow  inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
 
-                          <span className="relative z-10 font-medium">
-                            {t(button.text)}
-                          </span>
-                          <ArrowRight
-                            className={`relative z-10 w-5 h-5 transition-transform duration-300 group-hover:scale-110 ${
-                              language === "ar"
-                                ? "rotate-180 group-hover:-translate-x-1"
-                                : "group-hover:translate-x-1"
-                            }`}
-                          />
-                        </button>
-                      ),
-                    )}
+                        <span className="relative z-10 font-medium">
+                          {t(button.text)}
+                        </span>
+                        <ArrowRight
+                          className={`relative z-10 w-5 h-5 transition-transform duration-300 group-hover:scale-110 ${
+                            language === "ar"
+                              ? "rotate-180 group-hover:-translate-x-1"
+                              : "group-hover:translate-x-1"
+                          }`}
+                        />
+                      </button>
+                    ))}
                   </div>
                 </div>
               </div>

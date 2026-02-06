@@ -13,7 +13,7 @@ import {
 } from 'lucide-react';
 
 export function CoffeeAchievements() {
-  const { t, language } = useLanguage();
+  const { language } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 

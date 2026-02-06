@@ -139,7 +139,7 @@ export function AboutMilestones() {
               return (
                 <div
                   key={index}
-                  ref={(el) => (milestonesRef.current[index] = el)}
+                  ref={(el) => { milestonesRef.current[index] = el; }}
                   className={`flex items-center ${
                     isLeft ? "flex-row" : "flex-row-reverse"
                   }`}
