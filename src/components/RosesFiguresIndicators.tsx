@@ -76,11 +76,11 @@ export function RosesFiguresIndicators() {
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-3">
             <span className="bg-gradient-to-r from-[#035938] via-[#52BC88] to-[#F1BC28] bg-clip-text text-transparent">
-              Impact & Growth
+              {t('rosesImpactGrowth')}
             </span>
           </h2>
           <p className="text-lg text-[#035938]/60 max-w-2xl mx-auto">
-            Data-driven insights into the transformation of Saudi Arabia's rose and aromatic plants sector
+            {t('rosesFiguresSubtitle')}
           </p>
         </div>
 
@@ -113,7 +113,7 @@ export function RosesFiguresIndicators() {
 
                   <div className="flex items-center gap-1.5 text-[#52BC88] text-sm font-semibold">
                     <ArrowUpRight className="w-4 h-4" />
-                    <span>Empowering local producers</span>
+                    <span>{t('empoweringLocalProducers')}</span>
                   </div>
                 </div>
               </div>
@@ -148,11 +148,11 @@ export function RosesFiguresIndicators() {
                   <div className="flex items-center gap-4 text-xs font-semibold">
                     <div className="flex items-center gap-1.5">
                       <div className="w-2 h-2 rounded-full bg-[#52BC88]"></div>
-                      <span className="text-[#035938]/70">632 Men</span>
+                      <span className="text-[#035938]/70">632 {t('men')}</span>
                     </div>
                     <div className="flex items-center gap-1.5">
                       <div className="w-2 h-2 rounded-full bg-[#F1BC28]"></div>
-                      <span className="text-[#035938]/70">423 Women</span>
+                      <span className="text-[#035938]/70">423 {t('women')}</span>
                     </div>
                   </div>
                 </div>
@@ -299,7 +299,7 @@ export function RosesFiguresIndicators() {
               {/* Saudi Arabia Map Image */}
               <ImageWithFallback 
                 src="https://placehold.co/600x500?text=Map"
-                alt="Saudi Arabia Map"
+                alt={t('saudiMapAlt')}
                 className="absolute inset-0 w-full h-full object-contain p-8"
               />
               
@@ -427,7 +427,7 @@ export function RosesFiguresIndicators() {
                         {data.volume >= 1000 ? (data.volume / 1000).toFixed(1) : data.volume}
                       </span>
                       <span className="text-base font-semibold text-[#035938]/50">
-                        {data.volume >= 1000 ? 'B' : 'M'}
+                        {data.volume >= 1000 ? t('billionShort') : t('millionShort')}
                       </span>
                     </div>
                     <div className="text-xs text-[#035938]/60 mb-2">

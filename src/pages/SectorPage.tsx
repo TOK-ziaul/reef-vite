@@ -187,9 +187,11 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                 <p className="text-xl leading-relaxed">
                   {t("beekeepingIntro2")}
                 </p>
-                <p className="text-xl leading-relaxed">
-                  {t("beekeepingIntro3")}
-                </p>
+                {t("beekeepingIntro3") ? (
+                  <p className="text-xl leading-relaxed">
+                    {t("beekeepingIntro3")}
+                  </p>
+                ) : null}
               </div>
             </div>
           )}
@@ -485,12 +487,12 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                       </p>
                       <div className="flex flex-wrap gap-3">
                         <div className="bg-gradient-to-r from-[#035938] to-[#52BC88] text-white px-6 py-3 rounded-full font-semibold shadow-md">
-                          {isRTL ? "الطائف" : "Taif"} - 15,000{" "}
-                          {isRTL ? "شتلة" : "Seedlings"}
+                          {t("taif")} - 15,000{" "}
+                          {t("seedlings")}
                         </div>
                         <div className="bg-gradient-to-r from-[#F1BC28] to-[#035938] text-white px-6 py-3 rounded-full font-semibold shadow-md">
-                          {isRTL ? "جازان" : "Jazan"} - 15,000{" "}
-                          {isRTL ? "شتلة" : "Seedlings"}
+                          {t("jazan")} - 15,000{" "}
+                          {t("seedlings")}
                         </div>
                       </div>
                     </div>
@@ -558,21 +560,16 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                         {t("fruitsWork3Desc")}
                       </p>
                       <div className="flex flex-wrap gap-2">
-                        {[
-                          { ar: "العنب", en: "Grapes" },
-                          { ar: "التين", en: "Figs" },
-                          { ar: "المشمش", en: "Apricots" },
-                          { ar: "اللوز", en: "Almonds" },
-                        ].map((variety, idx) => (
+                        {["grapes", "figs", "apricots", "almonds"].map((key) => (
                           <div
-                            key={idx}
+                            key={key}
                             className="bg-[#52BC88]/10 border-2 border-[#52BC88] px-4 py-2 rounded-full text-[#035938] font-semibold"
                           >
-                            {isRTL ? variety.ar : variety.en}
+                            {t(key)}
                           </div>
                         ))}
                         <div className="bg-gradient-to-r from-[#F1BC28] to-[#035938] text-white px-4 py-2 rounded-full font-bold">
-                          6 {isRTL ? "أصناف" : "Varieties"}
+                          6 {t("varieties")}
                         </div>
                       </div>
                     </div>
@@ -689,9 +686,7 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                       d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
                     />
                   </svg>
-                  {isRTL
-                    ? "استكشف الخريطة التفاعلية"
-                    : "Explore Interactive Map"}
+                  {t("exploreInteractiveMap")}
                 </button>
                 <button className="bg-[#F1BC28] text-white px-6 py-2.5 rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 flex items-center gap-2 group">
                   <svg
@@ -707,7 +702,7 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                       d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                     />
                   </svg>
-                  {isRTL ? "استكشف برامج الدعم" : "Explore Support Programs"}
+                  {t("exploreSupportPrograms")}
                 </button>
               </div>
             </div>
@@ -873,9 +868,9 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                           <TreePine className="w-7 h-7 text-white" />
                         </div>
                         <h3 className="text-lg font-bold text-[#035938] leading-tight">
-                          Honey Sector
+                          {t("honeySector")}
                           <br />
-                          Ecosystem
+                          {t("honeyEcosystem")}
                         </h3>
                       </div>
                     </div>
@@ -1217,7 +1212,7 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                         <Coins className="w-4 h-4 text-[#F1BC28]" />
                       </div>
                       <h3 className="text-white/70 text-[10px] md:text-xs font-medium uppercase tracking-wide">
-                        {t("totalSupportValue")}
+                        {t("honeyTotalSupportLabel")}
                       </h3>
                     </div>
                     <div className="flex items-baseline gap-2">
@@ -1225,7 +1220,7 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                         +197.53
                       </span>
                       <span className="text-sm md:text-base text-[#F1BC28] font-semibold">
-                        {t("million")} SAR
+                        {t("millionSAR")}
                       </span>
                     </div>
                   </div>
@@ -1241,7 +1236,7 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                         <Users className="w-4 h-4 text-[#035938]" />
                       </div>
                       <h3 className="text-[#035938]/70 text-[10px] md:text-xs font-medium uppercase tracking-wide">
-                        {t("totalBeneficiaries")}
+                        {t("honeyBeneficiariesLabel")}
                       </h3>
                     </div>
                     <div className="flex items-center justify-between gap-3">
@@ -1286,7 +1281,7 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                         </div>
                         <div className="text-center">
                           <div className="text-sm text-gray-500 mb-2 font-semibold">
-                            Asir
+                            {t("asir")}
                           </div>
                           <div className="text-4xl font-bold text-[#035938] mb-3">
                             7,195
@@ -1298,7 +1293,7 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                             ></div>
                           </div>
                           <div className="text-xs text-gray-500 mt-2">
-                            48.3% of total
+                            48.3% {t("ofTotal")}
                           </div>
                         </div>
                       </div>
@@ -1315,7 +1310,7 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                         </div>
                         <div className="text-center">
                           <div className="text-sm text-gray-500 mb-2 font-semibold">
-                            Hail
+                            {t("hail")}
                           </div>
                           <div className="text-4xl font-bold text-[#52BC88] mb-3">
                             2,338
@@ -1327,7 +1322,7 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                             ></div>
                           </div>
                           <div className="text-xs text-gray-500 mt-2">
-                            15.7% of total
+                            15.7% {t("ofTotal")}
                           </div>
                         </div>
                       </div>
@@ -1344,7 +1339,7 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                         </div>
                         <div className="text-center">
                           <div className="text-sm text-gray-500 mb-2 font-semibold">
-                            Makkah Al-Mukarramah
+                            {t("makkah")}
                           </div>
                           <div className="text-4xl font-bold text-[#F1BC28] mb-3">
                             1,836
@@ -1356,7 +1351,7 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                             ></div>
                           </div>
                           <div className="text-xs text-gray-500 mt-2">
-                            12.3% of total
+                            12.3% {t("ofTotal")}
                           </div>
                         </div>
                       </div>
@@ -1367,52 +1362,52 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                   <div className="space-y-3">
                     {[
                       {
-                        region: "Al-Baha",
+                        region: t("baha"),
                         count: 1196,
                         color: "from-[#035938] to-[#52BC88]",
                       },
                       {
-                        region: "Tabuk",
+                        region: t("tabuk"),
                         count: 552,
                         color: "from-[#52BC88] to-[#F1BC28]",
                       },
                       {
-                        region: "Northern Borders",
+                        region: t("northernBorders"),
                         count: 457,
                         color: "from-[#F1BC28] to-[#52BC88]",
                       },
                       {
-                        region: "Eastern Province",
+                        region: t("easternProvince"),
                         count: 420,
                         color: "from-[#035938] to-[#52BC88]",
                       },
                       {
-                        region: "Jazan",
+                        region: t("jazan"),
                         count: 363,
                         color: "from-[#52BC88] to-[#F1BC28]",
                       },
                       {
-                        region: "Madinah",
+                        region: t("madinah"),
                         count: 340,
                         color: "from-[#F1BC28] to-[#035938]",
                       },
                       {
-                        region: "Riyadh",
+                        region: t("riyadh"),
                         count: 174,
                         color: "from-[#035938] to-[#52BC88]",
                       },
                       {
-                        region: "Al-Jouf",
+                        region: t("jouf"),
                         count: 124,
                         color: "from-[#52BC88] to-[#F1BC28]",
                       },
                       {
-                        region: "Najran",
+                        region: t("najran"),
                         count: 117,
                         color: "from-[#F1BC28] to-[#52BC88]",
                       },
                       {
-                        region: "Al-Qassim",
+                        region: t("qassim"),
                         count: 53,
                         color: "from-[#035938] to-[#52BC88]",
                       },
@@ -1677,7 +1672,7 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                           {t("tonsGrowth2020to2024")}
                         </div>
                         <div className="mt-3 inline-block px-3 py-1 bg-[#035938]/10 rounded-full text-xs text-[#035938] font-semibold">
-                          104.8% Growth
+                          {t("growth104Label")}
                         </div>
                       </div>
                     </div>
@@ -1692,7 +1687,7 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                           {t("totalProjectedGrowth")}
                         </div>
                         <div className="mt-3 inline-block px-3 py-1 bg-[#52BC88]/10 rounded-full text-xs text-[#52BC88] font-semibold">
-                          2020-2026
+                          2020–2026
                         </div>
                       </div>
                     </div>
@@ -1707,7 +1702,7 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                           {t("overallGrowthRate")}
                         </div>
                         <div className="mt-3 inline-block px-3 py-1 bg-[#F1BC28]/10 rounded-full text-xs text-[#F1BC28] font-semibold">
-                          6-Year Period
+                          {t("sixYearPeriod")}
                         </div>
                       </div>
                     </div>
@@ -1724,8 +1719,7 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                 {/* Section Header */}
                 <div className="text-center mb-12">
                   <h3 className="text-3xl md:text-4xl font-bold text-[#035938] mb-4">
-                    Projects of the Beekeeping Development and Honey Production
-                    Sector
+                    {t("honeyProjectsSectionTitle")}
                   </h3>
 
                   {/* Stats Cards */}
@@ -1734,10 +1728,10 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                       <div className="absolute inset-0 bg-gradient-to-br from-[#035938]/5 to-[#52BC88]/10 group-hover:from-[#035938]/10 group-hover:to-[#52BC88]/20 transition-all duration-300"></div>
                       <div className="relative p-8 text-center">
                         <div className="text-5xl font-bold text-[#035938] mb-2">
-                          13
+                          {t("honeyProjectsCountNumber")}
                         </div>
                         <div className="text-lg text-gray-700 font-semibold">
-                          Projects
+                          {t("honeyProjectsLabel")}
                         </div>
                       </div>
                     </div>
@@ -1746,21 +1740,17 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                       <div className="absolute inset-0 bg-gradient-to-br from-[#52BC88]/5 to-[#F1BC28]/10 group-hover:from-[#52BC88]/10 group-hover:to-[#F1BC28]/20 transition-all duration-300"></div>
                       <div className="relative p-8 text-center">
                         <div className="text-5xl font-bold text-[#52BC88] mb-2">
-                          98M
+                          {t("honeyProjectsValueNumber")}
                         </div>
                         <div className="text-lg text-gray-700 font-semibold">
-                          SAR Total Value
+                          {t("honeyProjectsValueLabel")}
                         </div>
                       </div>
                     </div>
                   </div>
 
                   <p className="text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto">
-                    The "Reef Saudi Arabia" Program implements several
-                    high-impact projects in the beekeeping and honey production
-                    sector to protect local bee strains, increase production
-                    efficiency, and support sustainability of this vital sector
-                    across the Kingdom.
+                    {t("honeyProjectsIntro")}
                   </p>
                 </div>
 
@@ -1768,7 +1758,7 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                 <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
                   <h4 className="text-2xl md:text-3xl font-bold text-[#035938] mb-8 flex items-center gap-3">
                     <div className="w-2 h-8 bg-gradient-to-b from-[#035938] to-[#52BC88] rounded-full"></div>
-                    Key Sector Projects
+                    {t("honeyKeyProjectsTitle")}
                   </h4>
 
                   <div className="space-y-6">
@@ -1777,11 +1767,10 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                       <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#035938] to-[#52BC88] rounded-full group-hover:w-2 transition-all duration-300"></div>
                       <div className="pl-8 py-4 bg-gradient-to-r from-[#035938]/5 to-transparent rounded-r-xl group-hover:from-[#035938]/10 transition-all duration-300">
                         <h5 className="text-xl font-bold text-[#035938] mb-2">
-                          Beekeeping Program in the Kingdom of Saudi Arabia
-                          (Phase II)
+                          {t("honeyKeyProject1Title")}
                         </h5>
                         <p className="text-gray-600">
-                          Protection of the local honey bee strain.
+                          {t("honeyKeyProject1Desc")}
                         </p>
                       </div>
                     </div>
@@ -1791,7 +1780,7 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                       <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#52BC88] to-[#F1BC28] rounded-full group-hover:w-2 transition-all duration-300"></div>
                       <div className="pl-8 py-4 bg-gradient-to-r from-[#52BC88]/5 to-transparent rounded-r-xl group-hover:from-[#52BC88]/10 transition-all duration-300">
                         <h5 className="text-xl font-bold text-[#035938] mb-2">
-                          Rehabilitation of the Beekeeping Station in Baljurashi
+                          {t("honeyKeyProject2Title")}
                         </h5>
                       </div>
                     </div>
@@ -1801,26 +1790,25 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                       <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#F1BC28] to-[#035938] rounded-full group-hover:w-2 transition-all duration-300"></div>
                       <div className="pl-8 py-4 bg-gradient-to-r from-[#F1BC28]/5 to-transparent rounded-r-xl group-hover:from-[#F1BC28]/10 transition-all duration-300">
                         <h5 className="text-xl font-bold text-[#035938] mb-3">
-                          Establishment of Queen Bee Breeding and Package
-                          Production Stations
+                          {t("honeyKeyProject3Title")}
                         </h5>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                           {[
-                            "Asir – Al-Namas",
-                            "Jazan",
-                            "Madinah",
-                            "Hail",
-                            "Tabuk",
-                            "Taif",
-                            "Najran",
-                          ].map((location, idx) => (
+                            "honeyKeyProjectLocationAsirNamas",
+                            "jazan",
+                            "madinah",
+                            "hail",
+                            "tabuk",
+                            "honeyKeyProjectLocationTaif",
+                            "najran",
+                          ].map((key, idx) => (
                             <div
                               key={idx}
                               className="flex items-center gap-2 bg-white rounded-lg px-4 py-2 border border-[#035938]/10 hover:border-[#035938]/30 hover:shadow-md transition-all duration-300"
                             >
                               <div className="w-2 h-2 bg-[#F1BC28] rounded-full"></div>
                               <span className="text-sm font-semibold text-gray-700">
-                                {location}
+                                {t(key)}
                               </span>
                             </div>
                           ))}
@@ -1833,10 +1821,10 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                       <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#035938] to-[#52BC88] rounded-full group-hover:w-2 transition-all duration-300"></div>
                       <div className="pl-8 py-4 bg-gradient-to-r from-[#035938]/5 to-transparent rounded-r-xl group-hover:from-[#035938]/10 transition-all duration-300">
                         <h5 className="text-xl font-bold text-[#035938] mb-2">
-                          Supply of Modern Beekeeping Equipment
+                          {t("honeyKeyProject4Title")}
                         </h5>
                         <p className="text-gray-600">
-                          To promote advanced technologies among beekeepers.
+                          {t("honeyKeyProject4Desc")}
                         </p>
                       </div>
                     </div>
@@ -1846,11 +1834,10 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                       <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#52BC88] to-[#F1BC28] rounded-full group-hover:w-2 transition-all duration-300"></div>
                       <div className="pl-8 py-4 bg-gradient-to-r from-[#52BC88]/5 to-transparent rounded-r-xl group-hover:from-[#52BC88]/10 transition-all duration-300">
                         <h5 className="text-xl font-bold text-[#035938] mb-2">
-                          Supply of Mobile Laboratories
+                          {t("honeyKeyProject5Title")}
                         </h5>
                         <p className="text-gray-600">
-                          For testing and diagnosing bee diseases and pests in
-                          apiaries.
+                          {t("honeyKeyProject5Desc")}
                         </p>
                       </div>
                     </div>
@@ -1860,10 +1847,10 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                       <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#F1BC28] to-[#035938] rounded-full group-hover:w-2 transition-all duration-300"></div>
                       <div className="pl-8 py-4 bg-gradient-to-r from-[#F1BC28]/5 to-transparent rounded-r-xl group-hover:from-[#F1BC28]/10 transition-all duration-300">
                         <h5 className="text-xl font-bold text-[#035938] mb-2">
-                          Supply of Fully Equipped Mobile Clinics
+                          {t("honeyKeyProject6Title")}
                         </h5>
                         <p className="text-gray-600">
-                          For diagnosing bee diseases and pests.
+                          {t("honeyKeyProject6Desc")}
                         </p>
                       </div>
                     </div>
@@ -1880,12 +1867,11 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                 {/* Section Header */}
                 <div className="text-center mb-16">
                   <h3 className="text-3xl md:text-4xl font-bold text-[#035938] mb-4">
-                    Technical and Economic Feasibility of the Projects
+                    {t("honeyFeasibilityTitle")}
                   </h3>
                   <div className="w-24 h-1 bg-gradient-to-r from-[#F1BC28] to-[#52BC88] mx-auto rounded-full mb-6"></div>
                   <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-                    These projects aim to create a sustainable impact on the
-                    beekeeping and honey production sector through:
+                    {t("honeyFeasibilityIntro")}
                   </p>
                 </div>
 
@@ -1903,11 +1889,10 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                           </div>
                           <div className="flex-1">
                             <h4 className="text-xl font-bold text-white mb-2">
-                              Protecting National Bee Wealth
+                              {t("honeyFeasibility1Title")}
                             </h4>
                             <p className="text-white/90">
-                              Comprehensive protection from diseases and pests
-                              to ensure sustainable populations
+                              {t("honeyFeasibility1Desc")}
                             </p>
                           </div>
                         </div>
@@ -1921,7 +1906,7 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                           02
                         </div>
                         <p className="text-gray-700 font-medium leading-relaxed">
-                          Increasing employment opportunities in beekeeping
+                          {t("honeyFeasibility2")}
                         </p>
                       </div>
                     </div>
@@ -1936,7 +1921,7 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                           03
                         </div>
                         <p className="text-gray-700 font-medium leading-relaxed">
-                          Increasing adapted bee colonies and improving genetics
+                          {t("honeyFeasibility3")}
                         </p>
                       </div>
                     </div>
@@ -1951,11 +1936,10 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                           </div>
                           <div className="flex-1">
                             <h4 className="text-xl font-bold text-[#035938] mb-2">
-                              Local Bee Products Year-Round
+                              {t("honeyFeasibility4Title")}
                             </h4>
                             <p className="text-[#035938]/90">
-                              Providing local bee products throughout the year
-                              without the need for imports
+                              {t("honeyFeasibility4")}
                             </p>
                           </div>
                         </div>
@@ -1972,7 +1956,7 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                           05
                         </div>
                         <p className="text-gray-700 font-medium leading-relaxed">
-                          Educational guidance manual for beekeepers
+                          {t("honeyFeasibility5")}
                         </p>
                       </div>
                     </div>
@@ -1984,7 +1968,7 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                           06
                         </div>
                         <p className="text-gray-700 font-medium leading-relaxed">
-                          Reducing genetic mixing of local bee strain
+                          {t("honeyFeasibility6")}
                         </p>
                       </div>
                     </div>
@@ -1996,7 +1980,7 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                           07
                         </div>
                         <p className="text-gray-700 font-medium leading-relaxed">
-                          Comprehensive database of diseases and pests
+                          {t("honeyFeasibility7")}
                         </p>
                       </div>
                     </div>
@@ -2014,11 +1998,10 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                           </div>
                           <div className="flex-1">
                             <h4 className="text-xl font-bold text-white mb-2">
-                              Stimulating Local Industry
+                              {t("honeyFeasibility8Title")}
                             </h4>
                             <p className="text-white/90">
-                              Supporting local industry to meet the needs of
-                              beekeeping projects
+                              {t("honeyFeasibility8")}
                             </p>
                           </div>
                         </div>
@@ -2035,10 +2018,10 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                           </div>
                           <div className="flex-1">
                             <h4 className="text-xl font-bold text-[#035938] mb-2">
-                              Modern Technologies
+                              {t("honeyFeasibility9Title")}
                             </h4>
                             <p className="text-[#035938]/90">
-                              Promoting and applying advanced beekeeping methods
+                              {t("honeyFeasibility9")}
                             </p>
                           </div>
                         </div>
@@ -2057,13 +2040,11 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                 {/* Section Header */}
                 <div className="text-center mb-20">
                   <h3 className="text-3xl md:text-4xl font-bold text-[#035938] mb-4">
-                    Project Objectives
+                    {t("honeyProjectObjectivesTitle")}
                   </h3>
                   <div className="w-24 h-1 bg-gradient-to-r from-[#F1BC28] to-[#52BC88] mx-auto rounded-full mb-6"></div>
                   <p className="text-lg text-gray-700 max-w-4xl mx-auto">
-                    Projects in the beekeeping sector under the "Reef Saudi
-                    Arabia" Program focus on achieving the following strategic
-                    goals:
+                    {t("honeyProjectObjectivesIntro")}
                   </p>
                 </div>
 
@@ -2093,11 +2074,10 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                     </div>
                     <div className="flex-1">
                       <h5 className="text-lg font-bold text-[#035938] mb-1">
-                        Increasing Local Bee Colonies
+                        {t("honeyProjectObj1Title")}
                       </h5>
                       <p className="text-sm text-gray-600">
-                        Achieve self-sufficiency and protect nature reserves
-                        from imported strains
+                        {t("honeyProjectObj1")}
                       </p>
                     </div>
                   </div>
@@ -2126,11 +2106,10 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                     </div>
                     <div className="flex-1">
                       <h5 className="text-lg font-bold text-[#035938] mb-1">
-                        Testing & Diagnosis Services
+                        {t("honeyProjectObj2Title")}
                       </h5>
                       <p className="text-sm text-gray-600">
-                        Treatment services for diseases and pests with guidance
-                        for beekeepers
+                        {t("honeyProjectObj2")}
                       </p>
                     </div>
                   </div>
@@ -2159,11 +2138,10 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                     </div>
                     <div className="flex-1">
                       <h5 className="text-lg font-bold text-[#035938] mb-1">
-                        Mobile Clinic Vehicles
+                        {t("honeyProjectObj3Title")}
                       </h5>
                       <p className="text-sm text-gray-600">
-                        Equipped with specialized laboratories and full medical
-                        equipment
+                        {t("honeyProjectObj3")}
                       </p>
                     </div>
                   </div>
@@ -2198,11 +2176,10 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                     </div>
                     <div className="flex-1">
                       <h5 className="text-lg font-bold text-[#035938] mb-1">
-                        Field Inspection & Treatment
+                        {t("honeyProjectObj4Title")}
                       </h5>
                       <p className="text-sm text-gray-600">
-                        Rapid treatment services at beekeepers' locations across
-                        the Kingdom
+                        {t("honeyProjectObj4")}
                       </p>
                     </div>
                   </div>
@@ -2218,7 +2195,7 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                 {/* Main Section Header */}
                 <div className="text-center mb-16">
                   <h3 className="text-3xl md:text-4xl font-bold text-[#035938] mb-4">
-                    Major Implemented Activities
+                    {t("honeyKeyWorksTitle")}
                   </h3>
                   <div className="w-24 h-1 bg-gradient-to-r from-[#F1BC28] to-[#52BC88] mx-auto rounded-full"></div>
                 </div>
@@ -2231,18 +2208,18 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                       <span className="text-white font-bold text-xl">1</span>
                     </div>
                     <h4 className="text-2xl md:text-3xl font-bold text-[#035938]">
-                      Studies and Statistics
+                      {t("honeyKeyWorksStudiesTitle")}
                     </h4>
                   </div>
 
                   {/* Survey Study Introduction */}
                   <div className="bg-white rounded-2xl p-6 md:p-8 shadow-md mb-8 border-l-4 border-[#F1BC28]">
                     <p className="text-lg text-gray-700 leading-relaxed">
-                      A survey study covering more than{" "}
+                      {t("honeyKeyWorksSurveyIntroBefore")}
                       <span className="font-bold text-[#035938]">
-                        450 beekeepers
-                      </span>{" "}
-                      was completed, producing key results including:
+                        {t("honeyKeyWorksSurveyIntroBold")}
+                      </span>
+                      {t("honeyKeyWorksSurveyIntroAfter")}
                     </p>
                   </div>
 
@@ -2266,13 +2243,13 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                         </svg>
                       </div>
                       <div className="text-4xl font-bold bg-gradient-to-r from-[#035938] to-[#52BC88] bg-clip-text text-transparent mb-2 relative z-10">
-                        15,000
+                        {t("honeyKeyWorksRegisteredCount")}
                       </div>
                       <div className="text-sm font-bold text-[#035938] mb-2 relative z-10">
-                        Registered Beekeepers
+                        {t("honeyKeyWorksRegisteredLabel")}
                       </div>
                       <div className="text-xs text-gray-600 leading-relaxed relative z-10">
-                        Including about 4,000 women beekeepers
+                        {t("honeyKeyWorksRegisteredDetail")}
                       </div>
                     </div>
                     <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 group border border-gray-100 hover:border-transparent overflow-hidden relative">
@@ -2293,13 +2270,13 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                         </svg>
                       </div>
                       <div className="text-4xl font-bold bg-gradient-to-r from-[#52BC88] to-[#F1BC28] bg-clip-text text-transparent mb-2 relative z-10">
-                        1.8M
+                        {t("honeyKeyWorksHivesCount")}
                       </div>
                       <div className="text-sm font-bold text-[#035938] mb-2 relative z-10">
-                        Bee Hives
+                        {t("honeyKeyWorksHivesLabel")}
                       </div>
                       <div className="text-xs text-gray-600 leading-relaxed relative z-10">
-                        Total number of hives in the Kingdom
+                        {t("honeyKeyWorksHivesDetail")}
                       </div>
                     </div>
                     <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 group border border-gray-100 hover:border-transparent overflow-hidden relative">
@@ -2323,10 +2300,10 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                         1%
                       </div>
                       <div className="text-sm font-bold text-[#035938] mb-2 relative z-10">
-                        Agricultural Income
+                        {t("honeyKeyWorksIncomeLabel")}
                       </div>
                       <div className="text-xs text-gray-600 leading-relaxed relative z-10">
-                        Honey production contribution
+                        {t("honeyKeyWorksIncomeDetail")}
                       </div>
                     </div>
                     <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 group border border-gray-100 hover:border-transparent overflow-hidden relative">
@@ -2347,13 +2324,13 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                         </svg>
                       </div>
                       <div className="text-4xl font-bold bg-gradient-to-r from-[#035938] to-[#52BC88] bg-clip-text text-transparent mb-2 relative z-10">
-                        17,000
+                        {t("honeyKeyWorksJobsCount")}
                       </div>
                       <div className="text-sm font-bold text-[#035938] mb-2 relative z-10">
-                        Jobs Provided
+                        {t("honeyKeyWorksJobsLabel")}
                       </div>
                       <div className="text-xs text-gray-600 leading-relaxed relative z-10">
-                        Employment opportunities in the sector
+                        {t("honeyKeyWorksJobsDetail")}
                       </div>
                     </div>
                   </div>
@@ -2378,26 +2355,28 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                       </div>
                       <div>
                         <h5 className="text-xl font-bold mb-2">
-                          National Database for Beekeeping Sector
+                          {t("honeyKeyWorksNationalDbTitle")}
                         </h5>
                         <p className="text-white/90 leading-relaxed">
-                          These studies supported the creation of a national
-                          database for the beekeeping sector, collecting
-                          comprehensive data from:
+                          {t("honeyKeyWorksNationalDbIntro")}
                         </p>
                       </div>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ml-0 md:ml-16">
                       <div className="bg-white/10 rounded-xl p-4 backdrop-blur-sm border border-white/20">
-                        <div className="text-3xl font-bold mb-1">80</div>
+                        <div className="text-3xl font-bold mb-1">
+                          {t("honeyKeyWorksApiariesCount")}
+                        </div>
                         <div className="text-sm text-white/80">
-                          Apiaries Covered
+                          {t("honeyKeyWorksApiariesLabel")}
                         </div>
                       </div>
                       <div className="bg-white/10 rounded-xl p-4 backdrop-blur-sm border border-white/20">
-                        <div className="text-3xl font-bold mb-1">800</div>
+                        <div className="text-3xl font-bold mb-1">
+                          {t("honeyKeyWorksColoniesCount")}
+                        </div>
                         <div className="text-sm text-white/80">
-                          Colonies Recorded
+                          {t("honeyKeyWorksColoniesLabel")}
                         </div>
                       </div>
                     </div>
@@ -2407,10 +2386,10 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                   <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-[#F1BC28]">
                     <div className="text-center mb-8">
                       <h5 className="text-2xl font-bold text-[#035938] mb-2">
-                        Average Honey Production Per Hive
+                        {t("honeyKeyWorksAvgProductionTitle")}
                       </h5>
                       <p className="text-gray-600">
-                        Comparing traditional vs modern hive efficiency
+                        {t("honeyKeyWorksAvgProductionSub")}
                       </p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -2419,7 +2398,7 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                           <div className="w-32 h-32 bg-gradient-to-br from-gray-400 to-gray-600 rounded-full flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300">
                             <div className="text-center">
                               <div className="text-4xl font-bold text-white">
-                                6.0
+                                {t("honeyKeyWorksTraditionalKg")}
                               </div>
                               <div className="text-sm text-white/80">kg</div>
                             </div>
@@ -2441,10 +2420,10 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                           </div>
                         </div>
                         <h6 className="text-lg font-bold text-gray-700 mb-2">
-                          Traditional Hive
+                          {t("honeyKeyWorksTraditionalHive")}
                         </h6>
                         <p className="text-sm text-gray-600">
-                          Per season production
+                          {t("honeyKeyWorksPerSeason")}
                         </p>
                       </div>
                       <div className="text-center group">
@@ -2452,7 +2431,7 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                           <div className="w-32 h-32 bg-gradient-to-br from-[#52BC88] to-[#035938] rounded-full flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300">
                             <div className="text-center">
                               <div className="text-4xl font-bold text-white">
-                                8.1
+                                {t("honeyKeyWorksModernKg")}
                               </div>
                               <div className="text-sm text-white/80">kg</div>
                             </div>
@@ -2474,10 +2453,10 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                           </div>
                         </div>
                         <h6 className="text-lg font-bold text-[#035938] mb-2">
-                          Modern Hive
+                          {t("honeyKeyWorksModernHive")}
                         </h6>
                         <p className="text-sm text-gray-600">
-                          Per season production
+                          {t("honeyKeyWorksPerSeason")}
                         </p>
                       </div>
                     </div>
@@ -2497,15 +2476,11 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                           />
                         </svg>
                         <h6 className="text-xl font-bold text-[#035938]">
-                          Key Finding
+                          {t("honeyKeyWorksKeyFinding")}
                         </h6>
                       </div>
                       <p className="text-lg text-gray-700">
-                        Modern hives produce nearly{" "}
-                        <span className="font-bold text-[#52BC88]">
-                          3 times more
-                        </span>{" "}
-                        than traditional ones
+                        {t("honeyKeyWorksKeyFindingText")}
                       </p>
                     </div>
                   </div>
@@ -2517,17 +2492,12 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                         <span className="text-white font-bold text-xl">2</span>
                       </div>
                       <h4 className="text-2xl md:text-3xl font-bold text-[#035938]">
-                        Productivity
+                        {t("honeyKeyWorksProductivityTitle")}
                       </h4>
                     </div>
                     <div className="bg-white rounded-2xl p-6 md:p-8 shadow-md mb-8 border-l-4 border-[#52BC88]">
                       <p className="text-lg text-gray-700 leading-relaxed">
-                        Productivity in the beekeeping sector improved
-                        significantly due to the introduction of{" "}
-                        <span className="font-bold text-[#52BC88]">
-                          modern technologies
-                        </span>
-                        :
+                        {t("honeyKeyWorksProductivityIntro")}
                       </p>
                     </div>
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
@@ -2543,10 +2513,10 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                           </div>
                         </div>
                         <h5 className="text-lg font-bold text-gray-700 mb-2">
-                          Traditional Hive
+                          {t("honeyKeyWorksTraditionalHive")}
                         </h5>
                         <p className="text-sm text-gray-600">
-                          Average production
+                          {t("honeyKeyWorksAverageProduction")}
                         </p>
                       </div>
                       <div className="flex items-center justify-center">
@@ -2565,7 +2535,7 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                             />
                           </svg>
                           <p className="text-sm font-bold text-[#52BC88]">
-                            +116% Increase
+                            {t("honeyKeyWorksIncrease116")}
                           </p>
                         </div>
                       </div>
@@ -2596,10 +2566,10 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                           </div>
                         </div>
                         <h5 className="text-lg font-bold text-[#035938] mb-2">
-                          Modern Hive
+                          {t("honeyKeyWorksModernHive")}
                         </h5>
                         <p className="text-sm text-gray-600">
-                          Average production
+                          {t("honeyKeyWorksAverageProduction")}
                         </p>
                       </div>
                     </div>
@@ -2623,9 +2593,11 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                           </div>
                           <div>
                             <div className="text-sm text-white/80 mb-1">
-                              Total Annual Honey Production
+                              {t("honeyKeyWorksTotalAnnualLabel")}
                             </div>
-                            <div className="text-4xl font-bold">4,600 tons</div>
+                            <div className="text-4xl font-bold">
+                              4,600 {t("tons")}
+                            </div>
                           </div>
                         </div>
                         <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm">
@@ -2647,15 +2619,7 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                     </div>
                     <div className="mt-8 bg-white rounded-2xl p-6 shadow-md border-l-4 border-[#F1BC28]">
                       <p className="text-gray-700 leading-relaxed italic">
-                        This improvement reflects the impact of{" "}
-                        <span className="font-bold text-[#035938]">
-                          modern practices
-                        </span>{" "}
-                        and{" "}
-                        <span className="font-bold text-[#52BC88]">
-                          technical supervision
-                        </span>{" "}
-                        in increasing efficiency and product quality.
+                        {t("honeyKeyWorksImprovementReflects")}
                       </p>
                     </div>
                   </div>
@@ -2667,36 +2631,34 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                         <span className="text-white font-bold text-xl">3</span>
                       </div>
                       <h4 className="text-2xl md:text-3xl font-bold text-[#035938]">
-                        Model Production Regions
+                        {t("honeyKeyWorksModelAreasTitle")}
                       </h4>
                     </div>
                     <div className="bg-white rounded-2xl p-6 md:p-8 shadow-md mb-8 border-l-4 border-[#F1BC28]">
                       <p className="text-lg text-gray-700 leading-relaxed">
-                        Model production regions were identified and developed
-                        for the beekeeping sector in several areas of the
-                        Kingdom, including:
+                        {t("honeyKeyWorksModelAreasIntro")}
                       </p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                       {[
                         {
-                          name: "Jazan",
+                          nameKey: "jazan",
                           gradient: "from-[#035938] to-[#52BC88]",
                         },
                         {
-                          name: "Asir",
+                          nameKey: "asir",
                           gradient: "from-[#52BC88] to-[#F1BC28]",
                         },
                         {
-                          name: "Al-Baha",
+                          nameKey: "baha",
                           gradient: "from-[#F1BC28] to-[#035938]",
                         },
                         {
-                          name: "Makkah Al-Mukarramah",
+                          nameKey: "makkah",
                           gradient: "from-[#035938] to-[#52BC88]",
                         },
                         {
-                          name: "Madinah",
+                          nameKey: "madinah",
                           gradient: "from-[#52BC88] to-[#F1BC28]",
                         },
                       ].map((region, idx) => (
@@ -2731,11 +2693,11 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                             </svg>
                           </div>
                           <h5 className="text-xl font-bold text-[#035938] mb-2 relative z-10 group-hover:text-[#52BC88] transition-colors duration-300">
-                            {region.name}
+                            {t(region.nameKey)}
                           </h5>
                           <div className="inline-block px-3 py-1 bg-gradient-to-r from-[#F1BC28]/20 to-[#52BC88]/20 rounded-full relative z-10">
                             <span className="text-xs font-semibold text-[#035938]">
-                              Model Region
+                              {t("honeyKeyWorksModelRegion")}
                             </span>
                           </div>
                           <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-gradient-to-br from-[#52BC88]/20 to-transparent rounded-full group-hover:scale-150 transition-transform duration-500"></div>
@@ -2751,13 +2713,12 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                         <span className="text-white font-bold text-xl">4</span>
                       </div>
                       <h4 className="text-2xl md:text-3xl font-bold text-[#035938]">
-                        Training and Capacity Building
+                        {t("honeyKeyWorksTrainingTitle")}
                       </h4>
                     </div>
                     <div className="bg-white rounded-2xl p-6 md:p-8 shadow-md mb-8 border-l-4 border-[#035938]">
                       <p className="text-lg text-gray-700 leading-relaxed">
-                        The program worked to enhance beekeepers' efficiency and
-                        build their capacities through:
+                        {t("honeyKeyWorksTrainingIntro")}
                       </p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
@@ -2783,10 +2744,10 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                               10
                             </div>
                             <h5 className="font-bold text-[#035938] mb-2">
-                              Supported Apiaries
+                              {t("honeyKeyWorksSupportedApiaries")}
                             </h5>
                             <p className="text-sm text-gray-600">
-                              Applying modern beekeeping technologies
+                              {t("honeyKeyWorksSupportedApiariesDesc")}
                             </p>
                           </div>
                         </div>
@@ -2813,10 +2774,10 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                               3
                             </div>
                             <h5 className="font-bold text-[#035938] mb-2">
-                              Model Breeders
+                              {t("honeyKeyWorksModelBreeders")}
                             </h5>
                             <p className="text-sm text-gray-600">
-                              Producing 1,000+ queens and packages
+                              {t("honeyKeyWorksModelBreedersDesc")}
                             </p>
                           </div>
                         </div>
@@ -2843,10 +2804,10 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                               12
                             </div>
                             <h5 className="font-bold text-[#035938] mb-2">
-                              Training Sessions
+                              {t("honeyKeyWorksTrainingSessions")}
                             </h5>
                             <p className="text-sm text-gray-600">
-                              Specialized workshops implemented
+                              {t("honeyKeyWorksTrainingSessionsDesc")}
                             </p>
                           </div>
                         </div>
@@ -2873,10 +2834,10 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                               300+
                             </div>
                             <h5 className="font-bold text-[#035938] mb-2">
-                              Trained Beekeepers
+                              {t("honeyKeyWorksTrainedBeekeepers")}
                             </h5>
                             <p className="text-sm text-gray-600">
-                              Improved practices and organic methods
+                              {t("honeyKeyWorksTrainedBeekeepersDesc")}
                             </p>
                           </div>
                         </div>
@@ -2902,28 +2863,27 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                           </div>
                           <div>
                             <h5 className="font-bold mb-3 text-lg">
-                              Participation in Agricultural Forums
+                              {t("honeyParticipationTitle")}
                             </h5>
                             <p className="text-sm text-white/90 leading-relaxed mb-3">
-                              The "Reef Saudi Arabia" Program reflects its
-                              active presence locally and internationally in
-                              promoting sustainability and food security
-                              through:
+                              {t("honeyParticipationIntro")}
                             </p>
                             <ul className="text-sm text-white/90 space-y-1.5">
                               <li className="flex items-start gap-2">
                                 <span className="text-[#F1BC28] mt-1">•</span>
-                                <span>
-                                  Participation in the Saudi Agricultural
-                                  Exhibition
-                                </span>
+                                <span>{t("honeyParticipation1")}</span>
                               </li>
                               <li className="flex items-start gap-2">
                                 <span className="text-[#F1BC28] mt-1">•</span>
-                                <span>
-                                  Contribution to national food security
-                                  initiatives
-                                </span>
+                                <span>{t("honeyParticipation2")}</span>
+                              </li>
+                              <li className="flex items-start gap-2">
+                                <span className="text-[#F1BC28] mt-1">•</span>
+                                <span>{t("honeyParticipation3")}</span>
+                              </li>
+                              <li className="flex items-start gap-2">
+                                <span className="text-[#F1BC28] mt-1">•</span>
+                                <span>{t("honeyParticipation4")}</span>
                               </li>
                             </ul>
                           </div>
@@ -2948,26 +2908,19 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                           </div>
                           <div>
                             <h5 className="font-bold mb-3 text-lg">
-                              International Partnerships
+                              {t("honeyInternationalPartnershipsTitle")}
                             </h5>
                             <p className="text-sm text-white/90 leading-relaxed mb-3">
-                              Building strategic partnerships to advance the
-                              beekeeping sector:
+                              {t("honeyInternationalPartnershipsIntro")}
                             </p>
                             <ul className="text-sm text-white/90 space-y-1.5">
                               <li className="flex items-start gap-2">
                                 <span className="text-[#035938] mt-1">•</span>
-                                <span>
-                                  Cooperation with the private sector and
-                                  strategic partners
-                                </span>
+                                <span>{t("honeyParticipation3")}</span>
                               </li>
                               <li className="flex items-start gap-2">
                                 <span className="text-[#035938] mt-1">•</span>
-                                <span>
-                                  Participation in the World Food Exhibition of
-                                  the Food and Agriculture Organization (FAO)
-                                </span>
+                                <span>{t("honeyParticipation4")}</span>
                               </li>
                             </ul>
                           </div>
@@ -2992,7 +2945,7 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                           d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
                         />
                       </svg>
-                      Explore Interactive Map
+                      {t("exploreInteractiveMap")}
                     </button>
                     <button className="bg-[#F1BC28] text-white px-8 py-4 rounded-xl font-bold hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center gap-2 group">
                       <svg
@@ -3008,7 +2961,7 @@ export function SectorPage({ sectorId }: SectorPageProps) {
                           d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                         />
                       </svg>
-                      Explore Support Programs
+                      {t("exploreSupportPrograms")}
                     </button>
                   </div>
                 </div>
