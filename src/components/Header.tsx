@@ -168,14 +168,14 @@ export function Header() {
         {/* Desktop Right Side Actions */}
         <div className="hidden lg:flex items-center gap-4">
           {/* Search Icon */}
-          <button className="p-2 hover:bg-[#52BC88]/10 rounded-lg transition-colors text-[#52BC88]">
+          <button className="p-2 hover:bg-[#52BC88]/10 rounded-lg transition-colors text-[#52BC88] cursor-pointer">
             <Search className="w-5 h-5" />
           </button>
 
           {/* Language Toggle */}
           <button
             onClick={toggleLanguage}
-            className="px-3 py-1 border-2 border-[#52BC88] text-[#52BC88] rounded-lg hover:bg-[#035938] hover:text-white hover:border-[#035938] transition-all duration-200"
+            className="px-3 py-1 border-2 border-[#52BC88] text-[#52BC88] rounded-lg hover:bg-[#035938] hover:text-white hover:border-[#035938] transition-all duration-200 cursor-pointer"
           >
             {language === "en" ? "AR" : "EN"}
           </button>
@@ -183,7 +183,7 @@ export function Header() {
           {/* Support Programs with External Link */}
           <a
             href="#"
-            className="flex items-center gap-2 px-4 py-2 bg-[#F1BC28] text-[#035938] rounded-lg hover:bg-[#035938] hover:text-white transition-all duration-300 hover:shadow-lg"
+            className="flex items-center gap-2 px-4 py-2 bg-[#F1BC28] text-[#035938]! rounded-lg hover:bg-[#035938] hover:!text-white transition-all duration-300 hover:shadow-lg"
           >
             {t("supportPrograms")}
             <ExternalLink className="w-4 h-4" />
@@ -294,7 +294,7 @@ export function Header() {
             {/* Support Programs */}
             <a
               href="#"
-              className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-[#F1BC28] text-[#035938] rounded-lg hover:bg-[#035938] hover:text-white transition-all duration-300"
+              className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-[#F1BC28] text-[#035938]! rounded-lg hover:bg-[#035938] hover:text-white transition-all duration-300"
             >
               {t("supportPrograms")}
               <ExternalLink className="w-4 h-4" />

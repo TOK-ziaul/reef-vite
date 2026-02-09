@@ -16,18 +16,22 @@ export function AboutIntro() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const paragraphs = [para1Ref.current, para2Ref.current, para3Ref.current].filter(Boolean);
-      
+      const paragraphs = [
+        para1Ref.current,
+        para2Ref.current,
+        para3Ref.current,
+      ].filter(Boolean);
+
       if (paragraphs.length > 0 && sectionRef.current) {
         // Set initial state to be visible
         gsap.set(paragraphs, { opacity: 1, y: 0, scale: 1 });
-        
+
         gsap.fromTo(
           paragraphs,
-          { 
+          {
             opacity: 0,
             y: 50,
-            scale: 0.95
+            scale: 0.95,
           },
           {
             opacity: 1,
@@ -42,7 +46,7 @@ export function AboutIntro() {
               end: "top 50%",
               toggleActions: "play none none reverse",
             },
-          }
+          },
         );
       }
 
@@ -68,9 +72,9 @@ export function AboutIntro() {
   }, []);
 
   return (
-    <section 
+    <section
       ref={sectionRef}
-      className="relative py-24 px-6 bg-gradient-to-br from-[#F9F7EF] via-white to-[#F9F7EF] overflow-hidden"
+      className="relative py-24 px-6 bg-gradient-to-br from-[#F9F7EF] via-white to-[#F9F7EF] overflow-hidden border-2 border-red-500"
       style={{
         direction: language === "ar" ? "rtl" : "ltr",
       }}
@@ -85,7 +89,7 @@ export function AboutIntro() {
         className="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-br from-[#F1BC28]/10 to-[#52BC88]/10 rounded-full blur-3xl"
       />
 
-      <div className="relative z-10 max-w-6xl mx-auto">
+      <div className="relative z-10 max-w-[1440px] mx-auto px-4 md:px-8">
         {/* Main Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
           {/* Left Column - Text Content */}
@@ -99,13 +103,16 @@ export function AboutIntro() {
               <p
                 className="relative z-10 text-lg md:text-xl text-[#035938] leading-relaxed"
                 style={{
-                  fontFamily: language === "ar" ? "'Loew Next Arabic', sans-serif" : "inherit",
+                  fontFamily:
+                    language === "ar"
+                      ? "'Loew Next Arabic', sans-serif"
+                      : "inherit",
                 }}
               >
                 {t("aboutIntroPara1")}
               </p>
             </div>
-            
+
             <div
               ref={para2Ref}
               className="group relative backdrop-blur-xl bg-white/80 rounded-2xl p-8 border border-[#52BC88]/10 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-1"
@@ -115,7 +122,10 @@ export function AboutIntro() {
               <p
                 className="relative z-10 text-lg md:text-xl text-[#035938] leading-relaxed"
                 style={{
-                  fontFamily: language === "ar" ? "'Loew Next Arabic', sans-serif" : "inherit",
+                  fontFamily:
+                    language === "ar"
+                      ? "'Loew Next Arabic', sans-serif"
+                      : "inherit",
                 }}
               >
                 {t("aboutIntroPara2")}
@@ -130,7 +140,7 @@ export function AboutIntro() {
           >
             {/* Main Image */}
             <div className="absolute inset-0">
-              <img 
+              <img
                 src="https://images.unsplash.com/photo-1674982046717-e5cc12a008dd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZ3JpY3VsdHVyZSUyMGZhcm0lMjBjcm9wcyUyMFNhdWRpJTIwQXJhYmlhfGVufDF8fHx8MTc2OTY4MTg4MXww&ixlib=rb-4.1.0&q=80&w=1080"
                 alt="Agricultural Development"
                 className="w-full h-full object-cover"
@@ -142,13 +152,36 @@ export function AboutIntro() {
             {/* Decorative overlays */}
             <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-bl from-white/10 to-transparent rounded-tr-3xl" />
             <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-[#F1BC28]/20 to-transparent rounded-bl-3xl" />
-            
+
             {/* Decorative Icon */}
             <div className="absolute top-8 right-8 w-20 h-20 rounded-full bg-gradient-to-br from-[#F1BC28] to-[#52BC88] flex items-center justify-center opacity-40 group-hover:opacity-60 transition-opacity duration-500 shadow-xl">
-              <svg className="w-12 h-12 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <svg
+                className="w-12 h-12 text-white"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 2L2 7L12 12L22 7L12 2Z"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M2 17L12 22L22 17"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M2 12L12 17L22 12"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
               </svg>
             </div>
 
@@ -157,17 +190,32 @@ export function AboutIntro() {
               <div className="backdrop-blur-xl bg-white/10 rounded-2xl p-6 border border-white/30 shadow-2xl">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#52BC88] to-[#F1BC28] flex items-center justify-center flex-shrink-0 shadow-lg">
-                    <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    <svg
+                      className="w-6 h-6 text-white"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
                     </svg>
                   </div>
                   <p
                     className="text-lg md:text-xl text-white/95 fw-heading"
                     style={{
-                      fontFamily: language === "ar" ? "'Loew Next Arabic', sans-serif" : "inherit",
+                      fontFamily:
+                        language === "ar"
+                          ? "'Loew Next Arabic', sans-serif"
+                          : "inherit",
                     }}
                   >
-                    {language === "ar" ? "التنمية الزراعية المستدامة" : "Sustainable Agricultural Development"}
+                    {language === "ar"
+                      ? "التنمية الزراعية المستدامة"
+                      : "Sustainable Agricultural Development"}
                   </p>
                 </div>
               </div>

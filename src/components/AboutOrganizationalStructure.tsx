@@ -20,7 +20,7 @@ export function AboutOrganizationalStructure() {
       const nodes = diagramRef.current.querySelectorAll(".org-node");
       gsap.set(nodes, { opacity: 1, scale: 1, y: 0 });
     }
-    
+
     if (titleRef.current && sectionRef.current) {
       gsap.fromTo(
         titleRef.current,
@@ -35,7 +35,7 @@ export function AboutOrganizationalStructure() {
             start: "top 75%",
             toggleActions: "play none none reverse",
           },
-        }
+        },
       );
     }
 
@@ -54,7 +54,7 @@ export function AboutOrganizationalStructure() {
             start: "top 75%",
             toggleActions: "play none none reverse",
           },
-        }
+        },
       );
     }
 
@@ -75,7 +75,7 @@ export function AboutOrganizationalStructure() {
             start: "top 80%",
             toggleActions: "play none none reverse",
           },
-        }
+        },
       );
     }
   }, []);
@@ -90,7 +90,10 @@ export function AboutOrganizationalStructure() {
     >
       {/* Animated Background Elements */}
       <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-br from-[#035938]/10 to-[#52BC88]/10 rounded-full blur-3xl animate-pulse-slow" />
-      <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-br from-[#F1BC28]/10 to-[#52BC88]/10 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: "1s" }} />
+      <div
+        className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-br from-[#F1BC28]/10 to-[#52BC88]/10 rounded-full blur-3xl animate-pulse-slow"
+        style={{ animationDelay: "1s" }}
+      />
 
       {/* Grid Pattern Overlay */}
       <div className="absolute inset-0 opacity-[0.03]">
@@ -103,13 +106,14 @@ export function AboutOrganizationalStructure() {
         />
       </div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-[1440px] mx-auto px-4 md:px-8 relative z-10">
         {/* Section Title */}
         <h2
           ref={titleRef}
           className="text-3xl md:text-4xl lg:text-5xl mb-12 text-[#035938] text-center fw-heading px-4"
           style={{
-            fontFamily: language === "ar" ? "'Loew Next Arabic', sans-serif" : "inherit",
+            fontFamily:
+              language === "ar" ? "'Loew Next Arabic', sans-serif" : "inherit",
           }}
         >
           {t("orgStructureTitle")}
@@ -129,7 +133,10 @@ export function AboutOrganizationalStructure() {
             <p
               className="text-lg md:text-xl text-[#035938]/90 leading-relaxed"
               style={{
-                fontFamily: language === "ar" ? "'Loew Next Arabic', sans-serif" : "inherit",
+                fontFamily:
+                  language === "ar"
+                    ? "'Loew Next Arabic', sans-serif"
+                    : "inherit",
               }}
             >
               {t("orgStructureParagraph1")}
@@ -137,7 +144,10 @@ export function AboutOrganizationalStructure() {
             <p
               className="text-lg md:text-xl text-[#035938]/90 leading-relaxed"
               style={{
-                fontFamily: language === "ar" ? "'Loew Next Arabic', sans-serif" : "inherit",
+                fontFamily:
+                  language === "ar"
+                    ? "'Loew Next Arabic', sans-serif"
+                    : "inherit",
               }}
             >
               {t("orgStructureParagraph2")}

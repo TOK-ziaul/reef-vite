@@ -397,7 +397,7 @@ export function AboutAchievements() {
         style={{ animationDelay: "2s" }}
       />
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-[1440px] mx-auto px-4 md:px-8 relative z-10">
         {/* === FIRST: FIGURES === */}
         <div ref={figuresRef}>
           <h2
@@ -636,7 +636,7 @@ export function AboutAchievements() {
 
                     {/* Title (Always Visible) */}
                     <div
-                      className="absolute bottom-3 left-3 right-3 z-20"
+                      className="absolute bottom-3 left-3 right-3 z-20 max-w-[430px]"
                       dir={language === "ar" ? "rtl" : "ltr"}
                     >
                       <h4
@@ -668,7 +668,7 @@ export function AboutAchievements() {
                             <Icon className="w-5 h-5" strokeWidth={2.5} />
                           </div>
                           <h5
-                            className="text-base md:text-lg fw-heading text-white"
+                            className="text-base md:text-lg fw-heading text-white max-w-[430px]"
                             style={{
                               fontFamily:
                                 language === "ar"

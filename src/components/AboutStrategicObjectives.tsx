@@ -79,7 +79,8 @@ export function AboutStrategicObjectives() {
     const ctx = gsap.context(() => {
       // Set initial visible state for all elements
       if (titleRef.current) gsap.set(titleRef.current, { opacity: 1, y: 0 });
-      if (centerRef.current) gsap.set(centerRef.current, { scale: 1, opacity: 1 });
+      if (centerRef.current)
+        gsap.set(centerRef.current, { scale: 1, opacity: 1 });
       if (cardsRef.current.length > 0)
         gsap.set(cardsRef.current.filter(Boolean), { scale: 1, opacity: 1 });
 
@@ -98,7 +99,7 @@ export function AboutStrategicObjectives() {
               start: "top 80%",
               toggleActions: "play none none reverse",
             },
-          }
+          },
         );
       }
 
@@ -117,7 +118,7 @@ export function AboutStrategicObjectives() {
               start: "top 75%",
               toggleActions: "play none none reverse",
             },
-          }
+          },
         );
       }
 
@@ -138,7 +139,7 @@ export function AboutStrategicObjectives() {
               start: "top 70%",
               toggleActions: "play none none reverse",
             },
-          }
+          },
         );
       }
 
@@ -159,7 +160,7 @@ export function AboutStrategicObjectives() {
               start: "top 65%",
               toggleActions: "play none none reverse",
             },
-          }
+          },
         );
       }
     }, sectionRef);
@@ -182,7 +183,8 @@ export function AboutStrategicObjectives() {
       ref={sectionRef}
       className="relative py-24 px-6 overflow-hidden"
       style={{
-        background: "linear-gradient(135deg, #035938 0%, #024a2e 50%, #035938 100%)",
+        background:
+          "linear-gradient(135deg, #035938 0%, #024a2e 50%, #035938 100%)",
         direction: language === "ar" ? "rtl" : "ltr",
       }}
     >
@@ -190,8 +192,18 @@ export function AboutStrategicObjectives() {
       <div className="absolute inset-0 opacity-5">
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
-              <path d="M 50 0 L 0 0 0 50" fill="none" stroke="white" strokeWidth="1" />
+            <pattern
+              id="grid"
+              width="50"
+              height="50"
+              patternUnits="userSpaceOnUse"
+            >
+              <path
+                d="M 50 0 L 0 0 0 50"
+                fill="none"
+                stroke="white"
+                strokeWidth="1"
+              />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#grid)" />
@@ -205,31 +217,30 @@ export function AboutStrategicObjectives() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full border-2 border-[#52BC88]/10" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto">
+      <div className="relative z-10 max-w-[1440px] mx-auto px-4 md:px-8">
         {/* Title */}
         <div className="text-center mb-20">
           <h2
             ref={titleRef}
             className="text-4xl md:text-6xl text-white fw-heading mb-4"
             style={{
-              fontFamily: language === "ar" ? "'Loew Next Arabic', sans-serif" : "inherit",
+              fontFamily:
+                language === "ar"
+                  ? "'Loew Next Arabic', sans-serif"
+                  : "inherit",
             }}
           >
             {language === "ar" ? (
               <>
                 ما هي{" "}
-                <span className="text-[#F1BC28]">
-                  الأهداف الاستراتيجية
-                </span>
+                <span className="text-[#F1BC28]">الأهداف الاستراتيجية</span>
                 <br />
                 لبرنامج ريف السعودية؟
               </>
             ) : (
               <>
                 What are the{" "}
-                <span className="text-[#F1BC28]">
-                  Strategic Objectives
-                </span>
+                <span className="text-[#F1BC28]">Strategic Objectives</span>
                 <br />
                 of Reef Saudi Program?
               </>
@@ -238,7 +249,10 @@ export function AboutStrategicObjectives() {
         </div>
 
         {/* Main Radial Layout */}
-        <div className="relative w-full max-w-5xl mx-auto" style={{ height: "900px" }}>
+        <div
+          className="relative w-full max-w-5xl mx-auto"
+          style={{ height: "900px" }}
+        >
           {/* Central Icon */}
           <div
             ref={centerRef}
@@ -253,7 +267,10 @@ export function AboutStrategicObjectives() {
                     {/* Inner target */}
                     <div className="w-28 h-28 rounded-full bg-white/10 backdrop-blur-sm border-2 border-white/20 flex items-center justify-center">
                       <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#52BC88] to-[#F1BC28] flex items-center justify-center shadow-lg">
-                        <Sprout className="w-10 h-10 text-white" strokeWidth={2.5} />
+                        <Sprout
+                          className="w-10 h-10 text-white"
+                          strokeWidth={2.5}
+                        />
                       </div>
                     </div>
                   </div>
@@ -340,7 +357,10 @@ export function AboutStrategicObjectives() {
                         transform: isHovered ? "scale(1.1)" : "scale(1)",
                       }}
                     >
-                      <Icon className="w-6 h-6" style={{ color: objective.color }} />
+                      <Icon
+                        className="w-6 h-6"
+                        style={{ color: objective.color }}
+                      />
                     </div>
                   </div>
 
@@ -349,7 +369,10 @@ export function AboutStrategicObjectives() {
                     className="text-base fw-heading mb-1 text-center leading-tight"
                     style={{
                       color: "#035938",
-                      fontFamily: language === "ar" ? "'Loew Next Arabic', sans-serif" : "inherit",
+                      fontFamily:
+                        language === "ar"
+                          ? "'Loew Next Arabic', sans-serif"
+                          : "inherit",
                     }}
                   >
                     {t(objective.titleKey)}
@@ -359,7 +382,10 @@ export function AboutStrategicObjectives() {
                   <p
                     className="text-xs text-gray-600 text-center leading-snug line-clamp-3"
                     style={{
-                      fontFamily: language === "ar" ? "'Loew Next Arabic', sans-serif" : "inherit",
+                      fontFamily:
+                        language === "ar"
+                          ? "'Loew Next Arabic', sans-serif"
+                          : "inherit",
                     }}
                   >
                     {t(objective.textKey)}

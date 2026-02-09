@@ -2,7 +2,13 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLanguage } from "../context/LanguageContext";
-import { Building2, TrendingUp, FlaskConical, Briefcase, ArrowRight } from "lucide-react";
+import {
+  Building2,
+  TrendingUp,
+  FlaskConical,
+  Briefcase,
+  ArrowRight,
+} from "lucide-react";
 
 // Dummy partner logos
 const logoMewa = "https://placehold.co/200x200?text=Logo";
@@ -33,10 +39,11 @@ export function AboutPartners() {
     if (introRef.current) gsap.set(introRef.current, { opacity: 1, y: 0 });
     if (ctaRef.current) gsap.set(ctaRef.current, { opacity: 1, y: 0 });
     if (categoriesRef.current) {
-      const categories = categoriesRef.current.querySelectorAll(".partner-category");
+      const categories =
+        categoriesRef.current.querySelectorAll(".partner-category");
       gsap.set(categories, { opacity: 1, y: 0 });
     }
-    
+
     if (titleRef.current && sectionRef.current) {
       gsap.fromTo(
         titleRef.current,
@@ -51,7 +58,7 @@ export function AboutPartners() {
             start: "top 75%",
             toggleActions: "play none none reverse",
           },
-        }
+        },
       );
     }
 
@@ -70,12 +77,13 @@ export function AboutPartners() {
             start: "top 75%",
             toggleActions: "play none none reverse",
           },
-        }
+        },
       );
     }
 
     if (categoriesRef.current && sectionRef.current) {
-      const categories = categoriesRef.current.querySelectorAll(".partner-category");
+      const categories =
+        categoriesRef.current.querySelectorAll(".partner-category");
       gsap.fromTo(
         categories,
         { opacity: 0, y: 40 },
@@ -90,7 +98,7 @@ export function AboutPartners() {
             start: "top 80%",
             toggleActions: "play none none reverse",
           },
-        }
+        },
       );
     }
 
@@ -109,7 +117,7 @@ export function AboutPartners() {
             start: "top 85%",
             toggleActions: "play none none reverse",
           },
-        }
+        },
       );
     }
   }, []);
@@ -144,11 +152,7 @@ export function AboutPartners() {
       icon: FlaskConical,
       titleKey: "partnersResearchTitle",
       gradient: "from-[#F1BC28] to-[#035938]",
-      partners: [
-        "partnersResearch1",
-        "partnersResearch2",
-        "partnersResearch3",
-      ],
+      partners: ["partnersResearch1", "partnersResearch2", "partnersResearch3"],
     },
     {
       icon: Briefcase,
@@ -174,12 +178,16 @@ export function AboutPartners() {
       className="relative py-24 px-6 overflow-hidden"
       style={{
         direction: language === "ar" ? "rtl" : "ltr",
-        background: "linear-gradient(180deg, #F9F7EF 0%, #ffffff 50%, #F9F7EF 100%)",
+        background:
+          "linear-gradient(180deg, #F9F7EF 0%, #ffffff 50%, #F9F7EF 100%)",
       }}
     >
       {/* Animated Background Elements */}
       <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-br from-[#52BC88]/10 to-[#F1BC28]/10 rounded-full blur-3xl animate-float" />
-      <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-br from-[#035938]/10 to-[#52BC88]/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "3s" }} />
+      <div
+        className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-br from-[#035938]/10 to-[#52BC88]/10 rounded-full blur-3xl animate-float"
+        style={{ animationDelay: "3s" }}
+      />
 
       {/* Grid Pattern Overlay */}
       <div className="absolute inset-0 opacity-[0.02]">
@@ -192,7 +200,7 @@ export function AboutPartners() {
         />
       </div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-[1440px] mx-auto px-4 md:px-8 relative z-10">
         {/* Section Title with decorative elements */}
         <div className="text-center mb-6">
           <div className="flex items-center justify-center gap-4 mb-4">
@@ -202,12 +210,15 @@ export function AboutPartners() {
             </div>
             <div className="h-1 w-16 bg-gradient-to-l from-transparent to-[#52BC88] rounded-full" />
           </div>
-          
+
           <h2
             ref={titleRef}
             className="text-3xl md:text-4xl lg:text-5xl mb-4 text-[#035938] fw-heading px-4"
             style={{
-              fontFamily: language === "ar" ? "'Loew Next Arabic', sans-serif" : "inherit",
+              fontFamily:
+                language === "ar"
+                  ? "'Loew Next Arabic', sans-serif"
+                  : "inherit",
             }}
           >
             {t("partnersTitle")}
@@ -218,7 +229,10 @@ export function AboutPartners() {
             ref={introRef}
             className="text-base md:text-lg text-[#035938]/80 max-w-4xl mx-auto mb-4 leading-relaxed px-4"
             style={{
-              fontFamily: language === "ar" ? "'Loew Next Arabic', sans-serif" : "inherit",
+              fontFamily:
+                language === "ar"
+                  ? "'Loew Next Arabic', sans-serif"
+                  : "inherit",
             }}
           >
             {t("partnersIntro")}
@@ -236,7 +250,10 @@ export function AboutPartners() {
               <h3
                 className="text-2xl md:text-3xl text-[#035938] fw-heading"
                 style={{
-                  fontFamily: language === "ar" ? "'Loew Next Arabic', sans-serif" : "inherit",
+                  fontFamily:
+                    language === "ar"
+                      ? "'Loew Next Arabic', sans-serif"
+                      : "inherit",
                 }}
               >
                 {t("partnersGovernmentTitle")}
@@ -246,21 +263,24 @@ export function AboutPartners() {
             {/* Infinite Scrolling Logo Grid */}
             <div className="relative overflow-hidden">
               <div className="flex gap-6 animate-scroll">
-                {[...partnerCategories[0].partners, ...partnerCategories[0].partners].map((partner, index) => (
+                {[
+                  ...partnerCategories[0].partners,
+                  ...partnerCategories[0].partners,
+                ].map((partner, index) => (
                   <div
                     key={index}
                     className="flex-shrink-0 group relative w-48 h-32 bg-white rounded-2xl p-6 border-2 border-[#035938]/10 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:border-[#52BC88]/40"
                   >
                     {/* Hover gradient */}
                     <div className="absolute inset-0 bg-gradient-to-br from-[#52BC88]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
-                    
+
                     {/* Sparkle */}
                     <div className="absolute top-2 right-2 w-2 h-2 bg-[#F1BC28] rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping" />
-                    
+
                     <div className="relative z-10 h-full flex items-center justify-center">
                       <img
-                        src={typeof partner === 'object' ? partner.logo : ''}
-                        alt={typeof partner === 'object' ? t(partner.key) : ''}
+                        src={typeof partner === "object" ? partner.logo : ""}
+                        alt={typeof partner === "object" ? t(partner.key) : ""}
                         className="w-full h-auto max-h-20 object-contain transform group-hover:scale-110 transition-transform duration-500"
                       />
                     </div>
@@ -289,7 +309,10 @@ export function AboutPartners() {
               <h3
                 className="text-2xl md:text-3xl text-[#035938] fw-heading"
                 style={{
-                  fontFamily: language === "ar" ? "'Loew Next Arabic', sans-serif" : "inherit",
+                  fontFamily:
+                    language === "ar"
+                      ? "'Loew Next Arabic', sans-serif"
+                      : "inherit",
                 }}
               >
                 {t("partnersDevelopmentTitle")}
@@ -305,14 +328,17 @@ export function AboutPartners() {
                 >
                   {/* Hover gradient */}
                   <div className="absolute inset-0 bg-gradient-to-br from-[#52BC88]/5 to-[#F1BC28]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
-                  
+
                   {/* Sparkle */}
                   <div className="absolute top-2 right-2 w-2 h-2 bg-[#F1BC28] rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping" />
-                  
-                  <div className="relative z-10 flex items-center justify-center" style={{ minHeight: "100px" }}>
+
+                  <div
+                    className="relative z-10 flex items-center justify-center"
+                    style={{ minHeight: "100px" }}
+                  >
                     <img
-                      src={typeof partner === 'object' ? partner.logo : ''}
-                      alt={typeof partner === 'object' ? t(partner.key) : ''}
+                      src={typeof partner === "object" ? partner.logo : ""}
+                      alt={typeof partner === "object" ? t(partner.key) : ""}
                       className="w-full h-auto max-h-20 object-contain transform group-hover:scale-110 transition-transform duration-500"
                     />
                   </div>
@@ -337,7 +363,10 @@ export function AboutPartners() {
               <h3
                 className="text-xl md:text-2xl text-[#035938] fw-heading"
                 style={{
-                  fontFamily: language === "ar" ? "'Loew Next Arabic', sans-serif" : "inherit",
+                  fontFamily:
+                    language === "ar"
+                      ? "'Loew Next Arabic', sans-serif"
+                      : "inherit",
                 }}
               >
                 {t("partnersResearchTitle")}
@@ -353,7 +382,7 @@ export function AboutPartners() {
                 >
                   {/* Animated side accent */}
                   <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#F1BC28] to-[#035938] transform scale-y-0 group-hover/card:scale-y-100 transition-transform duration-300" />
-                  
+
                   {/* Icon */}
                   <div className="flex items-center gap-4">
                     <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-gradient-to-br from-[#F1BC28]/20 to-[#F1BC28]/10 flex items-center justify-center transform group-hover/card:scale-110 group-hover/card:rotate-6 transition-all duration-300">
@@ -361,14 +390,17 @@ export function AboutPartners() {
                         <div className="w-2 h-2 rounded-full bg-[#F1BC28]" />
                       </div>
                     </div>
-                    
+
                     <span
                       className="text-base md:text-lg text-[#035938]/90 group-hover/card:text-[#035938] transition-colors duration-300 flex-1"
                       style={{
-                        fontFamily: language === "ar" ? "'Loew Next Arabic', sans-serif" : "inherit",
+                        fontFamily:
+                          language === "ar"
+                            ? "'Loew Next Arabic', sans-serif"
+                            : "inherit",
                       }}
                     >
-                      {t(typeof partner === 'string' ? partner : partner.key)}
+                      {t(typeof partner === "string" ? partner : partner.key)}
                     </span>
                   </div>
 
@@ -392,7 +424,10 @@ export function AboutPartners() {
               <h3
                 className="text-xl md:text-2xl text-[#035938] fw-heading"
                 style={{
-                  fontFamily: language === "ar" ? "'Loew Next Arabic', sans-serif" : "inherit",
+                  fontFamily:
+                    language === "ar"
+                      ? "'Loew Next Arabic', sans-serif"
+                      : "inherit",
                 }}
               >
                 {t("partnersPrivateTitle")}
@@ -408,20 +443,23 @@ export function AboutPartners() {
                 >
                   {/* Top accent */}
                   <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#035938] to-[#52BC88] transform scale-x-0 group-hover/card:scale-x-100 transition-transform duration-300" />
-                  
+
                   {/* Content */}
                   <div className="flex items-start gap-2">
                     <div className="flex-shrink-0 w-6 h-6 rounded-md bg-gradient-to-br from-[#52BC88]/20 to-[#52BC88]/10 flex items-center justify-center mt-0.5 transform group-hover/card:scale-110 transition-all duration-300">
                       <div className="w-1.5 h-1.5 rounded-full bg-[#52BC88]" />
                     </div>
-                    
+
                     <span
                       className="text-sm md:text-base text-[#035938]/90 group-hover/card:text-[#035938] transition-colors duration-300 leading-snug"
                       style={{
-                        fontFamily: language === "ar" ? "'Loew Next Arabic', sans-serif" : "inherit",
+                        fontFamily:
+                          language === "ar"
+                            ? "'Loew Next Arabic', sans-serif"
+                            : "inherit",
                       }}
                     >
-                      {t(typeof partner === 'string' ? partner : partner.key)}
+                      {t(typeof partner === "string" ? partner : partner.key)}
                     </span>
                   </div>
 
@@ -445,7 +483,10 @@ export function AboutPartners() {
             <span
               className="relative z-10 flex items-center gap-2"
               style={{
-                fontFamily: language === "ar" ? "'Loew Next Arabic', sans-serif" : "inherit",
+                fontFamily:
+                  language === "ar"
+                    ? "'Loew Next Arabic', sans-serif"
+                    : "inherit",
               }}
             >
               {t("partnersCTA1")}
@@ -462,7 +503,10 @@ export function AboutPartners() {
             <span
               className="relative z-10 flex items-center gap-2"
               style={{
-                fontFamily: language === "ar" ? "'Loew Next Arabic', sans-serif" : "inherit",
+                fontFamily:
+                  language === "ar"
+                    ? "'Loew Next Arabic', sans-serif"
+                    : "inherit",
               }}
             >
               {t("partnersCTA2")}

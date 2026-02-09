@@ -19,16 +19,16 @@ export function Footer() {
     {
       title: t("sectorsServices"),
       links: [
-        { label: t("beekeeping"), href: "#" },
-        { label: t("coffee"), href: "#" },
-        { label: t("fruits"), href: "#" },
-        { label: t("rainfedCrops"), href: "#" },
-        { label: t("rosesAromatic"), href: "#" },
-        { label: t("livestock"), href: "#" },
-        { label: t("fishing"), href: "#" },
-        { label: t("handicrafts"), href: "#" },
-        { label: t("agritech"), href: "#" },
-        { label: t("reefAcademy"), href: "#" },
+        { label: t("beekeepingFooter"), href: "#" },
+        { label: t("coffeeFooter"), href: "#" },
+        { label: t("fruitsFooter"), href: "#" },
+        { label: t("rainfedCropsFooter"), href: "#" },
+        { label: t("rosesAromaticFooter"), href: "#" },
+        { label: t("livestockFooter"), href: "#" },
+        { label: t("fishingFooter"), href: "#" },
+        { label: t("handicraftsFooter"), href: "#" },
+        { label: t("agritechFooter"), href: "#" },
+        { label: t("reefAcademyFooter"), href: "#" },
       ],
     },
     {
@@ -188,25 +188,25 @@ export function Footer() {
                 <div className="flex items-center gap-2 mb-4">
                   <button
                     className="w-10 h-10 bg-white/10 border border-white/20 rounded-lg flex items-center justify-center !text-white hover:bg-white/20 transition-all text-sm"
-                    aria-label="Decrease font size"
+                    aria-label={t("accessibilityReduceText")}
                   >
                     A-
                   </button>
                   <button
                     className="w-10 h-10 bg-white/10 border border-white/20 rounded-lg flex items-center justify-center !text-white hover:bg-white/20 transition-all"
-                    aria-label="Default font size"
+                    aria-label={t("accessibilityRestoreText")}
                   >
                     A
                   </button>
                   <button
                     className="w-10 h-10 bg-white/10 border border-white/20 rounded-lg flex items-center justify-center !text-white hover:bg-white/20 transition-all text-lg"
-                    aria-label="Increase font size"
+                    aria-label={t("accessibilityEnlargeText")}
                   >
                     A+
                   </button>
                   <button
                     className="w-10 h-10 bg-white/10 border border-white/20 rounded-lg flex items-center justify-center !text-white hover:bg-white/20 transition-all"
-                    aria-label="High contrast"
+                    aria-label={t("accessibilityColors")}
                   >
                     <svg
                       className="w-5 h-5"
