@@ -227,7 +227,7 @@ export function SectorPage({ sectorId: sectorIdProp }: SectorPageProps = {}) {
 
       {/* Content Section */}
       <section className="relative -mt-1 py-20 bg-[#F9F7EF]">
-        <div className="container mx-auto px-6 md:px-12 lg:px-20 max-w-7xl">
+        <div className="container  max-w-[1440px] mx-auto px-4 md:px-8">
           {/* Introduction Section - Beekeeping */}
           {sectorId === "beekeeping" && (
             <div className="max-w-5xl mx-auto mb-16">
@@ -247,7 +247,7 @@ export function SectorPage({ sectorId: sectorIdProp }: SectorPageProps = {}) {
 
           {/* Introduction Section - Coffee */}
           {sectorId === "coffee" && (
-            <div className="max-w-5xl mx-auto mb-16">
+            <div className="max-w-6xl mx-auto mb-16">
               <div className="space-y-6 text-lg leading-relaxed text-gray-700">
                 <p className="text-xl leading-relaxed">{t("coffeeIntroP1")}</p>
                 <p className="text-xl leading-relaxed">{t("coffeeIntroP2")}</p>
