@@ -4,9 +4,10 @@ import { useLanguage } from "../context/LanguageContext";
 import { useNavigation } from "../context/NavigationContext";
 import { MegaMenuSectors } from "./MegaMenuSectors";
 import { DropdownAbout } from "./DropdownAbout";
-import { DropdownSustainability } from "./DropdownSustainability";
+// import { DropdownSustainability } from "./DropdownSustainability";
 import { DropdownMediaCenter } from "./DropdownMediaCenter";
 import { DropdownSupport } from "./DropdownSupport";
+import { DropdownContact } from "./DropdownContact";
 const reefLogo = "https://placehold.co/200x200?text=Logo";
 
 export function Header() {
@@ -49,6 +50,8 @@ export function Header() {
       navigateTo("home");
     } else if (key === "about") {
       navigateTo("about");
+    } else if (key === "sustainability") {
+      navigateTo("sustainability");
     }
     // Close mobile menu if open
     setMobileMenuOpen(false);
@@ -90,9 +93,7 @@ export function Header() {
     {
       key: "sustainability",
       href: "#",
-      hasDropdown: true,
-      component: DropdownSustainability,
-      mobileItems: ["initiatives", "impactStats", "reefAcademy"],
+      hasDropdown: false,
     },
     {
       key: "mediaCenter",
@@ -106,9 +107,14 @@ export function Header() {
       href: "#",
       hasDropdown: true,
       component: DropdownSupport,
-      mobileItems: ["howToApply", "termsConditions", "faqs"],
+      mobileItems: ["howToApply", "faqs", "termsConditions"],
     },
-    { key: "contact", href: "#", hasDropdown: false },
+    {
+      key: "contact",
+      href: "#",
+      hasDropdown: true,
+      component: DropdownContact,
+    },
   ];
 
   return (
@@ -147,7 +153,7 @@ export function Header() {
                     handleNavigation(item.key);
                   }
                 }}
-                className="flex items-center gap-1 hover:text-[#52BC88] text-[#035938] transition-colors"
+                className="flex items-center gap-1 text-[#052F2A] hover:text-[#035938] transition-colors"
               >
                 {t(item.key)}
                 {item.hasDropdown && (
@@ -168,14 +174,14 @@ export function Header() {
         {/* Desktop Right Side Actions */}
         <div className="hidden lg:flex items-center gap-4">
           {/* Search Icon */}
-          <button className="p-2 hover:bg-[#52BC88]/10 rounded-lg transition-colors text-[#52BC88] cursor-pointer">
+          <button className="p-2 hover:bg-gray-100 rounded-lg transition-colors text-[#052F2A]">
             <Search className="w-5 h-5" />
           </button>
 
           {/* Language Toggle */}
           <button
             onClick={toggleLanguage}
-            className="px-3 py-1 border-2 border-[#52BC88] text-[#52BC88] rounded-lg hover:bg-[#035938] hover:text-white hover:border-[#035938] transition-all duration-200 cursor-pointer"
+            className="px-3 py-1 border-2 border-[#035938] text-[#035938] rounded-lg hover:bg-[#035938] hover:text-white transition-all duration-200"
           >
             {language === "en" ? "AR" : "EN"}
           </button>
@@ -183,7 +189,7 @@ export function Header() {
           {/* Support Programs with External Link */}
           <a
             href="#"
-            className="flex items-center gap-2 px-4 py-2 bg-[#F1BC28] text-[#035938]! rounded-lg hover:bg-[#035938] hover:!text-white transition-all duration-300 hover:shadow-lg"
+            className="flex items-center gap-2 px-4 py-2 bg-[#F1BC28] text-[#035938] rounded-lg hover:bg-[#035938] hover:text-white transition-all duration-300 hover:shadow-lg"
           >
             {t("supportPrograms")}
             <ExternalLink className="w-4 h-4" />
@@ -195,7 +201,7 @@ export function Header() {
           {/* Language Toggle */}
           <button
             onClick={toggleLanguage}
-            className="px-3 py-1 border-2 border-[#52BC88] text-[#52BC88] rounded-lg hover:bg-[#035938] hover:text-white hover:border-[#035938] transition-all duration-200"
+            className="px-3 py-1 border-2 border-[#035938] text-[#035938] rounded-lg hover:bg-[#035938] hover:text-white transition-all duration-200"
           >
             {language === "en" ? "AR" : "EN"}
           </button>
@@ -203,7 +209,7 @@ export function Header() {
           {/* Hamburger Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 hover:bg-[#52BC88]/10 rounded-lg transition-colors text-[#52BC88]"
+            className="p-2 hover:bg-gray-100 rounded-lg transition-colors text-[#052F2A]"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? (
@@ -244,7 +250,7 @@ export function Header() {
                           mobileActiveMenu === item.key ? null : item.key,
                         )
                       }
-                      className="w-full flex items-center justify-between py-3 text-[#52BC88] hover:text-[#035938] transition-colors"
+                      className="w-full flex items-center justify-between py-3 text-[#052F2A] hover:text-[#035938] transition-colors"
                     >
                       <span>{t(item.key)}</span>
                       <ChevronDown
@@ -259,7 +265,7 @@ export function Header() {
                           <a
                             key={subItem}
                             href="#"
-                            className="block py-2 text-sm text-[#52BC88]/90 hover:text-[#035938] transition-colors"
+                            className="block py-2 text-sm text-[#052F2A]/70 hover:text-[#035938] transition-colors"
                           >
                             {t(subItem)}
                           </a>
@@ -274,7 +280,7 @@ export function Header() {
                       e.preventDefault();
                       handleNavigation(item.key);
                     }}
-                    className="block py-3 text-[#52BC88] hover:text-[#035938] transition-colors"
+                    className="block py-3 text-[#052F2A] hover:text-[#035938] transition-colors"
                   >
                     {t(item.key)}
                   </a>
@@ -286,7 +292,7 @@ export function Header() {
           {/* Mobile Actions */}
           <div className="mt-6 space-y-3">
             {/* Search Button */}
-            <button className="w-full flex items-center justify-center gap-2 p-3 border border-[#52BC88]/40 rounded-lg hover:bg-[#52BC88]/10 transition-colors text-[#52BC88]">
+            <button className="w-full flex items-center justify-center gap-2 p-3 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors text-[#052F2A]">
               <Search className="w-5 h-5" />
               <span>{t("search")}</span>
             </button>
@@ -294,7 +300,7 @@ export function Header() {
             {/* Support Programs */}
             <a
               href="#"
-              className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-[#F1BC28] text-[#035938]! rounded-lg hover:bg-[#035938] hover:text-white transition-all duration-300"
+              className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-[#F1BC28] text-[#035938] rounded-lg hover:bg-[#035938] hover:text-white transition-all duration-300"
             >
               {t("supportPrograms")}
               <ExternalLink className="w-4 h-4" />

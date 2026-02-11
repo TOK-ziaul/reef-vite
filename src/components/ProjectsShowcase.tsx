@@ -1,8 +1,6 @@
 import { ArrowUpRight, MapPin } from 'lucide-react';
-import { useLanguage } from '../context/LanguageContext';
 
 export function ProjectsShowcase() {
-  useLanguage();
 
   const projects = [
     {

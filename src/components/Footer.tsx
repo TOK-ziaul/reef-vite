@@ -1,7 +1,10 @@
 import { Facebook, Twitter, Instagram, Linkedin, Youtube } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
+import { useNavigation } from "../context/NavigationContext";
+
 export function Footer() {
   const { t, language } = useLanguage();
+  const { navigateTo } = useNavigation();
 
   const footerColumns = [
     {
@@ -34,9 +37,9 @@ export function Footer() {
     {
       title: t("supportResources"),
       links: [
-        { label: t("howToApply"), href: "#" },
-        { label: t("termsConditions"), href: "#" },
-        { label: t("faqs"), href: "#" },
+        { label: t("howToApply"), page: "supportApplication" },
+        { label: t("faqs"), page: "faqs" },
+        { label: t("termsConditions"), page: "beneficiariesGuide" },
         { label: t("submitComplaint"), href: "#" },
         { label: t("reportCorruption"), href: "#" },
         { label: t("askSpokesperson"), href: "#" },
@@ -117,7 +120,7 @@ export function Footer() {
 
   return (
     <footer
-      className="bg-[#035938] text-white [&_a]:!text-white [&_a:hover]:!text-white/90 [&_h3]:!text-white [&_button]:!text-white"
+      className="bg-[#035938] text-white"
       dir={language === "ar" ? "rtl" : "ltr"}
     >
       {/* Main Footer Content */}
@@ -127,34 +130,44 @@ export function Footer() {
             {/* Four Main Columns */}
             {footerColumns.map((column, index) => (
               <div key={index}>
-                <h3 className="!text-white mb-6 text-lg">{column.title}</h3>
+                <h3 className="text-white mb-6 text-lg">{column.title}</h3>
                 <ul className="space-y-3">
                   {column.links.map((link, linkIndex) => (
                     <li key={linkIndex}>
-                      <a
-                        href={link.href}
-                        className="text-white/90 hover:text-white font-normal! 
-                        transition-colors text-sm  inline-flex items-center gap-2"
-                        target={link.external ? "_blank" : undefined}
-                        rel={link.external ? "noopener noreferrer" : undefined}
-                      >
-                        {link.label}
-                        {link.external && (
-                          <svg
-                            className="w-3 h-3"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                            />
-                          </svg>
-                        )}
-                      </a>
+                      {link.page ? (
+                        <button
+                          onClick={() => navigateTo(link.page as any)}
+                          className="text-white/80 hover:text-white transition-colors text-sm inline-flex items-center gap-2"
+                        >
+                          {link.label}
+                        </button>
+                      ) : (
+                        <a
+                          href={link.href}
+                          className="text-white/80 hover:text-white transition-colors text-sm inline-flex items-center gap-2"
+                          target={link.external ? "_blank" : undefined}
+                          rel={
+                            link.external ? "noopener noreferrer" : undefined
+                          }
+                        >
+                          {link.label}
+                          {link.external && (
+                            <svg
+                              className="w-3 h-3"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                              />
+                            </svg>
+                          )}
+                        </a>
+                      )}
                     </li>
                   ))}
                 </ul>
@@ -184,29 +197,29 @@ export function Footer() {
 
               {/* Accessibility Tools */}
               <div>
-                <h3 className="!text-white mb-4">{t("accessibilityTools")}</h3>
+                <h3 className="text-white mb-4">{t("accessibilityTools")}</h3>
                 <div className="flex items-center gap-2 mb-4">
                   <button
-                    className="w-10 h-10 bg-white/10 border border-white/20 rounded-lg flex items-center justify-center !text-white hover:bg-white/20 transition-all text-sm"
-                    aria-label={t("accessibilityReduceText")}
+                    className="w-10 h-10 bg-white/10 border border-white/20 rounded-lg flex items-center justify-center text-white hover:bg-white/20 transition-all text-sm"
+                    aria-label="Decrease font size"
                   >
                     A-
                   </button>
                   <button
-                    className="w-10 h-10 bg-white/10 border border-white/20 rounded-lg flex items-center justify-center !text-white hover:bg-white/20 transition-all"
-                    aria-label={t("accessibilityRestoreText")}
+                    className="w-10 h-10 bg-white/10 border border-white/20 rounded-lg flex items-center justify-center text-white hover:bg-white/20 transition-all"
+                    aria-label="Default font size"
                   >
                     A
                   </button>
                   <button
-                    className="w-10 h-10 bg-white/10 border border-white/20 rounded-lg flex items-center justify-center !text-white hover:bg-white/20 transition-all text-lg"
-                    aria-label={t("accessibilityEnlargeText")}
+                    className="w-10 h-10 bg-white/10 border border-white/20 rounded-lg flex items-center justify-center text-white hover:bg-white/20 transition-all text-lg"
+                    aria-label="Increase font size"
                   >
                     A+
                   </button>
                   <button
-                    className="w-10 h-10 bg-white/10 border border-white/20 rounded-lg flex items-center justify-center !text-white hover:bg-white/20 transition-all"
-                    aria-label={t("accessibilityColors")}
+                    className="w-10 h-10 bg-white/10 border border-white/20 rounded-lg flex items-center justify-center text-white hover:bg-white/20 transition-all"
+                    aria-label="High contrast"
                   >
                     <svg
                       className="w-5 h-5"
@@ -234,10 +247,10 @@ export function Footer() {
         <div className="max-w-[1440px] mx-auto px-8 py-6">
           <div className="flex items-center justify-center">
             {/* Copyright */}
-            <div className="text-sm !text-white text-center">
+            <div className="text-sm text-white/70 text-center">
               <div className="mb-1">{t("copyright")}</div>
-              <div className="text-xs !text-white">{t("copyrightFull")}</div>
-              <div className="text-xs !text-white">
+              <div className="text-xs text-white/50">{t("copyrightFull")}</div>
+              <div className="text-xs text-white/50">
                 {t("copyrightSupervision")}
               </div>
             </div>

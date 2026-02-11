@@ -1,7 +1,4 @@
-import { useLanguage } from '../context/LanguageContext';
-
 export function StickyNotesSection() {
-  useLanguage();
 
   const notes = [
     {

@@ -2,16 +2,19 @@ import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Send, MapPin, Phone, Mail } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export function ContactForm() {
+  const { language } = useLanguage();
+  const isRTL = language === 'ar';
   const formRef = useRef<HTMLDivElement>(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
-    subject: '',
+    service: '',
     message: '',
   });
 
@@ -44,7 +47,7 @@ export function ContactForm() {
     // Add your form submission logic here
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -54,23 +57,29 @@ export function ContactForm() {
   const contactInfo = [
     {
       icon: <MapPin className="w-6 h-6" />,
-      title: 'Visit Us',
-      details: ['Riyadh, Saudi Arabia', 'King Fahd Road'],
+      title: language === 'ar' ? 'زورنا' : 'Visit Us',
+      details: [
+        language === 'ar' ? 'الرياض، المملكة العربية السعودية' : 'Riyadh, Saudi Arabia',
+        language === 'ar' ? 'طريق الملك فهد' : 'King Fahd Road'
+      ],
     },
     {
       icon: <Phone className="w-6 h-6" />,
-      title: 'Call Us',
-      details: ['+966 11 XXX XXXX', 'Mon-Fri 9am-5pm'],
+      title: language === 'ar' ? 'اتصل بنا' : 'Call Us',
+      details: [
+        '+966 11 XXX XXXX',
+        language === 'ar' ? 'الأحد - الخميس ٩ص - ٥م' : 'Mon-Fri 9am-5pm'
+      ],
     },
     {
       icon: <Mail className="w-6 h-6" />,
-      title: 'Email Us',
+      title: language === 'ar' ? 'راسلنا' : 'Email Us',
       details: ['info@reef.gov.sa', 'support@reef.gov.sa'],
     },
   ];
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className={`py-24 bg-white relative overflow-hidden ${isRTL ? 'rtl font-loew' : ''}`} dir={isRTL ? 'rtl' : 'ltr'}>
       {/* Background Elements */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-[#035938]/10 to-transparent rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-[#F1BC28]/10 to-transparent rounded-full blur-3xl" />
@@ -78,11 +87,15 @@ export function ContactForm() {
       <div className="max-w-[1440px] mx-auto px-8 relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-[#052F2A] mb-4">
-            Get in <span className="italic text-[#035938]">Touch</span>
+          <h2 className={`text-[#052F2A] mb-4 ${isRTL ? 'text-right' : 'text-left'} max-w-7xl mx-auto`}>
+            {language === 'ar' ? (
+              <>تواصل <span className="italic text-[#035938]">معنا</span></>
+            ) : (
+              <>Get in <span className="italic text-[#035938]">Touch</span></>
+            )}
           </h2>
-          <p className="text-[#052F2A]/70 text-xl max-w-2xl mx-auto">
-            Have questions? We're here to help you succeed
+          <p className={`text-[#052F2A]/70 text-xl max-w-2xl mx-auto ${isRTL ? 'text-right' : 'text-left'}`}>
+            {language === 'ar' ? 'لديك أسئلة؟ نحن هنا لمساعدتك على النجاح' : 'Have questions? We\'re here to help you succeed'}
           </p>
         </div>
 
@@ -94,11 +107,11 @@ export function ContactForm() {
                 key={index}
                 className="group p-6 bg-[#F9F7EF] rounded-2xl hover:bg-[#035938] transition-all duration-300 cursor-pointer hover:shadow-lg"
               >
-                <div className="flex items-start gap-4">
+                <div className={`flex items-start gap-4 ${isRTL ? 'flex-row-reverse' : 'flex-row'}`}>
                   <div className="w-12 h-12 bg-gradient-to-br from-[#035938] to-[#52BC88] rounded-xl flex items-center justify-center text-white group-hover:scale-110 transition-transform">
                     {info.icon}
                   </div>
-                  <div>
+                  <div className={isRTL ? 'text-right' : 'text-left'}>
                     <h4 className="text-[#052F2A] group-hover:text-white transition-colors mb-2">
                       {info.title}
                     </h4>
@@ -125,8 +138,8 @@ export function ContactForm() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-[#052F2A] mb-2">
-                    Full Name *
+                  <label htmlFor="name" className={`block text-[#052F2A] mb-2 ${isRTL ? 'text-right' : 'text-left'}`}>
+                    {language === 'ar' ? 'الاسم الكامل' : 'Full Name'} *
                   </label>
                   <input
                     type="text"
@@ -135,13 +148,13 @@ export function ContactForm() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-6 py-4 bg-white border-2 border-transparent rounded-2xl focus:outline-none focus:border-[#035938] transition-all text-[#052F2A]"
-                    placeholder="John Doe"
+                    className={`w-full px-6 py-4 bg-white border-2 border-transparent rounded-2xl focus:outline-none focus:border-[#035938] transition-all text-[#052F2A] ${isRTL ? 'text-right' : 'text-left'}`}
+                    placeholder={language === 'ar' ? 'أحمد محمد' : 'John Doe'}
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-[#052F2A] mb-2">
-                    Email Address *
+                  <label htmlFor="email" className={`block text-[#052F2A] mb-2 ${isRTL ? 'text-right' : 'text-left'}`}>
+                    {language === 'ar' ? 'البريد الإلكتروني' : 'Email Address'} *
                   </label>
                   <input
                     type="email"
@@ -150,16 +163,16 @@ export function ContactForm() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-6 py-4 bg-white border-2 border-transparent rounded-2xl focus:outline-none focus:border-[#035938] transition-all text-[#052F2A]"
-                    placeholder="john@example.com"
+                    className={`w-full px-6 py-4 bg-white border-2 border-transparent rounded-2xl focus:outline-none focus:border-[#035938] transition-all text-[#052F2A] ${isRTL ? 'text-right' : 'text-left'}`}
+                    placeholder={language === 'ar' ? 'ahmed@example.com' : 'john@example.com'}
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="phone" className="block text-[#052F2A] mb-2">
-                    Phone Number
+                  <label htmlFor="phone" className={`block text-[#052F2A] mb-2 ${isRTL ? 'text-right' : 'text-left'}`}>
+                    {language === 'ar' ? 'رقم الهاتف' : 'Phone Number'}
                   </label>
                   <input
                     type="tel"
@@ -167,30 +180,38 @@ export function ContactForm() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-6 py-4 bg-white border-2 border-transparent rounded-2xl focus:outline-none focus:border-[#035938] transition-all text-[#052F2A]"
+                    className={`w-full px-6 py-4 bg-white border-2 border-transparent rounded-2xl focus:outline-none focus:border-[#035938] transition-all text-[#052F2A] ${isRTL ? 'text-right' : 'text-left'}`}
                     placeholder="+966 XXX XXXX"
                   />
                 </div>
                 <div>
-                  <label htmlFor="subject" className="block text-[#052F2A] mb-2">
-                    Subject *
+                  <label htmlFor="service" className={`block text-[#052F2A] mb-2 ${isRTL ? 'text-right' : 'text-left'}`}>
+                    {language === 'ar' ? 'نوع الخدمة' : 'Service Type'} *
                   </label>
-                  <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-6 py-4 bg-white border-2 border-transparent rounded-2xl focus:outline-none focus:border-[#035938] transition-all text-[#052F2A]"
-                    placeholder="How can we help?"
-                  />
+                  <div className="relative">
+                    <select
+                      id="service"
+                      name="service"
+                      value={formData.service}
+                      onChange={handleChange}
+                      required
+                      className={`w-full px-6 py-4 bg-white border-2 border-transparent rounded-2xl focus:outline-none focus:border-[#035938] transition-all text-[#052F2A] appearance-none ${isRTL ? 'text-right pr-6 pl-12' : 'text-left pl-6 pr-12'}`}
+                    >
+                      <option value="">{language === 'ar' ? 'اختر نوع الخدمة' : 'Select service type'}</option>
+                      <option value="inquiry">{language === 'ar' ? 'خدمة الاستفسارات والتواصل' : 'Inquiry and Communication Service'}</option>
+                    </select>
+                    <div className={`absolute top-1/2 -translate-y-1/2 pointer-events-none ${isRTL ? 'left-4' : 'right-4'}`}>
+                      <svg className="w-5 h-5 text-[#035938]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </div>
+                  </div>
                 </div>
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-[#052F2A] mb-2">
-                  Message *
+                <label htmlFor="message" className={`block text-[#052F2A] mb-2 ${isRTL ? 'text-right' : 'text-left'}`}>
+                  {language === 'ar' ? 'الرسالة' : 'Message'} *
                 </label>
                 <textarea
                   id="message"
@@ -199,17 +220,17 @@ export function ContactForm() {
                   onChange={handleChange}
                   required
                   rows={6}
-                  className="w-full px-6 py-4 bg-white border-2 border-transparent rounded-2xl focus:outline-none focus:border-[#035938] transition-all text-[#052F2A] resize-none"
-                  placeholder="Tell us more about your inquiry..."
+                  className={`w-full px-6 py-4 bg-white border-2 border-transparent rounded-2xl focus:outline-none focus:border-[#035938] transition-all text-[#052F2A] resize-none ${isRTL ? 'text-right' : 'text-left'}`}
+                  placeholder={language === 'ar' ? 'أخبرنا المزيد عن استفسارك...' : 'Tell us more about your inquiry...'}
                 />
               </div>
 
               <button
                 type="submit"
-                className="group w-full py-4 bg-gradient-to-r from-[#035938] to-[#52BC88] text-white rounded-2xl hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-3"
+                className={`group w-full py-4 bg-gradient-to-r from-[#035938] to-[#52BC88] text-white rounded-2xl hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-3 ${isRTL ? 'flex-row-reverse' : 'flex-row'}`}
               >
-                <span>Send Message</span>
-                <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <span>{language === 'ar' ? 'إرسال الرسالة' : 'Send Message'}</span>
+                <Send className={`w-5 h-5 group-hover:translate-x-1 transition-transform ${isRTL ? 'rotate-180' : ''}`} />
               </button>
             </form>
           </div>

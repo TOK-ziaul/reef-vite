@@ -24,7 +24,7 @@ export function MegaMenuSectors({ onClose }: MegaMenuSectorsProps = {}) {
     { icon: <Milk className="w-8 h-8" />, titleKey: 'livestock', sectorId: 'livestock' },
     { icon: <Scissors className="w-8 h-8" />, titleKey: 'handicrafts', sectorId: 'handicrafts' },
     { icon: <Fish className="w-8 h-8" />, titleKey: 'fishing', sectorId: 'fishing' },
-    { icon: <Sprout className="w-8 h-8" />, titleKey: 'aromaticPlants', sectorId: 'aromatic' },
+    { icon: <Sprout className="w-8 h-8" />, titleKey: 'aromaticPlants', sectorId: 'rainfed' },
     { icon: <Cpu className="w-8 h-8" />, titleKey: 'agritech', sectorId: 'agritech' },
   ];
 

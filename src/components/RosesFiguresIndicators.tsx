@@ -136,7 +136,7 @@ export function RosesFiguresIndicators() {
                 
                 <div className="flex-1 min-w-0">
                   <span className="text-xs font-bold text-[#035938]/50 uppercase tracking-wider block mb-3">
-                    {t('beneficiaries')}
+                    {t('numberOfBeneficiaries')}
                   </span>
                   
                   <div className="mb-2">

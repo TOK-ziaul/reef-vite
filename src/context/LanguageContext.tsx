@@ -13,13 +13,26 @@ const translations = {
     home: "Home",
     about: "About",
     sectors: "Sectors",
+    sustainability: "Sustainability",
+    support: "Support",
+    contact: "Contact",
+    search: "Search",
     programs: "Programs",
     supportPrograms: "Support Programs",
     news: "News & Events",
     latestNews: "Latest News",
     newsArchive: "News Archive",
-    contact: "Contact",
     language: "العربية",
+    // Header dropdowns (additional)
+    initiatives: "Initiatives",
+    impactStats: "Impact & Statistics",
+    newsPress: "News & Press",
+    photoVideo: "Photo & Video Library",
+    events: "Events",
+    beneficiariesGuide: "Beneficiaries Guide",
+    // Sectors (nav)
+    flowers: "Roses & Flowers",
+    aromatic: "Aromatic Plants",
     // Mega Menu - Programs
     programsOverview: "Programs Overview",
     programsIntro: "Discover our comprehensive support programs",
@@ -891,7 +904,7 @@ const translations = {
     honeyProjectObj4Title: "Field Inspection & Treatment",
     honeyProjectObj4:
       "Conducting field inspection and diagnosis and providing rapid treatment services to beekeepers at their locations across the Kingdom",
-    honeyKeyWorksTitle: "Key Implemented Activities",
+    honeyKeyWorksTitle: "Major Implemented Activities",
     honeyParticipationTitle: "Participation in Agricultural Forums",
     honeyParticipationIntro:
       'The "Reef Saudi" Program reflects its active presence locally and internationally to promote sustainability and food security through:',
@@ -968,7 +981,7 @@ const translations = {
       "Modern hives produce nearly 3 times more than traditional ones",
     honeyKeyWorksProductivityTitle: "Productivity",
     honeyKeyWorksProductivityIntro:
-      "Beekeeping sector productivity has developed notably as a result of introducing modern technologies, with:",
+      "Beekeeping sector productivity has developed notably as a result of introducing **modern** **technologies**, with:",
     honeyKeyWorksTraditionalAvg: "Traditional hive average: 2.2 kg",
     honeyKeyWorksModernAvg: "Modern hive average: 4.75 kg",
     honeyKeyWorksTotalAnnual: "Total annual honey production: 4,600 tons",
@@ -991,7 +1004,7 @@ const translations = {
       "Improved practices and organic methods",
     honeyKeyWorksTotalAnnualLabel: "Total Annual Honey Production",
     honeyKeyWorksImprovementReflects:
-      "This improvement reflects the impact of modern practices and technical supervision in increasing efficiency and product quality.",
+      "This improvement reflects the impact of **modern practices** and **technical supervision** in increasing efficiency and product quality.",
     honeyKeyWorksAverageProduction: "Average production",
     honeyKeyWorksIncrease116: "Increase 116%+",
     honeyInternationalPartnershipsTitle: "International Partnerships",
@@ -1398,13 +1411,26 @@ const translations = {
     home: "الرئيسية",
     about: "عن البرنامج",
     sectors: "القطاعات",
+    sustainability: "الاستدامة",
+    support: "الدعم",
+    contact: "تواصل معنا",
+    search: "بحث",
     programs: "البرامج",
     supportPrograms: "برامج الدعم",
     news: "الأخبار والفعاليات",
     latestNews: "آخر الأخبار",
     newsArchive: "أرشيف الأخبار",
-    contact: "تواصل معنا",
     language: "English",
+    // Header dropdowns (additional)
+    initiatives: "المبادرات",
+    impactStats: "الأثر والإحصائيات",
+    newsPress: "الأخبار والصحافة",
+    photoVideo: "مكتبة الصور والفيديو",
+    events: "الفعاليات",
+    beneficiariesGuide: "دليل المستفيدين",
+    // Sectors (nav)
+    flowers: "الورد والزهور",
+    aromatic: "النباتات العطرية",
 
     // Mega Menu - Programs
     programsOverview: "نظرة عامة على البرامج",
@@ -2294,7 +2320,7 @@ const translations = {
       "الخلايا الحديثة تنتج ما يقارب ثلاثة أضعاف الخلايا التقليدية",
     honeyKeyWorksProductivityTitle: "ثانياً: الإنتاجية",
     honeyKeyWorksProductivityIntro:
-      "شهدت إنتاجية قطاع النحل تطوراً ملحوظاً نتيجة إدخال التقنيات الحديثة، حيث بلغ:",
+      "شهدت إنتاجية قطاع النحل تطوراً ملحوظاً نتيجة إدخال **التقنيات** **الحديثة**، حيث بلغ:",
     honeyKeyWorksTraditionalAvg: "متوسط إنتاج الخلية التقليدية: 2.2 كجم",
     honeyKeyWorksModernAvg: "متوسط إنتاج الخلية الحديثة: 4.75 كجم",
     honeyKeyWorksTotalAnnual: "إجمالي الإنتاج السنوي للعسل: 4,600 طن",
@@ -2316,7 +2342,7 @@ const translations = {
       "تحسين الممارسات وأساليب تربية النحل العضوي",
     honeyKeyWorksTotalAnnualLabel: "إجمالي الإنتاج السنوي للعسل",
     honeyKeyWorksImprovementReflects:
-      "يعكس هذا التحسن أثر تطبيق الممارسات الحديثة والرقابة الفنية في رفع كفاءة الإنتاج وجودته.",
+      "يعكس هذا التحسن أثر تطبيق **الممارسات الحديثة** و**الرقابة الفنية** في رفع كفاءة الإنتاج وجودته.",
     honeyKeyWorksAverageProduction: "متوسط الإنتاج",
     honeyKeyWorksIncrease116: "زيادة 116%+",
     honeyInternationalPartnershipsTitle: "الشراكات الدولية",

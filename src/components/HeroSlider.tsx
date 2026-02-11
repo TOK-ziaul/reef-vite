@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useMemo, type ReactElement } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -226,7 +226,7 @@ export function HeroSlider() {
   const highlightedTitle = useMemo(() => {
     const text = t(slides[currentSlide].title) || "";
     const parts = text.split(/(\s+)/);
-    const result: Array<string | number | ReactElement> = [];
+    const result: Array<string | number | JSX.Element> = [];
 
     // Build set of word indexes to highlight.
     // Rules:
@@ -327,7 +327,7 @@ export function HeroSlider() {
 
   return (
     <section
-      className="relative h-[calc(100vh-60px)] overflow-hidden  "
+      className="relative h-screen overflow-hidden -mt-20 pt-20"
       ref={slideRef}
     >
       {/* Animated gradient blobs */}

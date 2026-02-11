@@ -74,7 +74,7 @@ export function AboutIntro() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-24 px-6 bg-gradient-to-br from-[#F9F7EF] via-white to-[#F9F7EF] overflow-hidden border-2 border-red-500"
+      className="relative py-24 px-6 bg-gradient-to-br from-[#F9F7EF] via-white to-[#F9F7EF] overflow-hidden"
       style={{
         direction: language === "ar" ? "rtl" : "ltr",
       }}

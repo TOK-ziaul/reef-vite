@@ -14,7 +14,6 @@ import {
   ArrowRight,
   Award,
   Trophy,
-  // Globe,
   Shield,
   CheckCircle,
   Target,

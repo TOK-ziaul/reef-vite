@@ -1,14 +1,21 @@
 import { useLanguage } from "../context/LanguageContext";
+import { useNavigation } from "../context/NavigationContext";
 
-export function DropdownMediaCenter() {
+export function DropdownMediaCenter({ onClose }: { onClose?: () => void }) {
   const { t } = useLanguage();
+  const { navigateTo } = useNavigation();
 
   const menuItems = [
-    { key: "newsPress", href: "#" },
-    { key: "photoVideo", href: "#" },
-    { key: "events", href: "#" },
-    { key: "galleryBook", href: "#" },
+    { key: "newsPress", page: "newsPress" as const },
+    { key: "photoVideo", page: "photoVideo" as const },
+    { key: "events", page: "events" as const },
+    { key: "galleryBook", page: "galleryBook" as const },
   ];
+
+  const handleItemClick = (page: "newsPress" | "photoVideo" | "events" | "galleryBook") => {
+    navigateTo(page);
+    if (onClose) onClose();
+  };
 
   return (
     <div
@@ -19,13 +26,13 @@ export function DropdownMediaCenter() {
     >
       <div className="py-2">
         {menuItems.map((item) => (
-          <a
+          <button
             key={item.key}
-            href={item.href}
-            className="block px-6 py-3 hover:bg-[#F7F9FA] hover:text-[#007C89] transition-colors"
+            onClick={() => handleItemClick(item.page)}
+            className="block w-full text-left px-6 py-3 hover:bg-[#F7F9FA] hover:text-[#007C89] transition-colors"
           >
             {t(item.key)}
-          </a>
+          </button>
         ))}
       </div>
     </div>

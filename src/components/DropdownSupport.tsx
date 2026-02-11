@@ -1,13 +1,20 @@
 import { useLanguage } from "../context/LanguageContext";
+import { useNavigation } from "../context/NavigationContext";
 
-export function DropdownSupport() {
+export function DropdownSupport({ onClose }: { onClose?: () => void }) {
   const { t } = useLanguage();
+  const { navigateTo } = useNavigation();
 
   const menuItems = [
-    { key: "howToApply", href: "#" },
-    { key: "termsConditions", href: "#" },
-    { key: "faqs", href: "#" },
+    { key: "howToApply", page: "supportApplication" },
+    { key: "faqs", page: "faqs" },
+    { key: "termsConditions", page: "beneficiariesGuide" },
   ];
+
+  const handleClick = (page: string) => {
+    navigateTo(page as any);
+    if (onClose) onClose();
+  };
 
   return (
     <div
@@ -18,13 +25,13 @@ export function DropdownSupport() {
     >
       <div className="py-2">
         {menuItems.map((item) => (
-          <a
+          <button
             key={item.key}
-            href={item.href}
-            className="block px-6 py-3 hover:bg-[#F7F9FA] hover:text-[#007C89] transition-colors"
+            onClick={() => handleClick(item.page)}
+            className="w-full text-left block px-6 py-3 hover:bg-[#F7F9FA] hover:text-[#007C89] transition-colors"
           >
             {t(item.key)}
-          </a>
+          </button>
         ))}
       </div>
     </div>

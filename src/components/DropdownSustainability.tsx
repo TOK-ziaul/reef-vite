@@ -1,9 +1,17 @@
 import { useLanguage } from "../context/LanguageContext";
+import { useNavigation } from "../context/NavigationContext";
 
 export function DropdownSustainability() {
   const { t } = useLanguage();
+  const { navigateTo } = useNavigation();
+
+  const handleSustainabilityClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    navigateTo('sustainability');
+  };
 
   const menuItems = [
+    { key: "sustainability", onClick: handleSustainabilityClick },
     { key: "initiatives", href: "#" },
     { key: "impactStats", href: "#" },
     { key: "reefAcademy", href: "#" },
@@ -20,7 +28,8 @@ export function DropdownSustainability() {
         {menuItems.map((item) => (
           <a
             key={item.key}
-            href={item.href}
+            href={item.href || "#"}
+            onClick={item.onClick}
             className="block px-6 py-3 hover:bg-[#F7F9FA] hover:text-[#007C89] transition-colors"
           >
             {t(item.key)}

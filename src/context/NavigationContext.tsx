@@ -1,6 +1,19 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useCallback, useContext, useMemo } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
-type Page = "home" | "about" | "sector";
+export type Page =
+  | "home"
+  | "about"
+  | "sector"
+  | "sustainability"
+  | "newsPress"
+  | "photoVideo"
+  | "events"
+  | "galleryBook"
+  | "supportApplication"
+  | "faqs"
+  | "beneficiariesGuide"
+  | "contact";
 
 interface NavigationContextType {
   currentPage: Page;
@@ -12,28 +25,73 @@ const NavigationContext = createContext<NavigationContextType | undefined>(
   undefined
 );
 
+const PATH_TO_PAGE: Record<string, Page> = {
+  "/": "home",
+  "/about": "about",
+  "/sustainability": "sustainability",
+  "/news-press": "newsPress",
+  "/photo-video": "photoVideo",
+  "/events": "events",
+  "/gallery-book": "galleryBook",
+  "/support-application": "supportApplication",
+  "/faqs": "faqs",
+  "/beneficiaries-guide": "beneficiariesGuide",
+  "/contact": "contact",
+};
+
+const PAGE_TO_PATH: Record<Page, string> = {
+  home: "/",
+  about: "/about",
+  sector: "/sector", // append /:sectorId
+  sustainability: "/sustainability",
+  newsPress: "/news-press",
+  photoVideo: "/photo-video",
+  events: "/events",
+  galleryBook: "/gallery-book",
+  supportApplication: "/support-application",
+  faqs: "/faqs",
+  beneficiariesGuide: "/beneficiaries-guide",
+  contact: "/contact",
+};
+
+function pathnameToPage(pathname: string): { page: Page; sectorId?: string } {
+  const sectorMatch = pathname.match(/^\/sector\/([^/]+)$/);
+  if (sectorMatch) return { page: "sector", sectorId: sectorMatch[1] };
+  return { page: PATH_TO_PAGE[pathname] ?? "home" };
+}
+
 export function NavigationProvider({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const [currentPage, setCurrentPage] = useState<Page>("home");
-  const [currentSectorId, setCurrentSectorId] = useState<string | undefined>(undefined);
+  const location = useLocation();
+  const navigate = useNavigate();
 
-  const navigateTo = (page: Page, sectorId?: string) => {
-    console.log('navigateTo called:', page, sectorId); // Debug log
-    setCurrentPage(page);
-    if (page === "sector" && sectorId) {
-      setCurrentSectorId(sectorId);
-    } else {
-      setCurrentSectorId(undefined);
-    }
-    // Scroll to top on navigation
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+  const { page: currentPage, sectorId: currentSectorId } = useMemo(
+    () => pathnameToPage(location.pathname),
+    [location.pathname]
+  );
+
+  const navigateTo = useCallback(
+    (page: Page, sectorId?: string) => {
+      if (page === "sector" && sectorId) {
+        navigate(`/sector/${sectorId}`);
+      } else {
+        navigate(PAGE_TO_PATH[page] ?? "/");
+      }
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    },
+    [navigate]
+  );
+
+  const value = useMemo(
+    () => ({ currentPage, currentSectorId, navigateTo }),
+    [currentPage, currentSectorId, navigateTo]
+  );
 
   return (
-    <NavigationContext.Provider value={{ currentPage, currentSectorId, navigateTo }}>
+    <NavigationContext.Provider value={value}>
       {children}
     </NavigationContext.Provider>
   );

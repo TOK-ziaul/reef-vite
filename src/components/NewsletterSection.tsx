@@ -1,9 +1,6 @@
-import { ArrowRight } from 'lucide-react';
-import { useLanguage } from '../context/LanguageContext';
+import { ArrowRight } from "lucide-react";
 
 export function NewsletterSection() {
-  useLanguage();
-
   return (
     <section className="py-24 bg-[#052F2A] relative overflow-hidden">
       {/* Gradient Blobs */}
@@ -21,10 +18,13 @@ export function NewsletterSection() {
             </div>
             <h2 className="text-white mb-6">
               <span className="block">Sign-up for</span>
-              <span className="block italic text-[#F1BC28]">regular Updates</span>
+              <span className="block italic text-[#F1BC28]">
+                regular Updates
+              </span>
             </h2>
             <p className="text-white/70 text-xl">
-              Get the latest news, updates, and insights about our programs, success stories, and agricultural innovations.
+              Get the latest news, updates, and insights about our programs,
+              success stories, and agricultural innovations.
             </p>
           </div>
 
@@ -54,7 +54,7 @@ export function NewsletterSection() {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </form>
-            
+
             {/* Small print */}
             <p className="text-[#052F2A]/60 text-sm mt-4 text-center">
               We respect your privacy. Unsubscribe at any time.
