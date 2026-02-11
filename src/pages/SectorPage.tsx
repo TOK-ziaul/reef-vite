@@ -41,6 +41,7 @@ import { RainfedStats } from "../components/RainfedStats";
 import { RainfedProjects } from "../components/RainfedProjects";
 import { RainfedImplementedWorks } from "../components/RainfedImplementedWorks";
 import { RainfedMechanization } from "../components/RainfedMechanization";
+import { AllSectorsList } from "../components/AllSectorsList";
 import {
   Lightbulb,
   Cog,
@@ -55,7 +56,7 @@ import {
 } from "lucide-react";
 
 interface SectorPageProps {
-  sectorId?: string;
+  sectorId: string;
 }
 
 export function SectorPage({ sectorId: sectorIdProp }: SectorPageProps = {}) {
@@ -139,10 +140,10 @@ export function SectorPage({ sectorId: sectorIdProp }: SectorPageProps = {}) {
         "https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=1920&q=80",
     },
     agritech: {
-      titleKey: "sector9Title",
+      titleKey: "supportedSectorsTitle",
       descKey: "sector9Desc",
       image:
-        "https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=1920&q=80",
+        "https://images.unsplash.com/photo-1759409972722-e4e549e0c7bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxydXJhbCUyMGZhbWlseSUyMHNtYWxsJTIwYnVzaW5lc3MlMjBob21lJTIwcHJvZHVjdGlvbnxlbnwxfHx8fDE3NzA4MDI2Nzd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     },
     rainfed: {
       titleKey: "rainfedHeroTitle",
@@ -157,7 +158,7 @@ export function SectorPage({ sectorId: sectorIdProp }: SectorPageProps = {}) {
   /** Renders translation text with **phrase** segments as green highlighted spans */
   const textWithHighlights = (
     raw: string,
-    highlightClassName = "text-[#52BC88] font-semibold"
+    highlightClassName = "text-[#52BC88] font-semibold",
   ) => {
     const parts = raw.split(/(\*\*[^*]+\*\*)/g);
     return parts.map((part, i) => {
@@ -226,7 +227,7 @@ export function SectorPage({ sectorId: sectorIdProp }: SectorPageProps = {}) {
 
       {/* Content Section */}
       <section className="relative -mt-1 py-20 bg-[#F9F7EF]">
-        <div className="container  max-w-[1440px] mx-auto px-4 md:px-8">
+        <div className="container mx-auto px-6 md:px-12 lg:px-20 max-w-7xl">
           {/* Introduction Section - Beekeeping */}
           {sectorId === "beekeeping" && (
             <div className="max-w-5xl mx-auto mb-16">
@@ -246,7 +247,7 @@ export function SectorPage({ sectorId: sectorIdProp }: SectorPageProps = {}) {
 
           {/* Introduction Section - Coffee */}
           {sectorId === "coffee" && (
-            <div className="max-w-6xl mx-auto mb-16">
+            <div className="max-w-5xl mx-auto mb-16">
               <div className="space-y-6 text-lg leading-relaxed text-gray-700">
                 <p className="text-xl leading-relaxed">{t("coffeeIntroP1")}</p>
                 <p className="text-xl leading-relaxed">{t("coffeeIntroP2")}</p>
@@ -264,6 +265,20 @@ export function SectorPage({ sectorId: sectorIdProp }: SectorPageProps = {}) {
               </div>
             </div>
           )}
+
+          {/* Introduction Section - Agritech / Productive Families */}
+          {sectorId === "agritech" && (
+            <div className="max-w-5xl mx-auto mb-16">
+              <div className="bg-white rounded-3xl p-8 md:p-12 shadow-lg">
+                <p className="text-xl leading-relaxed text-gray-700 text-center">
+                  {t("supportedSectorsIntro")}
+                </p>
+              </div>
+            </div>
+          )}
+
+          {/* All Sectors List - Agritech / Productive Families */}
+          {sectorId === "agritech" && <AllSectorsList />}
 
           {/* Main Objectives Section - Coffee */}
           {sectorId === "coffee" && <CoffeeObjectives />}

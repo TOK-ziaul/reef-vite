@@ -86,7 +86,7 @@ export function Header() {
         "livestock",
         "handicrafts",
         "fishing",
-        "aromatic",
+        "rainfedCrops",
         "agritech",
       ],
     },

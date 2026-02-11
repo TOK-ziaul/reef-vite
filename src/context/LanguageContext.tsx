@@ -26,13 +26,269 @@ const translations = {
     // Header dropdowns (additional)
     initiatives: "Initiatives",
     impactStats: "Impact & Statistics",
-    newsPress: "News & Press",
-    photoVideo: "Photo & Video Library",
-    events: "Events",
+
     beneficiariesGuide: "Beneficiaries Guide",
     // Sectors (nav)
     flowers: "Roses & Flowers",
     aromatic: "Aromatic Plants",
+    // Sustainability Page
+    sustainabilityHeroTitle: "Sustainable Initiatives",
+    sustainabilityHeroSubtitle:
+      "Our commitment to environmental stewardship, resource conservation, and long-term agricultural sustainability across Saudi Arabia's rural communities",
+    learnMore: "Learn More",
+    downloadReport: "Download Report",
+    sustainableInitiatives: "Sustainable Initiatives",
+    waterEfficiency: "Water Efficiency",
+    beneficiaries: "Beneficiaries",
+    comingSoon: "Coming Soon",
+    sustainabilityContentComingSoon:
+      "More sustainability content will be available soon.",
+
+    // Sustainability Content
+    sustIntroP1:
+      "Sustainable initiatives embody one of the main pillars in the directions of the 'Reef Saudi Arabia' program towards achieving long-term rural development, based on empowering local communities, enhancing agricultural production efficiency, and linking natural resources with sustainable economic and social values. These initiatives stem from a comprehensive vision aimed at transforming agricultural activity from a traditional practice into an integrated production system that meets the requirements of food security, environmental sustainability, and economic empowerment.",
+    sustIntroP2:
+      "The program focuses on investing in latent rural potential, through supporting small holdings, improving the quality of production chains, and enhancing skills and knowledge, through an integrated system of programs and projects that balance the economic, social and environmental dimensions, and place people and the environment at the heart of the development process.",
+
+    // Model Farms Project
+    modelFarmsTitle: "First: Model Farms Project",
+    modelFarmsBadge: "Model Farms",
+    modelFarmsP1:
+      "The project targets the selection of a group of leading farmers and the rehabilitation of the infrastructure of their farms, especially with regard to rationalized irrigation networks, in addition to providing them with the necessary agricultural inputs to become capable of adopting the best modern and sustainable agricultural practices.",
+    modelFarmsP2:
+      "These model farms are also used as field training centers through holding field workshops to train the rest of the farmers on modern techniques in sustainable agriculture, rationalizing water use, increasing productivity and improving product quality.",
+    modelFarmsAchievementTitle: "The project has achieved the following:",
+    modelFarmsRegions: "different regions",
+    modelFarmsCount: "model farms",
+    modelFarmsTrainees: "trainees",
+    modelFarmsWorkshops: "training workshop",
+    modelFarmsDonums: "donums",
+    modelFarmsVisits: "supervision visits",
+
+    // Agricultural Extension
+    agricExtensionTitle: "Second: Agricultural Extension",
+    agricExtensionIntro:
+      "Work has been done to develop an integrated agricultural extension system that includes digitization, awareness, direct training, and knowledge products dedicated to smallholder farmers, through several interconnected paths:",
+
+    // Digital Field Schools
+    digitalFieldSchoolsTitle: "1. Digital Field Schools:",
+    digitalFieldSchoolsDesc:
+      "The areas and activities of digital field schools have been identified, numbering 39 schools distributed across:",
+    digitalFieldSchoolsCrops: "Field crops: Wheat, Corn, Millet",
+    digitalFieldSchoolsFruits: "Fruits: Subtropical fruits",
+    digitalFieldSchoolsBeekeeping: "Beekeeping and honey production",
+    digitalFieldSchoolsRoses: "Roses",
+    digitalFieldSchoolsFish: "Fish",
+    digitalFieldSchoolsAromatics: "Aromatic plants",
+    digitalFieldSchoolsFarms: "farms selected as application points",
+    digitalFieldSchoolsPlatform:
+      "Electronic platform and website designed for broadcasting workshops",
+    digitalFieldSchoolsTraining:
+      "Farmers trained on workshop implementation and professional photography",
+
+    // Extension Messages
+    extensionMessagesTitle: "2. Extension Messages:",
+    extensionMessagesDesc:
+      "Preparing comprehensive extension messages for various agricultural and livestock activities, in coordination with the General Administration of Agricultural Extension.",
+    extensionMessagesApp: "Development of the Agricultural Guide app",
+    extensionMessagesPublished: "extension messages published",
+    extensionMessagesBeneficiaries: "members benefited",
+    extensionMessagesPrograms: "training programs developed",
+    extensionMessagesLeaders: "association leaders trained",
+
+    // Extension Meetings
+    extensionMeetingsTitle: "3. Extension Meetings and Visits:",
+    extensionMeetingsSessions: "field sessions implemented",
+    extensionMeetingsFarmers: "farmers",
+    extensionMeetingsTopic1: "Modern irrigation techniques",
+    extensionMeetingsTopic2: "Good agricultural practices",
+    extensionMeetingsTopic3: "Pruning and fertilization",
+    extensionMeetingsTopic4: "Improving bee and honey productivity",
+    extensionMeetingsTopic5: "Modern techniques in plant and animal production",
+
+    // Knowledge Exchange Networks
+    knowledgeNetworksTitle: "4. Knowledge Exchange Networks:",
+    knowledgeNetworksDesc:
+      "Creation of 4 digital groups for knowledge exchange between farmers via social media.",
+    knowledgeNetworksBeekeeping: "Beekeeping",
+    knowledgeNetworksBeekeepingParticipants:
+      "participants (Al-Baha, Asir, Jazan)",
+    knowledgeNetworksOrganic: "Organic Beekeeping",
+    knowledgeNetworksOrganicParticipants: "participants (Medina, Mecca)",
+    knowledgeNetworksRoses: "Rose Cultivation",
+    knowledgeNetworksRosesParticipants: "participants (Taif)",
+    knowledgeNetworksFruits: "Fruits",
+    knowledgeNetworksFruitsParticipants: "participants (Al-Baha)",
+
+    // Agricultural Marketing
+    agricMarketingTitle: "Third: Agricultural Marketing",
+
+    // Digital System
+    digitalMarketSystemTitle:
+      "1. Digital System for Agricultural Market Information:",
+    digitalMarketSystemItem1:
+      "Preparing project tender documents and linking to Ministry platform",
+    digitalMarketSystemItem2: "Announcing competition for qualified companies",
+    digitalMarketSystemItem3: "Sorting offers and selecting system implementer",
+    digitalMarketSystemItem4:
+      "Recruiting specialized agricultural marketing expert",
+    digitalMarketSystemGoalsTitle: "The system aims to:",
+    digitalMarketSystemGoal1: "Support sales decisions",
+    digitalMarketSystemGoal2: "Improve producers' access to markets",
+    digitalMarketSystemGoal3:
+      "Provide price information, locations, and sales points",
+
+    // Post-Harvest Operations
+    postHarvestTitle: "2. Post-Harvest Operations:",
+    postHarvestItem1: "Study of post-harvest operations for small producers",
+    postHarvestItem2:
+      "Preparation of agricultural marketing services development plan",
+    postHarvestItem3: "Inventory of required equipment",
+    postHarvestItem4:
+      "Preparation of technical guides for post-harvest operations",
+
+    // Sales Points
+    salesPointsTitle: "3. Sales Points:",
+    salesPointsIntro:
+      "Sales points dedicated to supporting and marketing rural family products have been established in several regions, including:",
+    salesPoint1: "Rural café at Qalf Farm - Al-Dayer Bani Malik",
+    salesPoint2: "Rural café at Al-Afia Farm - Taif Governorate",
+    salesPoint3: "Coffee roastery in Al-Dayer Bani Malik Governorate",
+    salesPoint4: "Honey exhibition in Dumat Al-Jandal Governorate",
+    salesPoint5: "Jasmine exhibition in Abu Arish Governorate",
+    salesPoint6: "Rainfed crops exhibition in Al-Lith Governorate",
+    salesPointsImpact:
+      "These points have contributed to enhancing income, diversifying its sources, and connecting producers directly with consumers.",
+
+    // Impact and Statistics
+    impactStatsTitle: "Impact and Statistics",
+    impactStatsSubtitle: "Direct and growing economic impact",
+    impactStatsIntro:
+      "The social, economic and environmental impact of Reef Saudi Arabia program initiatives has been measured through quantitative results and precise indicators, most notably:",
+
+    // Training and Capacity Building
+    trainingCapacityTitle: "1. Training and Capacity Building:",
+    trainingCourses: "training courses in 2024",
+    trainingParticipants: "participants in various rural sector fields",
+    trainingMen: "Men",
+    trainingWomen: "Women",
+    trainingFieldsTitle: "Fields covered:",
+    trainingBeekeeping: "Beekeeping and honey production",
+    trainingBeekeepingCount: "participants",
+    trainingRainfed: "Rainfed grains",
+    trainingLivestock: "Livestock",
+    trainingFisheries: "Fisheries",
+    trainingValueAdded: "Value added",
+    trainingCooperatives: "Agricultural cooperatives",
+    trainingExtension: "Agricultural extension",
+    trainingCapacityBuilding: "Training and capacity building",
+    trainingCategoriesTitle: "Trainees classification:",
+    trainingEmployees: "Employees",
+    trainingFarmers: "Farmers and cooperative members",
+
+    // Study Tours
+    studyToursTitle: "2. Study Tours:",
+    studyToursDesc: "Number of study tours during 2024:",
+    studyToursTotal: "tours",
+    studyToursInternal: "Internal",
+    studyToursExternal: "External",
+
+    // Strategic Partnerships
+    partnershipsTitle: "Strategic Partnerships",
+    partnershipsIntro:
+      "In the context of enhancing integrated work between government entities, the private sector, academic, sports and community institutions, Reef Saudi Arabia program signed 12 strategic cooperation memoranda aimed at expanding sustainable development impact in rural areas, and raising efficiency of productive, financial and marketing projects for families, farmers and entrepreneurs.",
+    partnershipsSubtitle:
+      "Cooperation memoranda included the following entities:",
+
+    // Partners
+    partnerNadec: "NADEC Company",
+    partnerNadecDesc:
+      "Supporting agricultural activities and developing sustainable supply chains.",
+    partnerDan: "DAN Company",
+    partnerDanDesc: "Enhancing food innovation and rural development.",
+    partnerRivana:
+      "Cooperative Society for Rural and Environmental Tourism (Rivana)",
+    partnerRivanaDesc: "Supporting environmentally responsible rural tourism.",
+    partnerJahez: "Jahez International Company (Jahez Group)",
+    partnerJahezDesc:
+      "Enabling rural products to reach modern digital markets.",
+    partnerKFU: "King Faisal University",
+    partnerKFUDesc:
+      "Cooperation in sustainable agricultural research and development.",
+    partnerAlhasa: "Al-Ahsa Development Authority",
+    partnerAlhasaDesc:
+      "Supporting rural projects linked to regional development.",
+    partnerFateh: "Al-Fateh Sports Club",
+    partnerFatehDesc:
+      "Enabling community and development initiatives in target areas.",
+    partnerShabab: "Al-Shabab Club",
+    partnerShababDesc:
+      "Supporting awareness and development activities among youth.",
+    partnerCateron: "Cateron Company",
+    partnerCateronDesc:
+      "Supporting supply chains and logistics services for rural sectors.",
+    partnerIrrigation: "General Irrigation Authority",
+    partnerIrrigationDesc:
+      "Enhancing water resource sustainability in rural agriculture.",
+    partnerCoopCouncil: "Cooperative Societies Council",
+    partnerCoopCouncilDesc:
+      "Developing cooperatives' capabilities and empowering them administratively and productively.",
+    partnerTVTC: "Technical and Vocational Training Corporation",
+    partnerTVTCDesc: "Building capacities and qualifying local competencies.",
+
+    // Partnership Goals
+    partnershipGoalsTitle: "Sustainability Partnership Goals:",
+    partnershipGoalsIntro:
+      "These partnerships focus on achieving four main tracks:",
+    partnershipGoal1:
+      "Increasing production efficiency in farms and rural families.",
+    partnershipGoal2: "Improving access to local and international markets.",
+    partnershipGoal3:
+      "Localizing sustainable agricultural knowledge and expertise.",
+    partnershipGoal4:
+      "Creating new job opportunities that enhance economic stability in rural areas.",
+
+    // Partnership Impact
+    partnershipImpactTitle: "Partnership Impact on Sustainable Reef:",
+    partnershipImpactIntro: "These agreements have contributed to:",
+    partnershipImpact1:
+      "Enhancing integration between government and private entities.",
+    partnershipImpact2:
+      "Accelerating implementation of initiatives and projects.",
+    partnershipImpact3:
+      "Supporting innovation in agriculture and sustainable practices.",
+    partnershipImpact4: "Expanding the scope of benefiting from Reef programs.",
+
+    // Additional Meetings
+    additionalMeetingsTitle: "Additional Strategic Collaborations",
+    additionalMeetingsIntro:
+      "Within the framework of enhancing integration between relevant entities, Reef Saudi Arabia program held a number of meetings with local partners, government agencies and relevant institutions, including:",
+    meetingPartner1: "Agricultural Development Fund",
+    meetingPartner2: "Saudi Food and Drug Authority",
+    meetingPartner3: "Saudi Coffee Company",
+    meetingPartner4: "Sustainability Center",
+    meetingPartner5: "Small and Medium Enterprises Authority",
+
+    // Meeting Results
+    meetingResultsTitle: "These partnerships resulted in:",
+    meetingResult1: "Supporting implementation of operational plans",
+    meetingResult2: "Aligning projects with Saudi Vision 2030",
+    meetingResult3: "Developing new investment opportunities",
+    meetingResult4: "Enhancing rural families empowerment",
+    meetingResult5: "Transferring knowledge and expertise",
+    meetingResult6: "Expanding developmental impact scope",
+
+    // Implementation Plans
+    implementationTitle: "Also:",
+    implementation1:
+      "Preparation of implementation plans for the period (2025 – 2030)",
+    implementation2:
+      "Following up on attracting national and international expertise",
+    implementation3:
+      "Formation of an executive committee chaired by the Deputy Minister",
+    implementation4:
+      "Holding regular meetings to evaluate performance and improve achievement level",
+
     // Mega Menu - Programs
     programsOverview: "Programs Overview",
     programsIntro: "Discover our comprehensive support programs",
@@ -67,6 +323,9 @@ const translations = {
     familiesSector: "Productive Families",
     familiesDesc: "Empowering home-based micro-enterprises",
     viewAllSectors: "View All Sectors",
+    supportedSectorsTitle: "Supported Agricultural Sectors in Reef Saudi",
+    supportedSectorsIntro:
+      'The Sustainable Rural Agricultural Development Program "Reef Saudi Arabia" supports eight major productive sectors that represent the foundation of agricultural and food development in the Kingdom. These sectors contribute to empowering small farmers and producers, raising the quality of agricultural production, enhancing food security, and achieving sustainable rural development in line with the goals of Saudi Vision 2030.',
 
     // Hero Slider
     hero1Title: "Empowering Rural Communities Through Sustainable Innovation",
@@ -400,6 +659,221 @@ const translations = {
     sector4Point2: "Developing Irrigation Methods",
     sector4Point3: "Local Marketing Support",
 
+    // Handicrafts & Rural Industries Page
+    handicraftsHeroTitle:
+      "Sector for Developing Added Value from Small Holdings",
+    handicraftsIntroTitle:
+      "Empowering Small Holdings for Greater Economic Impact",
+    handicraftsIntroLongDesc:
+      "Within the framework of its vision to enhance sustainable development in rural areas, the Added Value Development from Small Holdings sector in the Reef Saudi Arabia Program works to enable entrepreneurial families and small projects to transition from the primary production stage to the manufacturing, development, and marketing stage, contributing to maximizing economic returns and achieving sustainability. This sector targets supporting productive families by providing them with tools and capabilities that increase production efficiency, improve product quality, develop manufacturing, packaging, and packaging processes, and open wider marketing channels for them, with a special focus on empowering women and youth in rural production areas, and enhancing their contribution to the local economy and food security.",
+    handicraftsIntroDesc:
+      "The Handicrafts & Rural Industries sector represents a vital bridge between our rich cultural heritage and sustainable economic development. We empower rural artisans and families to transform traditional skills into thriving businesses, creating authentic products that tell the story of Saudi Arabia's rural heritage while diversifying income sources and preserving cultural identity for future generations.",
+    handicraftsPoint1Title: "Preserving Cultural Heritage",
+    handicraftsPoint1Desc:
+      "Supporting traditional crafts that have been passed down through generations, ensuring our cultural legacy thrives in modern markets.",
+    handicraftsPoint2Title: "Empowering Rural Communities",
+    handicraftsPoint2Desc:
+      "Creating sustainable income opportunities for rural families through skill development and market access.",
+    handicraftsPoint3Title: "Quality & Innovation",
+    handicraftsPoint3Desc:
+      "Combining traditional techniques with contemporary design to create products that appeal to modern consumers.",
+    handicraftsArtisans: "Trained Artisans",
+    handicraftsObjectivesTitle: "Our Strategic Objectives",
+    handicraftsObjectivesSubtitle:
+      "Building a sustainable ecosystem for rural handicrafts and industries",
+    handicraftsObj1Title: "1",
+    handicraftsObj1Desc:
+      "Maximizing returns from small holdings and traditional rural agricultural activities",
+    handicraftsObj2Title: "2",
+    handicraftsObj2Desc:
+      "Increasing added value and creating job opportunities for entrepreneurial families, especially youth and women",
+    handicraftsObj3Title: "3",
+    handicraftsObj3Desc:
+      "Increasing household income and rural community revenues and diversifying income sources for entrepreneurial agricultural families",
+    handicraftsObj4Title: "4",
+    handicraftsObj4Desc:
+      "Increasing added value of agricultural products and improving efficiency in using natural agricultural resources",
+    handicraftsObj5Title: "5",
+    handicraftsObj5Desc:
+      "Contributing to reducing rural migration rates and enhancing social stability in rural communities",
+    handicraftsObj6Title: "6",
+    handicraftsObj6Desc:
+      "Enhancing food security and supplying the local market with some traditional food products",
+    handicraftsWorkAxesTitle: "Work Axes in the Value Added Sector:",
+    handicraftsWorkAxesSubtitle: "",
+    handicraftsWorkAxis1:
+      "Conducting food chain analysis and added value studies for targeted commodities",
+    handicraftsWorkAxis2:
+      "Developing rural agricultural products aligned with food and nutrition requirements",
+    handicraftsWorkAxis3:
+      "Developing commercial production systems and technologies",
+    handicraftsWorkAxis4:
+      "Providing targeted financial and in-kind support to producing agricultural families, especially women and youth",
+    handicraftsWorkAxis5:
+      "Improving infrastructure and logistics services for producing and processing traditional agricultural and food products for entrepreneurial producing families",
+    handicraftsWorkAxis6:
+      "Developing marketing systems for traditional agricultural and food products for entrepreneurial producing families",
+    handicraftsWorkAxis7:
+      "Facilitating access to soft loans through agricultural development funds, social development committees, and other financial institutions",
+    handicraftsWorkAxis8:
+      "Establishing small business incubators and models for disseminating and localizing traditional rural agricultural and food establishments",
+    handicraftsWorkAxis9:
+      "Strengthening contract farming between small farmers and companies and establishing an agricultural rural development information system",
+    handicraftsWorkAxis10:
+      "Preparing and activating supportive national policies and strategies for developing and implementing agricultural rural development programs",
+    handicraftsWorkAxis11:
+      "Establishing specialized units for rural agricultural women's development",
+    handicraftsTotalSupport: "Total Support Value",
+    handicraftsTotalSupportValue: "+1.85 Billion SAR",
+    handicraftsTotalBeneficiaries: "Total Beneficiaries",
+    handicraftsTotalBeneficiariesValue: "49,517 Beneficiaries",
+    handicraftsBeneficiariesBreakdown: "(6,835 Men - 42,682 Women)",
+    handicraftsGeographicDistribution:
+      "Geographic Distribution of Beneficiaries:",
+    handicraftsRegionHail: "Hail",
+    handicraftsRegionEastern: "Eastern Province",
+    handicraftsRegionAsir: "Asir",
+    handicraftsRegionRiyadh: "Riyadh",
+    handicraftsRegionMakkah: "Makkah",
+    handicraftsRegionBaha: "Al Baha",
+    handicraftsRegionNajran: "Najran",
+    handicraftsRegionJazan: "Jazan",
+    handicraftsRegionQassim: "Qassim",
+    handicraftsRegionTabuk: "Tabuk",
+    handicraftsRegionJouf: "Al Jouf",
+    handicraftsRegionNorthern: "Northern Borders",
+    handicraftsRegionMadinah: "Madinah",
+    handicraftsGrowthTitle: "Development from 2020 to 2026:",
+    handicraftsGrowth2020: "2020: 562 Entrepreneurial Families",
+    handicraftsGrowth2024: "2024: 49,517 Entrepreneurial Families (76% Growth)",
+    handicraftsGrowth2026: "2026 (Target): 60,000 Entrepreneurial Families",
+    handicraftsWork1Title: "Training & Capacity Building",
+    handicraftsWork1Desc:
+      "Developing artisan skills through comprehensive training programs covering traditional techniques, modern tools, quality standards, and business management.",
+    handicraftsWork1Point1:
+      "Specialized workshops in traditional crafts including pottery, weaving, basketry, and textile arts",
+    handicraftsWork1Point2:
+      "Business development training covering pricing, marketing, financial management, and customer service",
+    handicraftsWork1Point3:
+      "Quality control and product development programs to meet market standards",
+    handicraftsWork2Title: "Market Access & E-Commerce",
+    handicraftsWork2Desc:
+      "Connecting artisans with buyers through digital platforms, exhibitions, and strategic market partnerships.",
+    handicraftsWork2Point1:
+      "Development of online marketplaces and e-commerce platforms for rural handicrafts",
+    handicraftsWork2Point2:
+      "Participation in national and international exhibitions and trade fairs",
+    handicraftsWork2Point3:
+      "Strategic partnerships with retailers and boutique stores",
+    handicraftsWork3Title: "Community & Women Empowerment",
+    handicraftsWork3Desc:
+      "Supporting rural communities and women entrepreneurs through targeted programs and financial assistance.",
+    handicraftsWork3Point1:
+      "Microfinance support and grants for starting handicraft businesses",
+    handicraftsWork3Point2: "Women's cooperatives and community workshops",
+    handicraftsWork3Point3:
+      "Mentorship programs connecting experienced artisans with newcomers",
+    handicraftsWork4Title: "Innovation & Product Development",
+    handicraftsWork4Desc:
+      "Blending traditional craftsmanship with contemporary design to create products that resonate with modern consumers.",
+    handicraftsWork4Point1:
+      "Collaboration with designers to modernize traditional products",
+    handicraftsWork4Point2:
+      "Research and development of new materials and techniques",
+    handicraftsWork4Point3:
+      "Packaging and branding support for market differentiation",
+    handicraftsStatsTitle: "Our Impact in Numbers",
+    handicraftsStatsSubtitle: "",
+    handicraftsStatArtisans: "Trained Artisans",
+    handicraftsStatProducts: "Product Lines",
+    handicraftsStatBrands: "Rural Brands",
+    handicraftsStatGrowth: "Income Growth",
+    handicraftsStatsNote:
+      "Data as of 2024 - reflecting our commitment to rural economic development",
+    handicraftsCTA1: "Explore Rural Artisan Products",
+    handicraftsCTA2: "Support Programs for Artisans",
+    handicraftsValueAddedTitle: "Value-Added Sector Projects",
+    handicraftsProjectsCount: "Projects",
+    handicraftsProjectsValue: "117.5M",
+    handicraftsProjectsValueLabel: "SAR Total Value",
+    handicraftsValueAddedIntro:
+      "The value-added sector is one of the core pillars of the 'Reef Saudi Arabia' Program, focusing on transforming knowledge, technology, and extension services into practical tools that enhance farmers' productivity, improve product quality, and strengthen value chains efficiency across various rural sectors.",
+    handicraftsMainProjects: "Key Sector Projects:",
+    handicraftsProject1:
+      "Implementing extension caravans in the field of plant wealth across various regions of the Kingdom.",
+    handicraftsProject2:
+      "Developing the agricultural guide application using artificial intelligence techniques for disease and pest diagnosis.",
+    handicraftsProject3:
+      "Supervising construction projects for the Southwestern Development Program.",
+    handicraftsProject4:
+      "Supervising construction projects for the Development Program in the Central and Western regions.",
+    handicraftsProject5:
+      "Providing consulting services for sustainable agricultural rural development program projects.",
+    handicraftsProject6:
+      "Supervising projects implementing sustainable irrigation systems and agricultural technologies.",
+    handicraftsTechnicalBenefits: "Technical Feasibility of Projects:",
+    handicraftsTechBenefit1:
+      "Preparing specialized awareness campaigns in the field of plant wealth.",
+    handicraftsTechBenefit2:
+      "Creating a smart application to identify crop diseases using mobile phone cameras and artificial intelligence technologies.",
+    handicraftsTechBenefit3:
+      "Building a database for plant and animal diseases including fish and bees to facilitate diagnosis and treatment processes.",
+    handicraftsTechBenefit4:
+      "Preparing a comprehensive database for agricultural crop diseases and control methods.",
+    handicraftsTechBenefit5:
+      "Producing visual, printed, and electronic extension materials to enhance agricultural knowledge.",
+    handicraftsTechBenefit6:
+      "Raising farmers' capabilities for early detection of diseases and pests.",
+    handicraftsTechBenefit7:
+      "Producing a comprehensive reference guide for agricultural and food diseases.",
+    handicraftsGoalsTitle: "Project Objectives:",
+    handicraftsGoal1:
+      "Using high-quality and credible technical means and training artificial intelligence systems to recognize agricultural diseases in all their stages and forms, facilitating disease diagnosis and accelerating treatment without the need for direct reference to specialists.",
+    handicraftsGoal2:
+      "Developing extension work in plant wealth and honey fields, through producing awareness and extension materials presented through caravans, seminars, meetings, and festivals, in addition to live broadcasting of activities implemented by the Ministry in various regions of the Kingdom.",
+    handicraftsKeyWorksTitle: "Key Implemented Works",
+    handicraftsKeyWorksIntro:
+      "The year 2024 witnessed the implementation of several quality initiatives within this sector, most notably the operation of the solar drying tunnel for drying figs, where production capacity increased from 400 to 500 kg per drying cycle, and crop loss rates decreased by an estimated 30%. Within just three months, approximately 2,500 kg of dried figs were produced with a value of 100,000 SAR, in addition to using the same technology for drying local mangoes.",
+    handicraftsKeyWorksKg: "kg",
+    handicraftsKeyWorksSar: "SAR",
+    handicraftsKeyWorksStat1: "Production capacity per cycle",
+    handicraftsKeyWorksStat2: "Reduction in crop losses",
+    handicraftsKeyWorksStat3: "Dried figs in 3 months",
+    handicraftsKeyWorksStat4: "Total value generated",
+    handicraftsKeyWorksSolarDrying: "Solar Drying Tunnel Project",
+    handicraftsKeyWorksSolarDetails:
+      "This technology was also used for drying local mango fruit, demonstrating its versatility and effectiveness in preserving various agricultural products.",
+    handicraftsKeyWorksSolarTraining:
+      "13 farmers and ministry staff trained on drying technology",
+    handicraftsKeyWorksTrainingTitle: "Training & Capacity Building",
+    handicraftsKeyWorksTraining1:
+      "Women entrepreneurs trained in beeswax product innovation",
+    handicraftsKeyWorksTraining2:
+      "Women trained in pomegranate-related entrepreneurship",
+    handicraftsKeyWorksTraining3:
+      "Supervisors trained in agricultural tourism development (Taif & Jazan)",
+    handicraftsKeyWorksTraining4:
+      "New farms added to the agricultural tourism atlas",
+    handicraftsKeyWorksTrainingDetails:
+      "Field visits were conducted to pomegranate cooperative orchards in Al-Baha region to diagnose field challenges and propose appropriate solutions. All trainees' data was documented and monitored within the Reef program system to ensure sustainable impact.",
+    handicraftsKeyWorksFoodSafety: "Food Safety & Storage",
+    handicraftsKeyWorksFoodSafetyDetails:
+      "Coordination with the Saudi Food and Drug Authority to hold awareness workshops for small farmers on food safety standards. Operating refrigerated storage units using Cool Bot technology, along with six solar-powered mobile cooling units, contributing to efficient preservation and transportation of agricultural products and reducing losses.",
+    handicraftsKeyWorksCoolBot:
+      "Refrigerated storage using Cool Bot technology",
+    handicraftsKeyWorksSolarUnits: "6 Solar-Powered Units",
+    handicraftsKeyWorksSolarUnitsDetails:
+      "Mobile cooling units operating on solar energy for efficient product transport",
+    handicraftsKeyWorksConclusion:
+      "Through these integrated efforts, the value-added development sector from small holdings in the Reef Saudi Arabia Program continues to play its pivotal role in promoting sustainable rural development, raising the living standards of productive families, and transforming small holdings from limited traditional activities into projects of sustainable economic and social value that effectively contribute to achieving the Kingdom's Vision targets.",
+    handicraftsCTA1Full: "Explore the Interactive Map of Our Rural Sectors",
+    handicraftsCTA1Desc:
+      "Discover the geographical distribution of projects and initiatives across different regions of the Kingdom",
+    handicraftsCTA2Full: "Explore Support Programs",
+    handicraftsCTA2Desc:
+      "Learn about available support and financing programs to empower rural communities",
+    exploreNow: "Explore Now",
+
     sector5Title: "Livestock & Dairy Products",
     sector5Desc:
       "Improving livestock farmers' efficiency and enhancing dairy production quality through targeted support and financing programs",
@@ -495,13 +969,221 @@ const translations = {
     sector6Point1: "Natural Irrigation Systems Support",
     sector6Point2: "Farmer Training",
     sector6Point3: "Local Grain Marketing",
+    rainfedHeroTitle: "Rainfed Crops Sector",
 
-    sector7Title: "Fishery & Aquaculture",
+    sector7Title: "Enhancing the Capacities of Fishermen and Fish Farmers",
     sector7Desc:
       "Innovating modern techniques for fish farming and improving marine production quality through training and financing programs",
     sector7Point1: "Supporting Aquaculture Projects",
     sector7Point2: "Port Development",
     sector7Point3: "Marine Product Marketing",
+    fishingHeroTitle: "Enhancing the Capacities of Fishermen and Fish Farmers",
+    fishingHeroIntro:
+      "The 'Reef Saudi Arabia' Program works to empower small-scale fishermen and fish farmers across various regions of the Kingdom of Saudi Arabia, enhance their productivity efficiency, improve their livelihoods, and strengthen their contribution to achieving food security, through integrated technical, financial, and training support programs, and strategic projects that contribute to developing the value chains of fishery resources.",
+    fishingObjectivesTitle: "Main Objectives of the Sector",
+    fishingObjective1:
+      "Meeting the Kingdom's needs for marine products and contributing to achieving food security by increasing local production and reducing imports.",
+    fishingObjective2:
+      "Supporting young entrepreneurs to establish and operate small fishing facilities.",
+    fishingObjective3: "Creating jobs for Saudis, especially the youth.",
+    fishingWorkAreasTitle: "Work Areas in the Fishing Sector",
+    fishingWorkArea1:
+      "Developing aquaculture fields and technologies and increasing productivity",
+    fishingWorkArea2:
+      "Developing extension and technical support services for small-scale fishermen and small fish farm owners",
+    fishingWorkArea3: "Establishing and developing facilities for fishermen",
+    fishingWorkArea4:
+      "Establishing and activating cooperative associations for small-scale fishermen and small fish farm owners to serve the sector",
+    fishingWorkArea5:
+      "Encouraging young entrepreneurs to enter aquaculture and establishing aquaculture incubators",
+    fishingWorkArea6:
+      "Establishing and developing local markets and raising their efficiency in marketing and price control",
+    fishingWorkArea7:
+      "Supporting and developing coastal activities in a sustainable manner and protecting the environmental characteristics of coasts, especially mangroves",
+    fishingWorkArea8: "Training human capacities in the field of aquaculture",
+    fishingWorkArea9:
+      "Designing and implementing programs to raise the skills of small fishermen and fish farmers in production and processing to increase added value",
+    fishingNumbersTitle: "Numbers and Indicators",
+    fishingTotalSupport: "Total Support Value",
+    fishingTotalSupportValue: "+16.8 Million Riyals",
+    fishingTotalBeneficiaries: "Total Number of Beneficiaries",
+    fishingTotalBeneficiariesValue: "1,812 Beneficiaries",
+    fishingGeographicDistribution: "Geographic Distribution of Beneficiaries",
+    fishingJazan: "Jazan",
+    fishingMakkah: "Makkah",
+    fishingEastern: "Eastern Region",
+    fishingTabuk: "Tabuk",
+    fishingMadinah: "Madinah",
+    fishingAsir: "Asir",
+    fishingProjectsTitle: "Fishing Sector Projects",
+    fishingProjectsCount: "Number of Projects",
+    fishingProjectsCountValue: "16 Projects",
+    fishingProjectsTotalValue: "Total Value",
+    fishingProjectsTotalValueAmount: "69.5 Million Riyals",
+    fishingProjectsIntro:
+      "Reef Saudi program works in the fishing sector to develop marine fishing infrastructure, enhance the efficiency of Saudi fishermen, and improve the quality and safety of marine products, contributing to strengthening national food security and creating sustainable job opportunities in coastal communities.",
+    fishingProject1:
+      "Supply of engines for small boats for small Saudi fishermen",
+    fishingProject2:
+      "Supply of satellite distress devices (EPIRB) to enhance fishermen's safety at sea",
+    fishingProject3:
+      "Supply of cooling boxes to preserve fish and reduce post-catch losses",
+    fishingFishAuctionsTitle:
+      "Establishment and equipping of fish auctions in:",
+    fishingQatif: "Qatif",
+    fishingRayis: "Rayis",
+    fishingUmluj: "Umluj",
+    fishingQunfudhah: "Qunfudhah",
+    fishingKhorFarasan: "Khor Farasan",
+    fishingMaintenanceCentersTitle:
+      "Establishment and equipping of boat maintenance centers in:",
+    fishingShaqiq: "Shaqiq",
+    fishingMadaya: "Madaya",
+    fishingProject7:
+      "Establishment and development of an electronic platform to support fishermen and connect them with services and markets",
+    fishingFeasibilityTitle: "Technical and Economic Feasibility of Projects",
+    fishingFeasibilityIntro:
+      "Fishing sector projects contribute to achieving a wide range of technical and economic impacts, most notably:",
+    fishingFeasibility1:
+      "Reducing loss and waste in marine products and improving environmental sustainability",
+    fishingFeasibility2:
+      "Enhancing the efficiency of packaging operations within post-catch facilities",
+    fishingFeasibility3:
+      "Using modern technologies for water analysis, waste treatment, and improving boat performance",
+    fishingFeasibility4:
+      "Providing fast and efficient boat maintenance services and ensuring safe operation",
+    fishingFeasibility5:
+      "Enhancing fishermen's safety at sea through effective and accurate distress devices",
+    fishingFeasibility6:
+      "Raising competitiveness and quality of marine products in markets",
+    fishingFeasibility7:
+      "Localizing the fishing profession and providing job opportunities for citizens",
+    fishingFeasibility8:
+      "Supporting local fishermen and raising the level of maritime security",
+    fishingFeasibility9:
+      "Reducing operational costs through improving maintenance operations",
+    fishingFeasibility10:
+      "Providing after-maintenance services to ensure continuity of performance quality",
+    fishingProjectObjectivesTitle: "Project Objectives",
+    fishingProjectObjectivesIntro:
+      "Fishing sector projects in Reef Saudi program focus on achieving the following:",
+    fishingObjective1Title:
+      "Establishment and equipping of fish auctions to provide basic services to fishermen, primarily serving small fishermen",
+    fishingObjective2Title:
+      "Establishment and equipping of boat maintenance centers to provide integrated technical and operational services to fishermen",
+    fishingObjective3Title:
+      "Supporting the fishing community by providing engines for fishing boats for small fishermen, contributing to enhancing their productive capacity and achieving national food security",
+    fishingObjective4Title:
+      "Supply of modern distress devices (EPIRB) to accurately locate boats and connect them with coastal rescue systems and marine operations, including the supply of 1,000 distress devices to support fishermen's safety and reduce risks in emergencies",
+    fishingStatsTitle: "Key Achievements in Numbers",
+
+    // Key Implemented Projects Section
+    fishingImplementedTitle: "Key Implemented Projects",
+    fishingImplementedSubtitle:
+      "Major achievements and initiatives transforming the fishing sector",
+
+    // Project 1: Digital Monitoring
+    fishingDigitalMonitoringTitle: "Digital Monitoring of Fisheries",
+    fishingDigitalMonitoringDesc:
+      "Installation of 4 digital cameras on 4 fishing boats (volunteers) in the Eastern Region and Jazan Region",
+
+    // Project 2: Ecosystem Management
+    fishingEcosystemTitle: "Ecosystem-Based Fisheries Management",
+    fishingEcosystemPoint1:
+      "Preparation of a systematic fisheries management plan through participatory discussions between fishermen and relevant authorities",
+    fishingEcosystemPoint2:
+      "Collection of preliminary data on the state of the marine ecosystem in the Farasan Islands, including social and economic data",
+    fishingEcosystemPoint3: "Implementation of 3 participatory workshops",
+    fishingEcosystemPoint4:
+      "Preparation of an initial draft plan and its submission to the Fisheries Management Department",
+
+    // Project 3: Automated Auction System
+    fishingAuctionSystemTitle: "Modern Automated Fish Auction System",
+    fishingAuctionSystemDesc:
+      "Installation of 4 modern systems in Jubail and Farasan Island auctions in Jazan",
+    fishingAuctionSystemFeatures:
+      "The system includes: electric conveyor belt, display screens, cameras, rust-resistant seats, carts, digital scale, and special boxes",
+    fishingAuctionSystemGoals:
+      "Aims to improve the quality of marine products, reduce waste, and increase fishermen's income by up to 20%",
+
+    // Project 4: Seaweed Cultivation
+    fishingSeaweedTitle: "Small-Scale Seaweed Cultivation",
+    fishingSeaweedPoint1:
+      "Implementation of two seaweed farm systems south of Jeddah (180 km) with an initial production capacity of 650 kg per batch / 6 weeks",
+    fishingSeaweedPoint2:
+      "Implementation of a model led by young Saudi men and women in Makkah Region in collaboration between Naqua Company, the Ministry of Environment, Water and Agriculture, and FAO",
+    fishingSeaweedPoint3:
+      "Training of more than 50 young men and women in cultivation and harvesting techniques",
+    fishingSeaweedPoint4:
+      "Planning for expansion at another site on the Red Sea coast",
+
+    // Project 5: Hatchery Activation
+    fishingHatcheryTitle: "Activation of Freshwater Fish Hatchery in Qatif",
+    fishingHatcheryPoint1: "Rehabilitation of the hatchery with modern systems",
+    fishingHatcheryPoint2: "Operation of a closed water recirculation system",
+    fishingHatcheryPoint3:
+      "Introduction of broodstock soon to enhance production and sustainability",
+
+    // CTAs
+    fishingCTA1: "Explore Interactive Map of Our Rural Sectors",
+    fishingCTA2: "Explore Support Programs",
+
+    fishingStatsFishFarmers: "Fish Farmers Supported",
+    fishingStatsAquacultureSites: "Aquaculture Sites Developed",
+    fishingStatsTrainedFishermen: "Trained Fishermen",
+    fishingStatsProductionIncrease: "Production Increase",
+    fishingStatsDescription:
+      "Through integrated technical and financial support programs, we work to enhance the efficiency of fishing operations and aquaculture, contributing to sustainable food security and improving the livelihoods of coastal communities.",
+    fishingWorkAxesTitle: "Main Work Areas",
+    fishingWorkAxesSubtitle:
+      "Integrated programs to develop fishing and aquaculture capabilities through modern technologies and sustainable practices",
+    fishingAxis1Title: "Development of Smart Aquaculture Systems",
+    fishingAxis1Desc:
+      "Establishing modern aquaculture facilities equipped with smart technologies to monitor water quality, control feeding systems, and improve productivity while preserving the marine environment.",
+    fishingAxis2Title: "Upgrading Fishing Infrastructure",
+    fishingAxis2Desc:
+      "Developing fishing ports, landing sites, and marine facilities to provide better services to fishermen and improve operational efficiency and marine product quality.",
+    fishingAxis3Title: "Technical Training and Capacity Building",
+    fishingAxis3Desc:
+      "Implementing specialized training programs for fishermen and fish farmers in sustainable fishing techniques, aquaculture management, and fishing operations safety practices.",
+    fishingAxis4Title: "Development of Cold Chains and Marketing",
+    fishingAxis4Desc:
+      "Establishing integrated cold chain systems from fishing/production sites to markets, providing refrigerated storage and transport facilities to maintain product quality and increase market value.",
+    fishingAxis5Title: "Environmental Sustainability and Resource Protection",
+    fishingAxis5Desc:
+      "Implementing environmental monitoring programs and sustainable fishing practices to protect marine resources, maintain ecological balance, and ensure long-term sustainability of the sector.",
+    fishingAxis6Title: "Quality Certification and Standards",
+    fishingAxis6Desc:
+      "Supporting fish farmers and fishermen in obtaining international quality certifications and compliance with health and environmental standards to enhance competitiveness in local and global markets.",
+    fishingKeyProjectsTitle: "Major Initiatives and Projects",
+    fishingKeyProjectsSubtitle:
+      "Strategic projects aimed at transforming the fishing and aquaculture sector through innovation and sustainability",
+    fishingProject1Title: "Development of Fishing Ports and Landing Sites",
+    fishingProject1Desc:
+      "A comprehensive project to upgrade fishing infrastructure across coastal regions to improve efficiency and service quality.",
+    fishingProject1Details:
+      "The project includes developing 12 fishing ports and landing sites with modern equipment, refrigerated storage facilities, fuel stations, maintenance workshops, and fish markets equipped with the latest technologies.",
+    fishingProject1Stats: "12 Ports Developed • 8 Coastal Regions",
+    fishingProject2Title: "Integrated Cold Chain Development",
+    fishingProject2Desc:
+      "Establishing a comprehensive cold chain system to preserve fish quality from catch to consumer.",
+    fishingProject2Details:
+      "The project includes installing refrigerated storage units at landing sites, providing refrigerated transport vehicles, and establishing quality control laboratories to ensure compliance with health standards.",
+    fishingProject2Stats: "25 Refrigerated Units • 15 Transport Vehicles",
+    fishingProject3Title: "Fishermen Training and Qualification Program",
+    fishingProject3Desc:
+      "Comprehensive training programs to enhance fishermen's skills in sustainable fishing and modern aquaculture techniques.",
+    fishingProject3Details:
+      "The program includes training in sustainable fishing methods, fishing equipment maintenance, marine safety practices, and fish handling and storage techniques, in cooperation with specialized technical institutes.",
+    fishingProject3Stats: "320+ Trained Fishermen • 15 Training Sessions",
+    fishingProject4Title: "Support for Cooperative Fishing Associations",
+    fishingProject4Desc:
+      "Strengthening fishing cooperatives to improve collective bargaining and marketing capabilities.",
+    fishingProject4Details:
+      "The project provides technical and administrative support to fishing cooperatives, facilitates access to financing, establishes collective marketing channels, and provides legal consultation to protect fishermen's rights.",
+    fishingProject4Stats: "18 Associations Supported • 450+ Beneficiaries",
+    fishingKeyProjectsConclusion:
+      "Through these strategic projects, the fishing and aquaculture sector in the Reef Saudi Arabia Program continues its vital role in supporting food security, improving the livelihoods of coastal communities, and achieving sustainable development of marine resources in alignment with the Kingdom's Vision 2030 objectives.",
 
     sector8Title: "Handicrafts & Rural Industries",
     sector8Desc:
@@ -518,6 +1200,35 @@ const translations = {
     sector9Point3: "Business Development Training",
 
     exploreSector: "Explore Sector",
+    ourRuralSectors: "Our Rural Sectors",
+    learnAboutSector: "Learn About Sector",
+
+    allSector1Name: "Beekeeping Development and Honey Production",
+    allSector1Desc:
+      "Reef Saudi supports beekeepers through training, financing, and technical guidance, aiming to improve the quality of Saudi honey and develop its value chains.",
+    allSector2Name:
+      "Development, Production, Processing, and Marketing of Saudi Coffee",
+    allSector2Desc:
+      "Reef Saudi focuses on empowering coffee farmers in Jazan, Al-Baha, and Asir by improving production, developing supply chains, and elevating the quality of Saudi coffee locally and globally.",
+    allSector3Name: "Rose Cultivation and Trade Development",
+    allSector3Desc:
+      "The program works on developing rose and aromatic plant cultivation, supporting related industries to enhance export opportunities and achieve added economic value.",
+    allSector4Name:
+      "Development, Production, Processing, and Marketing of Fruits",
+    allSector4Desc:
+      "Includes supporting the production of fruits such as pomegranate, fig, grape, and others through improving techniques, developing agricultural practices, and enabling farmers to enter new markets.",
+    allSector5Name: "Rainfed Agriculture Crops",
+    allSector5Desc:
+      "The sector supports rain-dependent agriculture in mountainous areas, such as wheat, barley, sorghum, and sesame, focusing on sustainability and preserving natural resources.",
+    allSector6Name: "Enhancing the Capabilities of Fishermen and Fish Farmers",
+    allSector6Desc:
+      "The program supports fishermen and fish farmers through training, financing, and developing modern techniques to increase marine sector productivity and enhance food security.",
+    allSector7Name: "Developing Value-Added from Small Holdings",
+    allSector7Desc:
+      "Works to empower productive families and artisans, develop rural industries that reflect the Kingdom's heritage identity, while supporting local marketing and manufacturing.",
+    allSector8Name: "Enhancing the Capabilities of Small Livestock Farmers",
+    allSector8Desc:
+      "Includes supporting small livestock farmers through training, financing, and veterinary care to improve dairy product quality and increase livestock production efficiency in the Kingdom.",
 
     // Widgets
     widget1Title: "Rural Support Programs",
@@ -570,7 +1281,6 @@ const translations = {
     whatWeOffer: "What We Offer",
     milestones: "Milestones",
     annualReports: "Annual Reports",
-    learnMore: "Learn More",
     aboutReefSaudi: "About Reef Saudi",
     aboutDescription:
       "Reef Saudi is a national initiative dedicated to empowering rural communities through sustainable agricultural practices, preserving cultural heritage, and creating economic opportunities across the Kingdom of Saudi Arabia.",
@@ -1117,7 +1827,11 @@ const translations = {
 
     // Footer - Detailed
     overview: "Overview",
+    achievements: "Achievements",
     mediaCenter: "Media Center",
+    newsPress: "News & Press Releases",
+    photoVideo: "Photo & Video Library",
+    events: "Events",
 
     sectorsServices: "Sectors & Services",
     beekeeping: "Beekeeping",
@@ -1211,7 +1925,7 @@ const translations = {
     women: "Women",
     beneficiariesByRegion: "Beneficiaries by region",
     millionSAR: "Million SAR",
-    beneficiaries: "Number of Beneficiaries",
+    numberOfBeneficiaries: "Number of Beneficiaries",
     supportedProducts: "Supported Products",
     jasmine: "Jasmine",
     henna: "Henna",

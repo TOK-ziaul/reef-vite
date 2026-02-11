@@ -1,6 +1,17 @@
-import { Leaf, Coffee, Flower2, Apple, Milk, Scissors, Fish, Sprout, Cpu, MapPin } from 'lucide-react';
-import { useLanguage } from '../context/LanguageContext';
-import { useNavigation } from '../context/NavigationContext';
+import {
+  Leaf,
+  Coffee,
+  Flower2,
+  Apple,
+  Milk,
+  Scissors,
+  Fish,
+  Sprout,
+  Cpu,
+  MapPin,
+} from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
+import { useNavigation } from "../context/NavigationContext";
 
 interface Sector {
   icon: React.ReactNode;
@@ -17,20 +28,56 @@ export function MegaMenuSectors({ onClose }: MegaMenuSectorsProps = {}) {
   const { navigateTo } = useNavigation();
 
   const sectors: Sector[] = [
-    { icon: <Leaf className="w-8 h-8" />, titleKey: 'beekeeping', sectorId: 'beekeeping' },
-    { icon: <Coffee className="w-8 h-8" />, titleKey: 'coffee', sectorId: 'coffee' },
-    { icon: <Flower2 className="w-8 h-8" />, titleKey: 'rosesAromatic', sectorId: 'flowers' },
-    { icon: <Apple className="w-8 h-8" />, titleKey: 'fruits', sectorId: 'fruits' },
-    { icon: <Milk className="w-8 h-8" />, titleKey: 'livestock', sectorId: 'livestock' },
-    { icon: <Scissors className="w-8 h-8" />, titleKey: 'handicrafts', sectorId: 'handicrafts' },
-    { icon: <Fish className="w-8 h-8" />, titleKey: 'fishing', sectorId: 'fishing' },
-    { icon: <Sprout className="w-8 h-8" />, titleKey: 'aromaticPlants', sectorId: 'rainfed' },
-    { icon: <Cpu className="w-8 h-8" />, titleKey: 'agritech', sectorId: 'agritech' },
+    {
+      icon: <Leaf className="w-8 h-8" />,
+      titleKey: "beekeeping",
+      sectorId: "beekeeping",
+    },
+    {
+      icon: <Coffee className="w-8 h-8" />,
+      titleKey: "coffee",
+      sectorId: "coffee",
+    },
+    {
+      icon: <Flower2 className="w-8 h-8" />,
+      titleKey: "rosesAromatic",
+      sectorId: "flowers",
+    },
+    {
+      icon: <Apple className="w-8 h-8" />,
+      titleKey: "fruits",
+      sectorId: "fruits",
+    },
+    {
+      icon: <Milk className="w-8 h-8" />,
+      titleKey: "livestock",
+      sectorId: "livestock",
+    },
+    {
+      icon: <Scissors className="w-8 h-8" />,
+      titleKey: "handicrafts",
+      sectorId: "handicrafts",
+    },
+    {
+      icon: <Fish className="w-8 h-8" />,
+      titleKey: "fishing",
+      sectorId: "fishing",
+    },
+    {
+      icon: <Sprout className="w-8 h-8" />,
+      titleKey: "rainfedCrops",
+      sectorId: "rainfed",
+    },
+    {
+      icon: <Cpu className="w-8 h-8" />,
+      titleKey: "agritech",
+      sectorId: "agritech",
+    },
   ];
 
   const handleSectorClick = (sectorId: string) => {
-    console.log('Sector clicked:', sectorId); // Debug log
-    navigateTo('sector', sectorId);
+    console.log("Sector clicked:", sectorId); // Debug log
+    navigateTo("sector", sectorId);
     if (onClose) {
       onClose();
     }
@@ -72,7 +119,7 @@ export function MegaMenuSectors({ onClose }: MegaMenuSectorsProps = {}) {
               <div>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="w-5 h-5" />
-                  <h3 className="text-lg">{t('interactiveMap')}</h3>
+                  <h3 className="text-lg">{t("interactiveMap")}</h3>
                 </div>
                 <div className="bg-white/20 rounded-xl p-6 mb-4 backdrop-blur-sm border border-white/30">
                   <div className="w-full h-40 flex items-center justify-center">
@@ -93,7 +140,7 @@ export function MegaMenuSectors({ onClose }: MegaMenuSectorsProps = {}) {
                 </div>
               </div>
               <button className="w-full bg-white text-[#035938] py-3 px-6 rounded-lg hover:bg-[#F1BC28] hover:text-[#035938] transition-all duration-200 hover:shadow-md">
-                {t('exploreInteractiveMap')}
+                {t("exploreInteractiveMap")}
               </button>
             </div>
           </div>
