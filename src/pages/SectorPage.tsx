@@ -56,7 +56,7 @@ import {
 } from "lucide-react";
 
 interface SectorPageProps {
-  sectorId: string;
+  sectorId?: string;
 }
 
 export function SectorPage({ sectorId: sectorIdProp }: SectorPageProps = {}) {
@@ -80,7 +80,7 @@ export function SectorPage({ sectorId: sectorIdProp }: SectorPageProps = {}) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  if (!sectorId) return <Navigate to="/" replace />;
+  if (sectorId === "agritech") return <Navigate to="/sectors" replace />;
 
   // Sector data mapping
   const sectorData: Record<
@@ -153,7 +153,8 @@ export function SectorPage({ sectorId: sectorIdProp }: SectorPageProps = {}) {
     },
   };
 
-  const sector = sectorData[sectorId] || sectorData.beekeeping;
+  const isSectorsHome = !sectorId;
+  const sector = isSectorsHome ? sectorData.agritech : (sectorData[sectorId] || sectorData.beekeeping);
 
   /** Renders translation text with **phrase** segments as green highlighted spans */
   const textWithHighlights = (
@@ -266,8 +267,8 @@ export function SectorPage({ sectorId: sectorIdProp }: SectorPageProps = {}) {
             </div>
           )}
 
-          {/* Introduction Section - Agritech / Productive Families */}
-          {sectorId === "agritech" && (
+          {/* Sectors home (no id): intro + all sectors list */}
+          {isSectorsHome && (
             <div className="max-w-5xl mx-auto mb-16">
               <div className="bg-white rounded-3xl p-8 md:p-12 shadow-lg">
                 <p className="text-xl leading-relaxed text-gray-700 text-center">
@@ -277,8 +278,7 @@ export function SectorPage({ sectorId: sectorIdProp }: SectorPageProps = {}) {
             </div>
           )}
 
-          {/* All Sectors List - Agritech / Productive Families */}
-          {sectorId === "agritech" && <AllSectorsList />}
+          {isSectorsHome && <AllSectorsList />}
 
           {/* Main Objectives Section - Coffee */}
           {sectorId === "coffee" && <CoffeeObjectives />}

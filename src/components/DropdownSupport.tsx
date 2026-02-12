@@ -18,8 +18,7 @@ export function DropdownSupport({ onClose }: { onClose?: () => void }) {
 
   return (
     <div
-      className="absolute top-full left-0 bg-white shadow-lg border-t border-gray-100 rounded-b-lg z-50 min-w-[280px]"
-      style={{ top: "51px" }}
+      className=" bg-white shadow-lg border-t border-gray-100 rounded-b-lg min-w-[280px]"
       onMouseEnter={(e) => e.stopPropagation()}
       onMouseLeave={(e) => e.stopPropagation()}
     >

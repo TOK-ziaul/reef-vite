@@ -12,15 +12,16 @@ export function DropdownMediaCenter({ onClose }: { onClose?: () => void }) {
     { key: "galleryBook", page: "galleryBook" as const },
   ];
 
-  const handleItemClick = (page: "newsPress" | "photoVideo" | "events" | "galleryBook") => {
+  const handleItemClick = (
+    page: "newsPress" | "photoVideo" | "events" | "galleryBook",
+  ) => {
     navigateTo(page);
     if (onClose) onClose();
   };
 
   return (
     <div
-      className="absolute top-full left-0 bg-white shadow-lg border-t border-gray-100 rounded-b-lg z-50 min-w-[280px]"
-      style={{ top: "51px" }}
+      className=" bg-white shadow-lg border-t border-gray-100 rounded-b-lg min-w-[280px]"
       onMouseEnter={(e) => e.stopPropagation()}
       onMouseLeave={(e) => e.stopPropagation()}
     >

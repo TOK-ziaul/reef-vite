@@ -18,8 +18,11 @@ export function AboutVision2030() {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
   const carouselRef = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [stepPx, setStepPx] = useState(0);
+  const GAP_PX = 8; // gap-6
 
   useEffect(() => {
     // Set initial visible state
@@ -165,6 +168,24 @@ export function AboutVision2030() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // Keep translation in sync: one step = one slide width + gap (so travel is even)
+  useEffect(() => {
+    if (!carouselRef.current || !trackRef.current) return;
+
+    const updateStep = () => {
+      const containerWidth = carouselRef.current?.offsetWidth ?? 0;
+      const gapTotal = (visibleSlides - 1) * GAP_PX;
+      const slideWidthPx = (containerWidth - gapTotal) / visibleSlides;
+      setStepPx(slideWidthPx + GAP_PX);
+    };
+
+    updateStep();
+    const ro = new ResizeObserver(updateStep);
+    ro.observe(carouselRef.current);
+
+    return () => ro.disconnect();
+  }, [visibleSlides]);
+
   return (
     <section
       ref={sectionRef}
@@ -216,14 +237,19 @@ export function AboutVision2030() {
           </button>
 
           {/* Cards Container */}
-          <div ref={carouselRef} className="overflow-hidden">
+          <div ref={carouselRef} className="overflow-hidden py-4">
             <div
-              className="flex transition-transform duration-700 ease-out gap-6"
+              ref={trackRef}
+              className="flex transition-transform duration-700 ease-out gap-2"
               style={{
                 transform:
-                  language === "ar"
-                    ? `translateX(${currentIndex * (100 / visibleSlides)}%)`
-                    : `translateX(-${currentIndex * (100 / visibleSlides)}%)`,
+                  stepPx > 0
+                    ? language === "ar"
+                      ? `translateX(${currentIndex * stepPx}px)`
+                      : `translateX(-${currentIndex * stepPx}px)`
+                    : language === "ar"
+                      ? `translateX(${currentIndex * (100 / visibleSlides)}%)`
+                      : `translateX(-${currentIndex * (100 / visibleSlides)}%)`,
               }}
             >
               {visionPoints.map((point, idx) => (
@@ -231,7 +257,7 @@ export function AboutVision2030() {
                   key={point.number}
                   className="flex-shrink-0 px-3"
                   style={{
-                    width: `${100 / visibleSlides}%`,
+                    width: `calc((100% - ${(visibleSlides - 1) * GAP_PX}px) / ${visibleSlides})`,
                     opacity:
                       idx >= currentIndex && idx < currentIndex + visibleSlides
                         ? 1
@@ -243,7 +269,7 @@ export function AboutVision2030() {
                     transition: "all 0.5s ease",
                   }}
                 >
-                  <div className="group relative backdrop-blur-xl bg-white/90 rounded-3xl p-8 border border-[#52BC88]/20 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 min-h-[380px] flex flex-col">
+                  <div className="group relative backdrop-blur-xl bg-white/90 rounded-3xl p-8 border border-[#52BC88]/20 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 min-h-[380px] flex flex-col">
                     {/* Gradient Number Badge */}
                     <div
                       className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${point.gradient} flex items-center justify-center shadow-lg mb-6 transform group-hover:rotate-6 group-hover:scale-110 transition-all duration-500`}

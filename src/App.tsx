@@ -22,6 +22,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
+            <Route path="/sectors" element={<SectorPage />} />
             <Route path="/sector/:sectorId" element={<SectorPage />} />
             <Route path="/sustainability" element={<SustainabilityPage />} />
             <Route path="/news-press" element={<NewsPressPage />} />

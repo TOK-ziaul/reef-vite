@@ -125,8 +125,8 @@ export function Footer() {
     >
       {/* Main Footer Content */}
       <div className="border-b border-white/10">
-        <div className="max-w-[1440px] mx-auto px-8 py-12">
-          <div className="grid grid-cols-4 gap-12 mb-8">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 mb-8">
             {/* Four Main Columns */}
             {footerColumns.map((column, index) => (
               <div key={index}>
@@ -177,11 +177,11 @@ export function Footer() {
 
           {/* Social and Accessibility Section */}
           <div className="border-t border-white/10 pt-8">
-            <div className="grid grid-cols-2 gap-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
               {/* Social Media */}
               <div>
                 <h3 className="text-white mb-4">{t("followUs")}</h3>
-                <div className="flex items-center gap-3">
+                <div className="flex flex-wrap items-center gap-3">
                   {socialLinks.map((social, index) => (
                     <a
                       key={index}
@@ -198,7 +198,7 @@ export function Footer() {
               {/* Accessibility Tools */}
               <div>
                 <h3 className="text-white mb-4">{t("accessibilityTools")}</h3>
-                <div className="flex items-center gap-2 mb-4">
+                <div className="flex flex-wrap items-center gap-2 mb-4">
                   <button
                     className="w-10 h-10 bg-white/10 border border-white/20 rounded-lg flex items-center justify-center text-white hover:bg-white/20 transition-all text-sm"
                     aria-label="Decrease font size"
@@ -244,7 +244,7 @@ export function Footer() {
 
       {/* Bottom Bar */}
       <div className="bg-[#052F2A]">
-        <div className="max-w-[1440px] mx-auto px-8 py-6">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-5 sm:py-6">
           <div className="flex items-center justify-center">
             {/* Copyright */}
             <div className="text-sm text-white/70 text-center">

@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 export type Page =
   | "home"
   | "about"
+  | "sectors"
   | "sector"
   | "sustainability"
   | "newsPress"
@@ -28,6 +29,7 @@ const NavigationContext = createContext<NavigationContextType | undefined>(
 const PATH_TO_PAGE: Record<string, Page> = {
   "/": "home",
   "/about": "about",
+  "/sectors": "sectors",
   "/sustainability": "sustainability",
   "/news-press": "newsPress",
   "/photo-video": "photoVideo",
@@ -42,6 +44,7 @@ const PATH_TO_PAGE: Record<string, Page> = {
 const PAGE_TO_PATH: Record<Page, string> = {
   home: "/",
   about: "/about",
+  sectors: "/sectors",
   sector: "/sector", // append /:sectorId
   sustainability: "/sustainability",
   newsPress: "/news-press",

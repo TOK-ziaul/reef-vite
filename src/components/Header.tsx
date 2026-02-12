@@ -45,24 +45,26 @@ export function Header() {
     setActiveMenu(null);
   };
 
-  const handleNavigation = (key: string) => {
-    if (key === "home") {
-      navigateTo("home");
-    } else if (key === "about") {
-      navigateTo("about");
-    } else if (key === "sustainability") {
-      navigateTo("sustainability");
+  const handleDropdownPanelEnter = () => {
+    if (hoverTimeout) {
+      clearTimeout(hoverTimeout);
+      setHoverTimeout(null);
     }
-    // Close mobile menu if open
+  };
+
+  const handleNavigation = (key: string, defaultPage?: string, defaultSectorId?: string) => {
+    const page = (defaultPage ?? key) as Parameters<typeof navigateTo>[0];
+    navigateTo(page, defaultSectorId);
     setMobileMenuOpen(false);
   };
 
   const navItems = [
-    { key: "home", href: "#", hasDropdown: false },
+    { key: "home", href: "/", hasDropdown: false },
     {
       key: "about",
-      href: "#",
+      href: "/about",
       hasDropdown: true,
+      defaultPage: "about",
       component: DropdownAbout,
       mobileItems: [
         "aboutProgram",
@@ -77,6 +79,7 @@ export function Header() {
       key: "sectors",
       href: "#",
       hasDropdown: true,
+      defaultPage: "sectors",
       component: MegaMenuSectors,
       mobileItems: [
         "beekeeping",
@@ -87,32 +90,34 @@ export function Header() {
         "handicrafts",
         "fishing",
         "rainfedCrops",
-        "agritech",
       ],
     },
     {
       key: "sustainability",
-      href: "#",
+      href: "/sustainability",
       hasDropdown: false,
     },
     {
       key: "mediaCenter",
-      href: "#",
+      href: "/news-press",
       hasDropdown: true,
+      defaultPage: "newsPress",
       component: DropdownMediaCenter,
       mobileItems: ["newsPress", "photoVideo", "events", "galleryBook"],
     },
     {
       key: "support",
-      href: "#",
+      href: "/support-application",
       hasDropdown: true,
+      defaultPage: "supportApplication",
       component: DropdownSupport,
       mobileItems: ["howToApply", "faqs", "termsConditions"],
     },
     {
       key: "contact",
-      href: "#",
+      href: "/contact",
       hasDropdown: true,
+      defaultPage: "contact",
       component: DropdownContact,
     },
   ];
@@ -139,34 +144,46 @@ export function Header() {
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-8">
           {navItems.map((item) => (
-            <div
-              key={item.key}
-              className="relative"
-              onMouseEnter={() => handleMouseEnter(item.key, item.hasDropdown)}
-              onMouseLeave={handleMouseLeave}
-            >
+            <div key={item.key} className="relative flex items-center gap-0.5">
               <a
                 href={item.href}
                 onClick={(e) => {
-                  if (!item.hasDropdown) {
-                    e.preventDefault();
-                    handleNavigation(item.key);
-                  }
+                  e.preventDefault();
+                  handleNavigation(
+                    item.key,
+                    (item as { defaultPage?: string }).defaultPage,
+                    (item as { defaultSectorId?: string }).defaultSectorId
+                  );
                 }}
-                className="flex items-center gap-1 text-[#052F2A] hover:text-[#035938] transition-colors"
+                className="text-[#052F2A] hover:text-[#035938] transition-colors"
               >
                 {t(item.key)}
-                {item.hasDropdown && (
-                  <ChevronDown
-                    className={`w-4 h-4 transition-transform duration-200 ${
-                      activeMenu === item.key ? "rotate-180" : ""
-                    }`}
-                  />
-                )}
               </a>
-              {item.hasDropdown &&
-                activeMenu === item.key &&
-                item.component && <item.component onClose={handleMenuClose} />}
+              {item.hasDropdown && (
+                <>
+                  <span
+                    className="inline-flex cursor-pointer p-1 -m-1 rounded text-[#052F2A] hover:text-[#035938] transition-colors"
+                    onMouseEnter={() => handleMouseEnter(item.key, true)}
+                    onMouseLeave={handleMouseLeave}
+                    aria-label={t("openDropdown")}
+                  >
+                    <ChevronDown
+                      className={`w-4 h-4 transition-transform duration-200 ${
+                        activeMenu === item.key ? "rotate-180" : ""
+                      }`}
+                    />
+                  </span>
+                  {activeMenu === item.key && item.component && (
+                    <div
+                      className="absolute left-0 top-[46px] pt-1 z-50"
+                      onMouseEnter={handleDropdownPanelEnter}
+                      onMouseLeave={handleMouseLeave}
+                    >
+                      <item.component onClose={handleMenuClose} />
+                    </div>
+                  )}
+                </>
+              )}
             </div>
           ))}
         </nav>
@@ -244,21 +261,40 @@ export function Header() {
               <div key={item.key} className="border-b border-gray-100 pb-2">
                 {item.hasDropdown ? (
                   <div>
-                    <button
-                      onClick={() =>
-                        setMobileActiveMenu(
-                          mobileActiveMenu === item.key ? null : item.key,
-                        )
-                      }
-                      className="w-full flex items-center justify-between py-3 text-[#052F2A] hover:text-[#035938] transition-colors"
-                    >
-                      <span>{t(item.key)}</span>
-                      <ChevronDown
-                        className={`w-5 h-5 transition-transform ${
-                          mobileActiveMenu === item.key ? "rotate-180" : ""
-                        }`}
-                      />
-                    </button>
+                    <div className="w-full flex items-center justify-between gap-2">
+                      <a
+                        href="#"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          handleNavigation(
+                            item.key,
+                            (item as { defaultPage?: string }).defaultPage,
+                            (item as { defaultSectorId?: string }).defaultSectorId
+                          );
+                        }}
+                        className="flex-1 py-3 text-start text-[#052F2A] hover:text-[#035938] transition-colors"
+                      >
+                        {t(item.key)}
+                      </a>
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          setMobileActiveMenu(
+                            mobileActiveMenu === item.key ? null : item.key
+                          );
+                        }}
+                        className="p-2 -m-2 shrink-0 text-[#052F2A] hover:text-[#035938] transition-colors"
+                        aria-label={t("openDropdown")}
+                      >
+                        <ChevronDown
+                          className={`w-5 h-5 transition-transform ${
+                            mobileActiveMenu === item.key ? "rotate-180" : ""
+                          }`}
+                        />
+                      </button>
+                    </div>
                     {mobileActiveMenu === item.key && item.mobileItems && (
                       <div className="pl-4 space-y-2 pb-2">
                         {item.mobileItems.map((subItem) => (
@@ -309,12 +345,12 @@ export function Header() {
         </div>
       </div>
 
-      {/* Desktop Overlay for mega menu */}
+      {/* Desktop Overlay for mega menu (z-40 so dropdowns stay on top when moving from arrow to menu) */}
       {activeMenu && (
         <div
-          className="fixed inset-0 bg-black/5 backdrop-blur-sm"
+          className="fixed inset-0 z-40 bg-black/5 backdrop-blur-sm"
           style={{ top: "80px" }}
-          onMouseEnter={() => setActiveMenu(null)}
+          onMouseEnter={handleMenuClose}
         />
       )}
     </header>

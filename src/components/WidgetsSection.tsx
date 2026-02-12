@@ -1,12 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import {
-  ArrowRight,
-  Image as ImageIcon,
-  Headphones,
-  Map,
-} from "lucide-react";
+import { ArrowRight, Image as ImageIcon, Headphones, Map } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { useLanguage } from "../context/LanguageContext";
 
@@ -32,13 +27,13 @@ function StackCards({
     // Small delay to ensure DOM is ready
     const timer = setTimeout(() => {
       if (!stackRef.current) return; // Check scope again before creating context
-      
+
       ScrollTrigger.refresh();
 
       const ctx = gsap.context(() => {
         cards.forEach((card, index) => {
           if (!card) return; // Add null check
-          
+
           const isLast = index === cards.length - 1;
 
           ScrollTrigger.create({
@@ -101,9 +96,7 @@ function StackCards({
 
 export function WidgetsSection() {
   const { t, language } = useLanguage();
-  const [hoveredRegion, setHoveredRegion] = useState<
-    string | null
-  >(null);
+  const [hoveredRegion, setHoveredRegion] = useState<string | null>(null);
 
   const regions = [
     {
@@ -128,10 +121,7 @@ export function WidgetsSection() {
       y: "22%",
     },
     {
-      name:
-        language === "ar"
-          ? "الحدود الشمالية"
-          : "Northern Borders",
+      name: language === "ar" ? "الحدود الشمالية" : "Northern Borders",
       projects: 28,
       sectors: "Rainfed Crops",
       x: "62%",
@@ -249,9 +239,7 @@ export function WidgetsSection() {
               <div className="inline-flex items-center gap-2 mb-4 px-5 py-2 bg-[#F9F7EF] backdrop-blur-md border border-[#035938]/20 rounded-full">
                 <div className="w-2 h-2 bg-[#52BC88] rounded-full animate-pulse" />
                 <span className="text-[#035938] text-sm font-medium">
-                  {language === "ar"
-                    ? "ثقافتنا"
-                    : "Our Culture"}
+                  {language === "ar" ? "ثقافتنا" : "Our Culture"}
                 </span>
               </div>
               <h2 className="text-[#052F2A] leading-tight text-3xl md:text-4xl font-bold">
@@ -273,7 +261,7 @@ export function WidgetsSection() {
                 }}
               >
                 <div
-                  className="w-4/5 mx-auto rounded-3xl shadow-2xl overflow-hidden relative"
+                  className="md:w-4/5 mx-auto rounded-3xl shadow-2xl overflow-hidden relative"
                   style={{ backgroundColor: card.bgColor }}
                   dir={language === "ar" ? "rtl" : "ltr"}
                 >
@@ -306,18 +294,14 @@ export function WidgetsSection() {
                       className={`w-14 h-14 rounded-xl flex items-center justify-center mb-5 transition-transform duration-300`}
                       style={{
                         backgroundColor:
-                          card.bgColor === "#F1BC28"
-                            ? "#052F2A"
-                            : "#F1BC28",
+                          card.bgColor === "#F1BC28" ? "#052F2A" : "#F1BC28",
                       }}
                     >
                       <IconComponent
                         className="w-7 h-7"
                         style={{
                           color:
-                            card.bgColor === "#F1BC28"
-                              ? "#F1BC28"
-                              : "#052F2A",
+                            card.bgColor === "#F1BC28" ? "#F1BC28" : "#052F2A",
                         }}
                       />
                     </div>
@@ -363,9 +347,7 @@ export function WidgetsSection() {
                                 onMouseEnter={() =>
                                   setHoveredRegion(region.name)
                                 }
-                                onMouseLeave={() =>
-                                  setHoveredRegion(null)
-                                }
+                                onMouseLeave={() => setHoveredRegion(null)}
                               >
                                 <div
                                   className="relative"
@@ -374,8 +356,7 @@ export function WidgetsSection() {
                                   <div className="w-3 h-3 bg-[#F1BC28] rounded-full animate-pulse" />
                                   <div className="absolute inset-0 w-3 h-3 bg-[#F1BC28] rounded-full animate-ping opacity-75" />
 
-                                  {hoveredRegion ===
-                                    region.name && (
+                                  {hoveredRegion === region.name && (
                                     <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-4 py-2 bg-white text-[#052F2A] rounded-lg shadow-xl whitespace-nowrap text-xs z-50">
                                       <div className="font-semibold">
                                         {region.name}
@@ -427,7 +408,7 @@ export function WidgetsSection() {
                         {/* Right: Image */}
                         <div className="rounded-2xl overflow-hidden shadow-lg">
                           <ImageWithFallback
-                            src={card.image ?? ''}
+                            src={card.image ?? ""}
                             alt={card.title}
                             className="w-full h-64 object-cover"
                           />
@@ -452,9 +433,7 @@ export function WidgetsSection() {
                           : "none",
                       }}
                     >
-                      <span className="text-sm">
-                        {card.btnText}
-                      </span>
+                      <span className="text-sm">{card.btnText}</span>
                       <ArrowRight className={`w-4 h-4`} />
                     </a>
                   </div>

@@ -248,9 +248,57 @@ export function AboutStrategicObjectives() {
           </h2>
         </div>
 
-        {/* Main Radial Layout */}
+        {/* Mobile stacked layout: simple cards instead of radial graph */}
+        <div className="md:hidden grid grid-cols-1 gap-4">
+          {objectives.map((objective, index) => {
+            const Icon = objective.icon;
+            return (
+              <div
+                key={`mobile-card-${index}`}
+                className="relative backdrop-blur-xl rounded-xl p-4 bg-white/90 shadow-lg"
+              >
+                <div className="mb-3 flex justify-center">
+                  <div
+                    className="w-12 h-12 rounded-lg flex items-center justify-center"
+                    style={{ background: `${objective.color}15` }}
+                  >
+                    <Icon
+                      className="w-6 h-6"
+                      style={{ color: objective.color }}
+                    />
+                  </div>
+                </div>
+                <h3
+                  className="text-base fw-heading mb-1 text-center leading-tight"
+                  style={{
+                    color: "#035938",
+                    fontFamily:
+                      language === "ar"
+                        ? "'Loew Next Arabic', sans-serif"
+                        : "inherit",
+                  }}
+                >
+                  {t(objective.titleKey)}
+                </h3>
+                <p
+                  className="text-xs text-gray-600 text-center leading-snug mt-1"
+                  style={{
+                    fontFamily:
+                      language === "ar"
+                        ? "'Loew Next Arabic', sans-serif"
+                        : "inherit",
+                  }}
+                >
+                  {t(objective.textKey)}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Main Radial Layout – desktop / tablet only */}
         <div
-          className="relative w-full max-w-5xl mx-auto"
+          className="relative w-full max-w-5xl mx-auto hidden md:block"
           style={{ height: "900px" }}
         >
           {/* Central Icon */}

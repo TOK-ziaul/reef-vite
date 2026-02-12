@@ -18,11 +18,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 export function SectorsGrid() {
   const { t, language } = useLanguage();
-  const sectorsRef = useRef<HTMLDivElement>(null);
+  const sectorsRef1 = useRef<HTMLDivElement>(null);
+  const sectorsRef2 = useRef<HTMLDivElement>(null);
+  const sectorsRef3 = useRef<HTMLDivElement>(null);
+  const sectionsContainerRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLDivElement>(null);
-  const [activeCard, setActiveCard] = useState<string | null>(
-    null,
-  );
+  const [activeCard, setActiveCard] = useState<string | null>(null);
   const [isMd, setIsMd] = useState<boolean>(false);
 
   useEffect(() => {
@@ -34,8 +35,8 @@ export function SectorsGrid() {
   }, []);
 
   useEffect(() => {
-    if (!sectorsRef.current) return; // Check scope before creating context
-    
+    if (!sectionsContainerRef.current) return;
+
     const ctx = gsap.context(() => {
       // Animate title
       if (titleRef.current && titleRef.current.children.length > 0) {
@@ -57,10 +58,11 @@ export function SectorsGrid() {
         );
       }
 
-      // Animate sector cards
-      if (sectorsRef.current) {
-        const cards = sectorsRef.current.querySelectorAll('.sector-card');
-
+      // Animate sector cards in each of the three containers
+      const sectorRefs = [sectorsRef1, sectorsRef2, sectorsRef3];
+      sectorRefs.forEach((ref) => {
+        if (!ref.current) return;
+        const cards = ref.current.querySelectorAll(".sector-card");
         if (cards.length > 0) {
           gsap.fromTo(
             cards,
@@ -77,36 +79,19 @@ export function SectorsGrid() {
               scale: 1,
               duration: 0.8,
               stagger: 0.08,
-              ease: 'back.out(1.2)',
+              ease: "back.out(1.2)",
               scrollTrigger: {
-                trigger: sectorsRef.current,
-                start: 'top 75%',
+                trigger: ref.current,
+                start: "top 75%",
               },
-            }
+            },
           );
-
-          // Parallax on scroll
-          cards.forEach((card) => {
-            if (!card) return;
-            
-            gsap.to(card, {
-              y: -20,
-              scrollTrigger: {
-                trigger: card,
-                start: 'top bottom',
-                end: 'bottom top',
-                scrub: 1,
-              },
-            });
-          });
         }
-      }
+      });
 
       // Animate floating shapes
-      const floatShape1 =
-        document.querySelector(".float-shape-1");
-      const floatShape2 =
-        document.querySelector(".float-shape-2");
+      const floatShape1 = document.querySelector(".float-shape-1");
+      const floatShape2 = document.querySelector(".float-shape-2");
 
       if (floatShape1) {
         gsap.to(floatShape1, {
@@ -131,7 +116,7 @@ export function SectorsGrid() {
           ease: "sine.inOut",
         });
       }
-    }, sectorsRef);
+    }, sectionsContainerRef);
 
     return () => ctx.revert();
   }, []);
@@ -146,8 +131,7 @@ export function SectorsGrid() {
       icon: <Droplet className="w-8 h-8" />,
       image:
         "https://images.unsplash.com/photo-1586616780827-13166a8d449b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiZWVrZWVwaW5nJTIwaG9uZXklMjBmYXJtfGVufDF8fHx8MTc2Mjg0NTEzNnww&ixlib=rb-4.1.0&q=80&w=1080",
-      gradient:
-        "from-[#F1BC28]/90 via-[#F1BC28]/70 to-[#035938]/90",
+      gradient: "from-[#F1BC28]/90 via-[#F1BC28]/70 to-[#035938]/90",
       iconBg: "from-[#F1BC28] to-[#F1BC28]/80",
     },
     {
@@ -159,8 +143,7 @@ export function SectorsGrid() {
       icon: <Coffee className="w-8 h-8" />,
       image:
         "https://images.unsplash.com/photo-1693734656256-e589d44cbd30?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2ZmZWUlMjBwbGFudGF0aW9uJTIwYmVhbnN8ZW58MXx8fHwxNzYyODQ1MTM2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      gradient:
-        "from-[#035938]/90 via-[#52BC88]/70 to-[#035938]/90",
+      gradient: "from-[#035938]/90 via-[#52BC88]/70 to-[#035938]/90",
       iconBg: "from-[#035938] to-[#52BC88]",
     },
   ];
@@ -175,8 +158,7 @@ export function SectorsGrid() {
       icon: <Apple className="w-8 h-8" />,
       image:
         "https://images.unsplash.com/photo-1523539693385-e5e891eb4465?q=80&w=689&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      gradient:
-        "from-[#F1BC28]/90 via-[#035938]/70 to-[#F1BC28]/90",
+      gradient: "from-[#F1BC28]/90 via-[#035938]/70 to-[#F1BC28]/90",
       iconBg: "from-[#F1BC28] to-[#035938]",
     },
     {
@@ -188,8 +170,7 @@ export function SectorsGrid() {
       icon: <Milk className="w-8 h-8" />,
       image:
         "https://images.unsplash.com/photo-1530507629858-e4977d30e9e0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzl8fGZhcm1pbmd8ZW58MHx8MHx8fDA%3D",
-      gradient:
-        "from-[#035938]/90 via-[#F1BC28]/70 to-[#035938]/90",
+      gradient: "from-[#035938]/90 via-[#F1BC28]/70 to-[#035938]/90",
       iconBg: "from-[#035938] to-[#F1BC28]",
     },
     {
@@ -201,8 +182,7 @@ export function SectorsGrid() {
       icon: <Wheat className="w-8 h-8" />,
       image:
         "https://images.unsplash.com/photo-1530541835461-dedaf9cf368a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTd8fGZhcm1pbmd8ZW58MHx8MHx8fDA%3D",
-      gradient:
-        "from-[#52BC88]/90 via-[#035938]/70 to-[#52BC88]/90",
+      gradient: "from-[#52BC88]/90 via-[#035938]/70 to-[#52BC88]/90",
       iconBg: "from-[#52BC88] to-[#035938]",
     },
   ];
@@ -217,8 +197,7 @@ export function SectorsGrid() {
       icon: <Fish className="w-8 h-8" />,
       image:
         "https://images.unsplash.com/photo-1695566372318-62666bb5ffe8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTc0fHxmYXJtaW5nfGVufDB8fDB8fHww",
-      gradient:
-        "from-[#F1BC28]/90 via-[#52BC88]/70 to-[#000903e6]/90",
+      gradient: "from-[#F1BC28]/90 via-[#52BC88]/70 to-[#000903e6]/90",
       iconBg: "from-[#F1BC28] to-[#52BC88]",
     },
     {
@@ -230,8 +209,7 @@ export function SectorsGrid() {
       icon: <Palette className="w-8 h-8" />,
       image:
         "https://images.unsplash.com/photo-1710563159928-83611beece71?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTk5fHxmYXJtaW5nfGVufDB8fDB8fHww",
-      gradient:
-        "from-[#035938]/90 via-[#52BC88]/70 to-[#F1BC28]/90",
+      gradient: "from-[#035938]/90 via-[#52BC88]/70 to-[#F1BC28]/90",
       iconBg: "from-[#035938] to-[#52BC88]",
     },
     {
@@ -243,8 +221,7 @@ export function SectorsGrid() {
       icon: <Users className="w-8 h-8" />,
       image:
         "https://images.unsplash.com/photo-1651592278391-4e42db713c1c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjE2fHxmYXJtaW5nfGVufDB8fDB8fHww",
-      gradient:
-        "from-[#52BC88]/90 via-[#F1BC28]/70 to-[#035938]/90",
+      gradient: "from-[#52BC88]/90 via-[#F1BC28]/70 to-[#035938]/90",
       iconBg: "from-[#52BC88] to-[#F1BC28]",
     },
   ];
@@ -269,9 +246,7 @@ export function SectorsGrid() {
     }, []);
 
     const style: React.CSSProperties = {
-      transform: visible
-        ? "translateY(0px)"
-        : "translateY(12px)",
+      transform: visible ? "translateY(0px)" : "translateY(12px)",
       opacity: visible ? 1 : 0,
       transition:
         "transform 300ms cubic-bezier(.22,.9,.28,1), opacity 300ms ease",
@@ -308,9 +283,7 @@ export function SectorsGrid() {
           <div className="inline-flex items-center gap-2 mb-6 px-6 py-3 bg-white/80 backdrop-blur-md border border-[#035938]/20 rounded-full">
             <div className="w-2 h-2 bg-[#52BC88] rounded-full animate-pulse" />
             <span className="text-[#035938] text-2xl font-medium">
-              {language === "ar"
-                ? "القطاعات الريفية"
-                : "Rural Sectors"}
+              {language === "ar" ? "القطاعات الريفية" : "Rural Sectors"}
             </span>
             <div
               className="w-2 h-2 bg-[#F1BC28] rounded-full animate-pulse"
@@ -326,446 +299,402 @@ export function SectorsGrid() {
             {t("sectorsDesc")}
           </p>
         </div>
-
-        {/* Sectors Grid */}
-        <div
-          ref={sectorsRef}
-          className="grid gap-2 transition-all duration-300"
-          style={{
-            gridTemplateColumns: !isMd
-              ? "1fr"
-              : activeCard && activeCard.startsWith("s1-")
-                ? (() => {
-                    const idx = Number(
-                      activeCard.split("-")[1],
-                    );
-                    const cols = ["1fr", "1fr"];
-                    if (
-                      !Number.isNaN(idx) &&
-                      idx >= 0 &&
-                      idx < cols.length
-                    )
-                      cols[idx] = "2fr";
-                    return cols.join(" ");
-                  })()
-                : "2fr 1fr",
-          }}
-        >
-          {sectors.map((sector, index) => (
-            <div
-              key={index}
-              className="sector-card"
-              style={{ perspective: "1000px" }}
-              onMouseEnter={() => setActiveCard(`s1-${index}`)}
-              onMouseLeave={() =>
-                setActiveCard((prev) =>
-                  prev === `s1-${index}` ? null : prev,
-                )
-              }
-              onFocus={() => setActiveCard(`s1-${index}`)}
-              onBlur={() =>
-                setActiveCard((prev) =>
-                  prev === `s1-${index}` ? null : prev,
-                )
-              }
-              onClick={() =>
-                setActiveCard((prev) =>
-                  prev === `s1-${index}` ? null : `s1-${index}`,
-                )
-              }
-              tabIndex={0}
-            >
+        <div ref={sectionsContainerRef} className="flex flex-col gap-4">
+          {/* Sectors Grid */}
+          <div
+            ref={sectorsRef1}
+            className="grid gap-4 transition-all duration-300"
+            style={{
+              gridTemplateColumns: !isMd
+                ? "1fr"
+                : activeCard && activeCard.startsWith("s1-")
+                  ? (() => {
+                      const idx = Number(activeCard.split("-")[1]);
+                      const cols = ["1fr", "1fr"];
+                      if (!Number.isNaN(idx) && idx >= 0 && idx < cols.length)
+                        cols[idx] = "2fr";
+                      return cols.join(" ");
+                    })()
+                  : "2fr 1fr",
+            }}
+          >
+            {sectors.map((sector, index) => (
               <div
-                className={`group relative ${isMd ? "h-full" : "h-auto"} bg-white rounded-3xl overflow-visible shadow-lg`}
+                key={index}
+                className="sector-card"
+                style={{ perspective: "1000px" }}
+                onMouseEnter={() => setActiveCard(`s1-${index}`)}
+                onMouseLeave={() =>
+                  setActiveCard((prev) =>
+                    prev === `s1-${index}` ? null : prev,
+                  )
+                }
+                onFocus={() => setActiveCard(`s1-${index}`)}
+                onBlur={() =>
+                  setActiveCard((prev) =>
+                    prev === `s1-${index}` ? null : prev,
+                  )
+                }
+                onClick={() =>
+                  setActiveCard((prev) =>
+                    prev === `s1-${index}` ? null : `s1-${index}`,
+                  )
+                }
+                tabIndex={0}
               >
-                {/* Image Background */}
                 <div
-                  className={`relative  rounded-3xl h-[300px] overflow-hidden`}
+                  className={`group relative ${isMd ? "h-full" : "h-auto"} bg-white rounded-3xl overflow-visible shadow-lg`}
                 >
-                  <ImageWithFallback
-                    src={sector.image}
-                    alt={t(sector.titleKey)}
-                    className={`w-full h-[300px] object-cover transition-transform duration-700 group-hover:scale-110`}
-                  />
-                  {/* Gradient Overlay */}
+                  {/* Image Background */}
                   <div
-                    className={`absolute inset-0 bg-gradient-to-br ${sector.gradient} opacity-80 group-hover:opacity-70 transition-opacity duration-500`}
-                  />
-
-                  {/* Icon Badge */}
-                  <div className="absolute top-6 left-6">
+                    className={`relative  rounded-3xl h-[300px] overflow-hidden`}
+                  >
+                    <ImageWithFallback
+                      src={sector.image}
+                      alt={t(sector.titleKey)}
+                      className={`w-full h-[300px] object-cover transition-transform duration-700 group-hover:scale-110`}
+                    />
+                    {/* Gradient Overlay */}
                     <div
-                      className={`w-16 h-16 bg-gradient-to-br ${sector.iconBg} rounded-2xl flex items-center justify-center text-white shadow-xl group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300`}
-                    >
-                      {sector.icon}
+                      className={`absolute inset-0 bg-gradient-to-br ${sector.gradient} opacity-80 group-hover:opacity-70 transition-opacity duration-500`}
+                    />
+
+                    {/* Icon Badge */}
+                    <div className="absolute top-6 left-6">
+                      <div
+                        className={`w-16 h-16 bg-gradient-to-br ${sector.iconBg} rounded-2xl flex items-center justify-center text-white shadow-xl group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300`}
+                      >
+                        {sector.icon}
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Title on Image */}
-                  <div
-                    className="absolute bottom-6 left-6 right-6"
-                    dir={language === "ar" ? "rtl" : "ltr"}
-                  >
-                    <h3 className="text-white drop-shadow-lg text-2xl font-semibold">
-                      {t(sector.titleKey)}
-                    </h3>
-
-                    <button
-                      className={`mt-2 w-full py-3 bg-gradient-to-r ${sector.iconBg} text-white rounded-xl hover:shadow-lg transform hover:scale-[1.02] transition-all duration-300 ${isMd ? "hidden group-hover:block" : "block"}`}
+                    {/* Title on Image */}
+                    <div
+                      className="absolute bottom-6 left-6 right-6"
+                      dir={language === "ar" ? "rtl" : "ltr"}
                     >
-                      {language === "ar"
-                        ? "زر لاستكشاف القطاع"
-                        : "Explore Sector"}
-                    </button>
+                      <h3 className="text-white drop-shadow-lg text-2xl font-semibold">
+                        {t(sector.titleKey)}
+                      </h3>
+
+                      <button
+                        className={`mt-2 w-full py-3 bg-gradient-to-r ${sector.iconBg} text-white rounded-xl hover:shadow-lg transform hover:scale-[1.02] transition-all duration-300 ${isMd ? "hidden group-hover:block" : "block"}`}
+                      >
+                        {language === "ar"
+                          ? "زر لاستكشاف القطاع"
+                          : "Explore Sector"}
+                      </button>
+                    </div>
+
+                    {/* Shine effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
                   </div>
 
-                  {/* Shine effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                  {/* Content overlay (hidden by default, shown on card hover) */}
+                  {activeCard === `s1-${index}` ? (
+                    <Overlay dir={language === "ar" ? "rtl" : "ltr"}>
+                      <p className="text-white text-sm md:text-lg mb-4 leading-relaxed">
+                        {t(sector.descKey)}
+                      </p>
+
+                      {/* Bullet Points */}
+                      <ul
+                        className={`space-y-2 text-sm md:text-base ${language === "ar" ? "mr-5" : "ml-5"}`}
+                      >
+                        <li className="flex items-start gap-2 text-white">
+                          <span className="text-[#52BC88] mt-1">●</span>
+                          <span>{t(sector.point1Key)}</span>
+                        </li>
+                        <li className="flex items-start gap-2 text-white">
+                          <span className="text-[#F1BC28] mt-1">●</span>
+                          <span>{t(sector.point2Key)}</span>
+                        </li>
+                        <li className="flex items-start gap-2 text-white">
+                          <span className="text-[#035938] mt-1">●</span>
+                          <span>{t(sector.point3Key)}</span>
+                        </li>
+                      </ul>
+
+                      {/* Button */}
+                      <button
+                        className={`mt-2 w-full py-3 bg-gradient-to-r ${sector.iconBg} text-white rounded-xl hover:shadow-lg transform hover:scale-[1.02] transition-all duration-300 pointer-events-auto cursor-pointer`}
+                      >
+                        {language === "ar"
+                          ? "زر لاستكشاف القطاع"
+                          : "Explore Sector"}
+                      </button>
+                    </Overlay>
+                  ) : null}
+
+                  {/* Decorative corner */}
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-white/20 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
-
-                {/* Content overlay (hidden by default, shown on card hover) */}
-                {activeCard === `s1-${index}` ? (
-                  <Overlay
-                    dir={language === "ar" ? "rtl" : "ltr"}
-                  >
-                    <p className="text-white text-sm md:text-lg mb-4 leading-relaxed">
-                      {t(sector.descKey)}
-                    </p>
-
-                    {/* Bullet Points */}
-                    <ul
-                      className={`space-y-2 text-sm md:text-base ${language === "ar" ? "mr-5" : "ml-5"}`}
-                    >
-                      <li className="flex items-start gap-2 text-white">
-                        <span className="text-[#52BC88] mt-1">
-                          ●
-                        </span>
-                        <span>{t(sector.point1Key)}</span>
-                      </li>
-                      <li className="flex items-start gap-2 text-white">
-                        <span className="text-[#F1BC28] mt-1">
-                          ●
-                        </span>
-                        <span>{t(sector.point2Key)}</span>
-                      </li>
-                      <li className="flex items-start gap-2 text-white">
-                        <span className="text-[#035938] mt-1">
-                          ●
-                        </span>
-                        <span>{t(sector.point3Key)}</span>
-                      </li>
-                    </ul>
-
-                    {/* Button */}
-                    <button
-                      className={`mt-2 w-full py-3 bg-gradient-to-r ${sector.iconBg} text-white rounded-xl hover:shadow-lg transform hover:scale-[1.02] transition-all duration-300 pointer-events-auto cursor-pointer`}
-                    >
-                      {language === "ar"
-                        ? "زر لاستكشاف القطاع"
-                        : "Explore Sector"}
-                    </button>
-                  </Overlay>
-                ) : null}
-
-                {/* Decorative corner */}
-                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-white/20 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
-            </div>
-          ))}
-        </div>
-        <br></br>
-        <div
-          ref={sectorsRef}
-          className="grid gap-2 transition-all duration-300"
-          style={{
-            gridTemplateColumns: !isMd
-              ? "1fr"
-              : activeCard && activeCard.startsWith("s2-")
-                ? (() => {
-                    const idx = Number(
-                      activeCard.split("-")[1],
-                    );
-                    const cols = ["1fr", "1fr", "1fr"];
-                    if (
-                      !Number.isNaN(idx) &&
-                      idx >= 0 &&
-                      idx < cols.length
-                    )
-                      cols[idx] = "2fr";
-                    return cols.join(" ");
-                  })()
-                : "1fr 1fr 1fr",
-          }}
-        >
-          {sectors2.map((sector, index) => (
-            <div
-              key={index}
-              className="sector-card"
-              style={{ perspective: "1000px" }}
-              onMouseEnter={() => setActiveCard(`s2-${index}`)}
-              onMouseLeave={() =>
-                setActiveCard((prev) =>
-                  prev === `s2-${index}` ? null : prev,
-                )
-              }
-              onFocus={() => setActiveCard(`s2-${index}`)}
-              onBlur={() =>
-                setActiveCard((prev) =>
-                  prev === `s2-${index}` ? null : prev,
-                )
-              }
-              onClick={() =>
-                setActiveCard((prev) =>
-                  prev === `s2-${index}` ? null : `s2-${index}`,
-                )
-              }
-              tabIndex={0}
-            >
+            ))}
+          </div>
+          <div
+            ref={sectorsRef2}
+            className="grid gap-4 transition-all duration-300"
+            style={{
+              gridTemplateColumns: !isMd
+                ? "1fr"
+                : activeCard && activeCard.startsWith("s2-")
+                  ? (() => {
+                      const idx = Number(activeCard.split("-")[1]);
+                      const cols = ["1fr", "1fr", "1fr"];
+                      if (!Number.isNaN(idx) && idx >= 0 && idx < cols.length)
+                        cols[idx] = "2fr";
+                      return cols.join(" ");
+                    })()
+                  : "1fr 1fr 1fr",
+            }}
+          >
+            {sectors2.map((sector, index) => (
               <div
-                className={`group relative ${isMd ? "h-full" : "h-auto"} bg-white rounded-3xl overflow-visible shadow-lg`}
+                key={index}
+                className="sector-card"
+                style={{ perspective: "1000px" }}
+                onMouseEnter={() => setActiveCard(`s2-${index}`)}
+                onMouseLeave={() =>
+                  setActiveCard((prev) =>
+                    prev === `s2-${index}` ? null : prev,
+                  )
+                }
+                onFocus={() => setActiveCard(`s2-${index}`)}
+                onBlur={() =>
+                  setActiveCard((prev) =>
+                    prev === `s2-${index}` ? null : prev,
+                  )
+                }
+                onClick={() =>
+                  setActiveCard((prev) =>
+                    prev === `s2-${index}` ? null : `s2-${index}`,
+                  )
+                }
+                tabIndex={0}
               >
-                {/* Image Background */}
                 <div
-                  className={`relative rounded-3xl h-[300px] overflow-hidden`}
+                  className={`group relative ${isMd ? "h-full" : "h-auto"} bg-white rounded-3xl overflow-visible shadow-lg`}
                 >
-                  <ImageWithFallback
-                    src={sector.image}
-                    alt={t(sector.titleKey)}
-                    className={`${isMd ? "w-full h-full " : "w-full h-auto "} object-cover transition-transform duration-700 group-hover:scale-110`}
-                  />
-                  {/* Gradient Overlay */}
+                  {/* Image Background */}
                   <div
-                    className={`absolute inset-0 bg-gradient-to-br ${sector.gradient} opacity-80 group-hover:opacity-70 transition-opacity duration-500`}
-                  />
-
-                  {/* Icon Badge */}
-                  <div className="absolute top-6 left-6">
+                    className={`relative rounded-3xl h-[300px] overflow-hidden`}
+                  >
+                    <ImageWithFallback
+                      src={sector.image}
+                      alt={t(sector.titleKey)}
+                      className={`${isMd ? "w-full h-full " : "w-full h-auto "} object-cover transition-transform duration-700 group-hover:scale-110`}
+                    />
+                    {/* Gradient Overlay */}
                     <div
-                      className={`w-16 h-16 bg-gradient-to-br ${sector.iconBg} rounded-2xl flex items-center justify-center text-white shadow-xl group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300`}
-                    >
-                      {sector.icon}
+                      className={`absolute inset-0 bg-gradient-to-br ${sector.gradient} opacity-80 group-hover:opacity-70 transition-opacity duration-500`}
+                    />
+
+                    {/* Icon Badge */}
+                    <div className="absolute top-6 left-6">
+                      <div
+                        className={`w-16 h-16 bg-gradient-to-br ${sector.iconBg} rounded-2xl flex items-center justify-center text-white shadow-xl group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300`}
+                      >
+                        {sector.icon}
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Title on Image */}
-                  <div
-                    className="absolute bottom-6 left-6 right-6"
-                    dir={language === "ar" ? "rtl" : "ltr"}
-                  >
-                    <h3 className="text-white drop-shadow-lg text-2xl font-semibold">
-                      {t(sector.titleKey)}
-                    </h3>
-                    <button
-                      className={`mt-2 w-full py-3 bg-gradient-to-r ${sector.iconBg} text-white rounded-xl hover:shadow-lg transform hover:scale-[1.02] transition-all duration-300 ${isMd ? "hidden group-hover:block" : "block"}`}
+                    {/* Title on Image */}
+                    <div
+                      className="absolute bottom-6 left-6 right-6"
+                      dir={language === "ar" ? "rtl" : "ltr"}
                     >
-                      {language === "ar"
-                        ? "زر لاستكشاف القطاع"
-                        : "Explore Sector"}
-                    </button>
+                      <h3 className="text-white drop-shadow-lg text-2xl font-semibold">
+                        {t(sector.titleKey)}
+                      </h3>
+                      <button
+                        className={`mt-2 w-full py-3 bg-gradient-to-r ${sector.iconBg} text-white rounded-xl hover:shadow-lg transform hover:scale-[1.02] transition-all duration-300 ${isMd ? "hidden group-hover:block" : "block"}`}
+                      >
+                        {language === "ar"
+                          ? "زر لاستكشاف القطاع"
+                          : "Explore Sector"}
+                      </button>
+                    </div>
+
+                    {/* Shine effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
                   </div>
 
-                  {/* Shine effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                  {/* Content overlay (hidden by default, shown on card hover) */}
+                  {activeCard === `s2-${index}` ? (
+                    <Overlay dir={language === "ar" ? "rtl" : "ltr"}>
+                      <p className="text-white text-sm md:text-lg mb-4 leading-relaxed">
+                        {t(sector.descKey)}
+                      </p>
+
+                      {/* Bullet Points */}
+                      <ul
+                        className={`space-y-2 text-sm md:text-base ${language === "ar" ? "mr-5" : "ml-5"}`}
+                      >
+                        <li className="flex items-start gap-2 text-white">
+                          <span className="text-[#52BC88] mt-1">●</span>
+                          <span>{t(sector.point1Key)}</span>
+                        </li>
+                        <li className="flex items-start gap-2 text-white">
+                          <span className="text-[#F1BC28] mt-1">●</span>
+                          <span>{t(sector.point2Key)}</span>
+                        </li>
+                        <li className="flex items-start gap-2 text-white">
+                          <span className="text-[#035938] mt-1">●</span>
+                          <span>{t(sector.point3Key)}</span>
+                        </li>
+                      </ul>
+
+                      {/* Button */}
+                      <button
+                        className={`mt-2 w-full py-3 bg-gradient-to-r ${sector.iconBg} text-white rounded-xl hover:shadow-lg transform hover:scale-[1.02] transition-all duration-300 pointer-events-auto cursor-pointer`}
+                      >
+                        {language === "ar"
+                          ? "زر لاستكشاف القطاع"
+                          : "Explore Sector"}
+                      </button>
+                    </Overlay>
+                  ) : null}
+
+                  {/* Decorative corner */}
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-white/20 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
-
-                {/* Content overlay (hidden by default, shown on card hover) */}
-                {activeCard === `s2-${index}` ? (
-                  <Overlay
-                    dir={language === "ar" ? "rtl" : "ltr"}
-                  >
-                    <p className="text-white text-sm md:text-lg mb-4 leading-relaxed">
-                      {t(sector.descKey)}
-                    </p>
-
-                    {/* Bullet Points */}
-                    <ul
-                      className={`space-y-2 text-sm md:text-base ${language === "ar" ? "mr-5" : "ml-5"}`}
-                    >
-                      <li className="flex items-start gap-2 text-white">
-                        <span className="text-[#52BC88] mt-1">
-                          ●
-                        </span>
-                        <span>{t(sector.point1Key)}</span>
-                      </li>
-                      <li className="flex items-start gap-2 text-white">
-                        <span className="text-[#F1BC28] mt-1">
-                          ●
-                        </span>
-                        <span>{t(sector.point2Key)}</span>
-                      </li>
-                      <li className="flex items-start gap-2 text-white">
-                        <span className="text-[#035938] mt-1">
-                          ●
-                        </span>
-                        <span>{t(sector.point3Key)}</span>
-                      </li>
-                    </ul>
-
-                    {/* Button */}
-                    <button
-                      className={`mt-2 w-full py-3 bg-gradient-to-r ${sector.iconBg} text-white rounded-xl hover:shadow-lg transform hover:scale-[1.02] transition-all duration-300 pointer-events-auto cursor-pointer`}
-                    >
-                      {language === "ar"
-                        ? "زر لاستكشاف القطاع"
-                        : "Explore Sector"}
-                    </button>
-                  </Overlay>
-                ) : null}
-
-                {/* Decorative corner */}
-                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-white/20 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
-            </div>
-          ))}
-        </div>
-        <br></br>
-        <div
-          ref={sectorsRef}
-          className="grid gap-2 transition-all duration-300"
-          style={{
-            gridTemplateColumns: !isMd
-              ? "1fr"
-              : activeCard && activeCard.startsWith("s3-")
-                ? (() => {
-                    const idx = Number(
-                      activeCard.split("-")[1],
-                    );
-                    const cols = ["1fr", "1fr", "1fr"];
-                    if (
-                      !Number.isNaN(idx) &&
-                      idx >= 0 &&
-                      idx < cols.length
-                    )
-                      cols[idx] = "2fr";
-                    // if no active in this grid, use default layout
-                    return activeCard &&
-                      activeCard.startsWith("s3-")
-                      ? cols.join(" ")
-                      : "1fr 2fr 1fr";
-                  })()
-                : "1fr 2fr 1fr",
-          }}
-        >
-          {sectors3.map((sector, index) => (
-            <div
-              key={index}
-              className="sector-card rounded-3xl"
-              style={{ perspective: "1000px" }}
-              onMouseEnter={() => setActiveCard(`s3-${index}`)}
-              onMouseLeave={() =>
-                setActiveCard((prev) =>
-                  prev === `s3-${index}` ? null : prev,
-                )
-              }
-              onFocus={() => setActiveCard(`s3-${index}`)}
-              onBlur={() =>
-                setActiveCard((prev) =>
-                  prev === `s3-${index}` ? null : prev,
-                )
-              }
-              onClick={() =>
-                setActiveCard((prev) =>
-                  prev === `s3-${index}` ? null : `s3-${index}`,
-                )
-              }
-              tabIndex={0}
-            >
+            ))}
+          </div>
+          <div
+            ref={sectorsRef3}
+            className="grid gap-4 transition-all duration-300"
+            style={{
+              gridTemplateColumns: !isMd
+                ? "1fr"
+                : activeCard && activeCard.startsWith("s3-")
+                  ? (() => {
+                      const idx = Number(activeCard.split("-")[1]);
+                      const cols = ["1fr", "1fr", "1fr"];
+                      if (!Number.isNaN(idx) && idx >= 0 && idx < cols.length)
+                        cols[idx] = "2fr";
+                      // if no active in this grid, use default layout
+                      return activeCard && activeCard.startsWith("s3-")
+                        ? cols.join(" ")
+                        : "1fr 2fr 1fr";
+                    })()
+                  : "1fr 2fr 1fr",
+            }}
+          >
+            {sectors3.map((sector, index) => (
               <div
-                className={`group rounded-3xl relative ${isMd ? "h-full" : "h-auto"} bg-white rounded-3xl overflow-visible shadow-lg`}
+                key={index}
+                className="sector-card rounded-3xl"
+                style={{ perspective: "1000px" }}
+                onMouseEnter={() => setActiveCard(`s3-${index}`)}
+                onMouseLeave={() =>
+                  setActiveCard((prev) =>
+                    prev === `s3-${index}` ? null : prev,
+                  )
+                }
+                onFocus={() => setActiveCard(`s3-${index}`)}
+                onBlur={() =>
+                  setActiveCard((prev) =>
+                    prev === `s3-${index}` ? null : prev,
+                  )
+                }
+                onClick={() =>
+                  setActiveCard((prev) =>
+                    prev === `s3-${index}` ? null : `s3-${index}`,
+                  )
+                }
+                tabIndex={0}
               >
-                {/* Image Background */}
                 <div
-                  className={`relative rounded-3xl h-[300px] overflow-hidden`}
+                  className={`group rounded-3xl relative ${isMd ? "h-full" : "h-auto"} bg-white rounded-3xl overflow-visible shadow-lg`}
                 >
-                  <ImageWithFallback
-                    src={sector.image}
-                    alt={t(sector.titleKey)}
-                    className={`${isMd ? "w-full h-full" : "w-full h-auto"} object-cover transition-transform duration-700 group-hover:scale-110`}
-                  />
-                  {/* Gradient Overlay */}
+                  {/* Image Background */}
                   <div
-                    className={`absolute inset-0 bg-gradient-to-br ${sector.gradient} opacity-80 group-hover:opacity-70 transition-opacity duration-500`}
-                  />
-
-                  {/* Icon Badge */}
-                  <div className="absolute top-6 left-6">
+                    className={`relative rounded-3xl h-[300px] overflow-hidden`}
+                  >
+                    <ImageWithFallback
+                      src={sector.image}
+                      alt={t(sector.titleKey)}
+                      className={`${isMd ? "w-full h-full" : "w-full h-auto"} object-cover transition-transform duration-700 group-hover:scale-110`}
+                    />
+                    {/* Gradient Overlay */}
                     <div
-                      className={`w-16 h-16 bg-gradient-to-br ${sector.iconBg} rounded-2xl flex items-center justify-center text-white shadow-xl group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300`}
-                    >
-                      {sector.icon}
+                      className={`absolute inset-0 bg-gradient-to-br ${sector.gradient} opacity-80 group-hover:opacity-70 transition-opacity duration-500`}
+                    />
+
+                    {/* Icon Badge */}
+                    <div className="absolute top-6 left-6">
+                      <div
+                        className={`w-16 h-16 bg-gradient-to-br ${sector.iconBg} rounded-2xl flex items-center justify-center text-white shadow-xl group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300`}
+                      >
+                        {sector.icon}
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Title on Image */}
-                  <div
-                    className="absolute bottom-6 left-6 right-6"
-                    dir={language === "ar" ? "rtl" : "ltr"}
-                  >
-                    <h3 className="text-white drop-shadow-lg text-2xl font-semibold">
-                      {t(sector.titleKey)}
-                    </h3>
-                    <button
-                      className={`mt-2 w-full py-3 bg-gradient-to-r ${sector.iconBg} text-white rounded-xl hover:shadow-lg transform hover:scale-[1.02] transition-all duration-300 ${isMd ? "hidden group-hover:block" : "block"}`}
+                    {/* Title on Image */}
+                    <div
+                      className="absolute bottom-6 left-6 right-6"
+                      dir={language === "ar" ? "rtl" : "ltr"}
                     >
-                      {language === "ar"
-                        ? "زر لاستكشاف القطاع"
-                        : "Explore Sector"}
-                    </button>
+                      <h3 className="text-white drop-shadow-lg text-2xl font-semibold">
+                        {t(sector.titleKey)}
+                      </h3>
+                      <button
+                        className={`mt-2 w-full py-3 bg-gradient-to-r ${sector.iconBg} text-white rounded-xl hover:shadow-lg transform hover:scale-[1.02] transition-all duration-300 ${isMd ? "hidden group-hover:block" : "block"}`}
+                      >
+                        {language === "ar"
+                          ? "زر لاستكشاف القطاع"
+                          : "Explore Sector"}
+                      </button>
+                    </div>
+
+                    {/* Shine effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
                   </div>
 
-                  {/* Shine effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                  {/* Content overlay (hidden by default, shown on card hover) */}
+                  {activeCard === `s3-${index}` ? (
+                    <Overlay dir={language === "ar" ? "rtl" : "ltr"}>
+                      <p className="text-white text-sm md:text-lg mb-4 leading-relaxed">
+                        {t(sector.descKey)}
+                      </p>
+
+                      {/* Bullet Points */}
+                      <ul
+                        className={`space-y-2 text-sm md:text-base ${language === "ar" ? "mr-5" : "ml-5"}`}
+                      >
+                        <li className="flex items-start gap-2 text-white">
+                          <span className="text-[#52BC88] mt-1">●</span>
+                          <span>{t(sector.point1Key)}</span>
+                        </li>
+                        <li className="flex items-start gap-2 text-white">
+                          <span className="text-[#F1BC28] mt-1">●</span>
+                          <span>{t(sector.point2Key)}</span>
+                        </li>
+                        <li className="flex items-start gap-2 text-white">
+                          <span className="text-[#035938] mt-1">●</span>
+                          <span>{t(sector.point3Key)}</span>
+                        </li>
+                      </ul>
+
+                      {/* Button */}
+                      <button
+                        className={`mt-2 w-full py-3 bg-gradient-to-r ${sector.iconBg} text-white rounded-xl hover:shadow-lg transform hover:scale-[1.02] transition-all duration-300 pointer-events-auto cursor-pointer`}
+                      >
+                        {language === "ar"
+                          ? "زر لاستكشاف القطاع"
+                          : "Explore Sector"}
+                      </button>
+                    </Overlay>
+                  ) : null}
+
+                  {/* Decorative corner */}
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-white/20 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
-
-                {/* Content overlay (hidden by default, shown on card hover) */}
-                {activeCard === `s3-${index}` ? (
-                  <Overlay
-                    dir={language === "ar" ? "rtl" : "ltr"}
-                  >
-                    <p className="text-white text-sm md:text-lg mb-4 leading-relaxed">
-                      {t(sector.descKey)}
-                    </p>
-
-                    {/* Bullet Points */}
-                    <ul
-                      className={`space-y-2 text-sm md:text-base ${language === "ar" ? "mr-5" : "ml-5"}`}
-                    >
-                      <li className="flex items-start gap-2 text-white">
-                        <span className="text-[#52BC88] mt-1">
-                          ●
-                        </span>
-                        <span>{t(sector.point1Key)}</span>
-                      </li>
-                      <li className="flex items-start gap-2 text-white">
-                        <span className="text-[#F1BC28] mt-1">
-                          ●
-                        </span>
-                        <span>{t(sector.point2Key)}</span>
-                      </li>
-                      <li className="flex items-start gap-2 text-white">
-                        <span className="text-[#035938] mt-1">
-                          ●
-                        </span>
-                        <span>{t(sector.point3Key)}</span>
-                      </li>
-                    </ul>
-
-                    {/* Button */}
-                    <button
-                      className={`mt-2 w-full py-3 bg-gradient-to-r ${sector.iconBg} text-white rounded-xl hover:shadow-lg transform hover:scale-[1.02] transition-all duration-300 pointer-events-auto cursor-pointer`}
-                    >
-                      {language === "ar"
-                        ? "زر لاستكشاف القطاع"
-                        : "Explore Sector"}
-                    </button>
-                  </Overlay>
-                ) : null}
-
-                {/* Decorative corner */}
-                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-white/20 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

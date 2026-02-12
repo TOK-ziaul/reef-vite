@@ -7,7 +7,6 @@ import {
   Scissors,
   Fish,
   Sprout,
-  Cpu,
   MapPin,
 } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
@@ -67,11 +66,6 @@ export function MegaMenuSectors({ onClose }: MegaMenuSectorsProps = {}) {
       icon: <Sprout className="w-8 h-8" />,
       titleKey: "rainfedCrops",
       sectorId: "rainfed",
-    },
-    {
-      icon: <Cpu className="w-8 h-8" />,
-      titleKey: "agritech",
-      sectorId: "agritech",
     },
   ];
 

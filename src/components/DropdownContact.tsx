@@ -27,7 +27,7 @@ export function DropdownContact({ onClose }: DropdownContactProps) {
 
   return (
     <div
-      className="absolute top-full left-0 mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden z-50 min-w-[280px]"
+      className=" bg-white shadow-lg border-t border-gray-100 rounded-b-lg min-w-[280px]"
       style={{ direction: isRTL ? "rtl" : "ltr" }}
       onMouseEnter={() => {}}
       onMouseLeave={onClose}
