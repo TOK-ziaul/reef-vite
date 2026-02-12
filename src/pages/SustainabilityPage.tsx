@@ -7,8 +7,12 @@ export const SustainabilityPage: React.FC = () => {
   const { t, language } = useLanguage();
   const isRTL = language === "ar";
   const heroImageRef = useRef<HTMLDivElement>(null);
+  const partnersCarouselRef = useRef<HTMLDivElement>(null);
   const [scrollY, setScrollY] = useState(0);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [cardsPerView, setCardsPerView] = useState(3);
+  const [stepPx, setStepPx] = useState(0);
+  const GAP_PX = 24;
 
   // Partners data
   const partners = [
@@ -99,8 +103,35 @@ export const SustainabilityPage: React.FC = () => {
   ];
 
   const totalSlides = partners.length;
-  const cardsPerView = 3;
   const maxSlide = Math.max(0, totalSlides - cardsPerView);
+
+  const getCardsPerView = () => {
+    if (typeof window === "undefined") return 3;
+    if (window.innerWidth < 640) return 1;
+    if (window.innerWidth < 1024) return 2;
+    return 3;
+  };
+
+  useEffect(() => {
+    const handleResize = () => setCardsPerView(getCardsPerView());
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (!partnersCarouselRef.current) return;
+    const updateStep = () => {
+      const containerWidth = partnersCarouselRef.current?.offsetWidth ?? 0;
+      const gapTotal = (cardsPerView - 1) * GAP_PX;
+      const slideWidthPx = (containerWidth - gapTotal) / cardsPerView;
+      setStepPx(slideWidthPx + GAP_PX);
+    };
+    updateStep();
+    const ro = new ResizeObserver(updateStep);
+    ro.observe(partnersCarouselRef.current);
+    return () => ro.disconnect();
+  }, [cardsPerView]);
 
   // Auto-play carousel
   useEffect(() => {
@@ -729,12 +760,15 @@ export const SustainabilityPage: React.FC = () => {
             }}
           >
             {/* Carousel Container */}
-            <div className="relative overflow-hidden">
+            <div ref={partnersCarouselRef} className="relative overflow-hidden">
               {/* Cards Track */}
               <div
                 className="flex transition-transform duration-500 ease-out gap-6"
                 style={{
-                  transform: `translateX(${isRTL ? currentSlide * (100 / cardsPerView) : -currentSlide * (100 / cardsPerView)}%)`,
+                  transform:
+                    stepPx > 0
+                      ? `translateX(${isRTL ? currentSlide * stepPx : -currentSlide * stepPx}px)`
+                      : `translateX(${isRTL ? currentSlide * (100 / cardsPerView) : -currentSlide * (100 / cardsPerView)}%)`,
                 }}
               >
                 {partners.map((partner, index) => (
@@ -742,7 +776,7 @@ export const SustainabilityPage: React.FC = () => {
                     key={index}
                     className="flex-shrink-0"
                     style={{
-                      width: `calc(${100 / cardsPerView}% - ${((cardsPerView - 1) * 24) / cardsPerView}px)`,
+                      width: `calc((100% - ${(cardsPerView - 1) * GAP_PX}px) / ${cardsPerView})`,
                     }}
                   >
                     <div className="relative backdrop-blur-xl rounded-[30px] overflow-hidden hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl h-[200px] group">

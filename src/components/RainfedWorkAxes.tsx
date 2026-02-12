@@ -1,13 +1,17 @@
 import { useLanguage } from '../context/LanguageContext';
 import { motion } from 'motion/react';
 import { Wheat, Sprout, Users, Droplets, Tractor, TreePine, DollarSign, Handshake, GraduationCap, ClipboardCheck, ChevronLeft, ChevronRight } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+
+const GAP_PX = 24;
 
 export function RainfedWorkAxes() {
   const { language } = useLanguage();
   const isRTL = language === 'ar';
+  const carouselRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [slidesToShow, setSlidesToShow] = useState(3);
+  const [stepPx, setStepPx] = useState(0);
 
   const axes = [
     {
@@ -109,6 +113,20 @@ export function RainfedWorkAxes() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  useEffect(() => {
+    if (!carouselRef.current) return;
+    const updateStep = () => {
+      const containerWidth = carouselRef.current?.offsetWidth ?? 0;
+      const gapTotal = (slidesToShow - 1) * GAP_PX;
+      const slideWidthPx = (containerWidth - gapTotal) / slidesToShow;
+      setStepPx(slideWidthPx + GAP_PX);
+    };
+    updateStep();
+    const ro = new ResizeObserver(updateStep);
+    ro.observe(carouselRef.current);
+    return () => ro.disconnect();
+  }, [slidesToShow]);
+
   // Auto-play
   useEffect(() => {
     const interval = setInterval(() => {
@@ -178,17 +196,15 @@ export function RainfedWorkAxes() {
           </button>
 
           {/* Slides Container */}
-          <div className="overflow-hidden">
-            <motion.div
-              className="flex gap-6"
-              animate={{
-                x: isRTL 
-                  ? `${currentIndex * (100 / slidesToShow)}%`
-                  : `-${currentIndex * (100 / slidesToShow)}%`
-              }}
-              transition={{ duration: 0.5, ease: 'easeInOut' }}
+          <div ref={carouselRef} className="overflow-hidden">
+            <div
+              className="flex gap-6 transition-transform duration-500 ease-out"
               style={{
-                direction: isRTL ? 'rtl' : 'ltr'
+                direction: isRTL ? 'rtl' : 'ltr',
+                transform:
+                  stepPx > 0
+                    ? `translateX(${isRTL ? currentIndex * stepPx : -currentIndex * stepPx}px)`
+                    : `translateX(${isRTL ? currentIndex * (100 / slidesToShow) : -currentIndex * (100 / slidesToShow)}%)`,
               }}
             >
               {axes.map((axis, index) => {
@@ -197,7 +213,7 @@ export function RainfedWorkAxes() {
                   <div
                     key={index}
                     className="flex-shrink-0"
-                    style={{ width: `calc(${100 / slidesToShow}% - ${(slidesToShow - 1) * 24 / slidesToShow}px)` }}
+                    style={{ width: `calc((100% - ${(slidesToShow - 1) * GAP_PX}px) / ${slidesToShow})` }}
                   >
                     <div className="group relative h-full">
                       {/* Card */}
@@ -251,7 +267,7 @@ export function RainfedWorkAxes() {
                   </div>
                 );
               })}
-            </motion.div>
+            </div>
           </div>
 
           {/* Dots Pagination */}
