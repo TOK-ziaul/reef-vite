@@ -220,7 +220,7 @@ export function RainfedWorkAxes() {
                                 className="absolute -top-2 -right-2 w-8 h-8 rounded-lg flex items-center justify-center font-bold text-white text-sm shadow-lg z-10 transform group-hover:scale-110 transition-transform duration-300"
                                 style={{ backgroundColor: axis.color }}
                               >
-                                {language === 'ar' ? axis.number.toLocaleString('ar-SA') : axis.number}
+                                {axis.number}
                               </div>
 
                               {/* Icon with glow effect */}

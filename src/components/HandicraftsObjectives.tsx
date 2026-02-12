@@ -2,8 +2,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { Target, Users, TrendingUp, Award, Globe, Sparkles } from 'lucide-react';
 
 export function HandicraftsObjectives() {
-  const { t, language } = useLanguage();
-  const isRTL = language === 'ar';
+  const { t } = useLanguage();
 
   const objectives = [
     {

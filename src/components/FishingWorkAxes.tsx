@@ -1,10 +1,9 @@
 import { useLanguage } from '../context/LanguageContext';
 import { motion } from 'motion/react';
-import { Waves, MapPin, Users, TrendingUp, Shield, Award, Network, Rocket } from 'lucide-react';
+import { Waves, MapPin, Users, TrendingUp, Shield, Award } from 'lucide-react';
 
 export function FishingWorkAxes() {
-  const { t, language } = useLanguage();
-  const isRTL = language === 'ar';
+  const { t } = useLanguage();
 
   const axes = [
     {

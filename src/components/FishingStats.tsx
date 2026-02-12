@@ -3,8 +3,7 @@ import { motion } from 'motion/react';
 import { Fish, Users, Anchor, TrendingUp } from 'lucide-react';
 
 export function FishingStats() {
-  const { t, language } = useLanguage();
-  const isRTL = language === 'ar';
+  const { t } = useLanguage();
 
   const stats = [
     {

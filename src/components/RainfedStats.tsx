@@ -226,7 +226,7 @@ export function RainfedStats() {
                   formatter={(value) => [`${(value as number).toLocaleString(language === 'ar' ? 'ar-SA' : 'en-US')} ${language === 'ar' ? 'طن' : 'tons'}`, '']}
                 />
                 <Bar dataKey="production" radius={[12, 12, 0, 0]}>
-                  {productionData.map((entry, index) => (
+                  {productionData.map((_, index) => (
                     <Cell key={`cell-${index}`} fill={index === 0 ? '#035938' : index === 1 ? '#52BC88' : '#F1BC28'} />
                   ))}
                 </Bar>

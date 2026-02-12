@@ -1,6 +1,6 @@
 import { useLanguage } from '../context/LanguageContext';
 import { TrendingUp, Users, DollarSign, MapPin } from 'lucide-react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line } from 'recharts';
+import { XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line } from 'recharts';
 import { motion } from 'motion/react';
 
 export function HandicraftsStats() {

@@ -10,28 +10,32 @@ export function Footer() {
     {
       title: t("overview"),
       links: [
-        { label: t("aboutProgram"), href: "#" },
-        { label: t("visionMission"), href: "#" },
-        { label: t("objectives"), href: "#" },
-        { label: t("whatWeOffer"), href: "#" },
-        { label: t("achievements"), href: "#" },
-        { label: t("annualReports"), href: "#" },
-        { label: t("mediaCenter"), href: "#" },
+        // All overview items go to the About page
+        { label: t("aboutProgram"), page: "about" },
+        { label: t("visionMission"), page: "about" },
+        { label: t("objectives"), page: "about" },
+        { label: t("whatWeOffer"), page: "about" },
+        { label: t("achievements"), page: "about" },
+        { label: t("annualReports"), page: "about" },
+        { label: t("mediaCenter"), page: "about" },
       ],
     },
     {
       title: t("sectorsServices"),
       links: [
-        { label: t("beekeeping"), href: "#" },
-        { label: t("coffee"), href: "#" },
-        { label: t("fruits"), href: "#" },
-        { label: t("rainfedCrops"), href: "#" },
-        { label: t("rosesAromatic"), href: "#" },
-        { label: t("livestock"), href: "#" },
-        { label: t("fishing"), href: "#" },
-        { label: t("handicrafts"), href: "#" },
-        { label: t("agritech"), href: "#" },
-        { label: t("reefAcademy"), href: "#" },
+        // Map each sector label to its sector route
+        { label: t("beekeeping"), page: "sector", sectorId: "beekeeping" },
+        { label: t("coffee"), page: "sector", sectorId: "coffee" },
+        { label: t("fruits"), page: "sector", sectorId: "fruits" },
+        { label: t("rainfedCrops"), page: "sector", sectorId: "rainfed" },
+        { label: t("rosesAromatic"), page: "sector", sectorId: "flowers" },
+        { label: t("livestock"), page: "sector", sectorId: "livestock" },
+        { label: t("fishing"), page: "sector", sectorId: "fishing" },
+        { label: t("handicrafts"), page: "sector", sectorId: "handicrafts" },
+        // Agritech is the sectors home page
+        { label: t("agritech"), page: "sectors" },
+        // Reef Academy currently routes to About
+        { label: t("reefAcademy"), page: "about" },
       ],
     },
     {
@@ -40,10 +44,11 @@ export function Footer() {
         { label: t("howToApply"), page: "supportApplication" },
         { label: t("faqs"), page: "faqs" },
         { label: t("termsConditions"), page: "beneficiariesGuide" },
+        // These can be wired to external complaint portals later
         { label: t("submitComplaint"), href: "#" },
         { label: t("reportCorruption"), href: "#" },
         { label: t("askSpokesperson"), href: "#" },
-        { label: t("contact"), href: "#" },
+        { label: t("contact"), page: "contact" },
       ],
     },
     {
@@ -74,9 +79,10 @@ export function Footer() {
           href: "https://mewa.gov.sa",
           external: true,
         },
-        { label: t("interactiveMap"), href: "#" },
-        { label: t("galleryBook"), href: "#" },
-        { label: t("supportPrograms"), href: "#" },
+        // Internal links mapped to existing routes
+        { label: t("interactiveMap"), page: "sectors" },
+        { label: t("galleryBook"), page: "galleryBook" },
+        { label: t("supportPrograms"), page: "supportApplication" },
       ],
     },
   ];
@@ -134,24 +140,29 @@ export function Footer() {
                 <ul className="space-y-3">
                   {column.links.map((link, linkIndex) => (
                     <li key={linkIndex}>
-                      {link.page ? (
+                      {"page" in link && link.page ? (
                         <button
-                          onClick={() => navigateTo(link.page as any)}
+                          onClick={() =>
+                            navigateTo(
+                              link.page as Parameters<typeof navigateTo>[0],
+                              (link as { sectorId?: string }).sectorId,
+                            )
+                          }
                           className="text-white/80 hover:text-white transition-colors text-sm inline-flex items-center gap-2"
                         >
                           {link.label}
                         </button>
                       ) : (
                         <a
-                          href={link.href}
+                          href={"href" in link ? link.href : "#"}
                           className="text-white/80 hover:text-white transition-colors text-sm inline-flex items-center gap-2"
-                          target={link.external ? "_blank" : undefined}
+                          target={"external" in link && link.external ? "_blank" : undefined}
                           rel={
-                            link.external ? "noopener noreferrer" : undefined
+                            "external" in link && link.external ? "noopener noreferrer" : undefined
                           }
                         >
                           {link.label}
-                          {link.external && (
+                          {"external" in link && link.external && (
                             <svg
                               className="w-3 h-3"
                               fill="none"

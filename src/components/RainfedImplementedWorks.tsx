@@ -242,7 +242,7 @@ export function RainfedImplementedWorks() {
                 className="bg-[#F9F7EF] rounded-2xl p-6 text-center hover:shadow-md transition-all duration-300"
                 style={{ borderTop: `4px solid ${trial.color}` }}
               >
-                <div className="text-4xl mb-4">{trial.icon}</div>
+                <div className="text-4xl mb-4" style={{ color: trial.color }}>●</div>
                 <p className="text-sm font-semibold text-[#035938]">
                   {trial.title}
                 </p>

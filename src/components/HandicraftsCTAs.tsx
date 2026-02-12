@@ -1,10 +1,7 @@
 import { useLanguage } from '../context/LanguageContext';
-import { motion } from 'motion/react';
-import { Map, Heart, ArrowRight, Sparkles } from 'lucide-react';
 
 export function HandicraftsCTAs() {
-  const { t, language } = useLanguage();
-  const isRTL = language === 'ar';
+  const { t } = useLanguage();
 
   return (
     <div className="mb-16">
