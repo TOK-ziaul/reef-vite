@@ -416,7 +416,7 @@ export function RosesFiguresIndicators() {
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Visual Map - Saudi Arabia with all region locations */}
-            <div className="relative h-[500px] w-full rounded-3xl overflow-hidden border border-[#52BC88]/20 bg-gradient-to-br from-[#035938]/5 to-[#52BC88]/5">
+            <div className="relative h-full w-full rounded-3xl overflow-hidden border border-[#52BC88]/20 bg-gradient-to-br from-[#035938]/5 to-[#52BC88]/5">
               <MapContainer
                 center={[24, 45]}
                 zoom={5}
