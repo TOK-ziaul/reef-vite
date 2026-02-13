@@ -186,7 +186,7 @@ export function RosesProjects() {
         </div>
 
         {/* Stats Overview */}
-        <div className="grid md:grid-cols-2 gap-6 mb-16">
+        <div className="grid md:grid-cols-2 gap-6 mb-16 max-w-[880px] mx-auto ">
           {/* Number of Projects */}
           <div
             className="group relative"

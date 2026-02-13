@@ -349,3 +349,9 @@ footer a:hover {
 .animate-bounce-slow {
   animation: bounce-slow 3s ease-in-out infinite;
 }
+
+/* Leaflet custom region markers - no default icon chrome */
+.region-marker.leaflet-div-icon {
+  background: none !important;
+  border: none !important;
+}
