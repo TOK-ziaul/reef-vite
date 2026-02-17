@@ -12,48 +12,56 @@ export function AllSectorsList() {
       nameKey: "allSector1Name",
       descKey: "allSector1Desc",
       number: 1,
+      img: "/sectors/beekeeping.jpg",
     },
     {
       id: "coffee",
       nameKey: "allSector2Name",
       descKey: "allSector2Desc",
       number: 2,
+      img: "/sectors/coffee.jpg",
     },
     {
       id: "flowers",
       nameKey: "allSector3Name",
       descKey: "allSector3Desc",
       number: 3,
+      img: "/sectors/rose.jpg",
     },
     {
       id: "fruits",
       nameKey: "allSector4Name",
       descKey: "allSector4Desc",
       number: 4,
+      img: "/sectors/fruits.jpg",
     },
     {
       id: "rainfed",
       nameKey: "allSector5Name",
       descKey: "allSector5Desc",
       number: 5,
+      img: "/sectors/rainfed.jpg",
     },
     {
       id: "fishing",
       nameKey: "allSector6Name",
       descKey: "allSector6Desc",
       number: 6,
+      img: "/sectors/fishing.jpg",
     },
     {
       id: "handicrafts",
       nameKey: "allSector7Name",
       descKey: "allSector7Desc",
       number: 7,
+      img: "/sectors/handicraft.jpg",
     },
     {
       id: "livestock",
       nameKey: "allSector8Name",
       descKey: "allSector8Desc",
       number: 8,
+      img: "/sectors/livestock.jpg",
     },
   ];
 
@@ -78,6 +86,11 @@ export function AllSectorsList() {
                 : "hover:border-[#F1BC28]/30"
             } overflow-hidden`}
           >
+            <img
+              src={sector.img}
+              alt={t(sector.nameKey)}
+              className="absolute inset-0 w-full h-full object-cover opacity-20"
+            />
             <div
               className={`absolute top-0 right-0 w-32 h-32 ${
                 index % 2 === 0
@@ -102,7 +115,7 @@ export function AllSectorsList() {
                   <h3 className="text-xl font-bold text-[#035938] mb-3">
                     {t(sector.nameKey)}
                   </h3>
-                  <p className="text-gray-700 leading-relaxed mb-4">
+                  <p className="text-gray-900 leading-relaxed mb-4">
                     {t(sector.descKey)}
                   </p>
                   <button

@@ -27,8 +27,7 @@ export const BeneficiariesGuidePage: React.FC = () => {
         language === "ar"
           ? "فهم طبيعة المشروع"
           : "Understanding Project Nature",
-      image:
-        "https://images.unsplash.com/photo-1758876202522-df2c0dbd0d52?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9qZWN0JTIwcGxhbm5pbmclMjBidXNpbmVzcyUyMHN0cmF0ZWd5fGVufDF8fHx8MTc3MDc0NTgxNXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image: "/guides/1.jpg",
       color: "from-[#035938] to-[#52BC88]",
       intro:
         language === "ar"
@@ -51,8 +50,7 @@ export const BeneficiariesGuidePage: React.FC = () => {
         language === "ar"
           ? "الالتزام بالمعايير الفنية"
           : "Commitment to Technical Standards",
-      image:
-        "https://images.unsplash.com/photo-1650331264110-72cd4206d092?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxxdWFsaXR5JTIwc3RhbmRhcmRzJTIwY2VydGlmaWNhdGlvbnxlbnwxfHx8fDE3NzA3NDU4MTV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image: "/guides/2.jpg",
       color: "from-[#52BC88] to-[#F1BC28]",
       intro:
         language === "ar"
@@ -75,8 +73,7 @@ export const BeneficiariesGuidePage: React.FC = () => {
         language === "ar"
           ? "إدارة الموارد المالية"
           : "Financial Resource Management",
-      image:
-        "https://images.unsplash.com/photo-1705948734578-54b4e4dbf443?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaW5hbmNpYWwlMjBtYW5hZ2VtZW50JTIwbW9uZXklMjBidWRnZXR8ZW58MXx8fHwxNzcwNzQ1ODE1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image: "/guides/3.jpg",
       color: "from-[#F1BC28] to-[#035938]",
       intro:
         language === "ar"
@@ -100,8 +97,7 @@ export const BeneficiariesGuidePage: React.FC = () => {
     },
     {
       title: language === "ar" ? "التسويق والترويج" : "Marketing and Promotion",
-      image:
-        "https://images.unsplash.com/photo-1709281847780-2b34c28853c0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYXJrZXRpbmclMjBwcm9tb3Rpb24lMjBidXNpbmVzcyUyMGdyb3d0aHxlbnwxfHx8fDE3NzA3NDU4MTZ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image: "/guides/4.jpg",
       color: "from-[#035938] to-[#F1BC28]",
       intro:
         language === "ar"
@@ -122,8 +118,7 @@ export const BeneficiariesGuidePage: React.FC = () => {
     },
     {
       title: language === "ar" ? "التقييم المستمر" : "Continuous Evaluation",
-      image:
-        "https://images.unsplash.com/photo-1768811838777-0507859b5ab9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxldmFsdWF0aW9uJTIwYXNzZXNzbWVudCUyMHBlcmZvcm1hbmNlJTIwcmV2aWV3fGVufDF8fHx8MTc3MDc0NTgxNnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image: "/guides/5.jpg",
       color: "from-[#52BC88] to-[#035938]",
       intro:
         language === "ar"

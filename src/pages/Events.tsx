@@ -36,8 +36,7 @@ export const EventsPage: React.FC = () => {
           ? "الرياض - مركز المعارض"
           : "Riyadh - Exhibition Center",
       attendees: "500+",
-      image:
-        "https://images.unsplash.com/photo-1765920774183-9c0841be77c0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnYWxsZXJ5JTIwcGhvdG9zJTIwZXhoaWJpdGlvbiUyMGRpc3BsYXl8ZW58MXx8fHwxNzcwNzIxODUzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image: "/events/3.jpg",
       category: language === "ar" ? "معارض" : "Exhibitions",
     },
     {
@@ -58,8 +57,7 @@ export const EventsPage: React.FC = () => {
           ? "الأحساء - مركز التدريب"
           : "Al-Ahsa - Training Center",
       attendees: "150",
-      image:
-        "https://images.unsplash.com/photo-1763962274119-1a0a0d418520?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxldmVudCUyMGNvbmZlcmVuY2UlMjBwZW9wbGUlMjBnYXRoZXJpbmd8ZW58MXx8fHwxNzcwNzIxNzcyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image: "/events/5.jpg",
       category: language === "ar" ? "ورش عمل" : "Workshops",
     },
     {
@@ -78,8 +76,7 @@ export const EventsPage: React.FC = () => {
       location:
         language === "ar" ? "جازان - المزرعة النموذجية" : "Jazan - Model Farm",
       attendees: "200",
-      image:
-        "https://images.unsplash.com/photo-1690986375486-460dc48dd499?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZ3JpY3VsdHVyZSUyMGZhcm0lMjBncmVlbiUyMGZpZWxkfGVufDF8fHx8MTc3MDcyMTc3M3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image: "/events/6.jpg",
       category: language === "ar" ? "برامج تدريبية" : "Training Programs",
     },
     {
@@ -100,8 +97,7 @@ export const EventsPage: React.FC = () => {
           ? "جدة - مركز المؤتمرات الدولي"
           : "Jeddah - International Conference Center",
       attendees: "800+",
-      image:
-        "https://images.unsplash.com/photo-1549969363-7d17e5cec74f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwaG90b2dyYXBoZXIlMjBjYW1lcmElMjB2aWRlbyUyMHByb2R1Y3Rpb258ZW58MXx8fHwxNzcwNzIxNzcyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image: "/events/2.jpg",
       category: language === "ar" ? "مؤتمرات" : "Conferences",
     },
     {
@@ -119,8 +115,7 @@ export const EventsPage: React.FC = () => {
           ? "القصيم - الساحة المركزية"
           : "Qassim - Central Plaza",
       attendees: "1000+",
-      image:
-        "https://images.unsplash.com/photo-1763962274119-1a0a0d418520?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxldmVudCUyMGNvbmZlcmVuY2UlMjBwZW9wbGUlMjBnYXRoZXJpbmd8ZW58MXx8fHwxNzcwNzIxNzcyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image: "/events/4.jpg",
       category: language === "ar" ? "احتفاليات" : "Celebrations",
     },
     {
@@ -141,8 +136,7 @@ export const EventsPage: React.FC = () => {
           ? "الرياض - قاعة الملك فهد"
           : "Riyadh - King Fahd Hall",
       attendees: "300",
-      image:
-        "https://images.unsplash.com/photo-1770250959829-de36726e99c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYWxlbmRhciUyMGV2ZW50JTIwc2NoZWR1bGUlMjBwbGFubmluZ3xlbnwxfHx8fDE3NzA3MjE5NDh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image: "/events/1.jpg",
       category: language === "ar" ? "تخريج" : "Graduation",
     },
   ];
