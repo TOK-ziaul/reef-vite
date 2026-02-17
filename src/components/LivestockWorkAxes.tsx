@@ -242,7 +242,7 @@ export function LivestockWorkAxes() {
         }}
       />
 
-      <div className="max-w-7xl mx-auto px-4 md:px-8 relative">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 relative ">
         {/* Section Title */}
         <motion.div
           className="text-center mb-12"
@@ -270,7 +270,7 @@ export function LivestockWorkAxes() {
           {/* Horizontal Scrolling Cards */}
           <div
             ref={containerRef}
-            className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide"
+            className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide px-6"
             style={{
               scrollbarWidth: "none",
               msOverflowStyle: "none",

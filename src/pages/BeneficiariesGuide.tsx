@@ -200,7 +200,7 @@ export const BeneficiariesGuidePage: React.FC = () => {
       </section>
 
       {/* Intro Section */}
-      <section className="relative -mt-20 py-24 bg-[#F9F7EF]">
+      <section className="relative -mt-2 pt-10 pb-24 bg-[#F9F7EF]">
         <div className="container mx-auto px-6 md:px-12 lg:px-20 max-w-7xl">
           <div
             className="bg-white rounded-[40px] p-10 md:p-14 lg:p-16 shadow-lg"
@@ -240,7 +240,7 @@ export const BeneficiariesGuidePage: React.FC = () => {
                     animation: `fadeInUp 0.8s ease-out ${0.15 * index}s backwards`,
                   }}
                 >
-                  <div className="bg-white rounded-[40px] shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                  <div className="bg-white rounded-[10px] shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
                       {/* Image Side */}
                       <div className="lg:col-span-4 relative h-[300px] lg:h-auto overflow-hidden">
@@ -255,35 +255,35 @@ export const BeneficiariesGuidePage: React.FC = () => {
                       </div>
 
                       {/* Content Side */}
-                      <div className="lg:col-span-8 p-10 md:p-12">
+                      <div className="lg:col-span-8 p-6 md:p-8">
                         <h3
-                          className={`text-3xl md:text-4xl font-bold text-[#035938] mb-6 ${isRTL ? "text-right" : "text-left"}`}
+                          className={`text-2xl md:text-3xl font-bold text-[#035938] mb-4 ${isRTL ? "text-right" : "text-left"}`}
                         >
                           {guide.title}
                         </h3>
 
                         <p
-                          className={`text-xl leading-relaxed text-[#052F2A]/70 mb-8 ${isRTL ? "text-right" : "text-left"}`}
+                          className={`text-lg leading-relaxed text-[#052F2A]/70 mb-4 ${isRTL ? "text-right" : "text-left"}`}
                         >
                           {guide.intro}
                         </p>
 
-                        <div className="space-y-4 mb-8">
+                        <div className="space-y-2 mb-6">
                           {guide.items.map((item, i) => (
                             <div
                               key={i}
                               className={`flex items-start gap-4 ${isRTL ? "flex-row-reverse" : "flex-row"}`}
                             >
                               <div
-                                className={`w-8 h-8 rounded-lg bg-gradient-to-br ${guide.color} flex items-center justify-center flex-shrink-0 mt-1`}
+                                className={`size-6 rounded bg-gradient-to-br ${guide.color} flex items-center justify-center flex-shrink-0 mt-1`}
                               >
                                 <Check
-                                  className="w-5 h-5 text-white"
+                                  className="size-4 text-white"
                                   strokeWidth={2.5}
                                 />
                               </div>
                               <p
-                                className={`text-lg text-[#052F2A] flex-1 ${isRTL ? "text-right" : "text-left"}`}
+                                className={`text-base text-[#052F2A] flex-1 ${isRTL ? "text-right" : "text-left"}`}
                               >
                                 {item}
                               </p>
@@ -293,7 +293,7 @@ export const BeneficiariesGuidePage: React.FC = () => {
 
                         {guide.conclusion && (
                           <div
-                            className={`p-6 rounded-2xl bg-[#F9F7EF] border-l-4 ${isRTL ? "border-r-4 border-l-0" : ""}`}
+                            className={`p-4 rounded-2xl bg-[#F9F7EF] border-l-4 ${isRTL ? "border-r-4 border-l-0" : ""}`}
                             style={{ borderColor: "#52BC88" }}
                           >
                             <p

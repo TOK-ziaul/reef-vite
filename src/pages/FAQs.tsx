@@ -151,7 +151,7 @@ export const FAQsPage: React.FC = () => {
       </section>
 
       {/* Intro Section */}
-      <section className="relative -mt-20 pb-24 bg-[#FAFAF8]">
+      <section className="relative -mt-2 pt-10 pb-24 bg-[#FAFAF8]">
         <div className="container mx-auto px-6 md:px-12 lg:px-20 max-w-7xl">
           <div
             className="bg-white rounded-[40px] p-10 md:p-16 shadow-2xl relative"

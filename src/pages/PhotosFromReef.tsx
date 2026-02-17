@@ -344,20 +344,19 @@ export const PhotosFromReefPage: React.FC = () => {
             ))}
           </div>
 
-          {/* Masonry Gallery Grid */}
+          {/* Masonry Gallery Grid - column flow so no gap on first row */}
           <div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            className="columns-1 md:columns-2 lg:columns-3"
             style={{
               animation: "fadeInUp 0.8s ease-out 0.2s backwards",
+              columnGap: "1.5rem",
             }}
           >
             {filteredGallery.map((item, index) => (
               <div
                 key={item.id}
-                className={`group relative rounded-[30px] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 ${
-                  index % 5 === 0
-                    ? "md:row-span-2 aspect-[3/4]"
-                    : "aspect-square"
+                className={`group relative rounded-[30px] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 break-inside-avoid mb-6 ${
+                  index % 5 === 0 ? "aspect-[3/4]" : "aspect-square"
                 }`}
                 style={{
                   animation: `fadeInUp 0.6s ease-out ${0.05 * index}s backwards`,

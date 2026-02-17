@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import { useLanguage } from "../context/LanguageContext";
+import { ArrowRight } from "lucide-react";
 
 export const SustainabilityPage: React.FC = () => {
   const { t, language } = useLanguage();
@@ -460,32 +461,32 @@ export const SustainabilityPage: React.FC = () => {
                 </div>
 
                 <div className="relative z-10 p-8 md:p-12 lg:p-16">
-                  <div className="grid md:grid-cols-3 gap-8">
+                  <div className="grid md:grid-cols-3 w-fit mx-auto gap-10">
                     {/* Stat 1 */}
-                    <div className="backdrop-blur-lg bg-white/10 rounded-3xl p-8 border border-white/20">
-                      <div className="text-6xl md:text-7xl font-bold text-[#F1BC28] mb-3">
+                    <div className="backdrop-blur-lg bg-white/10 rounded-3xl p-8 border border-white/20 max-w-[220px]">
+                      <div className="text-3xl md:text-5xl font-bold text-[#F1BC28] mb-3">
                         50
                       </div>
-                      <div className="text-white text-xl">
+                      <div className="text-white text-lg">
                         {t("trainingCourses")}
                       </div>
                     </div>
 
                     {/* Stat 2 */}
-                    <div className="backdrop-blur-lg bg-gradient-to-br from-[#F1BC28]/90 to-[#F1BC28]/70 rounded-3xl p-8 border border-white/30">
-                      <div className="text-6xl md:text-7xl font-bold text-[#035938] mb-3">
+                    <div className="backdrop-blur-lg bg-gradient-to-br from-[#F1BC28]/90 to-[#F1BC28]/70 rounded-3xl p-8 border border-white/30 max-w-[220px]">
+                      <div className="text-3xl md:text-5xl font-bold text-[#035938] mb-3">
                         1546
                       </div>
-                      <div className="text-[#035938] text-xl font-semibold">
+                      <div className="text-[#035938] text-lg font-semibold">
                         {t("trainingParticipants")}
                       </div>
                     </div>
 
                     {/* Gender Breakdown */}
-                    <div className="backdrop-blur-lg bg-white/10 rounded-3xl p-8 border border-white/20">
+                    <div className="backdrop-blur-lg bg-white/10 rounded-3xl p-8 border border-white/20 max-w-[220px]">
                       <div className="flex items-center justify-between mb-4">
                         <div>
-                          <div className="text-4xl font-bold text-white">
+                          <div className="text-3xl md:text-3xl font-bold text-white">
                             1288
                           </div>
                           <div className="text-white/80 text-sm">
@@ -496,10 +497,10 @@ export const SustainabilityPage: React.FC = () => {
                       <div className="h-px bg-white/20 my-4" />
                       <div className="flex items-center justify-between">
                         <div>
-                          <div className="text-4xl font-bold text-[#F1BC28]">
+                          <div className="text-3xl md:text-3xl font-bold text-[#F1BC28]">
                             258
                           </div>
-                          <div className="text-white/80 text-sm">
+                          <div className="text-white/80 text-lg">
                             {t("trainingWomen")}
                           </div>
                         </div>
@@ -545,14 +546,16 @@ export const SustainabilityPage: React.FC = () => {
                 <h4 className="text-2xl font-bold text-[#035938] mb-6">
                   {t("trainingCategoriesTitle")}
                 </h4>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="backdrop-blur-lg bg-gradient-to-br from-[#035938] to-[#52BC88] p-8 rounded-3xl text-white">
-                    <div className="text-5xl font-bold mb-2">410</div>
+                <div className="grid md:grid-cols-2 gap-6 w-fit">
+                  <div className="backdrop-blur-lg bg-gradient-to-br from-[#035938] to-[#52BC88] p-8 rounded-3xl text-white max-w-[220px]">
+                    <div className="text-3xl md:text-4xl font-bold mb-2">
+                      410
+                    </div>
                     <div className="text-xl">{t("trainingEmployees")}</div>
                   </div>
 
-                  <div className="backdrop-blur-lg bg-gradient-to-br from-[#F1BC28] to-[#F1BC28]/80 p-8 rounded-3xl">
-                    <div className="text-5xl font-bold text-[#035938] mb-2">
+                  <div className="backdrop-blur-lg bg-gradient-to-br from-[#F1BC28] to-[#F1BC28]/80 p-8 rounded-3xl max-w-[220px]">
+                    <div className="text-3xl md:text-4xl font-bold text-[#035938] mb-2">
                       654
                     </div>
                     <div className="text-xl text-[#035938]">
@@ -588,7 +591,7 @@ export const SustainabilityPage: React.FC = () => {
                   {/* Left Side - Stats Column (2/5 width) */}
                   <div className="lg:col-span-2 space-y-6">
                     {/* Main Total Stat - Vertical Card */}
-                    <div className="backdrop-blur-xl bg-gradient-to-br from-[#035938] to-[#52BC88] rounded-[40px] p-10 text-white shadow-2xl hover:scale-105 transition-all duration-500">
+                    <div className="backdrop-blur-xl bg-gradient-to-br from-[#035938] to-[#52BC88] rounded-[40px] p-10 text-white shadow-2xl hover:scale-105 transition-all duration-500 ">
                       <div className="text-center">
                         <div className="inline-block mb-6">
                           <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-lg border border-white/40">
@@ -597,7 +600,7 @@ export const SustainabilityPage: React.FC = () => {
                             </span>
                           </div>
                         </div>
-                        <div className="text-8xl font-bold mb-4 text-[#F1BC28]">
+                        <div className="text-3xl md:text-5xl font-bold mb-4 text-[#F1BC28]">
                           164
                         </div>
                         <div className="text-2xl font-semibold mb-4">
@@ -615,7 +618,9 @@ export const SustainabilityPage: React.FC = () => {
                       <div className="backdrop-blur-xl bg-gradient-to-r from-[#52BC88] to-[#52BC88]/80 rounded-[30px] p-8 text-white shadow-xl hover:scale-105 hover:shadow-2xl transition-all duration-300">
                         <div className="flex items-center justify-between">
                           <div>
-                            <div className="text-5xl font-bold mb-2">111</div>
+                            <div className="text-3xl md:text-4xl font-bold mb-2">
+                              111
+                            </div>
                             <div className="text-base">
                               {t("studyToursInternal")}
                             </div>
@@ -629,7 +634,7 @@ export const SustainabilityPage: React.FC = () => {
                       <div className="backdrop-blur-xl bg-gradient-to-r from-[#F1BC28] to-[#F1BC28]/80 rounded-[30px] p-8 shadow-xl hover:scale-105 hover:shadow-2xl transition-all duration-300">
                         <div className="flex items-center justify-between">
                           <div>
-                            <div className="text-5xl font-bold text-[#035938] mb-2">
+                            <div className="text-3xl md:text-4xl font-bold text-[#035938] mb-2">
                               53
                             </div>
                             <div className="text-base text-[#035938]">
@@ -958,6 +963,22 @@ export const SustainabilityPage: React.FC = () => {
               ))}
             </div>
           </div>
+        </div>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-16">
+          <a
+            href="#interactive-map"
+            className="flex items-center gap-2 px-8 py-4 bg-[#035938] !text-white rounded-xl hover:bg-[#52BC88] transition-all duration-300 hover:shadow-lg hover:scale-105"
+          >
+            {t("exploreInteractiveMap")}
+            <ArrowRight className="w-5 h-5" />
+          </a>
+          <a
+            href="#support-programs"
+            className="flex items-center gap-2 px-8 py-4 bg-yellow-400 text-[#035938] rounded-xl hover:bg-[#035938] hover:!text-white transition-all duration-300 hover:shadow-lg hover:scale-105"
+          >
+            {t("exploreSupportPrograms")}
+            <ArrowRight className="w-5 h-5" />
+          </a>
         </div>
       </section>
 
