@@ -154,7 +154,9 @@ export function SectorPage({ sectorId: sectorIdProp }: SectorPageProps = {}) {
   };
 
   const isSectorsHome = !sectorId;
-  const sector = isSectorsHome ? sectorData.agritech : (sectorData[sectorId] || sectorData.beekeeping);
+  const sector = isSectorsHome
+    ? sectorData.agritech
+    : sectorData[sectorId] || sectorData.beekeeping;
 
   /** Renders translation text with **phrase** segments as green highlighted spans */
   const textWithHighlights = (
@@ -1143,9 +1145,9 @@ export function SectorPage({ sectorId: sectorIdProp }: SectorPageProps = {}) {
 
           {/* Numbers and Indicators Section - Fishing */}
           {sectorId === "fishing" && (
-            <div className="mb-24 relative overflow-hidden py-20 bg-gradient-to-b from-[#F9F7EF] to-white">
+            <div className="mb-24 relative overflow-hidden py-20">
               {/* Decorative Wave Background */}
-              <div className="absolute inset-0 pointer-events-none opacity-5">
+              {/* <div className="absolute inset-0 pointer-events-none opacity-5">
                 <svg
                   className="w-full h-full"
                   preserveAspectRatio="none"
@@ -1164,7 +1166,7 @@ export function SectorPage({ sectorId: sectorIdProp }: SectorPageProps = {}) {
                     fill="#F1BC28"
                   />
                 </svg>
-              </div>
+              </div> */}
 
               <div className="relative max-w-7xl mx-auto px-4">
                 {/* Section Title */}

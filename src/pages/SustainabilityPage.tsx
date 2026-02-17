@@ -591,7 +591,12 @@ export const SustainabilityPage: React.FC = () => {
                   {/* Left Side - Stats Column (2/5 width) */}
                   <div className="lg:col-span-2 space-y-6">
                     {/* Main Total Stat - Vertical Card */}
-                    <div className="backdrop-blur-xl bg-gradient-to-br from-[#035938] to-[#52BC88] rounded-[40px] p-10 text-white shadow-2xl hover:scale-105 transition-all duration-500 ">
+                    <div className="backdrop-blur-xl bg-gradient-to-br from-[#035938] to-[#52BC88] rounded-[40px] p-10 text-white shadow-2xl hover:scale-105 transition-all duration-500 overflow-hidden">
+                      <img
+                        src="/tours/1.jpg"
+                        alt="Study Tours"
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-30"
+                      />
                       <div className="text-center">
                         <div className="inline-block mb-6">
                           <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-lg border border-white/40">
@@ -615,8 +620,13 @@ export const SustainabilityPage: React.FC = () => {
 
                     {/* Breakdown Cards - Stacked */}
                     <div className="space-y-4">
-                      <div className="backdrop-blur-xl bg-gradient-to-r from-[#52BC88] to-[#52BC88]/80 rounded-[30px] p-8 text-white shadow-xl hover:scale-105 hover:shadow-2xl transition-all duration-300">
-                        <div className="flex items-center justify-between">
+                      <div className="backdrop-blur-xl bg-gradient-to-r from-[#52BC88] to-[#52BC88]/80 rounded-[30px] p-8 text-white shadow-xl hover:scale-105 hover:shadow-2xl transition-all duration-300 overflow-hidden">
+                        <img
+                          src="/tours/4.jpg"
+                          alt="Study Tours"
+                          className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-40"
+                        />
+                        <div className="relative z-10 flex items-center justify-between">
                           <div>
                             <div className="text-3xl md:text-4xl font-bold mb-2">
                               111
@@ -631,8 +641,13 @@ export const SustainabilityPage: React.FC = () => {
                         </div>
                       </div>
 
-                      <div className="backdrop-blur-xl bg-gradient-to-r from-[#F1BC28] to-[#F1BC28]/80 rounded-[30px] p-8 shadow-xl hover:scale-105 hover:shadow-2xl transition-all duration-300">
-                        <div className="flex items-center justify-between">
+                      <div className="backdrop-blur-xl bg-gradient-to-r from-[#F1BC28] to-[#F1BC28]/80 rounded-[30px] p-8 shadow-xl hover:scale-105 hover:shadow-2xl transition-all duration-300 overflow-hidden">
+                        <img
+                          src="/tours/3.jpg"
+                          alt="Study Tours"
+                          className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-40"
+                        />
+                        <div className="relative z-10 flex items-center justify-between">
                           <div>
                             <div className="text-3xl md:text-4xl font-bold text-[#035938] mb-2">
                               53
@@ -654,7 +669,7 @@ export const SustainabilityPage: React.FC = () => {
                     {/* Large Image with Overlapping Badge */}
                     <div className="relative h-full min-h-[600px] rounded-[50px] overflow-hidden group shadow-2xl">
                       <img
-                        src="https://images.unsplash.com/photo-1754775156384-0b8cc4cc2b3d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHVkeSUyMHRvdXIlMjBmaWVsZCUyMHZpc2l0JTIwYWdyaWN1bHR1cmFsJTIwZmFybSUyMGdyb3VwfGVufDF8fHx8MTc3MDcxODU1OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                        src="/tours/2.jpg"
                         alt="Study Tours"
                         className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                       />

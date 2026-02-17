@@ -447,6 +447,10 @@ export function RosesFiguresIndicators() {
                       key={region.name}
                       position={[region.lat, region.lng]}
                       icon={icon}
+                      eventHandlers={{
+                        mouseover: (e) => e.target.openPopup(),
+                        mouseout: (e) => e.target.closePopup(),
+                      }}
                     >
                       <Popup>
                         <div className="text-center min-w-[120px]">
