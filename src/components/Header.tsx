@@ -8,7 +8,7 @@ import { DropdownAbout } from "./DropdownAbout";
 import { DropdownMediaCenter } from "./DropdownMediaCenter";
 import { DropdownSupport } from "./DropdownSupport";
 import { DropdownContact } from "./DropdownContact";
-const reefLogo = "https://placehold.co/200x200?text=Logo";
+const reefLogo = "/logo.png";
 
 export function Header() {
   const { language, toggleLanguage, t } = useLanguage();
