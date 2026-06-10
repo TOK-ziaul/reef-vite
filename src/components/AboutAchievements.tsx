@@ -384,7 +384,7 @@ export function AboutAchievements() {
     <section
       id="achievements"
       ref={sectionRef}
-      className="relative py-24 px-6 bg-gradient-to-br from-white via-[#F9F7EF] to-white overflow-hidden"
+      className="scroll-mt-24 relative py-24 px-6 bg-gradient-to-br from-white via-[#F9F7EF] to-white overflow-hidden"
       style={{
         direction: language === "ar" ? "rtl" : "ltr",
       }}

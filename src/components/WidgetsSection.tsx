@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowRight, Image as ImageIcon, Headphones, Map } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { useLanguage } from "../context/LanguageContext";
+import { useNavigation } from "../context/NavigationContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -96,6 +97,7 @@ function StackCards({
 
 export function WidgetsSection() {
   const { t, language } = useLanguage();
+  const { navigateTo } = useNavigation();
   const [hoveredRegion, setHoveredRegion] = useState<string | null>(null);
 
   const regions = [
@@ -198,6 +200,7 @@ export function WidgetsSection() {
       title: t("widget1Title"),
       description: t("widget1Desc"),
       btnText: t("widget1Btn1"),
+      onClick: () => navigateTo("supportApplication"),
       image:
         "https://images.unsplash.com/photo-1563514227147-6d2ff665a6a0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8ZmFybWluZ3xlbnwwfHwwfHx8MA%3D%3D",
       bgColor: "#F1BC28",
@@ -208,6 +211,7 @@ export function WidgetsSection() {
       title: t("widget2Title"),
       description: t("widget2Desc"),
       btnText: t("widget2Btn1"),
+      onClick: () => navigateTo("galleryBook"),
       image:
         "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       bgColor: "#035938",
@@ -218,6 +222,7 @@ export function WidgetsSection() {
       title: t("widget3Title"),
       description: t("widget3Desc"),
       btnText: t("widget3Btn"),
+      onClick: () => navigateTo("sectors"),
       image: null, // Map widget
       bgColor: "#52BC88",
       textColor: "white",
@@ -227,7 +232,7 @@ export function WidgetsSection() {
   ];
 
   return (
-    <section className="py-20 bg-white relative overflow-hidden">
+    <section id="interactive-map" className="scroll-mt-24 py-20 bg-white relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-gradient-to-l from-[#F1BC28]/10 to-transparent rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 left-0 w-[500px] h-[500px] bg-gradient-to-r from-[#035938]/10 to-transparent rounded-full blur-3xl" />
@@ -239,13 +244,11 @@ export function WidgetsSection() {
               <div className="inline-flex items-center gap-2 mb-4 px-5 py-2 bg-[#F9F7EF] backdrop-blur-md border border-[#035938]/20 rounded-full">
                 <div className="w-2 h-2 bg-[#52BC88] rounded-full animate-pulse" />
                 <span className="text-[#035938] text-sm font-medium">
-                  {language === "ar" ? "ثقافتنا" : "Our Culture"}
+                  {t("widgetsBadge")}
                 </span>
               </div>
               <h2 className="text-[#052F2A] leading-tight text-3xl md:text-4xl font-bold">
-                {language === "ar"
-                  ? "استكشف برامجنا ومبادراتنا"
-                  : "Explore Our Programs & Initiatives"}
+                {t("widgetsTitle")}
               </h2>
             </div>
           }
@@ -417,16 +420,15 @@ export function WidgetsSection() {
                     )}
 
                     {/* CTA Button */}
-                    <a
-                      href="#"
-                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg transition-all duration-300 font-medium"
+                    <button
+                      type="button"
+                      onClick={card.onClick}
+                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg transition-all duration-300 font-medium hover:opacity-90 mt-4 cursor-pointer"
                       style={{
                         backgroundColor:
                           card.bgColor === "#F1BC28"
-                            ? "#052F2A"
-                            : card.isMap
-                              ? "rgba(255,255,255,0.1)"
-                              : "rgba(255,255,255,0.1)",
+                            ? "#035938"
+                            : "rgba(255,255,255,0.1)",
                         color: card.textColor,
                         border: card.isMap
                           ? "1px solid rgba(255,255,255,0.2)"
@@ -434,8 +436,12 @@ export function WidgetsSection() {
                       }}
                     >
                       <span className="text-sm">{card.btnText}</span>
-                      <ArrowRight className={`w-4 h-4`} />
-                    </a>
+                      <ArrowRight
+                        className={`w-4 h-4 ${
+                          language === "ar" ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
                   </div>
 
                   {/* Decorative Circle */}

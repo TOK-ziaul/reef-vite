@@ -8,16 +8,31 @@ import {
   Milk,
   Wheat,
   Fish,
-  Palette,
-  Users,
+  Flower2,
+  Sparkles,
 } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { useLanguage } from "../context/LanguageContext";
+import { useNavigation } from "../context/NavigationContext";
+
+type SectorCard = {
+  sectorId: string;
+  titleKey: string;
+  descKey: string;
+  point1Key: string;
+  point2Key: string;
+  point3Key: string;
+  icon: React.ReactNode;
+  image: string;
+  gradient: string;
+  iconBg: string;
+};
 
 gsap.registerPlugin(ScrollTrigger);
 
 export function SectorsGrid() {
   const { t, language } = useLanguage();
+  const { navigateTo } = useNavigation();
   const sectorsRef1 = useRef<HTMLDivElement>(null);
   const sectorsRef2 = useRef<HTMLDivElement>(null);
   const sectorsRef3 = useRef<HTMLDivElement>(null);
@@ -121,8 +136,22 @@ export function SectorsGrid() {
     return () => ctx.revert();
   }, []);
 
-  const sectors = [
+  const sectors: SectorCard[] = [
     {
+      sectorId: "flowers",
+      titleKey: "sector3Title",
+      descKey: "sector3Desc",
+      point1Key: "sector3Point1",
+      point2Key: "sector3Point2",
+      point3Key: "sector3Point3",
+      icon: <Flower2 className="w-8 h-8" />,
+      image:
+        "https://images.unsplash.com/photo-1727505102823-79e8c3659604?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyb3NlcyUyMGN1bHRpdmF0aW9uJTIwZ2FyZGVuJTIwYmxvb21pbmd8ZW58MXx8fHwxNzY5OTQ3ODQwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      gradient: "from-[#F1BC28]/90 via-[#52BC88]/70 to-[#035938]/90",
+      iconBg: "from-[#F1BC28] to-[#52BC88]",
+    },
+    {
+      sectorId: "beekeeping",
       titleKey: "sector1Title",
       descKey: "sector1Desc",
       point1Key: "sector1Point1",
@@ -134,7 +163,37 @@ export function SectorsGrid() {
       gradient: "from-[#F1BC28]/90 via-[#F1BC28]/70 to-[#035938]/90",
       iconBg: "from-[#F1BC28] to-[#F1BC28]/80",
     },
+  ];
+
+  const sectors2: SectorCard[] = [
     {
+      sectorId: "fruits",
+      titleKey: "sector4Title",
+      descKey: "sector4Desc",
+      point1Key: "sector4Point1",
+      point2Key: "sector4Point2",
+      point3Key: "sector4Point3",
+      icon: <Apple className="w-8 h-8" />,
+      image:
+        "https://images.unsplash.com/photo-1523539693385-e5e891eb4465?q=80&w=689&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      gradient: "from-[#F1BC28]/90 via-[#035938]/70 to-[#F1BC28]/90",
+      iconBg: "from-[#F1BC28] to-[#035938]",
+    },
+    {
+      sectorId: "rainfed",
+      titleKey: "sector6Title",
+      descKey: "sector6Desc",
+      point1Key: "sector6Point1",
+      point2Key: "sector6Point2",
+      point3Key: "sector6Point3",
+      icon: <Wheat className="w-8 h-8" />,
+      image:
+        "https://images.unsplash.com/photo-1530541835461-dedaf9cf368a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTd8fGZhcm1pbmd8ZW58MHx8MHx8fDA%3D",
+      gradient: "from-[#52BC88]/90 via-[#035938]/70 to-[#52BC88]/90",
+      iconBg: "from-[#52BC88] to-[#035938]",
+    },
+    {
+      sectorId: "coffee",
       titleKey: "sector2Title",
       descKey: "sector2Desc",
       point1Key: "sector2Point1",
@@ -148,47 +207,22 @@ export function SectorsGrid() {
     },
   ];
 
-  const sectors2 = [
+  const sectors3: SectorCard[] = [
     {
-      titleKey: "sector4Title",
-      descKey: "sector4Desc",
-      point1Key: "sector4Point1",
-      point2Key: "sector4Point2",
-      point3Key: "sector4Point3",
-      icon: <Apple className="w-8 h-8" />,
+      sectorId: "handicrafts",
+      titleKey: "sector8Title",
+      descKey: "sector8Desc",
+      point1Key: "sector8Point1",
+      point2Key: "sector8Point2",
+      point3Key: "sector8Point3",
+      icon: <Sparkles className="w-8 h-8" />,
       image:
-        "https://images.unsplash.com/photo-1523539693385-e5e891eb4465?q=80&w=689&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      gradient: "from-[#F1BC28]/90 via-[#035938]/70 to-[#F1BC28]/90",
-      iconBg: "from-[#F1BC28] to-[#035938]",
+        "https://images.unsplash.com/photo-1737606985741-479bece921b7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cmFkaXRpb25hbCUyMGhhbmRpY3JhZnRzJTIwYXJ0aXNhbiUyMHdlYXZpbmd8ZW58MXx8fHwxNzcwNjM3MzY5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      gradient: "from-[#035938]/90 via-[#52BC88]/70 to-[#F1BC28]/90",
+      iconBg: "from-[#035938] to-[#52BC88]",
     },
     {
-      titleKey: "sector5Title",
-      descKey: "sector5Desc",
-      point1Key: "sector5Point1",
-      point2Key: "sector5Point2",
-      point3Key: "sector5Point3",
-      icon: <Milk className="w-8 h-8" />,
-      image:
-        "https://images.unsplash.com/photo-1530507629858-e4977d30e9e0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzl8fGZhcm1pbmd8ZW58MHx8MHx8fDA%3D",
-      gradient: "from-[#035938]/90 via-[#F1BC28]/70 to-[#035938]/90",
-      iconBg: "from-[#035938] to-[#F1BC28]",
-    },
-    {
-      titleKey: "sector6Title",
-      descKey: "sector6Desc",
-      point1Key: "sector6Point1",
-      point2Key: "sector6Point2",
-      point3Key: "sector6Point3",
-      icon: <Wheat className="w-8 h-8" />,
-      image:
-        "https://images.unsplash.com/photo-1530541835461-dedaf9cf368a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTd8fGZhcm1pbmd8ZW58MHx8MHx8fDA%3D",
-      gradient: "from-[#52BC88]/90 via-[#035938]/70 to-[#52BC88]/90",
-      iconBg: "from-[#52BC88] to-[#035938]",
-    },
-  ];
-
-  const sectors3 = [
-    {
+      sectorId: "fishing",
       titleKey: "sector7Title",
       descKey: "sector7Desc",
       point1Key: "sector7Point1",
@@ -201,30 +235,23 @@ export function SectorsGrid() {
       iconBg: "from-[#F1BC28] to-[#52BC88]",
     },
     {
-      titleKey: "sector8Title",
-      descKey: "sector8Desc",
-      point1Key: "sector8Point1",
-      point2Key: "sector8Point2",
-      point3Key: "sector8Point3",
-      icon: <Palette className="w-8 h-8" />,
+      sectorId: "livestock",
+      titleKey: "sector5Title",
+      descKey: "sector5Desc",
+      point1Key: "sector5Point1",
+      point2Key: "sector5Point2",
+      point3Key: "sector5Point3",
+      icon: <Milk className="w-8 h-8" />,
       image:
-        "https://images.unsplash.com/photo-1710563159928-83611beece71?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTk5fHxmYXJtaW5nfGVufDB8fDB8fHww",
-      gradient: "from-[#035938]/90 via-[#52BC88]/70 to-[#F1BC28]/90",
-      iconBg: "from-[#035938] to-[#52BC88]",
-    },
-    {
-      titleKey: "sector9Title",
-      descKey: "sector9Desc",
-      point1Key: "sector9Point1",
-      point2Key: "sector9Point2",
-      point3Key: "sector9Point3",
-      icon: <Users className="w-8 h-8" />,
-      image:
-        "https://images.unsplash.com/photo-1651592278391-4e42db713c1c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjE2fHxmYXJtaW5nfGVufDB8fDB8fHww",
-      gradient: "from-[#52BC88]/90 via-[#F1BC28]/70 to-[#035938]/90",
-      iconBg: "from-[#52BC88] to-[#F1BC28]",
+        "https://images.unsplash.com/photo-1530507629858-e4977d30e9e0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzl8fGZhcm1pbmd8ZW58MHx8MHx8fDA%3D",
+      gradient: "from-[#035938]/90 via-[#F1BC28]/70 to-[#035938]/90",
+      iconBg: "from-[#035938] to-[#F1BC28]",
     },
   ];
+
+  const handleExploreSector = (sectorId: string) => {
+    navigateTo("sector", sectorId);
+  };
 
   // Small overlay component to animate mount with translate + opacity
   function Overlay({
@@ -258,7 +285,7 @@ export function SectorsGrid() {
       <div
         dir={dir}
         style={style}
-        className={`rounded-3xl absolute inset-0 p-6 pointer-events-auto justify-between  backdrop-blur-sm flex flex-col  overflow-auto max-h-full`}
+        className={`rounded-3xl absolute inset-0 p-6 pointer-events-auto justify-between  backdrop-blur-sm flex flex-col  overflow-auto max-h-full custom-scrollbar `}
       >
         {children}
       </div>
@@ -266,7 +293,7 @@ export function SectorsGrid() {
   }
 
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-[#F9F7EF] relative overflow-hidden">
+    <section id="sectors-grid" className="py-20 bg-gradient-to-b from-white to-[#F9F7EF] relative overflow-hidden">
       {/* Floating background shapes */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="float-shape-1 absolute top-20 left-10 w-96 h-96 bg-gradient-to-br from-[#52BC88]/10 to-[#035938]/10 rounded-full blur-[100px]" />
@@ -283,7 +310,7 @@ export function SectorsGrid() {
           <div className="inline-flex items-center gap-2 mb-6 px-6 py-3 bg-white/80 backdrop-blur-md border border-[#035938]/20 rounded-full">
             <div className="w-2 h-2 bg-[#52BC88] rounded-full animate-pulse" />
             <span className="text-[#035938] text-2xl font-medium">
-              {language === "ar" ? "القطاعات الريفية" : "Rural Sectors"}
+              {t("sectorsBadge")}
             </span>
             <div
               className="w-2 h-2 bg-[#F1BC28] rounded-full animate-pulse"
@@ -378,11 +405,14 @@ export function SectorsGrid() {
                       </h3>
 
                       <button
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleExploreSector(sector.sectorId);
+                        }}
                         className={`mt-2 w-full py-3 bg-gradient-to-r ${sector.iconBg} text-white rounded-xl hover:shadow-lg transform hover:scale-[1.02] transition-all duration-300 ${isMd ? "hidden group-hover:block" : "block"}`}
                       >
-                        {language === "ar"
-                          ? "زر لاستكشاف القطاع"
-                          : "Explore Sector"}
+                        {t("exploreSector")}
                       </button>
                     </div>
 
@@ -417,11 +447,14 @@ export function SectorsGrid() {
 
                       {/* Button */}
                       <button
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleExploreSector(sector.sectorId);
+                        }}
                         className={`mt-2 w-full py-3 bg-gradient-to-r ${sector.iconBg} text-white rounded-xl hover:shadow-lg transform hover:scale-[1.02] transition-all duration-300 pointer-events-auto cursor-pointer`}
                       >
-                        {language === "ar"
-                          ? "زر لاستكشاف القطاع"
-                          : "Explore Sector"}
+                        {t("exploreSector")}
                       </button>
                     </Overlay>
                   ) : null}
@@ -508,11 +541,14 @@ export function SectorsGrid() {
                         {t(sector.titleKey)}
                       </h3>
                       <button
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleExploreSector(sector.sectorId);
+                        }}
                         className={`mt-2 w-full py-3 bg-gradient-to-r ${sector.iconBg} text-white rounded-xl hover:shadow-lg transform hover:scale-[1.02] transition-all duration-300 ${isMd ? "hidden group-hover:block" : "block"}`}
                       >
-                        {language === "ar"
-                          ? "زر لاستكشاف القطاع"
-                          : "Explore Sector"}
+                        {t("exploreSector")}
                       </button>
                     </div>
 
@@ -547,11 +583,14 @@ export function SectorsGrid() {
 
                       {/* Button */}
                       <button
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleExploreSector(sector.sectorId);
+                        }}
                         className={`mt-2 w-full py-3 bg-gradient-to-r ${sector.iconBg} text-white rounded-xl hover:shadow-lg transform hover:scale-[1.02] transition-all duration-300 pointer-events-auto cursor-pointer`}
                       >
-                        {language === "ar"
-                          ? "زر لاستكشاف القطاع"
-                          : "Explore Sector"}
+                        {t("exploreSector")}
                       </button>
                     </Overlay>
                   ) : null}
@@ -641,11 +680,14 @@ export function SectorsGrid() {
                         {t(sector.titleKey)}
                       </h3>
                       <button
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleExploreSector(sector.sectorId);
+                        }}
                         className={`mt-2 w-full py-3 bg-gradient-to-r ${sector.iconBg} text-white rounded-xl hover:shadow-lg transform hover:scale-[1.02] transition-all duration-300 ${isMd ? "hidden group-hover:block" : "block"}`}
                       >
-                        {language === "ar"
-                          ? "زر لاستكشاف القطاع"
-                          : "Explore Sector"}
+                        {t("exploreSector")}
                       </button>
                     </div>
 
@@ -680,11 +722,14 @@ export function SectorsGrid() {
 
                       {/* Button */}
                       <button
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleExploreSector(sector.sectorId);
+                        }}
                         className={`mt-2 w-full py-3 bg-gradient-to-r ${sector.iconBg} text-white rounded-xl hover:shadow-lg transform hover:scale-[1.02] transition-all duration-300 pointer-events-auto cursor-pointer`}
                       >
-                        {language === "ar"
-                          ? "زر لاستكشاف القطاع"
-                          : "Explore Sector"}
+                        {t("exploreSector")}
                       </button>
                     </Overlay>
                   ) : null}

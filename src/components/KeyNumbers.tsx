@@ -2,11 +2,11 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
-  TrendingUp,
   Users,
   Sprout,
   Coins,
-  Building2,
+  Award,
+  GraduationCap,
 } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 
@@ -32,14 +32,17 @@ export function KeyNumbers() {
     },
     {
       icon: <Coins className="w-10 h-10" />,
-      number: 2514,
+      number: 2.514,
       prefix: "+",
+      suffixKey: "stat2Suffix",
       labelKey: "stat2Label",
       color: "from-[#52BC88] via-[#F1BC28] to-[#52BC88]",
       iconBg: "from-[#52BC88] to-[#F1BC28]",
+      isDecimal: true,
+      decimalPlaces: 3,
     },
     {
-      icon: <Sprout className="w-10 h-10" />,
+      icon: <Users className="w-10 h-10" />,
       number: 49500,
       prefix: "+",
       labelKey: "stat3Label",
@@ -47,29 +50,31 @@ export function KeyNumbers() {
       iconBg: "from-[#F1BC28] to-[#52BC88]",
     },
     {
-      icon: <Users className="w-10 h-10" />,
-      number: 58093,
+      icon: <Award className="w-10 h-10" />,
+      number: 95000,
       prefix: "+",
       labelKey: "stat4Label",
       color: "from-[#035938] via-[#F1BC28] to-[#035938]",
       iconBg: "from-[#035938] to-[#F1BC28]",
     },
     {
-      icon: <Building2 className="w-10 h-10" />,
-      number: 105,
-      prefix: "+",
+      icon: <GraduationCap className="w-10 h-10" />,
+      number: 129,
+      prefix: "",
       labelKey: "stat5Label",
       color: "from-[#52BC88] via-[#035938] to-[#52BC88]",
       iconBg: "from-[#52BC88] to-[#035938]",
     },
     {
-      icon: <TrendingUp className="w-10 h-10" />,
+      icon: <Sprout className="w-10 h-10" />,
       number: 15.5,
       prefix: "+",
+      suffixKey: "stat6Suffix",
       labelKey: "stat6Label",
       color: "from-[#F1BC28] via-[#035938] to-[#F1BC28]",
       iconBg: "from-[#F1BC28] to-[#035938]",
       isDecimal: true,
+      decimalPlaces: 1,
     },
   ];
 
@@ -140,6 +145,10 @@ export function KeyNumbers() {
             );
             const isDecimal =
               element.getAttribute("data-decimal") === "true";
+            const decimalPlaces = parseInt(
+              element.getAttribute("data-decimal-places") || "1",
+              10,
+            );
             const obj = { value: 0 };
 
             gsap.to(obj, {
@@ -152,7 +161,7 @@ export function KeyNumbers() {
               },
               onUpdate: () => {
                 if (element && isDecimal) {
-                  element.textContent = obj.value.toFixed(1);
+                  element.textContent = obj.value.toFixed(decimalPlaces);
                 } else if (element) {
                   element.textContent = Math.round(
                     obj.value,
@@ -237,8 +246,9 @@ export function KeyNumbers() {
 
   return (
     <section
+      id="key-numbers"
       ref={sectionRef}
-      className="py-20 bg-gradient-to-b from-[#F9F7EF] to-white relative overflow-hidden"
+      className="scroll-mt-24 py-20 bg-gradient-to-b from-[#F9F7EF] to-white relative overflow-hidden"
       style={{ background: "#f5f0e5" }}
     >
       {/* Animated gradient blobs */}
@@ -274,9 +284,7 @@ export function KeyNumbers() {
           <div className="flex justify-center mb-4">
             <div className="inline-block px-5 py-2 bg-white/60 backdrop-blur-md border border-[#035938]/20 rounded-full">
               <span className="text-[#035938] text-2xl font-medium">
-                {language === "ar"
-                  ? "📊 إحصائيات الأثر"
-                  : "📊 Impact Statistics"}
+                📊 {t("statsBadge")}
               </span>
             </div>
           </div>
@@ -331,19 +339,31 @@ export function KeyNumbers() {
 
                   {/* Number with prefix - medium weight */}
                   <div className="mb-4">
-                    <div className="flex items-start gap-1.5">
-                      <span className="text-[#F1BC28] text-3xl font-medium">
-                        {stat.prefix}
-                      </span>
+                    <div className="flex flex-wrap items-start gap-1.5">
+                      {stat.prefix ? (
+                        <span className="text-[#F1BC28] text-3xl font-medium">
+                          {stat.prefix}
+                        </span>
+                      ) : null}
                       <span
                         className="count-up text-4xl text-[#052F2A] font-medium inline-block leading-none"
                         data-target={stat.number}
                         data-decimal={
                           stat.isDecimal ? "true" : "false"
                         }
+                        data-decimal-places={
+                          "decimalPlaces" in stat
+                            ? stat.decimalPlaces
+                            : 1
+                        }
                       >
                         0
                       </span>
+                      {"suffixKey" in stat && stat.suffixKey ? (
+                        <span className="text-[#052F2A] text-2xl font-medium leading-none self-end">
+                          {t(stat.suffixKey)}
+                        </span>
+                      ) : null}
                     </div>
                   </div>
 
@@ -366,9 +386,7 @@ export function KeyNumbers() {
           <div className="inline-flex items-center gap-3 px-8 py-4 bg-white/60 backdrop-blur-md rounded-full border border-[#035938]/20">
             <div className="w-3 h-3 bg-[#52BC88] rounded-full animate-pulse" />
             <span className="text-[#052F2A]/70">
-              {language === "ar"
-                ? "البيانات محدّثة باستمرار"
-                : "Data Updated Continuously"}
+              {t("statsDisclaimer")}
             </span>
             <div
               className="w-3 h-3 bg-[#F1BC28] rounded-full animate-pulse"

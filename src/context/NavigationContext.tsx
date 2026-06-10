@@ -1,4 +1,10 @@
-import React, { createContext, useCallback, useContext, useMemo } from "react";
+import React, {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+} from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 export type Page =
@@ -19,7 +25,17 @@ export type Page =
 interface NavigationContextType {
   currentPage: Page;
   currentSectorId?: string;
-  navigateTo: (page: Page, sectorId?: string) => void;
+  navigateTo: (page: Page, sectorId?: string, hash?: string) => void;
+}
+
+function scrollToHash(hash: string) {
+  const id = hash.startsWith("#") ? hash.slice(1) : hash;
+  window.setTimeout(() => {
+    document.getElementById(id)?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }, 150);
 }
 
 const NavigationContext = createContext<NavigationContextType | undefined>(
@@ -77,16 +93,33 @@ export function NavigationProvider({
   );
 
   const navigateTo = useCallback(
-    (page: Page, sectorId?: string) => {
-      if (page === "sector" && sectorId) {
-        navigate(`/sector/${sectorId}`);
-      } else {
-        navigate(PAGE_TO_PATH[page] ?? "/");
+    (page: Page, sectorId?: string, hash?: string) => {
+      const path =
+        page === "sector" && sectorId
+          ? `/sector/${sectorId}`
+          : (PAGE_TO_PATH[page] ?? "/");
+
+      const isSamePath = location.pathname === path;
+
+      if (hash) {
+        if (isSamePath) {
+          scrollToHash(hash);
+          return;
+        }
+        navigate(`${path}#${hash}`);
+        return;
       }
+
+      navigate(path);
       window.scrollTo({ top: 0, behavior: "smooth" });
     },
-    [navigate]
+    [navigate, location.pathname],
   );
+
+  useEffect(() => {
+    if (!location.hash) return;
+    scrollToHash(location.hash);
+  }, [location.pathname, location.hash]);
 
   const value = useMemo(
     () => ({ currentPage, currentSectorId, navigateTo }),

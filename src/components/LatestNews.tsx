@@ -3,10 +3,14 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Calendar, ArrowRight, Clock } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { useLanguage } from "../context/LanguageContext";
+import { useNavigation } from "../context/NavigationContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export function LatestNews() {
+  const { t, language } = useLanguage();
+  const { navigateTo } = useNavigation();
   const newsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -75,26 +79,31 @@ export function LatestNews() {
     <section className="py-24 bg-[#F9F7EF]">
       <div className="max-w-[1440px] mx-auto px-8">
         {/* Header */}
-        <div className="flex  flex-row  items-center justify-between mb-12 latest-header">
+        <div
+          className="flex flex-row items-center justify-between mb-12 latest-header"
+          dir={language === "ar" ? "rtl" : "ltr"}
+        >
           <div>
             <h1 className="text-[#052F2A] mb-4 text-2xl">
-              Latest{" "}
+              {t("newsTitlePrefix")}{" "}
               <span className="italic text-[#035938] text-2xl">
-                News
+                {t("newsTitleHighlight")}
               </span>
             </h1>
-            <p className="text-[#052F2A]/70 text-xl">
-              Stay updated with our latest stories and
-              achievements
-            </p>
+            <p className="text-[#052F2A]/70 text-xl">{t("newsDesc")}</p>
           </div>
-          <a
-            href="/news"
+          <button
+            type="button"
+            onClick={() => navigateTo("newsPress")}
             className="group px-6 py-3 bg-[#035938] text-white rounded-full hover:bg-[#052F2A] transition-all duration-300 flex items-center gap-2"
           >
-            <span>View All News</span>
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </a>
+            <span>{t("viewAllNews")}</span>
+            <ArrowRight
+              className={`w-5 h-5 transition-transform group-hover:translate-x-1 ${
+                language === "ar" ? "rotate-180 group-hover:-translate-x-1" : ""
+              }`}
+            />
+          </button>
         </div>
 
         {/* News Grid */}

@@ -355,3 +355,9 @@ footer a:hover {
   background: none !important;
   border: none !important;
 }
+
+
+.custom-scrollbar { 
+  scrollbar-width: thin !important;
+  ms-overflow-style: thin !important;
+}

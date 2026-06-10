@@ -310,7 +310,7 @@ const translations = {
     coffeeDesc: "Empowering coffee farmers across regions",
     rosesSector: "Roses & Aromatic Plants",
     sector3Desc:
-      "Developing the production of roses and aromatic plants in the Kingdom's regions to increase added value and exports",
+      'Sector for the development of rose cultivation and rose trade. The program works on developing rose and aromatic plant cultivation and supporting related industries to enhance export opportunities and achieve added economic value.',
     fruitsSector: "Fruits",
     fruitsDesc: "Organic and sustainable fruit farming",
     livestockSector: "Livestock & Dairy",
@@ -329,43 +329,56 @@ const translations = {
       'The Sustainable Rural Agricultural Development Program "Reef Saudi Arabia" supports eight major productive sectors that represent the foundation of agricultural and food development in the Kingdom. These sectors contribute to empowering small farmers and producers, raising the quality of agricultural production, enhancing food security, and achieving sustainable rural development in line with the goals of Saudi Vision 2030.',
 
     // Hero Slider
-    hero1Title: "Empowering Rural Communities Through Sustainable Innovation",
+    hero1Title: "A Rural Transformation Shaping the Kingdom's Future",
     hero1Desc:
-      "Reef Saudi Arabia is committed to sustainable agricultural development, preserving cultural heritage, and fostering economic opportunities in rural regions",
-    hero1Btn1: "Explore Our Sectors",
-    hero1Btn2: "Learn About Us",
+      'The Sustainable Rural Agricultural Development Program "Reef Saudi" supports small farmers and rural families to achieve sustainable agricultural development that contributes to diversifying the national economy and enhancing food security.',
+    hero1Btn1: "Watch the Story",
+    hero1Btn2: "Explore the Impact",
 
-    hero2Title: "Cultivating Excellence in Saudi Coffee",
+    hero2Title: "Saudi Coffee.. A Story of Pride and Leadership",
     hero2Desc:
-      "Supporting coffee farmers across Jazan, Al-Baha, and Asir to enhance quality and reach global markets",
-    hero2Btn1: "Discover Coffee Sector",
-    hero2Btn2: "View All Sectors",
+      'Reef Saudi supports coffee farmers in Jazan, Al-Baha, and Asir to improve production quality and enhance the presence of Saudi coffee in global markets.',
+    hero2Btn1: "Explore Coffee Sector",
+    hero2Btn2: "Learn About Initiatives",
 
-    hero3Title: "Sustainable Agriculture for Future Generations",
+    hero3Title: "Sustainability.. A Promise We Plant Today",
     hero3Desc:
-      "Promoting eco-friendly farming practices that preserve our environment and ensure food security",
-    hero3Btn: "Learn More",
+      "Towards sustainable rural development that cares for people and resources together, in line with Saudi Vision 2030 targets.",
+    hero3Btn: "Explore Reef Sustainable Initiatives",
 
-    hero4Title: "Transforming Lives Through Rural Development",
+    hero4Title: "Support that Bears Sustainable Impact",
     hero4Desc:
-      "Creating opportunities, building infrastructure, and empowering communities across the Kingdom",
-    hero4Btn1: "Our Impact",
-    hero4Btn2: "Support Programs",
+      'Through financial and advisory support programs, Reef Saudi empowers small farmers and productive families to improve livelihoods and achieve local self-sufficiency.',
+    hero4Btn1: "Apply for Support",
+    hero4Btn2: "Learn About Eligibility Conditions",
 
-    hero5Title: "Preserving Heritage, Building Tomorrow",
+    hero5Title: "Growth that Thrives in Every Region",
     hero5Desc:
-      "Honoring traditional crafts and agricultural practices while embracing modern innovation",
-    hero5Btn1: "Explore Heritage",
-    hero5Btn2: "View Initiatives",
+      "In every region, village, and farm, the impact of Reef Saudi extends through projects and programs that enhance agricultural production, support rural communities, and open new horizons for sustainable growth.",
+    hero5Btn1: "Learn About Our Initiatives",
+    hero5Btn2: "Explore the Interactive Sector Map",
 
     // Hero (Legacy - kept for compatibility)
-    heroTitle: "Empowering Rural Communities Through Innovation",
+    heroTitle: "A Rural Transformation Shaping the Kingdom's Future",
     heroSubtitle:
-      "Reef Saudi Arabia is committed to sustainable agricultural development, preserving cultural heritage, and fostering economic opportunities in rural regions",
-    heroButton1: "Explore Our Sectors",
-    heroButton2: "Learn About Us",
+      'The Sustainable Rural Agricultural Development Program "Reef Saudi" supports small farmers and rural families to achieve sustainable agricultural development that contributes to diversifying the national economy and enhancing food security.',
+    heroButton1: "Watch the Story",
+    heroButton2: "Explore the Impact",
 
-    // Key Numbers
+    // Key Numbers / Impact Statistics
+    statsBadge: "Impact Statistics",
+    statsTitle: "Reef Saudi.. Giving and Growth in Numbers",
+    statsDesc:
+      'Latest figures and statistics related to Reef Saudi\'s efforts in empowering farmers and enhancing sustainable rural development in various regions of the Kingdom.',
+    stat1Label: "Beneficiaries",
+    stat2Label: "Total Support Amount",
+    stat2Suffix: " billion SAR",
+    stat3Label: "Supported Families",
+    stat4Label: "Freelance Work Certificates",
+    stat5Label: "Training Courses in the Program",
+    stat6Label: "Seedlings Planted Under Saudi Green Initiative",
+    stat6Suffix: " million",
+    statsDisclaimer: "Data Updated Continuously",
     keyNumbersTitle: "Our Impact",
     keyNumbersSubtitle: "Making a difference across Saudi Arabia",
     keyNumbers1: "87,000+",
@@ -378,12 +391,15 @@ const translations = {
     keyNumbers4Label: "Total Investment",
 
     // Sectors Grid
-    sectorsTitle: "Our Focus Sectors",
+    sectorsBadge: "Rural Sectors",
+    sectorsTitle: "Our Rural Sectors",
+    sectorsDesc:
+      "We support small farmers in various rural areas of the nation through diverse agricultural sectors that reflect the Kingdom's natural and economic environmental diversity.",
     sectorsSubtitle:
-      "Reef Saudi Arabia supports 9 key sectors driving rural development and agricultural excellence",
-    sector1Title: "Beekeeping",
+      "Reef Saudi Arabia supports 8 key sectors driving rural development and agricultural excellence",
+    sector1Title: "Beekeeping & Honey Production",
     sector1Desc:
-      "Supporting beekeepers in mountainous regions to produce premium Saudi honey with high purity and quality",
+      'Sector for the development of beekeeping and honey production. Reef Saudi supports beekeepers through training, financing, and technical guidance to improve Saudi honey quality and develop related value chains.',
     sector1Point1: "Training & Development",
     sector1Point2: "Financial Support",
     sector1Point3: "Technical Guidance",
@@ -490,7 +506,7 @@ const translations = {
       "Developing agricultural practices compatible with climate and soil conditions",
 
     sector2Desc:
-      "Empowering coffee farmers in Jazan, Al-Baha, and Asir to enhance quality and global reach",
+      "Sector for the development, production, processing, and marketing of Saudi coffee. Reef Saudi focuses on empowering coffee farmers in Jazan, Al-Baha, and Asir through improved production, supply chain development, and elevating Saudi coffee quality locally and globally.",
     sector2Point1: "Improving Supply Chains",
     sector2Point2: "Supporting Small Farmers",
     sector2Point3: "Product Marketing",
@@ -500,9 +516,9 @@ const translations = {
     sector3Point2: "Supporting Manufacturing Operations",
     sector3Point3: "Enhancing Marketing Opportunities",
 
-    sector4Title: "Fruits",
+    sector4Title: "Fruit Production & Processing",
     sector4Desc:
-      "Producing distinctive fruits using organic methods that preserve soil and crop quality and achieve higher sustainability",
+      "Sector for the development, production, processing, and marketing of fruits. Support includes fruits such as pomegranate, fig, grape, and more through improved techniques, developed agricultural practices, and enabling farmers to enter new markets.",
     fruitsHeroTitle:
       "Sector of Fruit Development, Production, Processing, and Marketing",
     fruitsIntro1:
@@ -875,9 +891,9 @@ const translations = {
       "Learn about available support and financing programs to empower rural communities",
     exploreNow: "Explore Now",
 
-    sector5Title: "Livestock & Dairy Products",
+    sector5Title: "Small Livestock Breeders",
     sector5Desc:
-      "Improving livestock farmers' efficiency and enhancing dairy production quality through targeted support and financing programs",
+      "Sector for enhancing the capacities of small livestock breeders. Support includes training, financing, and veterinary care to improve dairy product quality and raise animal production efficiency across the Kingdom.",
     livestockHeroTitle: "Enhancing the Capacities of Small Livestock Breeders",
     livestockIntro1:
       "The sector of enhancing the capacities of small livestock breeders represents one of the vital sectors in the 'Reef Saudi Arabia' Program, as an important pillar for supporting food security, improving rural household income, and promoting the sustainability of livestock production systems in desert and marginal areas. The program works to develop breeding and care systems and upgrade local breeds, with a focus on production efficiency, natural resource protection, and raising breeders' competitiveness in the market.",
@@ -964,17 +980,17 @@ const translations = {
     sector5Point2: "Veterinary Care",
     sector5Point3: "Production Line Support",
 
-    sector6Title: "Rainfed Agriculture",
+    sector6Title: "Rainfed Crops",
     sector6Desc:
-      "Supporting rainfed crop cultivation like wheat and barley in mountainous regions to enhance local food security",
+      'Sector for the cultivation of rainfed crops. Support covers rain-dependent crops in mountainous regions such as wheat, barley, millet, and sesame, with a focus on sustainability and preserving natural resources.',
     sector6Point1: "Natural Irrigation Systems Support",
     sector6Point2: "Farmer Training",
     sector6Point3: "Local Grain Marketing",
     rainfedHeroTitle: "Rainfed Crops Sector",
 
-    sector7Title: "Enhancing the Capacities of Fishermen and Fish Farmers",
+    sector7Title: "Fisheries & Aquaculture",
     sector7Desc:
-      "Innovating modern techniques for fish farming and improving marine production quality through training and financing programs",
+      "Sector for enhancing the capacities of fishermen and fish farmers. The program supports fishermen and fish farmers through training, financing, and modern technologies to raise marine production and strengthen food security.",
     sector7Point1: "Supporting Aquaculture Projects",
     sector7Point2: "Port Development",
     sector7Point3: "Marine Product Marketing",
@@ -1186,12 +1202,12 @@ const translations = {
     fishingKeyProjectsConclusion:
       "Through these strategic projects, the fishing and aquaculture sector in the Reef Saudi Arabia Program continues its vital role in supporting food security, improving the livelihoods of coastal communities, and achieving sustainable development of marine resources in alignment with the Kingdom's Vision 2030 objectives.",
 
-    sector8Title: "Handicrafts & Rural Industries",
+    sector8Title: "Value-Added Products",
     sector8Desc:
-      "Empowering rural families and artisans to develop heritage-style local products that diversify income sources",
-    sector8Point1: "Artisan Training",
-    sector8Point2: "E-Commerce Support",
-    sector8Point3: "Enhancing Community Participation",
+      "Sector for developing value-added products from small agricultural holdings. It supports productive rural families, handicrafts, rural industries, and rural tourism activities to establish small home-based projects and local experiences that achieve sustainable income.",
+    sector8Point1: "Training Artisans and Rural Entrepreneurs",
+    sector8Point2: "E-Commerce Marketing for Rural Products and Services",
+    sector8Point3: "Rural Tourism Activities and Community Participation",
 
     sector9Title: "Productive Families",
     sector9Desc:
@@ -1232,28 +1248,33 @@ const translations = {
       "Includes supporting small livestock farmers through training, financing, and veterinary care to improve dairy product quality and increase livestock production efficiency in the Kingdom.",
 
     // Widgets
+    widgetsBadge: "From the Countryside",
+    widgetsTitle: "Explore Our Programs & Initiatives",
     widget1Title: "Rural Support Programs",
     widget1Desc:
-      "Learn about support programs dedicated to small farmers and productive families, and apply online with ease",
-    widget1Btn1: "Browse Support Programs",
+      "Learn about support programs dedicated to small farmers and productive families, and submit your application online easily.",
+    widget1Btn1: "Apply for Support",
     widget1Btn2: "Go to Application Platform",
 
-    widget2Title: "From the Countryside... Stories to Be Told",
+    widget2Title: "From the Countryside.. Stories to Be Told",
     widget2Desc:
-      "A visual window and a geographic, social, and cultural showcase of rural components in various regions of the Kingdom",
-    widget2Btn1: "Watch Photo Stories",
+      "A visual window and geographical, social, and cultural display of rural components in various regions of the Kingdom.",
+    widget2Btn1: "Watch Visual Stories",
     widget2Btn2: "Explore Full Gallery",
 
-    widget3Title: "Thriving Sectors... From North to South",
+    widget3Title: "Discover What Reef Saudi Supports in Your Region",
     widget3Desc:
-      "Explore supported agricultural sectors in different regions of the Kingdom, and learn about active rural projects and initiatives near you",
-    widget3Btn: "Explore Interactive Map",
+      'Explore the agricultural sectors supported by Reef Saudi in each city, and learn about the products and crops that distinguish each region and shape its production identity.',
+    widget3Btn: "Discover What Makes Your Region Unique",
     widget3Hover: "Hover to see details",
 
     // News
     newsTitle: "Latest News",
+    newsTitlePrefix: "Latest",
+    newsTitleHighlight: "News",
     newsDesc:
-      'Follow the latest news, initiatives, and events from the "Reef Saudi Arabia" program',
+      "Stay updated with our latest stories and achievements",
+    viewAllNews: "View All News",
     viewAll: "View All",
     readMore: "Read More",
 
@@ -2168,7 +2189,7 @@ const translations = {
     coffeeDesc: "تمكين مزارعي البن في جميع المناطق",
     rosesSector: "الورد والنباتات العطرية",
     sector3Desc:
-      "تنمية إنتاج الورود والنباتات العطرية في مناطق المملكة لزيادة القيمة المضافة والتصدير",
+      'قطاع تنمية زراعة الورد وتجارة الورد. يعمل البرنامج على تطوير زراعة الورد والنباتات العطرية، ودعم الصناعات المرتبطة بها لتعزيز فرص التصدير وتحقيق قيمة اقتصادية مضافة.',
     fruitsSector: "الفواكه",
     fruitsDesc: "زراعة الفواكه العضوية والمستدامة",
     livestockSector: "الثروة الحيوانية والألبان",
@@ -2184,43 +2205,56 @@ const translations = {
     viewAllSectors: "عرض جميع القطاعات",
 
     // Hero Slider
-    hero1Title: "تمكين المجتمعات الريفية من خلال الابتكار المستدام",
+    hero1Title: "تحوّل ريفي يصنع مستقبل المملكة",
     hero1Desc:
-      "برنامج ريف السعودية يلتزم بالتنمية الزراعية المستدامة، والحفاظ على التراث الثقافي، وتعزيز الفرص الاقتصادية في المناطق الريفية",
-    hero1Btn1: "استكشف قطاعاتنا",
-    hero1Btn2: "تعرف علينا",
+      'برنامج التنمية الريفية الزراعية المستدامة "ريف السعودية" يدعم صغار المزارعين والأسر الريفية، لتحقيق تنمية زراعية مستدامة تُسهم في تنويع الاقتصاد الوطني وتعزيز الأمن الغذائي.',
+    hero1Btn1: "شاهد القصة",
+    hero1Btn2: "استكشف الأثر",
 
-    hero2Title: "زراعة البن السعودي بتميز",
+    hero2Title: "القهوة السعودية.. قصة فخر وريادة",
     hero2Desc:
-      "دعم مزارعي البن في جازان والباحة وسير لتحسين الجودة والوصول إلى الأسواق العالمية",
-    hero2Btn1: "اكتشف قطاع البن",
-    hero2Btn2: "عرض جميع القطاعات",
+      'يدعم برنامج "ريف السعودية" مزارعي البن في جازان والباحة وعسير لرفع جودة الإنتاج وتعزيز حضور القهوة السعودية في الأسواق العالمية.',
+    hero2Btn1: "استكشف قطاع القهوة",
+    hero2Btn2: "تعرّف على المبادرات",
 
-    hero3Title: "زراعة مستدامة للجيل القادم",
+    hero3Title: "الاستدامة.. وعد نزرعه اليوم",
     hero3Desc:
-      "تعزيز ممارسات الزراعة البيئية التي تحافظ على بيئتنا وتضمن الأمن الغذائي",
-    hero3Btn: "تعرف أكثر",
+      "نحو تنميةٍ ريفيةٍ مستدامة، تُعنى بالإنسان والموارد معًا، ضمن مستهدفات رؤية السعودية 2030.",
+    hero3Btn: "استكشف مبادرات ريف المستدامة",
 
-    hero4Title: "تغير حياة الناس من خلال التنمية الريفية",
+    hero4Title: "دعم يُثمر أثرًا مستدامًا",
     hero4Desc:
-      "خلق فرص، بناء البنية التحتية، وتمكين المجتمعات في جميع أنحاء المملكة",
-    hero4Btn1: "تأثيرنا",
-    hero4Btn2: "برامج الدعم",
+      'من خلال برامج الدعم المالي والإرشادي، يُمكّن برنامج "ريف السعودية" صغار المزارعين والأسر المنتجة، لتحسين سبل العيش وتحقيق الاكتفاء المحلي.',
+    hero4Btn1: "قدّم على الدعم",
+    hero4Btn2: "تعرف على شروط الاستفادة",
 
-    hero5Title: "حفظ التراث، بناء المستقبل",
+    hero5Title: "نماء يُثمر في كل منطقة",
     hero5Desc:
-      "احترام الحرف اليدوية التقليدية والممارسات الزراعية مع اعتماد الابتكار الحديث",
-    hero5Btn1: "استكشف التراث",
-    hero5Btn2: "عرض المبادرات",
+      "في كل منطقةٍ وقريةٍ ومزرعة، يمتدّ أثر برنامج ريف السعودية عبر مشاريع وبرامج تُعزّز الإنتاج الزراعي، وتدعم المجتمعات الريفية، وتفتح آفاقًا جديدة للنمو المستدام.",
+    hero5Btn1: "تعرّف على مبادراتنا",
+    hero5Btn2: "استكشف الخريطة التفاعلية للقطاعات",
 
     // Hero (Legacy - kept for compatibility)
-    heroTitle: "تمكين المجتمعات الريفية من خلال الابتكار",
+    heroTitle: "تحوّل ريفي يصنع مستقبل المملكة",
     heroSubtitle:
-      "يلتزم برنامج ريف السعودية بالتنمية الزراعية المستدامة، والحفاظ على التراث الثقافي، وتعزيز الفرص الاقتصادية في المناطق الريفية",
-    heroButton1: "استكشف قطاعاتنا",
-    heroButton2: "تعرف علينا",
+      'برنامج التنمية الريفية الزراعية المستدامة "ريف السعودية" يدعم صغار المزارعين والأسر الريفية، لتحقيق تنمية زراعية مستدامة تُسهم في تنويع الاقتصاد الوطني وتعزيز الأمن الغذائي.',
+    heroButton1: "شاهد القصة",
+    heroButton2: "استكشف الأثر",
 
-    // Key Numbers
+    // Key Numbers / Impact Statistics
+    statsBadge: "إحصائيات الأثر",
+    statsTitle: "ريف السعودية.. عطاء ونماء بالأرقام",
+    statsDesc:
+      'آخر الأرقام والإحصاءات المتعلقة بجهود برنامج "ريف السعودية" في تمكين المزارعين وتعزيز التنمية الريفية المستدامة في مختلف مناطق المملكة.',
+    stat1Label: "إجمالي عدد المدعومين",
+    stat2Label: "إجمالي مبلغ الدعم",
+    stat2Suffix: " مليار ريال",
+    stat3Label: "عدد الأسر الاقتصادية المدعومة",
+    stat4Label: "عدد شهادات العمل الحر",
+    stat5Label: "عدد الدورات التدريبية في البرنامج",
+    stat6Label: "عدد الشتلات المزروعة ضمن مبادرة السعودية الخضراء",
+    stat6Suffix: " مليون",
+    statsDisclaimer: "البيانات محدّثة باستمرار",
     keyNumbersTitle: "تأثيرنا",
     keyNumbersSubtitle: "نحدث فرقاً في جميع أنحاء المملكة",
     keyNumbers1: "+87,000",
@@ -2233,13 +2267,16 @@ const translations = {
     keyNumbers4Label: "إجمالي الاستثمار",
 
     // Sectors Grid
-    sectorsTitle: "قطاعاتنا المستهدفة",
+    sectorsBadge: "القطاعات المستهدفة بالدعم",
+    sectorsTitle: "قطاعاتنا الريفية",
+    sectorsDesc:
+      "ندعم صغار المزارعين والأسر المنتجة في مختلف مناطق المملكة عبر قطاعات زراعية وإنتاجية متنوعة، تعكس ثراء البيئة السعودية وتحولها إلى فرص تنموية مستدامة.",
     sectorsSubtitle:
-      "يدعم برنامج ريف السعودية 9 قطاعات رئيسية تقود التنمية الريفية والتميز الزراعي",
+      "يدعم برنامج ريف السعودية 8 قطاعات رئيسية تقود التنمية الريفية والتميز الزراعي",
 
-    sector1Title: "تربية النحل",
+    sector1Title: "تربية النحل وإنتاج العسل",
     sector1Desc:
-      "دعم مربي النحل في المناطق الجبلية لإنتاج عسل سعودي فاخر بنقاء وجودة عالية",
+      'قطاع تطوير وتربية النحل وإنتاج العسل. يدعم برنامج "ريف السعودية" مربي النحل عبر التدريب والتمويل والإرشاد الفني، بهدف رفع جودة العسل السعودي وتطوير سلاسل القيمة المرتبطة به.',
     sector1Point1: "التدريب والتطوير",
     sector1Point2: "الدعم المالي",
     sector1Point3: "الإرشاد الفني",
@@ -2327,7 +2364,7 @@ const translations = {
     coffeeObjective6: "تطوير ممارسات زراعية متوافقة مع طبيعة المناخ والتربة.",
 
     sector2Desc:
-      "تمكين مزارعي البن في جازان والباحة وسير لتعزيز الجودة والانتشار العالمي",
+      'قطاع تطوير وإنتاج وتصنيع وتسويق القهوة السعودية. يركّز "ريف السعودية" على تمكين مزارعي البن في جازان والباحة وعسير من خلال تحسين الإنتاج وتطوير سلاسل الإمداد والارتقاء بجودة القهوة السعودية محلياً وعالمياً.',
     sector2Point1: "تحسين سلاسل الإمداد",
     sector2Point2: "دعم صغار المزارعين",
     sector2Point3: "تسويق المنتجات",
@@ -2339,7 +2376,7 @@ const translations = {
 
     sector4Title: "الفواكه",
     sector4Desc:
-      "إنتاج فواكه مميزة بأساليب عضوية تحافظ على التربة وجودة المحاصيل وحقق استدامة أعلى",
+      "قطاع تطوير وإنتاج وتصنيع وتسويق الفاكهة. يشمل دعم إنتاج الفواكه مثل الرمان والتين والعنب وغيرها، عبر تحسين التقنيات المستخدمة، وتطوير الممارسات الزراعية، وتمكين المزارعين من دخول أسواق جديدة.",
     fruitsHeroTitle: "قطاع تطوير وإنتاج وتصنيع وتسويق الفاكهة",
     fruitsIntro1:
       "يهدف قطاع الفاكهة في برنامج ريف السعودية إلى دعم تطوير وإنتاج وتسويق الفواكه ذات الميزة النسبية والقيمة العالية، من خلال تحسين عمليات الإنتاج والتسويق، ورفع كفاءة سلاسل القيمة، وإضافة قيمة اقتصادية من خلال الجمع والتصنيع والتسويق، بما يسهم في زيادة دخل المزارعين، وخلق فرص تنموية مستدامة للمجتمعات الريفية في ظل تزايد الطلب على منتجات الفاكهة محلياً ودولياً.",
@@ -2477,9 +2514,9 @@ const translations = {
     sector4Point2: "تطوير أساليب الري",
     sector4Point3: "دعم التسويق المحلي",
 
-    sector5Title: "الثروة الحيوانية ومنتجات الألبان",
+    sector5Title: "مربي الماشية",
     sector5Desc:
-      "رفع كفاءة مربي الماشية وتحسين جودة إنتاج الألبان عبر برامج دعم وتمويل موجهة",
+      "قطاع تعزيز قدرات صغار مربي الماشية. يشمل دعم صغار مربي الماشية عبر التدريب والتمويل والرعاية البيطرية، لتحسين جودة منتجات الألبان ورفع كفاءة الإنتاج الحيواني في المملكة.",
     livestockHeroTitle: "قطاع تعزيز قدرات صغار مربي الماشية",
     livestockIntro1:
       'يمثل قطاع تعزيز قدرات صغار مربي الماشية أحد القطاعات الحيوية في برنامج "ريف السعودية"، بوصفه ركيزة مهمة لدعم الأمن الغذائي وتحسين دخل الأسر الريفية وتعزيز استدامة نظم الإنتاج الحيواني في المناطق الصحراوية والهامشية. ويعمل البرنامج على تطوير نظم التربية والرعاية والارتقاء بالسلالات المحلية، مع التركيز على كفاءة الإنتاج، وحماية الموارد الطبيعية، ورفع قدرة المربين على المنافسة في السوق.',
@@ -2566,24 +2603,24 @@ const translations = {
 
     sector6Title: "المحاصيل البعلية",
     sector6Desc:
-      "دعم زراعة المحاصيل البعلية كالقمح والشعير في المناطق الجبلية لتعزيز الأمن الغذائي المحلي",
+      'قطاع زراعة المحاصيل البعلية "المطرية". يدعم القطاع زراعة المحاصيل المعتمدة على الأمطار في المناطق الجبلية، مثل القمح والشعير والذرة الرفيعة والسمسم، مع التركيز على الاستدامة والحفاظ على الموارد الطبيعية.',
     sector6Point1: "دعم أنظمة الري الطبيعية",
     sector6Point2: "تدريب المزارعين",
     sector6Point3: "تسويق الحبوب المحلية",
 
-    sector7Title: "الصيد والاستزراع السمكي",
+    sector7Title: "صيادي الأسماك",
     sector7Desc:
-      "ابتكار تقنيات حديثة لتربية الأسماك وتحسين جودة الإنتاج البحري عبر برامج تدريبية وتمويلية",
+      "قطاع تعزيز قدرات الصيادين ومستزرعي الأسماك. يدعم البرنامج الصيادين ومستزرعي الأسماك من خلال التدريب والتمويل وتطوير التقنيات الحديثة لرفع إنتاجية القطاع البحري وتعزيز الأمن الغذائي.",
     sector7Point1: "دعم مشاريع الاستزراع",
     sector7Point2: "تطوير المرافئ",
     sector7Point3: "تسويق المنتجات البحرية",
 
-    sector8Title: "الحرف اليدوية والصناعات الريفية",
+    sector8Title: "القيمة المضافة",
     sector8Desc:
-      "تمكين الأسر الريفية والحرفيين لتطوير منتجات محلية ذات طابع تراثي تساهم في تنويع مصادر الدخل",
-    sector8Point1: "تدريب الحرفيين",
-    sector8Point2: "دعم التسويق الإلكتروني",
-    sector8Point3: "تعزيز المشاركة المجتمعية",
+      "قطاع تطوير القيمة المضافة من الحيازات الصغيرة. يعنى بدعم الأسر الريفية المنتجة والحرف اليدوية والصناعات الريفية، إضافة إلى أنشطة السياحة الريفية، لتأسيس مشاريع صغيرة في المنازل وتطوير منتجات وتجارب محلية تحقق دخلاً مستداماً.",
+    sector8Point1: "تدريب الحرفيين وأصحاب المشاريع الريفية",
+    sector8Point2: "دعم التسويق الإلكتروني للمنتجات والخدمات الريفية",
+    sector8Point3: "تطوير أنشطة السياحة الريفية وتعزيز المشاركة المجتمعية",
 
     sector9Title: "أسر المنتجة",
     sector9Desc:
@@ -2595,27 +2632,32 @@ const translations = {
     exploreSector: "استكشف القطاع",
 
     // Widgets
-    widget1Title: "برامج الدعم الريفي",
+    widgetsBadge: "من الريف",
+    widgetsTitle: "استكشف برامجنا ومبادراتنا",
+    widget1Title: 'برنامج دعم ريف السعودية',
     widget1Desc:
-      "تعرّف على برامج الدعم المخصصة لصغار المزارعين والأسر المنتجة وقدّم طلبك إلكتروياً بسهولة",
-    widget1Btn1: "استعرض برامج الدعم",
+      "تعرّف على برامج الدعم المخصصة لصغار المزارعين والأسر المنتجة وقدّم طلبك إلكترونياً بسهولة.",
+    widget1Btn1: "للتقديم على الدعم",
     widget1Btn2: "انتقل إلى منصة التقديم",
 
     widget2Title: "من الريف.. قصصٌ تُروى",
     widget2Desc:
-      "نافذة بصرية واستعراض جغرافي واجتماعي وثقافي لمكونات الريف في مختلف مناطق المملكة",
-    widget2Btn1: "شاهد القصص المصورة",
+      "نافذة بصرية واستعراض جغرافي واجتماعي وثقافي لمكونات الريف في مختلف مناطق المملكة.",
+    widget2Btn1: "زيارة معرض صور من الريف",
     widget2Btn2: "استكشف المعرض الكامل",
 
-    widget3Title: "قطاعات تزدهر.. من الشمال إلى الجنوب",
+    widget3Title: 'تعرف على ما يدعمه برنامج "ريف السعودية" في منطقتك',
     widget3Desc:
-      "استكشف القطاعات الزراعية المدعومة في مختلف مناطق المملكة، وتعرّف على المشاريع والمبادرات الريفية النشطة بالقرب منك",
-    widget3Btn: "استكشف الخريطة التفاعلية",
+      'استكشف القطاعات الزراعية التي يدعمها برنامج "ريف السعودية" في كل مدينة، وتعرّف على المنتجات والمحاصيل التي تميز كل منطقة وتشكل هويتها الإنتاجية.',
+    widget3Btn: "اكتشف ما يميز منطقتك",
     widget3Hover: "مرر بالمؤشر لرؤية التفاصيل",
 
     // News
     newsTitle: "آخر الأخبار",
-    newsDesc: 'تابع أحدث الأخبار والمبادرات والفعاليات لبرنامج "ريف السعودية"',
+    newsTitlePrefix: "آخر",
+    newsTitleHighlight: "الأخبار",
+    newsDesc: "ابقَ على اطلاعٍ دائم بآخر أخبارنا وإنجازاتنا",
+    viewAllNews: "عرض جميع الأخبار",
     viewAll: "عرض الكل",
     readMore: "اقرأ المزيد",
 
