@@ -181,7 +181,7 @@ export function AboutStrategicObjectives() {
     <section
       id="objectives"
       ref={sectionRef}
-      className="relative py-24 px-6 overflow-hidden"
+      className="scroll-mt-24 relative py-24 px-6 overflow-hidden"
       style={{
         background:
           "linear-gradient(135deg, #035938 0%, #024a2e 50%, #035938 100%)",

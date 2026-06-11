@@ -75,7 +75,7 @@ export function AboutAnnualReports() {
     <section
       id="annual-reports"
       ref={sectionRef}
-      className="relative py-24 bg-gradient-to-b from-white to-[#F9F7EF] overflow-hidden"
+      className="scroll-mt-24 relative py-24 bg-gradient-to-b from-white to-[#F9F7EF] overflow-hidden"
     >
       {/* Background Elements */}
       <div className="absolute top-20 right-10 w-96 h-96 bg-[#52BC88]/5 rounded-full blur-3xl" />

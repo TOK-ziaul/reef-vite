@@ -88,7 +88,7 @@ export function AboutHero() {
     <section
       id="about-program"
       ref={heroRef}
-      className="relative min-h-[70vh] flex items-center justify-center overflow-hidden"
+      className="scroll-mt-24 relative min-h-[70vh] flex items-center justify-center overflow-hidden"
     >
       {/* Background Image with zoom and parallax animation */}
       <div ref={imageContainerRef} className="absolute inset-0 w-full h-full overflow-hidden">

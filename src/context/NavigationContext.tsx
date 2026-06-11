@@ -30,11 +30,25 @@ interface NavigationContextType {
 
 function scrollToHash(hash: string) {
   const id = hash.startsWith("#") ? hash.slice(1) : hash;
-  window.setTimeout(() => {
-    document.getElementById(id)?.scrollIntoView({
+  const headerOffset = 80;
+
+  const scrollToSection = () => {
+    const section = document.getElementById(id);
+    if (!section) return false;
+
+    const offsetPosition =
+      section.getBoundingClientRect().top + window.scrollY - headerOffset;
+
+    window.scrollTo({
+      top: offsetPosition,
       behavior: "smooth",
-      block: "start",
     });
+    return true;
+  };
+
+  window.setTimeout(() => {
+    if (scrollToSection()) return;
+    window.setTimeout(scrollToSection, 250);
   }, 150);
 }
 

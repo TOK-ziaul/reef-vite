@@ -89,8 +89,9 @@ export function AboutVisionMission() {
 
   return (
     <section
+      id="vision-mission"
       ref={sectionRef}
-      className="relative py-20 px-6 bg-white overflow-hidden"
+      className="scroll-mt-24 relative py-20 px-6 bg-white overflow-hidden"
       style={{
         direction: language === "ar" ? "rtl" : "ltr",
       }}

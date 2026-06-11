@@ -8,6 +8,7 @@ import { DropdownAbout } from "./DropdownAbout";
 import { DropdownMediaCenter } from "./DropdownMediaCenter";
 import { DropdownSupport } from "./DropdownSupport";
 import { DropdownContact } from "./DropdownContact";
+import { ABOUT_DROPDOWN_ITEMS, ABOUT_SECTION_BY_KEY } from "../constants/aboutSections";
 const reefLogo = "/logo.png";
 
 export function Header() {
@@ -58,6 +59,16 @@ export function Header() {
     setMobileMenuOpen(false);
   };
 
+  const handleMobileSubItemClick = (parentKey: string, subItem: string) => {
+    if (parentKey === "about" && subItem in ABOUT_SECTION_BY_KEY) {
+      const sectionId =
+        ABOUT_SECTION_BY_KEY[subItem as keyof typeof ABOUT_SECTION_BY_KEY];
+      navigateTo("about", undefined, sectionId);
+    }
+    setMobileMenuOpen(false);
+    setMobileActiveMenu(null);
+  };
+
   const navItems = [
     { key: "home", href: "/", hasDropdown: false },
     {
@@ -66,14 +77,7 @@ export function Header() {
       hasDropdown: true,
       defaultPage: "about",
       component: DropdownAbout,
-      mobileItems: [
-        "aboutProgram",
-        "visionMission",
-        "objectives",
-        "whatWeOffer",
-        "milestones",
-        "annualReports",
-      ],
+      mobileItems: ABOUT_DROPDOWN_ITEMS.map((item) => item.key),
     },
     {
       key: "sectors",
@@ -298,13 +302,14 @@ export function Header() {
                     {mobileActiveMenu === item.key && item.mobileItems && (
                       <div className="pl-4 space-y-2 pb-2">
                         {item.mobileItems.map((subItem) => (
-                          <a
+                          <button
                             key={subItem}
-                            href="#"
-                            className="block py-2 text-sm text-[#052F2A]/70 hover:text-[#035938] transition-colors"
+                            type="button"
+                            onClick={() => handleMobileSubItemClick(item.key, subItem)}
+                            className="block w-full text-left py-2 text-sm text-[#052F2A]/70 hover:text-[#035938] transition-colors"
                           >
                             {t(subItem)}
-                          </a>
+                          </button>
                         ))}
                       </div>
                     )}

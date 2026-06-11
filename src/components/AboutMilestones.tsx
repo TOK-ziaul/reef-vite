@@ -99,7 +99,7 @@ export function AboutMilestones() {
     <section
       id="milestones"
       ref={sectionRef}
-      className="relative py-24 bg-white overflow-hidden"
+      className="scroll-mt-24 relative py-24 bg-white overflow-hidden"
     >
       {/* Background Decorations */}
       <div className="absolute inset-0 pointer-events-none">

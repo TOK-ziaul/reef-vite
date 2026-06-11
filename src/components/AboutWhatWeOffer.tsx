@@ -84,7 +84,7 @@ export function AboutWhatWeOffer() {
     <section
       id="what-we-offer"
       ref={sectionRef}
-      className="relative py-24 bg-gradient-to-b from-[#F9F7EF] to-white overflow-hidden"
+      className="scroll-mt-24 relative py-24 bg-gradient-to-b from-[#F9F7EF] to-white overflow-hidden"
     >
       {/* Decorative Elements */}
       <div className="absolute top-20 left-0 w-96 h-96 bg-[#52BC88]/5 rounded-full blur-3xl" />

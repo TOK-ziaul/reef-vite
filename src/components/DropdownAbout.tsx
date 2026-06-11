@@ -1,48 +1,14 @@
 import { useLanguage } from "../context/LanguageContext";
 import { useNavigation } from "../context/NavigationContext";
+import { ABOUT_DROPDOWN_ITEMS } from "../constants/aboutSections";
 
-export function DropdownAbout() {
+export function DropdownAbout({ onClose }: { onClose?: () => void }) {
   const { t } = useLanguage();
   const { navigateTo } = useNavigation();
 
-  const menuItems = [
-    { key: "aboutProgram", href: "#about-program", sectionId: "about-program" },
-    {
-      key: "visionMission",
-      href: "#vision-mission",
-      sectionId: "vision-mission",
-    },
-    { key: "objectives", href: "#objectives", sectionId: "objectives" },
-    { key: "whatWeOffer", href: "#what-we-offer", sectionId: "what-we-offer" },
-    { key: "milestones", href: "#milestones", sectionId: "milestones" },
-    {
-      key: "annualReports",
-      href: "#annual-reports",
-      sectionId: "annual-reports",
-    },
-  ];
-
-  const handleClick = (e: React.MouseEvent, item: (typeof menuItems)[0]) => {
-    e.preventDefault();
-
-    // Navigate to about page first
-    navigateTo("about");
-
-    // Then scroll to the section after a brief delay to ensure page is loaded
-    setTimeout(() => {
-      const section = document.getElementById(item.sectionId);
-      if (section) {
-        const headerOffset = 80; // Account for fixed header height
-        const elementPosition = section.getBoundingClientRect().top;
-        const offsetPosition =
-          elementPosition + window.pageYOffset - headerOffset;
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth",
-        });
-      }
-    }, 100);
+  const handleClick = (sectionId: string) => {
+    navigateTo("about", undefined, sectionId);
+    onClose?.();
   };
 
   return (
@@ -52,15 +18,15 @@ export function DropdownAbout() {
       onMouseLeave={(e) => e.stopPropagation()}
     >
       <div className="py-2">
-        {menuItems.map((item) => (
-          <a
+        {ABOUT_DROPDOWN_ITEMS.map((item) => (
+          <button
             key={item.key}
-            href={item.href}
-            onClick={(e) => handleClick(e, item)}
-            className="block px-6 py-3 hover:bg-[#F7F9FA] hover:text-[#007C89] transition-colors"
+            type="button"
+            onClick={() => handleClick(item.sectionId)}
+            className="block w-full text-left px-6 py-3 hover:bg-[#F7F9FA] hover:text-[#007C89] transition-colors"
           >
             {t(item.key)}
-          </a>
+          </button>
         ))}
       </div>
     </div>
