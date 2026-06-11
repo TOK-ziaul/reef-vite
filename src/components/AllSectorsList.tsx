@@ -120,7 +120,7 @@ export function AllSectorsList() {
                   </p>
                   <button
                     onClick={() => navigateTo("sector", sector.id)}
-                    className="text-[#52BC88] hover:text-[#035938] font-bold transition-colors duration-300 flex items-center gap-2 group/btn"
+                    className="text-[#52BC88] hover:text-[#035938] font-bold transition-colors duration-300 flex items-center gap-2 group/btn cursor-pointer"
                   >
                     {t("learnAboutSector")}
                     <svg

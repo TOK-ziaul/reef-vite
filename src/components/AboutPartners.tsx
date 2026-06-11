@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLanguage } from "../context/LanguageContext";
+import { useNavigation } from "../context/NavigationContext";
 import {
   Building2,
   TrendingUp,
@@ -10,23 +11,67 @@ import {
   ArrowRight,
 } from "lucide-react";
 
-// Dummy partner logos
-const logoMewa = "https://placehold.co/200x200?text=Logo";
-const logoHRSD = "https://placehold.co/200x200?text=Logo";
-const logoEconomy = "https://placehold.co/200x200?text=Logo";
-const logoTourism = "https://placehold.co/200x200?text=Logo";
-const logoEducation = "https://placehold.co/200x200?text=Logo";
-const logoMonshaat = "https://placehold.co/200x200?text=Logo";
-const logoADF = "https://placehold.co/200x200?text=Logo";
-const logoSDB = "https://placehold.co/200x200?text=Logo";
-const logoADFCircle = "https://placehold.co/200x200?text=Logo";
-const logoReefFoundation = "https://placehold.co/200x200?text=Logo";
-const logoGreenInitiative = "https://placehold.co/200x200?text=Logo";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
+function PartnerLogoCard({
+  partnerKey,
+  logo,
+  accentGradient,
+  language,
+  t,
+  className = "",
+}: {
+  partnerKey: string;
+  logo: string;
+  accentGradient: string;
+  language: string;
+  t: (key: string) => string;
+  className?: string;
+}) {
+  return (
+    <div
+      className={`group relative bg-white rounded-2xl p-6 border-2 border-[#035938]/10 shadow-lg hover:shadow-2xl transition-all duration-500  hover:border-[#52BC88]/40 overflow-hidden ${className}`}
+    >
+      <div className="absolute inset-0 bg-gradient-to-br from-[#52BC88]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
+      <div className="absolute top-2 right-2 w-2 h-2 bg-[#F1BC28] rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping" />
+
+      <div className="relative z-10 h-full flex items-center justify-center min-h-[80px]">
+        <img
+          src={logo}
+          alt={t(partnerKey)}
+          className="w-full h-auto max-h-20 object-contain transform group-hover:scale-105 transition-transform duration-500 group-hover:opacity-20"
+        />
+      </div>
+
+      <div
+        className="absolute inset-0 z-20 flex items-center justify-center p-4 bg-[#035938]/92 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"
+        dir={language === "ar" ? "rtl" : "ltr"}
+      >
+        <p
+          className="text-white text-sm md:text-base text-center fw-heading leading-snug"
+          style={{
+            fontFamily:
+              language === "ar"
+                ? "'Loew Next Arabic', sans-serif"
+                : "inherit",
+          }}
+        >
+          {t(partnerKey)}
+        </p>
+      </div>
+
+      <div
+        className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${accentGradient} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 rounded-b-2xl`}
+      />
+    </div>
+  );
+}
+
 export function AboutPartners() {
   const { t, language } = useLanguage();
+  const { navigateTo } = useNavigation();
   const sectionRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const introRef = useRef<HTMLParagraphElement>(null);
@@ -128,12 +173,12 @@ export function AboutPartners() {
       titleKey: "partnersGovernmentTitle",
       gradient: "from-[#035938] to-[#52BC88]",
       partners: [
-        { key: "partnersGov1", logo: logoMewa },
-        { key: "partnersGov2", logo: logoHRSD },
-        { key: "partnersGov3", logo: logoEconomy },
-        { key: "partnersGov4", logo: logoTourism },
-        { key: "partnersGov5", logo: logoEducation },
-        { key: "partnersGov6", logo: logoMonshaat },
+        { key: "partnersGov1", logo: "/partners/1.jpg" },
+        { key: "partnersGov2", logo: "/partners/2.jpg" },
+        { key: "partnersGov3", logo: "/partners/3.jpg" },
+        { key: "partnersGov4", logo: "/partners/4.jpg" },
+        { key: "partnersGov5", logo: "/partners/5.jpg" },
+        { key: "partnersGov6", logo: "/partners/6.jpg" },
       ],
     },
     {
@@ -141,11 +186,11 @@ export function AboutPartners() {
       titleKey: "partnersDevelopmentTitle",
       gradient: "from-[#52BC88] to-[#F1BC28]",
       partners: [
-        { key: "partnersDev1", logo: logoADF },
-        { key: "partnersDev2", logo: logoSDB },
-        { key: "partnersDev3", logo: logoADFCircle },
-        { key: "partnersDev4", logo: logoReefFoundation },
-        { key: "partnersDev5", logo: logoGreenInitiative },
+        { key: "partnersDev1", logo: "/partners/7.jpg" },
+        { key: "partnersDev2", logo: "/partners/8.jpg" },
+        { key: "partnersDev3", logo: "/partners/9.jpg" },
+        { key: "partnersDev4", logo: "/partners/10.jpg" },
+        { key: "partnersDev5", logo: "/partners/11.jpg" },
       ],
     },
     {
@@ -261,34 +306,24 @@ export function AboutPartners() {
             </div>
 
             {/* Infinite Scrolling Logo Grid */}
-            <div className="relative overflow-hidden">
+            <div className="relative overflow-hidden pb-6">
               <div className="flex gap-6 animate-scroll">
                 {[
                   ...partnerCategories[0].partners,
                   ...partnerCategories[0].partners,
-                ].map((partner, index) => (
-                  <div
-                    key={index}
-                    className="flex-shrink-0 group relative w-48 h-32 bg-white rounded-2xl p-6 border-2 border-[#035938]/10 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:border-[#52BC88]/40"
-                  >
-                    {/* Hover gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#52BC88]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
-
-                    {/* Sparkle */}
-                    <div className="absolute top-2 right-2 w-2 h-2 bg-[#F1BC28] rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping" />
-
-                    <div className="relative z-10 h-full flex items-center justify-center">
-                      <img
-                        src={typeof partner === "object" ? partner.logo : ""}
-                        alt={typeof partner === "object" ? t(partner.key) : ""}
-                        className="w-full h-auto max-h-20 object-contain transform group-hover:scale-110 transition-transform duration-500"
-                      />
-                    </div>
-
-                    {/* Bottom accent */}
-                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#035938] to-[#52BC88] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 rounded-b-2xl" />
-                  </div>
-                ))}
+                ].map((partner, index) =>
+                  typeof partner === "object" ? (
+                    <PartnerLogoCard
+                      key={index}
+                      partnerKey={partner.key}
+                      logo={partner.logo}
+                      accentGradient="from-[#035938] to-[#52BC88]"
+                      language={language}
+                      t={t}
+                      className="flex-shrink-0 w-48 h-32"
+                    />
+                  ) : null,
+                )}
               </div>
             </div>
           </div>
@@ -321,32 +356,18 @@ export function AboutPartners() {
 
             {/* Compact Grid Layout */}
             <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-              {partnerCategories[1].partners.map((partner, idx) => (
-                <div
-                  key={idx}
-                  className="group relative bg-white rounded-2xl p-6 border-2 border-[#52BC88]/10 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:border-[#F1BC28]/40 overflow-hidden"
-                >
-                  {/* Hover gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#52BC88]/5 to-[#F1BC28]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
-
-                  {/* Sparkle */}
-                  <div className="absolute top-2 right-2 w-2 h-2 bg-[#F1BC28] rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping" />
-
-                  <div
-                    className="relative z-10 flex items-center justify-center"
-                    style={{ minHeight: "100px" }}
-                  >
-                    <img
-                      src={typeof partner === "object" ? partner.logo : ""}
-                      alt={typeof partner === "object" ? t(partner.key) : ""}
-                      className="w-full h-auto max-h-20 object-contain transform group-hover:scale-110 transition-transform duration-500"
-                    />
-                  </div>
-
-                  {/* Bottom accent */}
-                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#52BC88] to-[#F1BC28] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 rounded-b-2xl" />
-                </div>
-              ))}
+              {partnerCategories[1].partners.map((partner, idx) =>
+                typeof partner === "object" ? (
+                  <PartnerLogoCard
+                    key={idx}
+                    partnerKey={partner.key}
+                    logo={partner.logo}
+                    accentGradient="from-[#52BC88] to-[#F1BC28]"
+                    language={language}
+                    t={t}
+                  />
+                ) : null,
+              )}
             </div>
           </div>
         </div>
@@ -381,7 +402,7 @@ export function AboutPartners() {
                   className="group/card relative bg-gradient-to-r from-white to-[#F1BC28]/5 rounded-xl p-5 border border-[#F1BC28]/20 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-x-2 overflow-hidden"
                 >
                   {/* Animated side accent */}
-                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#F1BC28] to-[#035938] transform scale-y-0 group-hover/card:scale-y-100 transition-transform duration-300" />
+                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#F1BC28] to-[#035938] " />
 
                   {/* Icon */}
                   <div className="flex items-center gap-4">
@@ -479,7 +500,11 @@ export function AboutPartners() {
           ref={ctaRef}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
-          <button className="group relative px-10 py-5 bg-gradient-to-r from-[#035938] to-[#52BC88] text-white rounded-full text-lg fw-heading overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:scale-105">
+          <button
+            type="button"
+            onClick={() => navigateTo("about", undefined, "achievements")}
+            className="group relative px-10 py-5 bg-gradient-to-r from-[#035938] to-[#52BC88] text-white rounded-full text-lg fw-heading overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:scale-105"
+          >
             <span
               className="relative z-10 flex items-center gap-2"
               style={{
@@ -499,7 +524,11 @@ export function AboutPartners() {
             <div className="absolute inset-0 bg-gradient-to-r from-[#F1BC28] to-[#52BC88] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           </button>
 
-          <button className="group relative px-10 py-5 bg-white border-2 border-[#035938] text-[#035938] rounded-full text-lg fw-heading overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:scale-105 hover:bg-[#035938] hover:text-white">
+          <button
+            type="button"
+            onClick={() => navigateTo("sectors")}
+            className="group relative px-10 py-5 bg-white border-2 border-[#035938] text-[#035938] rounded-full text-lg fw-heading overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:scale-105 hover:bg-[#035938] hover:text-white"
+          >
             <span
               className="relative z-10 flex items-center gap-2"
               style={{

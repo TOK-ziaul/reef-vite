@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLanguage } from "../context/LanguageContext";
+import { useNavigation } from "../context/NavigationContext";
 import {
   Users,
   DollarSign,
@@ -36,6 +37,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export function AboutAchievements() {
   const { t, language } = useLanguage();
+  const { navigateTo } = useNavigation();
   const sectionRef = useRef<HTMLDivElement>(null);
   const figuresRef = useRef<HTMLDivElement>(null);
   const indicatorsRef = useRef<HTMLDivElement>(null);
@@ -336,22 +338,29 @@ export function AboutAchievements() {
       titleKey: "achievementsAward2Title",
       descKey: "achievementsAward2Desc",
       image: princessAwardImage,
-      altEn: "Princess Royal Training Awards",
-      altAr: "جائزة الأميرة الملكية للتدريب",
+      altEn: "Princess Seeta Award for Social Work",
+      altAr: "جائزة الأميرة صيتة للعمل الاجتماعي",
     },
     {
       titleKey: "achievementsAward3Title",
       descKey: "achievementsAward3Desc",
       image: innovationAwardImage,
-      altEn: "Innovation Award",
-      altAr: "جائزة الابتكار",
+      altEn: "IBMAR Innovation Award",
+      altAr: "جائزة الابتكار من مؤسسة IBMAR",
     },
     {
       titleKey: "achievementsAward4Title",
       descKey: "achievementsAward4Desc",
       image: digitalAwardImage,
-      altEn: "Digital Award",
-      altAr: "جائزة رقمية",
+      altEn: "Arab Digital Government Social Media Award",
+      altAr: "جائزة الحكومة الرقمية العربية للتواصل الاجتماعي",
+    },
+    {
+      titleKey: "achievementsAward5Title",
+      descKey: "achievementsAward5Desc",
+      image: digitalAwardImage,
+      altEn: "Arab Digital Government Visual Media Award",
+      altAr: "جائزة الحكومة الرقمية للإعلام المرئي",
     },
     {
       titleKey: "achievementsAward6Title",
@@ -397,6 +406,31 @@ export function AboutAchievements() {
       />
 
       <div className="max-w-[1440px] mx-auto px-4 md:px-8 relative z-10">
+        <div className="text-center mb-16">
+          <h2
+            className="text-3xl md:text-4xl lg:text-5xl mb-6 text-[#035938] fw-heading"
+            style={{
+              fontFamily:
+                language === "ar"
+                  ? "'Loew Next Arabic', sans-serif"
+                  : "inherit",
+            }}
+          >
+            {t("achievementsPageTitle")}
+          </h2>
+          <p
+            className="text-base md:text-lg text-[#035938]/70 max-w-4xl mx-auto leading-relaxed"
+            style={{
+              fontFamily:
+                language === "ar"
+                  ? "'Loew Next Arabic', sans-serif"
+                  : "inherit",
+            }}
+          >
+            {t("achievementsPageIntro")}
+          </p>
+        </div>
+
         {/* === FIRST: FIGURES === */}
         <div ref={figuresRef}>
           <h2
@@ -568,9 +602,7 @@ export function AboutAchievements() {
                   : "inherit",
             }}
           >
-            {language === "ar"
-              ? "نجاحات نوعية تعك التزامنا بتحقيق التنمية المستدامة وتمكين المجتمعات الريفية"
-              : "Qualitative achievements reflecting our commitment to sustainable development and empowering rural communities"}
+            {t("achievementsHighlightsSubtitle")}
           </p>
 
           {/* Image-Based Grid with Hover Overlay */}
@@ -882,17 +914,28 @@ export function AboutAchievements() {
                       {t("achievementsGuinnessTitle")}
                     </h4>
 
-                    <p
-                      className="text-sm md:text-base text-white/90 text-center leading-relaxed"
-                      style={{
-                        fontFamily:
-                          language === "ar"
-                            ? "'Loew Next Arabic', sans-serif"
-                            : "inherit",
-                      }}
-                    >
-                      {t("achievementsGuinness1")}
-                    </p>
+                    <div className="space-y-3 text-sm md:text-base text-white/90 text-center leading-relaxed">
+                      <p
+                        style={{
+                          fontFamily:
+                            language === "ar"
+                              ? "'Loew Next Arabic', sans-serif"
+                              : "inherit",
+                        }}
+                      >
+                        {t("achievementsGuinness1")}
+                      </p>
+                      <p
+                        style={{
+                          fontFamily:
+                            language === "ar"
+                              ? "'Loew Next Arabic', sans-serif"
+                              : "inherit",
+                        }}
+                      >
+                        {t("achievementsGuinness2")}
+                      </p>
+                    </div>
                   </div>
                 )}
 
@@ -1195,7 +1238,11 @@ export function AboutAchievements() {
           ref={ctaRef}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
-          <button className="group relative px-8 py-4 bg-gradient-to-r from-[#035938] to-[#52BC88] text-white rounded-full text-lg fw-heading overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-1">
+          <button
+            type="button"
+            onClick={() => navigateTo("supportApplication")}
+            className="group relative px-8 py-4 bg-gradient-to-r from-[#035938] to-[#52BC88] text-white rounded-full text-lg fw-heading overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-1"
+          >
             <span
               className="relative z-10 flex items-center gap-2"
               style={{
@@ -1215,7 +1262,11 @@ export function AboutAchievements() {
             <div className="absolute inset-0 bg-gradient-to-r from-[#52BC88] to-[#F1BC28] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           </button>
 
-          <button className="group relative px-8 py-4 bg-transparent border-2 border-[#035938] text-[#035938] rounded-full text-lg fw-heading overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 hover:bg-[#035938] hover:text-white">
+          <button
+            type="button"
+            onClick={() => navigateTo("sectors")}
+            className="group relative px-8 py-4 bg-transparent border-2 border-[#035938] text-[#035938] rounded-full text-lg fw-heading overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 hover:bg-[#035938] hover:text-white"
+          >
             <span
               className="relative z-10 flex items-center gap-2"
               style={{

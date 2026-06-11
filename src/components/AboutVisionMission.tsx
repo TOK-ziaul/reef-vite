@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLanguage } from "../context/LanguageContext";
 import { ArrowRight, Target, Leaf, Eye, Compass } from "lucide-react";
-
+import { useNavigate } from "react-router-dom";
 gsap.registerPlugin(ScrollTrigger);
 
 export function AboutVisionMission() {
@@ -12,7 +12,7 @@ export function AboutVisionMission() {
   const visionCardRef = useRef<HTMLDivElement>(null);
   const missionCardRef = useRef<HTMLDivElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
-
+  const navigate = useNavigate();
   useEffect(() => {
     // Set initial visible state
     if (visionCardRef.current)
@@ -217,7 +217,7 @@ export function AboutVisionMission() {
           </button>
 
           <button
-            onClick={() => scrollToSection("sectors")}
+            onClick={() => navigate("/sectors")}
             className="group relative px-8 py-4 bg-white text-[#035938] border-2 border-[#035938] rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 flex items-center gap-3 overflow-hidden"
             style={{
               fontFamily:

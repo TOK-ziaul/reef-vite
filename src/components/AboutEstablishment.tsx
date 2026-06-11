@@ -262,27 +262,29 @@ export function AboutEstablishment() {
             </div>
 
             {/* Paragraph 3 - Highlighted Card */}
-            <div className="group relative backdrop-blur-xl bg-gradient-to-br from-[#F1BC28] to-[#52BC88] rounded-3xl p-8 border border-white/30 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-1 overflow-hidden">
-              <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-white/20 to-transparent rounded-tl-3xl" />
-              <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-[#035938]/30 to-transparent rounded-br-3xl" />
+            {t("aboutEstablishmentPara3") ? (
+              <div className="group relative backdrop-blur-xl bg-gradient-to-br from-[#F1BC28] to-[#52BC88] rounded-3xl p-8 border border-white/30 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-1 overflow-hidden">
+                <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-white/20 to-transparent rounded-tl-3xl" />
+                <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-[#035938]/30 to-transparent rounded-br-3xl" />
 
-              <div className="relative z-10 flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center flex-shrink-0 backdrop-blur-sm">
-                  <Zap className="w-6 h-6 text-white" />
+                <div className="relative z-10 flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center flex-shrink-0 backdrop-blur-sm">
+                    <Zap className="w-6 h-6 text-white" />
+                  </div>
+                  <p
+                    className="text-lg md:text-xl text-white fw-heading leading-relaxed"
+                    style={{
+                      fontFamily:
+                        language === "ar"
+                          ? "'Loew Next Arabic', sans-serif"
+                          : "inherit",
+                    }}
+                  >
+                    {t("aboutEstablishmentPara3")}
+                  </p>
                 </div>
-                <p
-                  className="text-lg md:text-xl text-white fw-heading leading-relaxed"
-                  style={{
-                    fontFamily:
-                      language === "ar"
-                        ? "'Loew Next Arabic', sans-serif"
-                        : "inherit",
-                  }}
-                >
-                  {t("aboutEstablishmentPara3")}
-                </p>
               </div>
-            </div>
+            ) : null}
           </div>
 
           {/* Right - Image (2 columns) */}

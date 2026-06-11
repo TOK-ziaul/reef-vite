@@ -318,12 +318,12 @@ export function SectorsGrid() {
             />
           </div>
 
-          <h2 className="text-[#052F2A] mb-6 leading-tight">
-            {t("sectorsTitle")}
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#052F2A] mb-6 leading-tight">
+            {t("supportedSectorsTitle")}
           </h2>
 
           <p className="text-[#052F2A]/70 text-xl max-w-3xl mx-auto leading-relaxed">
-            {t("sectorsDesc")}
+            {t("supportedSectorsIntro")}
           </p>
         </div>
         <div ref={sectionsContainerRef} className="flex flex-col gap-4">

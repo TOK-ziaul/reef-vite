@@ -9,6 +9,7 @@ import {
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -23,7 +24,7 @@ export function AboutVision2030() {
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [stepPx, setStepPx] = useState(0);
   const GAP_PX = 8; // gap-6
-
+  const navigate = useNavigate();
   useEffect(() => {
     // Set initial visible state
     if (titleRef.current) gsap.set(titleRef.current, { opacity: 1, y: 0 });
@@ -368,7 +369,7 @@ export function AboutVision2030() {
           </button>
 
           <button
-            onClick={() => scrollToSection("sectors")}
+            onClick={() => navigate("/sectors")}
             className="group relative px-8 py-4 bg-white text-[#035938] border-2 border-[#035938] rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 flex items-center gap-3 overflow-hidden"
             style={{
               fontFamily:

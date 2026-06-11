@@ -10,13 +10,17 @@ import {
   Gift,
   BarChart3,
   Package,
+  ArrowRight,
+  Leaf,
 } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
+import { useNavigation } from "../context/NavigationContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export function AboutStrategicObjectives() {
   const { t, language } = useLanguage();
+  const { navigateTo } = useNavigation();
   const sectionRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const centerRef = useRef<HTMLDivElement>(null);
@@ -222,7 +226,7 @@ export function AboutStrategicObjectives() {
         <div className="text-center mb-20">
           <h2
             ref={titleRef}
-            className="text-4xl md:text-6xl text-white fw-heading mb-4"
+            className="text-4xl md:text-6xl text-white fw-heading mb-6"
             style={{
               fontFamily:
                 language === "ar"
@@ -230,22 +234,19 @@ export function AboutStrategicObjectives() {
                   : "inherit",
             }}
           >
-            {language === "ar" ? (
-              <>
-                ما هي{" "}
-                <span className="text-[#F1BC28]">الأهداف الاستراتيجية</span>
-                <br />
-                لبرنامج ريف السعودية؟
-              </>
-            ) : (
-              <>
-                What are the{" "}
-                <span className="text-[#F1BC28]">Strategic Objectives</span>
-                <br />
-                of Reef Saudi Program?
-              </>
-            )}
+            <span className="text-[#F1BC28]">{t("strategicObjectivesTitle")}</span>
           </h2>
+          <p
+            className="text-base md:text-lg text-white/80 max-w-4xl mx-auto leading-relaxed"
+            style={{
+              fontFamily:
+                language === "ar"
+                  ? "'Loew Next Arabic', sans-serif"
+                  : "inherit",
+            }}
+          >
+            {t("strategicObjectivesIntro")}
+          </p>
         </div>
 
         {/* Mobile stacked layout: simple cards instead of radial graph */}
@@ -451,6 +452,52 @@ export function AboutStrategicObjectives() {
               </div>
             );
           })}
+        </div>
+
+        <div className="flex flex-col md:flex-row gap-4 justify-center items-center mt-16">
+          <button
+            type="button"
+            onClick={() => navigateTo("sustainability")}
+            className="group relative px-8 py-4 bg-gradient-to-r from-[#F1BC28] to-[#52BC88] text-[#035938] rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 flex items-center gap-3 overflow-hidden"
+            style={{
+              fontFamily:
+                language === "ar"
+                  ? "'Loew Next Arabic', sans-serif"
+                  : "inherit",
+            }}
+          >
+            <Sprout className="w-5 h-5 relative z-10" />
+            <span className="text-lg fw-heading relative z-10">
+              {t("strategicObjectivesCTA1")}
+            </span>
+            <ArrowRight
+              className={`w-5 h-5 relative z-10 ${
+                language === "ar" ? "rotate-180" : ""
+              }`}
+            />
+          </button>
+
+          <button
+            type="button"
+            onClick={() => navigateTo("sectors")}
+            className="group relative px-8 py-4 bg-white/10 text-white border-2 border-white/40 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 flex items-center gap-3 overflow-hidden hover:bg-white hover:text-[#035938]"
+            style={{
+              fontFamily:
+                language === "ar"
+                  ? "'Loew Next Arabic', sans-serif"
+                  : "inherit",
+            }}
+          >
+            <Leaf className="w-5 h-5 relative z-10" />
+            <span className="text-lg fw-heading relative z-10">
+              {t("strategicObjectivesCTA2")}
+            </span>
+            <ArrowRight
+              className={`w-5 h-5 relative z-10 ${
+                language === "ar" ? "rotate-180" : ""
+              }`}
+            />
+          </button>
         </div>
       </div>
     </section>
