@@ -4,23 +4,23 @@ import { DollarSign, Users, MapPin, TrendingUp } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts';
 
 export function RainfedStats() {
-  const { language } = useLanguage();
+  const { language, t } = useLanguage();
   const isRTL = language === 'ar';
 
   const keyStats = [
     {
       icon: DollarSign,
-      number: language === 'ar' ? '٩٩٫٦٥' : '99.65',
+      number: '99.65',
       unit: language === 'ar' ? 'مليون ريال' : 'Million SAR',
-      label: language === 'ar' ? 'إجمالي قيمة الدعم' : 'Total Support Value',
+      label: t('rainfedTotalSupport'),
       color: '#035938'
     },
     {
       icon: Users,
-      number: language === 'ar' ? '٥٬٤٦٦+' : '5,466+',
+      number: '5,466+',
       unit: language === 'ar' ? 'مستفيداً' : 'Beneficiaries',
-      label: language === 'ar' ? 'إجمالي عدد المستفيدين' : 'Total Beneficiaries',
-      subtext: language === 'ar' ? '٢٬٩١٩ رجلاً و٢٬٥٤٧ امرأة' : '2,919 men and 2,547 women',
+      label: t('rainfedBeneficiaries'),
+      subtext: t('rainfedBeneficiariesDetails'),
       color: '#52BC88'
     }
   ];
@@ -37,18 +37,18 @@ export function RainfedStats() {
   ];
 
   const supportedProducts = [
-    { name: language === 'ar' ? 'القمح' : 'Wheat', icon: '🌾' },
-    { name: language === 'ar' ? 'الشعير' : 'Barley', icon: '🌾' },
-    { name: language === 'ar' ? 'الدخن' : 'Millet', icon: '🌾' },
-    { name: language === 'ar' ? 'السمسم' : 'Sesame', icon: '🌱' },
-    { name: language === 'ar' ? 'الذرة الرفيعة' : 'Sorghum', icon: '🌽' },
-    { name: language === 'ar' ? 'الحبحب البعلي' : 'Rainfed Watermelon', icon: '🍉' }
+    { name: t('rainfedProduct1'), icon: '🌾' },
+    { name: t('rainfedProduct2'), icon: '🌾' },
+    { name: t('rainfedProduct3'), icon: '🌾' },
+    { name: t('rainfedProduct4'), icon: '🌱' },
+    { name: t('rainfedProduct5'), icon: '🌽' },
+    { name: t('rainfedProduct6'), icon: '🍉' },
   ];
 
   const productionData = [
-    { year: '2020', production: 6000, label: language === 'ar' ? '٦٬٠٠٠ طن' : '6,000 tons' },
-    { year: '2024', production: 62000, label: language === 'ar' ? '٦٢٬٠٠٠ طن' : '62,000 tons', growth: language === 'ar' ? 'نمو ٣٢٪' : '32% Growth' },
-    { year: language === 'ar' ? '2026 (مستهدف)' : '2026 (Target)', production: 195000, label: language === 'ar' ? '١٩٥٬٠٠٠ طن' : '195,000 tons' }
+    { year: '2020', production: 6000, label: t('rainfedProduction2020') },
+    { year: '2024', production: 62000, label: t('rainfedProduction2024'), growth: t('rainfedGrowthRate') },
+    { year: language === 'ar' ? `2026 ${t('rainfedTarget')}` : `2026 ${t('rainfedTarget')}`, production: 195000, label: t('rainfedProduction2026') },
   ];
 
   return (
@@ -72,7 +72,7 @@ export function RainfedStats() {
                 <TrendingUp className="w-6 h-6 text-white" />
               </div>
               <h2 className="text-4xl md:text-5xl font-bold text-[#035938]">
-                {language === 'ar' ? 'أرقام ومؤشرات' : 'Numbers and Indicators'}
+                {t('rainfedStatsTitle')}
               </h2>
             </div>
             <div className="h-1.5 bg-gradient-to-r from-[#035938] via-[#52BC88] to-[#F1BC28] rounded-full" />
@@ -129,7 +129,7 @@ export function RainfedStats() {
         >
           <div className={`${isRTL ? 'text-right' : 'text-left'} mb-8`}>
             <h3 className="text-3xl font-bold text-[#035938] mb-2">
-              {language === 'ar' ? 'التوزيع الجغرافي للمستفيدين' : 'Geographic Distribution of Beneficiaries'}
+              {t('rainfedGeoDistribution')}
             </h3>
           </div>
           
@@ -145,7 +145,7 @@ export function RainfedStats() {
               >
                 <MapPin className="w-8 h-8 mx-auto mb-3" style={{ color: item.color }} />
                 <div className="text-3xl font-bold text-[#035938] mb-2">
-                  {language === 'ar' ? item.value.toLocaleString('ar-SA') : item.value.toLocaleString('en-US')}
+                  {item.value.toLocaleString('en-US')}
                 </div>
                 <div className="text-sm text-[#052F2A]">
                   {item.region}
@@ -165,7 +165,7 @@ export function RainfedStats() {
         >
           <div className={`${isRTL ? 'text-right' : 'text-left'} mb-8`}>
             <h3 className="text-3xl font-bold text-white mb-2">
-              {language === 'ar' ? 'المنتجات المدعومة' : 'Supported Products'}
+              {t('rainfedSupportedProducts')}
             </h3>
           </div>
           
@@ -198,7 +198,7 @@ export function RainfedStats() {
         >
           <div className={`${isRTL ? 'text-right' : 'text-left'} mb-8`}>
             <h3 className="text-3xl font-bold text-[#035938] mb-2">
-              {language === 'ar' ? 'تطور الإنتاج (طن/سنة)' : 'Production Evolution (tons/year)'}
+              {t('rainfedProductionEvolution')}
             </h3>
           </div>
 
@@ -223,7 +223,7 @@ export function RainfedStats() {
                     borderRadius: '12px',
                     color: 'white'
                   }}
-                  formatter={(value) => [`${(value as number).toLocaleString(language === 'ar' ? 'ar-SA' : 'en-US')} ${language === 'ar' ? 'طن' : 'tons'}`, '']}
+                  formatter={(value) => [`${(value as number).toLocaleString('en-US')} ${language === 'ar' ? 'طن' : 'tons'}`, '']}
                 />
                 <Bar dataKey="production" radius={[12, 12, 0, 0]}>
                   {productionData.map((_, index) => (

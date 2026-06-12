@@ -26,9 +26,11 @@ export const FishingImplementedSection: React.FC = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-[#035938] mb-4">
             {t('fishingImplementedTitle')}
           </h2>
-          <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-            {t('fishingImplementedSubtitle')}
-          </p>
+          {t('fishingImplementedSubtitle').trim() ? (
+            <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+              {t('fishingImplementedSubtitle')}
+            </p>
+          ) : null}
         </div>
 
         {/* Projects Grid */}
@@ -146,7 +148,7 @@ export const FishingImplementedSection: React.FC = () => {
                     
                     {/* System Features */}
                     <div className="bg-gradient-to-r from-[#F9F7EF] to-white rounded-xl p-5 mb-4 border border-gray-100">
-                      <h4 className="font-semibold text-[#035938] mb-2">{language === 'ar' ? 'مكونات النظام:' : 'System Components:'}</h4>
+                      <h4 className="font-semibold text-[#035938] mb-2">{t('fishingAuctionSystemFeaturesLabel')}</h4>
                       <p className="text-gray-700 leading-relaxed">
                         {t('fishingAuctionSystemFeatures')}
                       </p>
@@ -281,13 +283,13 @@ export const FishingImplementedSection: React.FC = () => {
               <svg className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
               </svg>
-              {t('fishingCTA1')}
+              {t('exploreInteractiveMap')}
             </button>
             <button className="bg-[#F1BC28] text-white px-8 py-4 rounded-xl font-bold hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center gap-2 group">
               <svg className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
-              {t('fishingCTA2')}
+              {t('exploreSupportPrograms')}
             </button>
           </div>
         </div>

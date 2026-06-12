@@ -103,36 +103,9 @@ export function CoffeeStats() {
               {/* Number Display */}
               <div className="text-center mb-6">
                 <div className="flex items-baseline gap-2 justify-center mb-2">
+                  <span className="text-xl font-bold text-[#52BC88]">+</span>
                   <AnimatedCounter value={95.13} decimals={2} isVisible={isVisible} duration={2000} />
                   <span className="text-xl font-bold text-[#52BC88]">{language === 'ar' ? 'مليون ريال' : 'M SAR'}</span>
-                </div>
-                <div className="inline-block px-4 py-2 bg-gradient-to-r from-[#52BC88]/10 to-[#035938]/10 rounded-full">
-                  <span className="text-sm text-[#035938]/70">2020-2024</span>
-                </div>
-              </div>
-
-              {/* Progress Visual */}
-              <div className="mt-auto">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs text-[#035938]/60">{t('coffeeProgressLabel')}</span>
-                  <span className="text-xs font-bold text-[#52BC88]">100%</span>
-                </div>
-                <div className="relative h-2 bg-gradient-to-r from-[#035938]/10 to-[#52BC88]/10 rounded-full overflow-hidden">
-                  <div 
-                    className="h-full bg-gradient-to-r from-[#035938] via-[#52BC88] to-[#F1BC28] rounded-full"
-                    style={{ 
-                      width: isVisible ? '100%' : '0%',
-                      transition: 'width 2s ease-out 0.3s',
-                      boxShadow: '0 0 15px rgba(82, 188, 136, 0.4)',
-                    }}
-                  >
-                    <div 
-                      className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
-                      style={{
-                        animation: 'shimmer 2s infinite',
-                      }}
-                    ></div>
-                  </div>
                 </div>
               </div>
 
@@ -175,6 +148,7 @@ export function CoffeeStats() {
 
               {/* Number Display */}
               <div className="flex items-baseline gap-2 mb-5">
+                <span className="text-2xl font-bold text-[#035938]">+</span>
                 <AnimatedCounter value={4465} decimals={0} isVisible={isVisible} duration={2000} />
                 <span className="text-sm text-[#035938]/70">{t('coffeeBeneficiariesLabel')}</span>
               </div>

@@ -1,4 +1,5 @@
 import { useLanguage } from "../context/LanguageContext";
+import { useNavigation } from "../context/NavigationContext";
 import {
   Briefcase,
   DollarSign,
@@ -32,14 +33,11 @@ import {
   Map,
   GraduationCap,
   CheckCircle2,
-  Activity,
 } from "lucide-react";
-import { useState } from "react";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 export function RosesProjects() {
   const { t } = useLanguage();
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const { navigateTo } = useNavigation();
 
   const keyProjects = [
     {
@@ -163,21 +161,7 @@ export function RosesProjects() {
 
       <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
         {/* Section Header */}
-        <div
-          className="text-center mb-16"
-          style={{ animation: "float 6s ease-in-out infinite" }}
-        >
-          <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#52BC88]/10 to-[#F1BC28]/10 rounded-full mb-6 border border-[#52BC88]/20 shadow-lg backdrop-blur-sm">
-            <div className="relative">
-              <Briefcase className="w-5 h-5 text-[#52BC88]" />
-              <div className="absolute -top-1 -right-1 w-2 h-2 bg-[#F1BC28] rounded-full animate-ping"></div>
-            </div>
-            <span className="text-sm font-bold text-[#035938] uppercase tracking-wider">
-              {t("sectorProjects")}
-            </span>
-            <Sparkles className="w-4 h-4 text-[#F1BC28]" />
-          </div>
-
+        <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
             <span className="bg-gradient-to-r from-[#035938] via-[#52BC88] to-[#F1BC28] bg-clip-text text-transparent">
               {t("rosesAromaticProjectsTitle")}
@@ -208,13 +192,8 @@ export function RosesProjects() {
                     {t("numberOfProjects")}
                     <Zap className="w-3 h-3 text-[#F1BC28]" />
                   </div>
-                  <div className="flex items-baseline gap-3">
-                    <span className="text-6xl font-bold bg-gradient-to-r from-[#035938] to-[#52BC88] bg-clip-text text-transparent">
-                      14
-                    </span>
-                    <span className="text-xl font-semibold text-[#035938]/50">
-                      {t("projects")}
-                    </span>
+                  <div className="text-4xl font-bold bg-gradient-to-r from-[#035938] to-[#52BC88] bg-clip-text text-transparent">
+                    {t("rosesProjectsCountLabel")}
                   </div>
                 </div>
               </div>
@@ -245,13 +224,8 @@ export function RosesProjects() {
                     {t("totalEstimatedValue")}
                     <Zap className="w-3 h-3 text-[#52BC88]" />
                   </div>
-                  <div className="flex items-baseline gap-3">
-                    <span className="text-6xl font-bold bg-gradient-to-r from-[#F1BC28] to-[#52BC88] bg-clip-text text-transparent">
-                      135.6
-                    </span>
-                    <span className="text-xl font-semibold text-[#035938]/50">
-                      {t("millionSAR")}
-                    </span>
+                  <div className="text-4xl font-bold bg-gradient-to-r from-[#F1BC28] to-[#52BC88] bg-clip-text text-transparent">
+                    {t("rosesProjectsValueLabel")}
                   </div>
                 </div>
               </div>
@@ -274,105 +248,26 @@ export function RosesProjects() {
           </div>
         </div>
 
-        {/* Key Sector Projects - LIST STYLE */}
-        <div className="mb-20">
-          <div className="flex items-center justify-between mb-12">
-            <div className="flex items-center gap-4">
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#035938] to-[#52BC88] rounded-2xl blur-md animate-pulse"></div>
-                <div className="relative w-14 h-14 rounded-2xl bg-gradient-to-br from-[#035938] to-[#52BC88] flex items-center justify-center shadow-xl">
-                  <Building2 className="w-7 h-7 text-white" />
+        {/* Key Sector Projects */}
+        <div className="mb-20 bg-white rounded-2xl shadow-xl p-8 md:p-12">
+          <h3 className="text-2xl md:text-3xl font-bold text-[#035938] mb-8 flex items-center gap-3">
+            <div className="w-2 h-8 bg-gradient-to-b from-[#035938] to-[#52BC88] rounded-full"></div>
+            {t("keySectorProjects")}
+          </h3>
+          <div className="space-y-4">
+            {keyProjects.map((project, index) => (
+              <div key={project.key} className="relative group">
+                <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#035938] to-[#52BC88] rounded-full group-hover:w-2 transition-all duration-300"></div>
+                <div className="pl-8 py-4 bg-gradient-to-r from-[#035938]/5 to-transparent rounded-r-xl group-hover:from-[#035938]/10 transition-all duration-300">
+                  <p className="text-gray-700 leading-relaxed text-lg">
+                    <span className="font-bold text-[#035938] me-2">
+                      {index + 1}-
+                    </span>
+                    {t(project.key)}
+                  </p>
                 </div>
               </div>
-              <h3 className="text-4xl font-bold text-[#035938]">
-                {t("keySectorProjects")}
-              </h3>
-            </div>
-            <div className="hidden md:flex items-center gap-3 px-5 py-2.5 bg-gradient-to-r from-[#52BC88]/10 to-[#F1BC28]/10 rounded-full border border-[#52BC88]/20">
-              <Sparkles className="w-4 h-4 text-[#52BC88]" />
-              <span className="text-sm font-bold text-[#035938]">
-                {keyProjects.length} {t("projects")}
-              </span>
-            </div>
-          </div>
-
-          {/* Projects List */}
-          <div className="space-y-0">
-            {keyProjects.map((project, index) => {
-              // const Icon = project.icon;
-              const isHovered = hoveredIndex === index;
-
-              return (
-                <div
-                  key={index}
-                  className="group relative"
-                  onMouseEnter={() => setHoveredIndex(index)}
-                  onMouseLeave={() => setHoveredIndex(null)}
-                  style={{
-                    animation: "fadeInUp 0.6s ease-out forwards",
-                    animationDelay: `${index * 0.05}s`,
-                    opacity: 0,
-                  }}
-                >
-                  {/* Project Row */}
-                  <div className="relative flex items-center gap-6 py-8 transition-all duration-300">
-                    {/* Background highlight on hover */}
-                    <div
-                      className="absolute inset-0 rounded-2xl transition-all duration-300"
-                      style={{
-                        backgroundColor: isHovered
-                          ? `${project.color}05`
-                          : "transparent",
-                        transform: isHovered ? "scale(1.02)" : "scale(1)",
-                      }}
-                    ></div>
-
-                    {/* Number Badge */}
-                    <div className="relative flex-shrink-0 z-10">
-                      <div
-                        className="w-14 h-14 rounded-full flex items-center justify-center text-lg font-bold text-white shadow-lg transition-all duration-300"
-                        style={{
-                          backgroundColor: project.color,
-                          transform: isHovered
-                            ? "scale(1.1) rotate(5deg)"
-                            : "scale(1) rotate(0deg)",
-                        }}
-                      >
-                        {String(index + 1).padStart(2, "0")}
-                      </div>
-                    </div>
-
-                    {/* Project Text */}
-                    <div className="flex-1 relative z-10">
-                      <p className="text-lg text-[#035938] leading-relaxed">
-                        {t(project.key)}
-                      </p>
-                    </div>
-
-                    {/* Image Thumbnail (if available) */}
-                    {project.image && (
-                      <div className="relative flex-shrink-0 w-32 h-20 rounded-xl overflow-hidden shadow-lg z-10 hidden md:block">
-                        <ImageWithFallback
-                          src={project.image}
-                          alt=""
-                          className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
-                        />
-                      </div>
-                    )}
-
-                    {/* Accent line */}
-                    <div
-                      className="absolute left-0 right-0 bottom-0 h-0.5 transition-all duration-300"
-                      style={{
-                        backgroundColor: `${project.color}20`,
-                        transform: isHovered ? "scaleX(1)" : "scaleX(0.5)",
-                        transformOrigin: "left",
-                      }}
-                    ></div>
-                  </div>
-                </div>
-              );
-            })}
+            ))}
           </div>
         </div>
 
@@ -623,12 +518,9 @@ export function RosesProjects() {
         <div className="mt-32 mb-20">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#035938]/10 to-[#52BC88]/10 rounded-full mb-6 border border-[#035938]/20 shadow-lg">
-              <Activity className="w-5 h-5 text-[#035938]" />
-              <span className="text-sm font-bold text-[#035938] uppercase tracking-wider">
-                {t("keyImplementedActivities")}
-              </span>
-            </div>
+            <h3 className="text-3xl md:text-4xl font-bold text-[#035938]">
+              {t("keyImplementedActivities")}
+            </h3>
           </div>
 
           {/* Activities Grid */}
@@ -856,31 +748,37 @@ export function RosesProjects() {
                   {/* Stats Grid */}
                   <div className="grid md:grid-cols-3 gap-4 mb-6">
                     <div className="bg-gradient-to-br from-[#035938]/10 to-transparent rounded-2xl p-6 border border-[#035938]/20">
-                      <div className="text-sm font-semibold text-[#035938]/60 uppercase mb-2">
-                        Suitable Area
+                      <div className="text-sm font-semibold text-[#035938]/60 mb-2">
+                        {t("rosesSuitableArea")}
                       </div>
                       <div className="text-3xl font-bold text-[#035938] mb-1">
                         621
                       </div>
-                      <div className="text-sm text-[#035938]/60">hectares</div>
+                      <div className="text-sm text-[#035938]/60">
+                        {t("hectares")}
+                      </div>
                     </div>
                     <div className="bg-gradient-to-br from-[#52BC88]/10 to-transparent rounded-2xl p-6 border border-[#52BC88]/20">
-                      <div className="text-sm font-semibold text-[#035938]/60 uppercase mb-2">
-                        Currently Cultivated
+                      <div className="text-sm font-semibold text-[#035938]/60 mb-2">
+                        {t("rosesCurrentlyCultivated")}
                       </div>
                       <div className="text-3xl font-bold text-[#52BC88] mb-1">
                         346
                       </div>
-                      <div className="text-sm text-[#035938]/60">hectares</div>
+                      <div className="text-sm text-[#035938]/60">
+                        {t("hectares")}
+                      </div>
                     </div>
                     <div className="bg-gradient-to-br from-[#F1BC28]/10 to-transparent rounded-2xl p-6 border border-[#F1BC28]/20">
-                      <div className="text-sm font-semibold text-[#035938]/60 uppercase mb-2">
-                        Expansion Potential
+                      <div className="text-sm font-semibold text-[#035938]/60 mb-2">
+                        {t("rosesExpansionPotential")}
                       </div>
                       <div className="text-3xl font-bold text-[#F1BC28] mb-1">
                         275
                       </div>
-                      <div className="text-sm text-[#035938]/60">hectares</div>
+                      <div className="text-sm text-[#035938]/60">
+                        {t("hectares")}
+                      </div>
                     </div>
                   </div>
 
@@ -1000,8 +898,9 @@ export function RosesProjects() {
         <div className="mt-24">
           <div className="flex flex-wrap items-center justify-center gap-6">
             {/* CTA 1: Interactive Map */}
-            <a
-              href="#"
+            <button
+              type="button"
+              onClick={() => navigateTo("home", undefined, "interactive-map")}
               className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#035938] to-[#52BC88] !text-white rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
               style={{
                 animation: "fadeInUp 0.6s ease-out forwards",
@@ -1013,11 +912,12 @@ export function RosesProjects() {
                 {t("exploreInteractiveMap")}
               </span>
               <ChevronRight className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" />
-            </a>
+            </button>
 
             {/* CTA 2: Support Programs */}
-            <a
-              href="#"
+            <button
+              type="button"
+              onClick={() => navigateTo("supportApplication")}
               className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#52BC88] to-[#F1BC28] !text-white rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
               style={{
                 animation: "fadeInUp 0.6s ease-out forwards",
@@ -1030,7 +930,7 @@ export function RosesProjects() {
                 {t("exploreSupportPrograms")}
               </span>
               <ChevronRight className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" />
-            </a>
+            </button>
           </div>
         </div>
       </div>

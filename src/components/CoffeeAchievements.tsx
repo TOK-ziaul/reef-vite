@@ -13,7 +13,7 @@ import {
 } from 'lucide-react';
 
 export function CoffeeAchievements() {
-  const { language } = useLanguage();
+  const { t } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -37,75 +37,50 @@ export function CoffeeAchievements() {
   const achievements = [
     {
       icon: Trees,
-      text: language === 'ar' 
-        ? 'زيادة عدد أشجار القهوة إلى 1.2 مليون شجرة'
-        : 'Increasing the number of coffee trees to 1.2 million trees',
-      subtext: language === 'ar'
-        ? '(الهدف: الوصول إلى 5-6 ملايين شجرة بحلول 2030)'
-        : '(Target: reaching 5–6 million trees by 2030)',
+      textKey: 'coffeeAchievement1',
+      subtextKey: 'coffeeAchievement1Sub',
       color: '#035938',
       gradient: 'from-[#035938] to-[#0d7a50]',
     },
     {
       icon: TrendingUp,
-      text: language === 'ar'
-        ? 'رفع الإنتاجية المتوقعة لكل شجرة من 0.4 كجم إلى 1.5 كجم سنوياً'
-        : 'Raising the expected productivity per tree from 0.4 kg to 1.5 kg annually',
-      subtext: '',
+      textKey: 'coffeeAchievement2',
       color: '#52BC88',
       gradient: 'from-[#52BC88] to-[#3da872]',
     },
     {
       icon: Lightbulb,
-      text: language === 'ar'
-        ? 'إدخال 5 تقنيات وممارسات حديثة في زراعة القهوة'
-        : 'Introducing 5 modern technologies and practices in coffee cultivation',
-      subtext: '',
+      textKey: 'coffeeAchievement3',
       color: '#F1BC28',
       gradient: 'from-[#F1BC28] to-[#d89e1a]',
     },
     {
       icon: Sprout,
-      text: language === 'ar'
-        ? 'نقل 8,000 شتلة قهوة عالية الجودة بنجاح'
-        : 'Successfully transferring 8,000 high-quality coffee seedlings',
-      subtext: '',
+      textKey: 'coffeeAchievement4',
       color: '#52BC88',
       gradient: 'from-[#52BC88] to-[#035938]',
     },
     {
       icon: Home,
-      text: language === 'ar'
-        ? 'دعم المشاتل بقدرة إنتاجية تبلغ 50,000 شتلة سنوياً'
-        : 'Supporting nurseries with a production capacity of 50,000 seedlings per year',
-      subtext: '',
+      textKey: 'coffeeAchievement5',
       color: '#035938',
       gradient: 'from-[#035938] to-[#52BC88]',
     },
     {
       icon: Users,
-      text: language === 'ar'
-        ? 'إجراء ورش عمل تدريبية لأكثر من 200 مستفيد'
-        : 'Conducting training workshops for more than 200 beneficiaries',
-      subtext: '',
+      textKey: 'coffeeAchievement6',
       color: '#F1BC28',
       gradient: 'from-[#F1BC28] to-[#52BC88]',
     },
     {
       icon: Map,
-      text: language === 'ar'
-        ? 'تنفيذ زيارات ميدانية إلى أكثر من 100 مزرعة'
-        : 'Carrying out field visits to over 100 farms',
-      subtext: '',
+      textKey: 'coffeeAchievement7',
       color: '#52BC88',
       gradient: 'from-[#52BC88] to-[#035938]',
     },
     {
       icon: Globe,
-      text: language === 'ar'
-        ? 'المشاركة في مؤتمرات ومعارض دولية متخصصة'
-        : 'Participating in specialized international conferences and exhibitions',
-      subtext: '',
+      textKey: 'coffeeAchievement8',
       color: '#035938',
       gradient: 'from-[#035938] to-[#52BC88]',
     },
@@ -123,7 +98,7 @@ export function CoffeeAchievements() {
         {/* Section Title */}
         <div className="mb-16">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#035938] mb-4">
-            {language === 'ar' ? 'الإنجازات الرئيسية' : 'Key Achievements'}
+            {t('coffeeKeyAchievementsTitle')}
           </h2>
           <div className="w-32 h-1.5 bg-gradient-to-r from-[#035938] to-[#52BC88] rounded-full"></div>
         </div>
@@ -169,13 +144,13 @@ export function CoffeeAchievements() {
                           strokeWidth={2.5}
                         />
                         <p className="text-lg text-[#035938] font-medium leading-relaxed">
-                          {achievement.text}
+                          {t(achievement.textKey)}
                         </p>
                       </div>
                       
-                      {achievement.subtext && (
+                      {achievement.subtextKey && (
                         <p className="text-base text-[#035938]/60 italic pl-9 leading-relaxed">
-                          {achievement.subtext}
+                          {t(achievement.subtextKey)}
                         </p>
                       )}
                     </div>

@@ -5,7 +5,6 @@ import {
   MapPin,
   Package,
   Calendar,
-  Sparkles,
   ArrowUpRight,
   DollarSign,
   Leaf,
@@ -175,20 +174,11 @@ export function RosesFiguresIndicators() {
       <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
         {/* Section Title */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-3 px-6 py-3 bg-white/80 backdrop-blur-xl rounded-full border border-[#52BC88]/20 mb-6">
-            <Sparkles className="w-5 h-5 text-[#F1BC28]" />
-            <span className="text-sm font-bold text-[#035938] uppercase tracking-wider">
+          <h2 className="text-4xl md:text-5xl font-bold">
+            <span className="bg-gradient-to-r from-[#035938] via-[#52BC88] to-[#F1BC28] bg-clip-text text-transparent">
               {t("figuresIndicators")}
             </span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-3">
-            <span className="bg-gradient-to-r from-[#035938] via-[#52BC88] to-[#F1BC28] bg-clip-text text-transparent">
-              {t("rosesImpactGrowth")}
-            </span>
           </h2>
-          <p className="text-lg text-[#035938]/60 max-w-2xl mx-auto">
-            {t("rosesFiguresSubtitle")}
-          </p>
         </div>
 
         {/* Hero Stats */}
@@ -205,13 +195,13 @@ export function RosesFiguresIndicators() {
                 </div>
 
                 <div className="flex-1 min-w-0">
-                  <span className="text-xs font-bold text-[#035938]/50 uppercase tracking-wider block mb-3">
+                  <span className="text-xs font-bold text-[#035938]/50 tracking-wider block mb-3">
                     {t("totalSupport")}
                   </span>
 
                   <div className="flex items-baseline gap-2 mb-2">
                     <span className="text-5xl font-bold bg-gradient-to-r from-[#52BC88] to-[#035938] bg-clip-text text-transparent">
-                      59.80
+                      +59.80
                     </span>
                     <span className="text-lg font-semibold text-[#035938]/40">
                       {t("millionSAR")}
@@ -242,25 +232,30 @@ export function RosesFiguresIndicators() {
                 </div>
 
                 <div className="flex-1 min-w-0">
-                  <span className="text-xs font-bold text-[#035938]/50 uppercase tracking-wider block mb-3">
+                  <span className="text-xs font-bold text-[#035938]/50 tracking-wider block mb-3">
                     {t("numberOfBeneficiaries")}
                   </span>
 
-                  <div className="mb-2">
+                  <div className="mb-2 flex items-baseline gap-2 flex-wrap">
                     <span className="text-5xl font-bold bg-gradient-to-r from-[#F1BC28] to-[#52BC88] bg-clip-text text-transparent">
                       1,055
+                    </span>
+                    <span className="text-lg font-semibold text-[#035938]/50">
+                      {t("rosesBeneficiariesLabel")}
                     </span>
                   </div>
 
                   <div className="flex items-center gap-4 text-xs font-semibold">
                     <div className="flex items-center gap-1.5">
                       <div className="w-2 h-2 rounded-full bg-[#52BC88]"></div>
-                      <span className="text-[#035938]/70">632 {t("men")}</span>
+                      <span className="text-[#035938]/70">
+                        632 {t("rosesMenLabel")}
+                      </span>
                     </div>
                     <div className="flex items-center gap-1.5">
                       <div className="w-2 h-2 rounded-full bg-[#F1BC28]"></div>
                       <span className="text-[#035938]/70">
-                        423 {t("women")}
+                        423 {t("rosesWomenLabel")}
                       </span>
                     </div>
                   </div>
@@ -375,7 +370,7 @@ export function RosesFiguresIndicators() {
                       {/* Stats */}
                       <div className="mt-4 flex items-center justify-between text-sm">
                         <span className="text-[#035938]/60 font-semibold">
-                          Market Share
+                          {t("marketShare")}
                         </span>
                         <div
                           className="flex items-center gap-1.5"
@@ -538,7 +533,7 @@ export function RosesFiguresIndicators() {
           <div className="text-center mb-8">
             <h3 className="text-2xl md:text-3xl font-bold mb-2">
               <span className="bg-gradient-to-r from-[#035938] to-[#52BC88] bg-clip-text text-transparent">
-                {t("productionGrowth")}
+                {t("rosesProductionEvolution")}
               </span>
             </h3>
             <p className="text-sm text-[#035938]/60 max-w-2xl mx-auto">
@@ -749,7 +744,7 @@ export function RosesFiguresIndicators() {
                   </div>
                   <div>
                     <div className="text-xs text-[#035938]/60 font-medium">
-                      Cumulative Growth
+                      {t("rosesCumulativeGrowth")}
                     </div>
                     <div className="text-xl font-bold text-[#52BC88]">+38%</div>
                   </div>
@@ -763,7 +758,7 @@ export function RosesFiguresIndicators() {
                   </div>
                   <div>
                     <div className="text-xs text-[#035938]/60 font-medium">
-                      Target Achievement
+                      {t("rosesTargetAchievement")}
                     </div>
                     <div className="text-xl font-bold text-[#F1BC28]">2026</div>
                   </div>
@@ -777,7 +772,7 @@ export function RosesFiguresIndicators() {
                   </div>
                   <div>
                     <div className="text-xs text-[#035938]/60 font-medium">
-                      Production Scale
+                      {t("rosesProductionScale")}
                     </div>
                     <div className="text-xl font-bold text-[#035938]">4x</div>
                   </div>

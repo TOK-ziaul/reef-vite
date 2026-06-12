@@ -1,78 +1,57 @@
 import { useLanguage } from '../context/LanguageContext';
 import { motion } from 'motion/react';
 import { useState } from 'react';
-import { Sprout, TrendingUp, Beaker, Users, Shield, ChevronRight, ChevronLeft, Map, Gift } from 'lucide-react';
+import { TrendingUp, Beaker, Stethoscope, Users, ChevronRight, ChevronLeft, Map, Gift } from 'lucide-react';
 
 export function KeyAchievements2024() {
-  const { language } = useLanguage();
+  const { t, language } = useLanguage();
   const [activeIndex, setActiveIndex] = useState(0);
 
   const achievements = [
     {
-      icon: Sprout,
-      color: 'from-[#035938] to-[#52BC88]',
-      bgImage: 'https://images.unsplash.com/photo-1708796705570-33fd29ef67d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxudXJzZXJ5JTIwcGxhbnQlMjBzZWVkbGluZ3MlMjBncmVlbmhvdXNlfGVufDF8fHx8MTc3MDEyNjA2OXww&ixlib=rb-4.1.0&q=80&w=1080',
-      titleAr: 'إنشاء مشاتل جديدة',
-      titleEn: 'Establishing New Nurseries',
-      descriptionAr: 'تم اختيار موقعين لإنشاء مشاتل فاكهة تعاونية لدى الجمعية الزراعية بالطائف وجمعية التسويق الزراعي بجازان، بسعة تقديرية 15 ألف شتلة لكل مشتل.',
-      descriptionEn: 'Two sites were selected to establish cooperative fruit nurseries at the Agricultural Society in Taif and the Agricultural Marketing Society in Jazan, with an estimated capacity of 15,000 seedlings per nursery.',
-      stats: [
-        { valueAr: '2', valueEn: '2', labelAr: 'موقع', labelEn: 'Locations' },
-        { valueAr: '15,000', valueEn: '15,000', labelAr: 'شتلة/مشتل', labelEn: 'Seedlings/Nursery' }
-      ]
-    },
-    {
       icon: TrendingUp,
-      color: 'from-[#52BC88] to-[#035938]',
-      bgImage: 'https://images.unsplash.com/photo-1572166365087-96ac83103260?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmcnVpdCUyMHRyZWUlMjBvcmNoYXJkJTIwZmFybWluZ3xlbnwxfHx8fDE3NzAxMjYwNjl8MA&ixlib=rb-4.1.0&q=80&w=1080',
-      titleAr: 'التوسع بالمشاتل القديمة',
-      titleEn: 'Expansion of Existing Nurseries',
-      descriptionAr: 'التوسع في المشاتل القائمة بمنطقة عسير بـ 10,000 شتلة ومنطقة الباحة بـ 10,000 شتلة. إجمالي الإنتاج 20,000 شتلة، جرى توزيعها خلال النصف الثاني من عام 2025.',
-      descriptionEn: 'Existing nurseries in Asir region were expanded by 10,000 seedlings and Al-Baha region by 10,000 seedlings. Total production reached 20,000 seedlings distributed in the second half of 2025.',
+      color: 'from-[#035938] to-[#52BC88]',
+      bgImage: 'https://images.unsplash.com/photo-1688677825986-4ffb926bafc9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaWdpdGFsJTIwdGVjaG5vbG9neSUyMGZhcm1pbmd8ZW58MXx8fHwxNzcwMTI0ODg0fDA&ixlib=rb-4.1.0&q=80&w=1080',
+      titleKey: 'livestockKeyWork1Title',
+      descKey: 'livestockKeyWork1Desc',
       stats: [
-        { valueAr: '20,000', valueEn: '20,000', labelAr: 'شتلة', labelEn: 'Seedlings' },
-        { valueAr: '2', valueEn: '2', labelAr: 'منطقة', labelEn: 'Regions' }
-      ]
+        { valueKey: 'livestockKeyWork1Stat1Value', labelKey: 'livestockKeyWork1Stat1Label' },
+        { valueKey: 'livestockKeyWork1Stat2Value', labelKey: 'livestockKeyWork1Stat2Label' },
+      ],
     },
     {
       icon: Beaker,
-      color: 'from-[#F1BC28] to-[#035938]',
+      color: 'from-[#52BC88] to-[#035938]',
       bgImage: 'https://images.unsplash.com/photo-1759742269093-de3d9fed6714?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxncmFwZSUyMHZpbmV5YXJkJTIwaGFydmVzdHxlbnwxfHx8fDE3NzAxMjYwNzB8MA&ixlib=rb-4.1.0&q=80&w=1080',
-      titleAr: 'توصيف أصناف الفاكهة',
-      titleEn: 'Fruit Variety Characterization',
-      descriptionAr: 'توصيف 6 أصناف مستوردة من العنب والتين والمشمش واللوز في الحقل الإرشادي بالبلجرشي بالتعاون مع مركز البذور والتقاوي بالباحة لتحديد المواصفات وإكثار الأصناف المناسبة.',
-      descriptionEn: 'Six imported varieties of grapes, figs, apricots and almonds were characterized in the demonstration field in Baljurashi in cooperation with the Seeds Center in Al-Baha to determine specifications and propagate suitable varieties.',
+      titleKey: 'livestockKeyWork2Title',
+      descKey: 'livestockKeyWork2Desc',
       stats: [
-        { valueAr: '6', valueEn: '6', labelAr: 'أصناف', labelEn: 'Varieties' },
-        { valueAr: '4', valueEn: '4', labelAr: 'أنواع', labelEn: 'Types' }
-      ]
+        { valueKey: 'livestockKeyWork2Stat1Value', labelKey: 'livestockKeyWork2Stat1Label' },
+        { valueKey: 'livestockKeyWork2Stat2Value', labelKey: 'livestockKeyWork2Stat2Label' },
+      ],
+    },
+    {
+      icon: Stethoscope,
+      color: 'from-[#F1BC28] to-[#035938]',
+      bgImage: 'https://images.unsplash.com/photo-1654119938236-de0d8ed4641d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2ZXRlcmluYXJ5JTIwY2FyZSUyMGxpdmVzdG9ja3xlbnwxfHx8fDE3NzAxMjQ4ODV8MA&ixlib=rb-4.1.0&q=80&w=1080',
+      titleKey: 'livestockKeyWork3Title',
+      descKey: 'livestockKeyWork3Desc',
+      stats: [
+        { valueKey: 'livestockKeyWork3Stat1Value', labelKey: 'livestockKeyWork3Stat1Label' },
+        { valueKey: 'livestockKeyWork3Stat2Value', labelKey: 'livestockKeyWork3Stat2Label' },
+      ],
     },
     {
       icon: Users,
       color: 'from-[#52BC88] to-[#F1BC28]',
       bgImage: 'https://images.unsplash.com/photo-1677501002892-6fe7ba4bfe98?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21lbiUyMGFncmljdWx0dXJhbCUyMHRyYWluaW5nJTIwZmFybXxlbnwxfHx8fDE3NzAxMjYwNjl8MA&ixlib=rb-4.1.0&q=80&w=1080',
-      titleAr: 'تطوير ريادة الأعمال الزراعية للسيدات',
-      titleEn: 'Women\'s Agricultural Entrepreneurship',
-      descriptionAr: 'برنامج تدريبي استمر 3 أشهر شمل اختيار وتدريب 15 رائدة أعمال زراعية على إنشاء وتشغيل مشاتل زراعية خاصة بمدينة بلجرشي. شمل البرنامج تطوير مهارات التصنيع التحويلي للرمان.',
-      descriptionEn: 'A 3-month training program for 15 agricultural women entrepreneurs on establishing and operating private agricultural nurseries in Baljurashi city. The program included developing pomegranate processing skills.',
+      titleKey: 'livestockKeyWork4Title',
+      descKey: 'livestockKeyWork4Desc',
       stats: [
-        { valueAr: '15', valueEn: '15', labelAr: 'رائدة أعمال', labelEn: 'Entrepreneurs' },
-        { valueAr: '3', valueEn: '3', labelAr: 'أشهر', labelEn: 'Months' }
-      ]
+        { valueKey: 'livestockKeyWork4Stat1Value', labelKey: 'livestockKeyWork4Stat1Label' },
+        { valueKey: 'livestockKeyWork4Stat2Value', labelKey: 'livestockKeyWork4Stat2Label' },
+      ],
     },
-    {
-      icon: Shield,
-      color: 'from-[#035938] to-[#F1BC28]',
-      bgImage: 'https://images.unsplash.com/photo-1576669801838-1b1c52121e6a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwbGFudCUyMGRpc2Vhc2UlMjBkaWFnbm9zaXMlMjBsYWJvcmF0b3J5fGVufDF8fHx8MTc3MDEyNjA3MHww&ixlib=rb-4.1.0&q=80&w=1080',
-      titleAr: 'الصحة النباتية',
-      titleEn: 'Plant Health',
-      descriptionAr: 'مسح شامل لتشخيص آفات وأمراض التين والعنب والرمان، وإعداد برامج الإدارة المتكاملة لمكافحة البياض الدقيق وذبابة الفاكهة والنيماتودا وفراشة الرمان بالتعاون مع مركز وقاء.',
-      descriptionEn: 'Comprehensive survey to diagnose pests and diseases of figs, grapes and pomegranates, and integrated management programs to combat powdery mildew, fruit flies, nematodes and pomegranate moths in cooperation with Weqaa Center.',
-      stats: [
-        { valueAr: '3', valueEn: '3', labelAr: 'محاصيل', labelEn: 'Crops' },
-        { valueAr: '4', valueEn: '4', labelAr: 'برامج مكافحة', labelEn: 'Control Programs' }
-      ]
-    }
   ];
 
   const handleNext = () => {
@@ -85,7 +64,6 @@ export function KeyAchievements2024() {
 
   return (
     <div className="py-16 bg-white relative overflow-hidden">
-      {/* Background Decoration */}
       <motion.div 
         className="absolute top-0 left-0 w-full h-full opacity-30"
         initial={{ opacity: 0 }}
@@ -96,7 +74,6 @@ export function KeyAchievements2024() {
       </motion.div>
       
       <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
-        {/* Header */}
         <motion.div 
           className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
@@ -111,17 +88,14 @@ export function KeyAchievements2024() {
               className="text-3xl md:text-4xl font-bold text-[#035938]"
               style={{ fontFamily: language === 'ar' ? "'Loew Next Arabic', sans-serif" : "inherit" }}
             >
-              {language === 'ar' ? 'أهم الأعمال المنفذة' : 'Key Achievements'}
+              {t('livestockKeyWorksTitle')}
             </h2>
           </div>
         </motion.div>
 
-        {/* Interactive Carousel */}
         <div className="relative">
-          {/* Main Content Display */}
           <div className="bg-gradient-to-br from-white to-[#F9F7EF] rounded-3xl overflow-hidden shadow-2xl border border-[#035938]/5">
             <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px]">
-              {/* Left: Image with overlay */}
               <div className="relative h-80 lg:h-auto overflow-hidden">
                 <motion.div 
                   key={`image-${activeIndex}`}
@@ -133,7 +107,6 @@ export function KeyAchievements2024() {
                 />
                 <div className={`absolute inset-0 bg-gradient-to-br ${achievements[activeIndex].color} opacity-85`} />
                 
-                {/* Content Overlay */}
                 <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
                   <motion.div
                     key={`icon-${activeIndex}`}
@@ -159,10 +132,9 @@ export function KeyAchievements2024() {
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.5, delay: 0.3 }}
                   >
-                    {language === 'ar' ? achievements[activeIndex].titleAr : achievements[activeIndex].titleEn}
+                    {t(achievements[activeIndex].titleKey)}
                   </motion.h3>
 
-                  {/* Stats */}
                   <motion.div 
                     className="flex gap-4 flex-wrap justify-center"
                     initial={{ y: 20, opacity: 0 }}
@@ -171,12 +143,12 @@ export function KeyAchievements2024() {
                   >
                     {achievements[activeIndex].stats.map((stat, idx) => (
                       <div key={idx} className="bg-white/20 backdrop-blur-sm rounded-xl px-6 py-3 border border-white/30">
-                        <div className="text-3xl font-bold text-white">{language === 'ar' ? stat.valueAr : stat.valueEn}</div>
+                        <div className="text-3xl font-bold text-white">{t(stat.valueKey)}</div>
                         <div 
                           className="text-sm text-white/95 mt-1"
                           style={{ fontFamily: language === 'ar' ? "'Loew Next Arabic', sans-serif" : "inherit" }}
                         >
-                          {language === 'ar' ? stat.labelAr : stat.labelEn}
+                          {t(stat.labelKey)}
                         </div>
                       </div>
                     ))}
@@ -184,7 +156,6 @@ export function KeyAchievements2024() {
                 </div>
               </div>
 
-              {/* Right: Description */}
               <div className="p-8 lg:p-12 flex flex-col justify-between" dir={language === 'ar' ? 'rtl' : 'ltr'}>
                 <div>
                   <motion.div
@@ -201,15 +172,14 @@ export function KeyAchievements2024() {
                     </div>
 
                     <p 
-                      className="text-lg text-[#035938] leading-relaxed"
+                      className="text-lg text-[#035938] leading-relaxed whitespace-pre-line"
                       style={{ fontFamily: language === 'ar' ? "'Loew Next Arabic', sans-serif" : "inherit" }}
                     >
-                      {language === 'ar' ? achievements[activeIndex].descriptionAr : achievements[activeIndex].descriptionEn}
+                      {t(achievements[activeIndex].descKey)}
                     </p>
                   </motion.div>
                 </div>
 
-                {/* Navigation */}
                 <div className="flex items-center justify-between mt-8 pt-8 border-t border-[#035938]/10">
                   <button
                     onClick={handlePrev}
@@ -219,7 +189,6 @@ export function KeyAchievements2024() {
                     {language === 'ar' ? <ChevronRight className="w-6 h-6" /> : <ChevronLeft className="w-6 h-6" />}
                   </button>
 
-                  {/* Dots */}
                   <div className="flex gap-2">
                     {achievements.map((_, idx) => (
                       <button
@@ -248,7 +217,6 @@ export function KeyAchievements2024() {
           </div>
         </div>
 
-        {/* CTA Buttons */}
         <motion.div 
           className="flex flex-wrap items-center justify-center gap-4 mt-12"
           initial={{ opacity: 0, y: 20 }}
@@ -267,7 +235,7 @@ export function KeyAchievements2024() {
               className="font-semibold"
               style={{ fontFamily: language === 'ar' ? "'Loew Next Arabic', sans-serif" : "inherit" }}
             >
-              {language === 'ar' ? 'استكشف الخريطة التفاعلية لقطاعاتنا الريفية' : 'Explore Interactive Map of Our Rural Sectors'}
+              {t('exploreInteractiveMap')}
             </span>
           </motion.button>
 
@@ -281,7 +249,7 @@ export function KeyAchievements2024() {
               className="font-semibold"
               style={{ fontFamily: language === 'ar' ? "'Loew Next Arabic', sans-serif" : "inherit" }}
             >
-              {language === 'ar' ? 'استكشف برامج الدعم' : 'Explore Support Programs'}
+              {t('exploreSupportPrograms')}
             </span>
           </motion.button>
         </motion.div>

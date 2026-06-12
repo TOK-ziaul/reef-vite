@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 import { Target, Users, TrendingUp } from 'lucide-react';
 
 export function RainfedObjectives() {
-  const { language } = useLanguage();
+  const { language, t } = useLanguage();
   const isRTL = language === 'ar';
 
   const objectives = [
@@ -12,28 +12,22 @@ export function RainfedObjectives() {
       color: '#035938',
       gradient: 'from-[#035938] to-[#052F2A]',
       title: language === 'ar' ? 'زيادة ورفع إنتاجية المحاصيل البعلية' : 'Increase and Raise Productivity of Rainfed Crops',
-      description: language === 'ar'
-        ? 'زيادة ورفع إنتاجية المحاصيل البعلية في المناطق ذات الميز النسبية باستخدام تقنيات حصاد المياه وأساليب الري الحديثة.'
-        : 'Increase and raise the productivity of rainfed crops in areas with comparative advantages using rainwater harvesting techniques and modern irrigation methods.'
+      description: t('rainfedObj1'),
     },
     {
       icon: Target,
       color: '#52BC88',
       gradient: 'from-[#52BC88] to-[#035938]',
       title: language === 'ar' ? 'زيادة نسبة الاكتفاء الذاتي' : 'Increase Self-Sufficiency Rate',
-      description: language === 'ar'
-        ? 'زيادة نسبة الاكتفاء الذاتي من هذه المحاصيل وإحلال نسبة من الواردات.'
-        : 'Increase the self-sufficiency rate in these crops and substitute a portion of imports.'
+      description: t('rainfedObj2'),
     },
     {
       icon: Users,
       color: '#F1BC28',
       gradient: 'from-[#F1BC28] to-[#F09800]',
       title: language === 'ar' ? 'زيادة دخل صغار المزارعين' : 'Increase Income of Smallholder Farmers',
-      description: language === 'ar'
-        ? 'زيادة دخل صغار المزارعين وتحسين سبل معيشتهم.'
-        : 'Increase the income of smallholder farmers and improve their livelihoods.'
-    }
+      description: t('rainfedObj3'),
+    },
   ];
 
   return (
@@ -86,7 +80,7 @@ export function RainfedObjectives() {
                         className="text-7xl font-bold opacity-5"
                         style={{ color: objective.color }}
                       >
-                        {language === 'ar' ? (index + 1).toLocaleString('ar-SA') : (index + 1).toString().padStart(2, '0')}
+                        {(index + 1).toString().padStart(2, '0')}
                       </div>
                     </div>
                     

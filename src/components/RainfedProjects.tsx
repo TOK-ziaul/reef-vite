@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 import { Tractor, Factory, Wheat, Droplets, Lightbulb, Target, CheckCircle, MapPin } from 'lucide-react';
 
 export function RainfedProjects() {
-  const { language } = useLanguage();
+  const { language, t } = useLanguage();
   const isRTL = language === 'ar';
 
   const keyProjects = [
@@ -32,7 +32,9 @@ export function RainfedProjects() {
       color: '#035938'
     },
     {
-      title: language === 'ar' ? 'تشغيل وحدة أبحاث جازان' : 'Operation of Jazan Research Unit',
+      title: language === 'ar'
+        ? 'تشغيل وحدة أبحاث جازان لتعزيز التكامل بين الأبحاث الزراعية والتطبيقات الميدانية'
+        : 'Operating the Jazan research unit to strengthen integration between agricultural research and field applications',
       location: language === 'ar' ? 'جازان' : 'Jazan',
       icon: Lightbulb,
       color: '#52BC88'
@@ -50,13 +52,13 @@ export function RainfedProjects() {
       color: '#035938'
     },
     {
-      title: language === 'ar' ? 'توريد معدات الحصاد الحديثة' : 'Supply of Modern Harvesting Equipment',
+      title: language === 'ar' ? 'توريد معدات الحصاد الحديثة لخدمة المحاصيل البعلية' : 'Supply of modern harvesting equipment for rainfed crops',
       location: language === 'ar' ? 'مناطق متعددة' : 'Multiple Regions',
       icon: Tractor,
       color: '#52BC88'
     },
     {
-      title: language === 'ar' ? 'توريد معدات إعداد التربة والزراعة الحديثة' : 'Supply of Soil Preparation and Modern Farming Equipment',
+      title: language === 'ar' ? 'توريد معدات إعداد التربة والزراعة الحديثة لخدمة مزارعي المحاصيل البعلية' : 'Supply of soil preparation and modern farming equipment for rainfed crop farmers',
       location: language === 'ar' ? 'مناطق متعددة' : 'Multiple Regions',
       icon: Tractor,
       color: '#F1BC28'
@@ -79,24 +81,24 @@ export function RainfedProjects() {
   ];
 
   const technicalFeasibility = [
-    language === 'ar' ? 'تعزيز الكفاءة التشغيلية للمعدات الزراعية في التنمية الريفية.' : 'Enhancing operational efficiency of agricultural equipment in rural development.',
-    language === 'ar' ? 'تقليل الجهد والتكاليف عبر إدخال تقنيات وميكنة حديثة.' : 'Reducing effort and costs through introducing modern technologies and mechanization.',
-    language === 'ar' ? 'تعزيز التعاون بين المزارعين من خلال العمل الجماعي واستخدام المعدات المشتركة.' : 'Promoting cooperation among farmers through collective work and shared equipment use.',
-    language === 'ar' ? 'رفع كفاءة إنتاج المحاصيل الحقلية لتحقيق الأمن الغذائي.' : 'Improving field crop production efficiency to achieve food security.',
-    language === 'ar' ? 'زيادة استدامة وإنتاجية المحاصيل المطرية المحلية.' : 'Increasing sustainability and productivity of local rainfed crops.',
-    language === 'ar' ? 'تحسين توظيف الموارد المائية المتاحة.' : 'Improving utilization of available water resources.',
-    language === 'ar' ? 'تطبيق تقنيات زراعية حديثة لتحسين جودة وإنتاجية المحاصيل.' : 'Applying modern agricultural techniques to improve crop quality and productivity.',
-    language === 'ar' ? 'دعم توسع الحيازات الزراعية النوعية.' : 'Supporting expansion of quality agricultural holdings.',
-    language === 'ar' ? 'تصميم وتنفيذ شبكات ري تتوافق مع طبيعة المنطقة والمحصول.' : 'Designing and implementing irrigation networks compatible with the nature of the region and crop.',
-    language === 'ar' ? 'تنظيم سلاسل القيمة من الإنتاج إلى التصنيع والتسويق.' : 'Organizing value chains from production to processing and marketing.'
+    t('rainfedFeasibility1'),
+    t('rainfedFeasibility2'),
+    t('rainfedFeasibility3'),
+    t('rainfedFeasibility4'),
+    t('rainfedFeasibility5'),
+    t('rainfedFeasibility6'),
+    t('rainfedFeasibility7'),
+    t('rainfedFeasibility8'),
+    t('rainfedFeasibility9'),
+    t('rainfedFeasibility10'),
   ];
 
   const projectObjectives = [
-    language === 'ar' ? 'تحقيق الاستفادة القصوى من إنتاج المحاصيل وتشجيع زيادة الطلب عليها.' : 'Achieving maximum benefit from crop production and encouraging increased demand.',
-    language === 'ar' ? 'إنشاء حقول زراعية نموذجية وإرشادية توفر حزمًا متكاملة من العمليات الزراعية طوال الموسم.' : 'Establishing model and demonstration agricultural fields providing integrated packages of agricultural operations throughout the season.',
-    language === 'ar' ? 'تنفيذ خزانات وشبكات ري حديثة مناسبة لطبيعة الأراضي، وتوفير مصادر ري تكميلية في حال شح الأمطار.' : 'Implementing modern tanks and irrigation networks suitable for land nature, and providing supplementary irrigation sources in case of rainfall scarcity.',
-    language === 'ar' ? 'الاستفادة من الأراضي الزراعية المتاحة ومياه الأمطار عبر تطبيق نظم ري مستدامة وتقنيات حديثة.' : 'Utilizing available agricultural land and rainwater through applying sustainable irrigation systems and modern techniques.',
-    language === 'ar' ? 'تطوير الميكنة الزراعية لزيادة الكفاءة وتقليل التكلفة على المزارعين، وتدريب الجمعيات التعاونية على تشغيلها.' : 'Developing agricultural mechanization to increase efficiency and reduce cost on farmers, and training cooperative associations on their operation.'
+    t('rainfedProjectObjective1'),
+    t('rainfedProjectObjective2'),
+    t('rainfedProjectObjective3'),
+    t('rainfedProjectObjective4'),
+    t('rainfedProjectObjective5'),
   ];
 
   return (
@@ -111,7 +113,7 @@ export function RainfedProjects() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-[#035938] mb-6">
-            {language === 'ar' ? 'مشاريع قطاع المحاصيل البعلية' : 'Rainfed Crops Sector Projects'}
+            {t('rainfedProjectsTitle')}
           </h2>
           <div className="w-24 h-1 bg-[#52BC88] mx-auto mb-8" />
 
@@ -125,7 +127,7 @@ export function RainfedProjects() {
               className="bg-gradient-to-br from-[#035938] to-[#052F2A] rounded-2xl p-8 text-center"
             >
               <div className="text-5xl font-bold text-white mb-2">
-                {language === 'ar' ? '٢٠' : '20'}
+                17
               </div>
               <div className="text-xl text-white/90">
                 {language === 'ar' ? 'مشروعاً' : 'Projects'}
@@ -139,7 +141,7 @@ export function RainfedProjects() {
               className="bg-gradient-to-br from-[#52BC88] to-[#035938] rounded-2xl p-8 text-center"
             >
               <div className="text-5xl font-bold text-white mb-2">
-                {language === 'ar' ? '٢٠٥٫٤' : '205.4'}
+                215.4
               </div>
               <div className="text-xl text-white/90">
                 {language === 'ar' ? 'مليون ريال' : 'Million SAR'}
@@ -148,9 +150,7 @@ export function RainfedProjects() {
           </div>
 
           <p className="text-lg md:text-xl text-[#052F2A] leading-relaxed max-w-5xl mx-auto">
-            {language === 'ar'
-              ? 'يعمل برنامج "ريف السعودية" على تنفيذ منظومة من المشاريع النوعية في قطاع المحاصيل البعلية، بهدف تعزيز الأمن الغذائي، ورفع كفاءة الإنتاج، وتحسين استدامة الزراعة المطرية في مختلف مناطق المملكة.'
-              : 'The "Reef Saudi" program works on implementing a system of quality projects in the rainfed crops sector, aiming to enhance food security, raise production efficiency, and improve the sustainability of rainfed agriculture in various regions of the Kingdom.'}
+            {t('rainfedProjectsIntro')}
           </p>
         </motion.div>
 
@@ -162,7 +162,7 @@ export function RainfedProjects() {
             viewport={{ once: true }}
             className={`text-3xl font-bold text-[#035938] mb-8 ${isRTL ? 'text-right' : 'text-left'}`}
           >
-            {language === 'ar' ? 'أبرز مشاريع القطاع:' : 'Key Sector Projects:'}
+            {t('rainfedProjectsHighlights')}:
           </motion.h3>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -211,9 +211,9 @@ export function RainfedProjects() {
             <div className="flex items-center gap-4 mb-4">
               <Droplets className="w-10 h-10 text-white" />
               <h3 className="text-2xl md:text-3xl font-bold text-white">
-                {language === 'ar' 
-                  ? 'تطبيق نظم الري المستدامة والتقنيات الزراعية الحديثة' 
-                  : 'Application of Sustainable Irrigation Systems and Modern Agricultural Technologies'}
+                {language === 'ar'
+                  ? 'تطبيق نظم الري المستدامة والتقنيات الزراعية الحديثة'
+                  : 'Application of sustainable irrigation systems and modern agricultural techniques'}
               </h3>
             </div>
             <p className="text-white/90 text-lg mb-6">
@@ -250,12 +250,10 @@ export function RainfedProjects() {
           className="bg-[#F9F7EF] rounded-3xl p-8 md:p-10 mb-20"
         >
           <h3 className={`text-3xl font-bold text-[#035938] mb-8 ${isRTL ? 'text-right' : 'text-left'}`}>
-            {language === 'ar' ? 'الجدوى الفنية للمشاريع:' : 'Technical Feasibility of Projects:'}
+            {t('rainfedFeasibilityTitle')}:
           </h3>
           <p className={`text-lg text-[#052F2A] mb-6 ${isRTL ? 'text-right' : 'text-left'}`}>
-            {language === 'ar'
-              ? 'تسهم مشاريع قطاع المحاصيل البعلية في تحقيق مجموعة من المكاسب الفنية والإنتاجية، من أبرزها:'
-              : 'Rainfed crops sector projects contribute to achieving a set of technical and productive gains, most notably:'}
+            {t('rainfedFeasibilityIntro')}
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -285,13 +283,11 @@ export function RainfedProjects() {
           <div className={`flex items-center gap-4 mb-8 ${isRTL ? 'flex-row-reverse text-right' : 'text-left'}`}>
             <Target className="w-10 h-10 text-[#035938]" />
             <h3 className="text-3xl font-bold text-[#035938]">
-              {language === 'ar' ? 'أهداف المشاريع:' : 'Project Objectives:'}
+              {t('rainfedProjectObjectivesTitle')}:
             </h3>
           </div>
           <p className={`text-lg text-[#052F2A] mb-6 ${isRTL ? 'text-right' : 'text-left'}`}>
-            {language === 'ar'
-              ? 'تركز مشاريع قطاع المحاصيل البعلية في برنامج "ريف السعودية" على تحقيق الأهداف التالية:'
-              : 'Rainfed crops sector projects in the "Reef Saudi" program focus on achieving the following objectives:'}
+            {t('rainfedProjectObjectivesIntro')}
           </p>
 
           <div className="space-y-4">
@@ -309,7 +305,7 @@ export function RainfedProjects() {
                     className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 font-bold text-white"
                     style={{ backgroundColor: index % 3 === 0 ? '#035938' : index % 3 === 1 ? '#52BC88' : '#F1BC28' }}
                   >
-                    {language === 'ar' ? (index + 1).toLocaleString('ar-SA') : index + 1}
+                    {index + 1}
                   </div>
                   <p className="text-base text-[#052F2A] leading-relaxed flex-1">
                     {objective}

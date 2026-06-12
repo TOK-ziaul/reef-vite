@@ -19,7 +19,7 @@ import { useState, useEffect, useRef } from "react";
 const GAP_PX = 24;
 
 export function RainfedWorkAxes() {
-  const { language } = useLanguage();
+  const { language, t } = useLanguage();
   const isRTL = language === "ar";
   const carouselRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -31,91 +31,61 @@ export function RainfedWorkAxes() {
       icon: ClipboardCheck,
       color: "#035938",
       number: "1",
-      description:
-        language === "ar"
-          ? "تطبيق الممارسات الزراعية الجيدة ويشمل ذلك العمليات الزراعية والتربوية."
-          : "Implementing good agricultural practices, including agricultural and educational processes.",
+      description: t("rainfedWorkAxis1"),
     },
     {
       icon: Wheat,
       color: "#52BC88",
       number: "2",
-      description:
-        language === "ar"
-          ? "استنباط وتوفير البذور المحسّنة المناسبة لمناطق الإنتاج حسب ظروفها البيئية والمقاومة للأمراض، وتوزيعها على صغار المنتجين."
-          : "Development and provision of improved seeds suitable for production areas according to their environmental conditions and disease resistance, and distributing them to smallholder producers.",
+      description: t("rainfedWorkAxis2"),
     },
     {
       icon: Users,
       color: "#F1BC28",
       number: "3",
-      description:
-        language === "ar"
-          ? "تقديم خدمات إرشاد ودعم فني لصغار المنتجين."
-          : "Providing extension services and technical support to smallholder producers.",
+      description: t("rainfedWorkAxis3"),
     },
     {
       icon: Droplets,
       color: "#035938",
       number: "4",
-      description:
-        language === "ar"
-          ? "تطوير أنظمة حصاد مياه الأمطار بما يتناسب مع متطلبات مناطق الإنتاج وتعميمها وسط المزارعين، مع إمكانية استخدام الري التكميلي."
-          : "Developing rainwater harvesting systems in line with the requirements of production areas and disseminating them among farmers, with the possibility of using supplementary irrigation.",
+      description: t("rainfedWorkAxis4"),
     },
     {
       icon: Tractor,
       color: "#52BC88",
       number: "5",
-      description:
-        language === "ar"
-          ? "إدخال تقنيات الحصاد الآلي وما بعد الحصاد للتقليل من الفاقد."
-          : "Introducing mechanical harvesting and post-harvest technologies to reduce losses.",
+      description: t("rainfedWorkAxis5"),
     },
     {
       icon: Sprout,
       color: "#F1BC28",
       number: "6",
-      description:
-        language === "ar"
-          ? "تطوير وتنفيذ برامج لمحاصيل: الذرة الرفيعة، السمسم، الدخن، وتوفير خدمات تقنية متقدمة لعمليات ما بعد الحصاد."
-          : "Developing and implementing programs for crops: sorghum, sesame, millet, and providing advanced technical services for post-harvest operations.",
+      description: t("rainfedWorkAxis6"),
     },
     {
       icon: DollarSign,
       color: "#035938",
       number: "7",
-      description:
-        language === "ar"
-          ? "تقديم دعم مالي لتشجيع المزارعين على إنتاج المحاصيل."
-          : "Providing financial support to encourage farmers to produce crops.",
+      description: t("rainfedWorkAxis7"),
     },
     {
       icon: TreePine,
       color: "#52BC88",
       number: "8",
-      description:
-        language === "ar"
-          ? "زراعة الأشجار الغابية في حقول المزارعين."
-          : "Planting forest trees in farmers' fields.",
+      description: t("rainfedWorkAxis8"),
     },
     {
       icon: Handshake,
       color: "#F1BC28",
       number: "9",
-      description:
-        language === "ar"
-          ? "إنشاء جمعيات تعاونية لتقديم خدمات الإنتاج وما بعد الحصاد."
-          : "Establishing cooperative associations to provide production and post-harvest services.",
+      description: t("rainfedWorkAxis9"),
     },
     {
       icon: GraduationCap,
       color: "#035938",
       number: "10",
-      description:
-        language === "ar"
-          ? "تطوير القدرات الفنية للمزارعين."
-          : "Developing the technical capacities of farmers.",
+      description: t("rainfedWorkAxis10"),
     },
   ];
 
@@ -192,9 +162,7 @@ export function RainfedWorkAxes() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-[#035938] mb-6">
-            {language === "ar"
-              ? "محاور عمل قطاع المحاصيل البعلية"
-              : "Work Axes of the Rainfed Crops Sector"}
+            {t("rainfedWorkAxesTitle")}
           </h2>
           <div className="w-24 h-1.5 bg-gradient-to-r from-[#035938] via-[#52BC88] to-[#F1BC28] rounded-full mx-auto" />
         </motion.div>

@@ -136,7 +136,7 @@ export function HandicraftsStats() {
                       {item.region}
                     </span>
                     <span className="text-[#52BC88] font-bold text-sm md:text-base">
-                      {item.value.toLocaleString(isRTL ? "ar-SA" : "en-US")}
+                      {item.value.toLocaleString("en-US")}
                     </span>
                   </div>
                   <div className="relative h-4 bg-gray-200 rounded-full overflow-hidden shadow-inner">

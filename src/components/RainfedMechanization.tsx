@@ -21,26 +21,14 @@ export function RainfedMechanization() {
   const isRTL = language === "ar";
   const initiativeGoals = [
     {
-      title:
-        language === "ar"
-          ? "تبني تقنيات الميكنة الزراعية الحديثة"
-          : "Adopting Modern Agricultural Mechanization Technologies",
-      description:
-        language === "ar"
-          ? "تم استيراد نحو ٣٠٠ معدة زراعية متنوعة يتم تشغيلها عبر الجمعيات التعاونية لخدمة صغار المزارعين."
-          : "Approximately 300 various agricultural equipment have been imported and are operated through cooperative associations to serve smallholder farmers.",
+      title: t("rainfedMechGoal1"),
+      description: t("rainfedMechGoal1Desc"),
       icon: Tractor,
       color: "#035938",
     },
     {
-      title:
-        language === "ar"
-          ? 'إطلاق "حاضنة رواد الميكنة"'
-          : 'Launch of "Mechanization Pioneers Incubator"',
-      description:
-        language === "ar"
-          ? "لتمكين رواد الأعمال الشباب"
-          : "To empower young entrepreneurs",
+      title: t("rainfedMechGoal2"),
+      description: t("rainfedMechGoal2Desc"),
       icon: Sparkles,
       color: "#52BC88",
     },
@@ -48,47 +36,38 @@ export function RainfedMechanization() {
 
   const indicators = [
     {
-      number: language === "ar" ? "٣٧" : "37",
-      label: language === "ar" ? "رائد أعمال مشغل" : "Operating Entrepreneurs",
+      number: "37",
+      label: t("rainfedMechIndicator1"),
       icon: Users,
       color: "#035938",
     },
     {
-      number: language === "ar" ? "١٩" : "19",
-      label:
-        language === "ar"
-          ? "جمعية تعاونية مشغلة"
-          : "Operating Cooperative Associations",
+      number: "19",
+      label: t("rainfedMechIndicator2"),
       icon: Building2,
       color: "#52BC88",
     },
     {
-      number: language === "ar" ? "١٤٠" : "140",
-      label: language === "ar" ? "مستفيداً من الدورات" : "Course Beneficiaries",
+      number: "140",
+      label: t("rainfedMechIndicator3"),
       icon: GraduationCap,
       color: "#F1BC28",
     },
     {
-      number: language === "ar" ? "١٤" : "14",
-      label:
-        language === "ar"
-          ? "ورشة ودورة تدريبية"
-          : "Workshops and Training Courses",
+      number: "14",
+      label: t("rainfedMechIndicator4"),
       icon: BookOpen,
       color: "#035938",
     },
     {
-      number: language === "ar" ? "٦" : "6",
-      label: language === "ar" ? "مناطق مستفيدة" : "Beneficiary Regions",
+      number: "6",
+      label: t("rainfedMechIndicator5"),
       icon: MapPin,
       color: "#52BC88",
     },
     {
-      number: language === "ar" ? "٣٬٥٧١" : "3,571",
-      label:
-        language === "ar"
-          ? "مستفيداً مباشر من المبادرة"
-          : "Direct Beneficiaries of the Initiative",
+      number: "3,571",
+      label: t("rainfedMechIndicator6"),
       icon: TrendingUp,
       color: "#F1BC28",
     },
@@ -96,34 +75,22 @@ export function RainfedMechanization() {
 
   const processingProjects = [
     {
-      title:
-        language === "ar"
-          ? "تطوير استخلاص زيت الورد الطائفي"
-          : "Development of Taif Rose Oil Extraction",
+      title: t("rainfedMechProcessing1"),
       icon: Droplet,
       color: "#035938",
     },
     {
-      title:
-        language === "ar"
-          ? "تطوير معالجة وغسيل التين الشوكي للتخلص من الأشواك قبل التعبئة"
-          : "Development of Cactus Pear Processing and Washing to Remove Thorns Before Packaging",
+      title: t("rainfedMechProcessing2"),
       icon: Cherry,
       color: "#52BC88",
     },
     {
-      title:
-        language === "ar"
-          ? "تطوير تقشير وفرز ثمار اللوز"
-          : "Development of Almond Peeling and Sorting",
+      title: t("rainfedMechProcessing3"),
       icon: Nut,
       color: "#F1BC28",
     },
     {
-      title:
-        language === "ar"
-          ? "تطوير معالجة وغزل الخيوط الصوفية"
-          : "Development of Wool Thread Processing and Spinning",
+      title: t("rainfedMechProcessing4"),
       icon: Wind,
       color: "#035938",
     },
@@ -143,16 +110,12 @@ export function RainfedMechanization() {
           <div className="inline-flex items-center gap-3 mb-6">
             <Tractor className="w-12 h-12 text-[#035938]" />
             <h2 className="text-4xl md:text-5xl font-bold text-[#035938]">
-              {language === "ar"
-                ? "مبادرة الميكنة الزراعية"
-                : "Agricultural Mechanization Initiative"}
+              {t("rainfedMechanizationTitle")}
             </h2>
           </div>
           <div className="w-24 h-1 bg-[#52BC88] mx-auto mb-8" />
           <p className="text-xl text-[#052F2A] max-w-4xl mx-auto">
-            {language === "ar"
-              ? "تهدف إلى زيادة الإنتاجية وتقليل التكلفة على صغار المزارعين من خلال:"
-              : "Aiming to increase productivity and reduce costs for smallholder farmers through:"}
+            {t("rainfedMechanizationIntro")}
           </p>
         </motion.div>
 
@@ -199,7 +162,7 @@ export function RainfedMechanization() {
           <h3
             className={`text-3xl font-bold text-white mb-10 ${isRTL ? "text-right" : "text-left"}`}
           >
-            {language === "ar" ? "مؤشرات المبادرة:" : "Initiative Indicators:"}
+            {t("rainfedMechIndicatorsTitle")}:
           </h3>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -243,14 +206,10 @@ export function RainfedMechanization() {
         >
           <div className={`${isRTL ? "text-right" : "text-left"} mb-10`}>
             <h3 className="text-3xl font-bold text-[#035938] mb-4">
-              {language === "ar"
-                ? "تطوير ميكنة الصناعات التحويلية"
-                : "Development of Processing Industries Mechanization"}
+              {t("rainfedMechProcessingTitle")}
             </h3>
             <p className="text-lg text-[#052F2A]">
-              {language === "ar"
-                ? "يجري العمل حالياً على التالي:"
-                : "Currently working on the following:"}
+              {t("rainfedMechProcessingIntro")}
             </p>
           </div>
 
@@ -304,13 +263,11 @@ export function RainfedMechanization() {
           <div className="flex items-center justify-center gap-4 mb-4">
             <Tractor className="w-10 h-10 text-[#035938]" />
             <div className="text-5xl font-bold text-[#035938]">
-              {language === "ar" ? "٣٠٠" : "300"}
+              300
             </div>
           </div>
           <p className="text-xl font-semibold text-[#052F2A]">
-            {language === "ar"
-              ? "معدة زراعية متنوعة مستوردة لخدمة صغار المزارعين"
-              : "Various agricultural equipment imported to serve smallholder farmers"}
+            {t("rainfedMechEquipmentHighlight")}
           </p>
         </motion.div>
         {/* Bottom CTAs */}

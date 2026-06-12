@@ -3,70 +3,37 @@ import { motion } from "motion/react";
 import { MapPin, Database, Target } from "lucide-react";
 
 export function LivestockProjects() {
-  const { language } = useLanguage();
+  const { t, language } = useLanguage();
 
-  const locations =
-    language === "ar"
-      ? [
-          "الجبيل",
-          "المدينة المنورة",
-          "حفر الباطن",
-          "نجران",
-          "حائل",
-          "القصيم",
-          "عرعر",
-        ]
-      : [
-          "Jubail",
-          "Madinah",
-          "Hafr Al-Batin",
-          "Najran",
-          "Hail",
-          "Qassim",
-          "Arar",
-        ];
+  const locations = [
+    t("livestockLocation1"),
+    t("livestockLocation2"),
+    t("livestockLocation3"),
+    t("livestockLocation4"),
+    t("livestockLocation5"),
+    t("livestockLocation6"),
+    t("livestockLocation7"),
+  ];
 
-  const technicalBenefits =
-    language === "ar"
-      ? [
-          "ترقيم أكثر من 12,269,000 رأس من الماشية المنتجة بجميع أنواعها (الأغنام – الماعز – الإبل).",
-          "إطلاق منصة إلكترونية لإدارة كافة أعمال التنفيذ، تشمل إدخال البيانات، الشرائح الإلكترونية، والأتمتة الكاملة للعمليات.",
-          "توفير مزارع نموذجية لتربية الماشية في مناطق مختارة مثل القصيم، حائل، حفر الباطن، الجبيل، عرعر وغيرها.",
-          "دعم تحقيق الاكتفاء الذاتي وزيادة الإنتاج المحلي من اللحوم ضمن مستهدفات رؤية المملكة 2030.",
-          "إدخال تقنيات حديثة في التلقيح الصناعي وتحسين السلالات.",
-          "الحفاظ على المراعي الطبيعية ومجابهة الرعي الجائر وحماية الموارد البيئية.",
-          "الاستخدام الأمثل للموارد الغذائية والمائية المتاحة.",
-          "تحسين دخل صغار المربين والمساهمة في تحقيق الاستقرار الاجتماعي في المناطق الريفية.",
-          "إنشاء نماذج متقدمة للمزارع النموذجية يُحتذى بها للمستثمرين في قطاع الثروة الحيوانية وإمكانية تكرارها.",
-          "المساهمة في تحقيق الأمن الغذائي وزيادة مصادر البروتين الحيواني.",
-          "تعزيز كفاءة الإنتاج الحيواني ورفع جودته.",
-        ]
-      : [
-          "Numbering more than 12,269,000 heads of productive livestock of all types (sheep - goats - camels).",
-          "Launching an electronic platform to manage all implementation work, including data entry, electronic chips, and complete automation of operations.",
-          "Providing model livestock farms in selected areas such as Qassim, Hail, Hafr Al-Batin, Jubail, Arar and others.",
-          "Supporting self-sufficiency and increasing local meat production within the targets of Saudi Vision 2030.",
-          "Introducing modern techniques in artificial insemination and breed improvement.",
-          "Preserving natural pastures, combating overgrazing and protecting environmental resources.",
-          "Optimal use of available food and water resources.",
-          "Improving the income of small breeders and contributing to achieving social stability in rural areas.",
-          "Creating advanced model farm models to be emulated by investors in the livestock sector and the possibility of replicating them.",
-          "Contributing to achieving food security and increasing sources of animal protein.",
-          "Enhancing livestock production efficiency and raising its quality.",
-        ];
+  const technicalBenefits = [
+    t("livestockProjectsFeasibility1"),
+    t("livestockProjectsFeasibility2"),
+    t("livestockProjectsFeasibility3"),
+    t("livestockProjectsFeasibility4"),
+    t("livestockProjectsFeasibility5"),
+    t("livestockProjectsFeasibility6"),
+    t("livestockProjectsFeasibility7"),
+    t("livestockProjectsFeasibility8"),
+    t("livestockProjectsFeasibility9"),
+    t("livestockProjectsFeasibility10"),
+    t("livestockProjectsFeasibility11"),
+  ];
 
-  const goals =
-    language === "ar"
-      ? [
-          "إنشاء مجمعات مستدامة لتربية وإنتاج الماشية وتنمية وتأهيل الحقول الريفية على أراضي الوزارة المخصصة لصغار مربي الثروة الحيوانية.",
-          "تقديم خدمات بيطرية شاملة لترقيم الثروة الحيوانية، وإطلاق منصة إلكترونية بقاعدة بيانات متكاملة لمتابعة ملاك الماشية، تشمل إدخال البيانات والشرائح الإلكترونية وكافة عمليات الأتمتة.",
-          "تنفيذ منظومة ترقيم وتتبع إلكتروني تعتمد على أرقام مزودة بشرائح إلكترونية لتطبيق التتبع الدقيق على النعاج والذكور المنتجة والإبل، بما يدعم نظم المعلومات وتحليل البيانات ويرفع كفاءة إدارة القطيع على مستوى المملكة.",
-        ]
-      : [
-          "Establishing sustainable complexes for livestock breeding and production, developing and rehabilitating rural fields on ministry lands allocated to small livestock breeders.",
-          "Providing comprehensive veterinary services for livestock numbering, and launching an electronic platform with an integrated database to track livestock owners, including data entry, electronic chips and all automation operations.",
-          "Implementing an electronic numbering and tracking system based on numbers equipped with electronic chips for accurate tracking of productive ewes, males and camels, supporting information systems and data analysis and raising the efficiency of herd management at the Kingdom level.",
-        ];
+  const goals = [
+    t("livestockProjectsGoal1"),
+    t("livestockProjectsGoal2"),
+    t("livestockProjectsGoal3"),
+  ];
 
   // const cardImages = [
   //   "https://images.unsplash.com/photo-1713688160785-dface7be5706?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsaXZlc3RvY2slMjBzaGVlcCUyMGZhcm18ZW58MXx8fHwxNzcwMTI0ODg0fDA&ixlib=rb-4.1.0&q=80&w=1080", // sheep farm
@@ -108,9 +75,7 @@ export function LivestockProjects() {
             }}
             dir={language === "ar" ? "rtl" : "ltr"}
           >
-            {language === "ar"
-              ? "مشاريع قطاع الماشية"
-              : "Livestock Sector Projects"}
+            {t("livestockProjectsTitle")}
           </h2>
           <div className="w-32 h-1.5 bg-gradient-to-r from-[#035938] via-[#52BC88] to-[#F1BC28] mx-auto rounded-full"></div>
         </motion.div>
@@ -147,7 +112,7 @@ export function LivestockProjects() {
                       : "inherit",
                 }}
               >
-                {language === "ar" ? "مشاريع" : "Projects"}
+                {t("livestockProjectsCountLabel")}
               </p>
             </div>
           </motion.div>
@@ -171,7 +136,7 @@ export function LivestockProjects() {
               <div className="flex items-baseline justify-center gap-2 mb-1">
                 <span className="text-5xl font-bold text-[#035938]">125.1</span>
                 <span className="text-lg text-[#035938]/90">
-                  {language === "ar" ? "مليون ر.س" : "Million SAR"}
+                  {t("livestockProjectsMillionSar")}
                 </span>
               </div>
               <p
@@ -183,7 +148,7 @@ export function LivestockProjects() {
                       : "inherit",
                 }}
               >
-                {language === "ar" ? "إجمالي القيمة" : "Total Value"}
+                {t("livestockProjectsTotalValueLabel")}
               </p>
             </div>
           </motion.div>
@@ -206,9 +171,7 @@ export function LivestockProjects() {
             }}
             dir={language === "ar" ? "rtl" : "ltr"}
           >
-            {language === "ar"
-              ? 'يعمل برنامج "ريف السعودية" في قطاع الماشية على تطوير منظومة الإنتاج الحيواني في المملكة من خلال إنشاء بنية تحتية متقدمة، وتطبيق أنظمة التتبع والترقيم، ورفع كفاءة صغار المربين، بما يسهم في تعزيز الأمن الغذائي وزيادة الإنتاج المحلي من اللحوم والألبان وتحقيق الاستدامة البيئية والاقتصادية.'
-              : "The Reef Saudi program in the livestock sector works to develop the Kingdom's livestock production system through the establishment of advanced infrastructure, application of tracking and numbering systems, and raising the efficiency of small breeders, contributing to enhancing food security, increasing local meat and dairy production, and achieving environmental and economic sustainability."}
+            {t("livestockProjectsIntro")}
           </p>
         </motion.div>
 
@@ -229,7 +192,7 @@ export function LivestockProjects() {
             }}
             dir={language === "ar" ? "rtl" : "ltr"}
           >
-            {language === "ar" ? "أبرز مشاريع القطاع" : "Key Sector Projects"}
+            {t("livestockProjectsKeyTitle")}
           </h3>
 
           <div className="bg-gradient-to-br from-white/80 to-[#F9F7EF] backdrop-blur-sm rounded-3xl p-8 md:p-10 border border-[#035938]/10">
@@ -243,9 +206,7 @@ export function LivestockProjects() {
               }}
               dir={language === "ar" ? "rtl" : "ltr"}
             >
-              {language === "ar"
-                ? "إنشاء وتجهيز مجمع المزارع النموذجية للإنتاج الحيواني في:"
-                : "Establishment and equipping of model livestock production farm complexes in:"}
+              {t("livestockProjectsLocationsIntro")}
             </p>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
@@ -301,9 +262,7 @@ export function LivestockProjects() {
                         : "inherit",
                   }}
                 >
-                  {language === "ar"
-                    ? "تنفيذ مشروع ترقيم وتسجيل الثروة الحيوانية في مختلف مناطق المملكة."
-                    : "Implementation of the livestock numbering and registration project in various regions of the Kingdom."}
+                  {t("livestockProjectsTagging")}
                 </p>
               </div>
             </motion.div>
@@ -327,9 +286,7 @@ export function LivestockProjects() {
             }}
             dir={language === "ar" ? "rtl" : "ltr"}
           >
-            {language === "ar"
-              ? "الجدوى الفنية للمشاريع"
-              : "Technical Feasibility of Projects"}
+            {t("livestockProjectsFeasibilityTitle")}
           </h3>
 
           <p
@@ -342,9 +299,7 @@ export function LivestockProjects() {
             }}
             dir={language === "ar" ? "rtl" : "ltr"}
           >
-            {language === "ar"
-              ? "تسهم مشاريع قطاع الماشية في تحقيق مجموعة واسعة من الآثار الفنية والتنموية، من أبرزها:"
-              : "Livestock sector projects contribute to achieving a wide range of technical and developmental impacts, most notably:"}
+            {t("livestockProjectsFeasibilityIntro")}
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
@@ -428,7 +383,7 @@ export function LivestockProjects() {
             }}
             dir={language === "ar" ? "rtl" : "ltr"}
           >
-            {language === "ar" ? "أهداف المشاريع" : "Project Goals"}
+            {t("livestockProjectsGoalsTitle")}
           </h3>
 
           <div className="bg-gradient-to-br from-white/80 to-[#F9F7EF] backdrop-blur-sm rounded-3xl p-8 md:p-10 border border-[#035938]/10">
@@ -442,9 +397,7 @@ export function LivestockProjects() {
               }}
               dir={language === "ar" ? "rtl" : "ltr"}
             >
-              {language === "ar"
-                ? 'تركز مشاريع قطاع الماشية في برنامج "ريف السعودية" على:'
-                : "Livestock sector projects in the Reef Saudi program focus on:"}
+              {t("livestockProjectsGoalsIntro")}
             </p>
 
             <div className="space-y-6">

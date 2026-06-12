@@ -3,10 +3,9 @@ import { TrendingUp, Users, MapPin, Sparkles } from 'lucide-react';
 
 interface FruitsStatsCreativeProps {
   t: (key: string) => string;
-  language: string;
 }
 
-export function FruitsStatsCreative({ t, language }: FruitsStatsCreativeProps) {
+export function FruitsStatsCreative({ t }: FruitsStatsCreativeProps) {
   const [hoveredRegion, setHoveredRegion] = useState<string | null>(null);
 
   return (
@@ -21,13 +20,8 @@ export function FruitsStatsCreative({ t, language }: FruitsStatsCreativeProps) {
 
       {/* Section Title */}
       <div className="text-center mb-16 relative z-10">
-        <div className="inline-flex items-center gap-3 mb-4">
-          <div className="h-px w-12 bg-gradient-to-r from-transparent to-[#52BC88]"></div>
-          <p className="text-[#52BC88] text-xs tracking-[0.3em] uppercase">Impact Metrics</p>
-          <div className="h-px w-12 bg-gradient-to-l from-transparent to-[#52BC88]"></div>
-        </div>
         <h2 className="text-3xl md:text-5xl font-bold text-[#035938]">
-          {t('fruitsStatsTitle')}
+          {t("fruitsStatsTitle")}
         </h2>
       </div>
 
@@ -115,29 +109,30 @@ export function FruitsStatsCreative({ t, language }: FruitsStatsCreativeProps) {
           {/* Chart Grid */}
           <div className="space-y-4">
             {[
-              { name: language === 'ar' ? 'نجران' : 'Najran', count: '3,984', value: 3984, color: '#035938' },
-              { name: language === 'ar' ? 'عسير' : 'Asir', count: '2,617', value: 2617, color: '#52BC88' },
-              { name: language === 'ar' ? 'جازان' : 'Jazan', count: '589', value: 589, color: '#F1BC28' },
-              { name: language === 'ar' ? 'الباحة' : 'Al-Baha', count: '577', value: 577, color: '#035938' },
-              { name: language === 'ar' ? 'مكة المكرة' : 'Makkah', count: '478', value: 478, color: '#52BC88' },
-              { name: language === 'ar' ? 'حائل' : 'Hail', count: '255', value: 255, color: '#F1BC28' },
-              { name: language === 'ar' ? 'الرياض' : 'Riyadh', count: '160', value: 160, color: '#035938' },
-              { name: language === 'ar' ? 'المنطقة الشرقية' : 'Eastern Region', count: '109', value: 109, color: '#52BC88' },
-              { name: language === 'ar' ? 'تبوك' : 'Tabuk', count: '100', value: 100, color: '#F1BC28' },
-              { name: language === 'ar' ? 'القصيم' : 'Qassim', count: '78', value: 78, color: '#035938' },
-              { name: language === 'ar' ? 'المدينة المنورة' : 'Madinah', count: '59', value: 59, color: '#52BC88' },
-              { name: language === 'ar' ? 'الجوف' : 'Al-Jouf', count: '49', value: 49, color: '#F1BC28' },
-              { name: language === 'ar' ? 'الحدود الشمالية' : 'Northern Borders', count: '5', value: 5, color: '#035938' },
+              { key: "najran", count: "3,984", value: 3984, color: "#035938" },
+              { key: "asir", count: "2,617", value: 2617, color: "#52BC88" },
+              { key: "jazan", count: "589", value: 589, color: "#F1BC28" },
+              { key: "baha", count: "577", value: 577, color: "#035938" },
+              { key: "makkah", count: "478", value: 478, color: "#52BC88" },
+              { key: "hail", count: "255", value: 255, color: "#F1BC28" },
+              { key: "riyadh", count: "160", value: 160, color: "#035938" },
+              { key: "easternProvince", count: "109", value: 109, color: "#52BC88" },
+              { key: "tabuk", count: "100", value: 100, color: "#F1BC28" },
+              { key: "madinah", count: "59", value: 59, color: "#52BC88" },
+              { key: "qassim", count: "78", value: 78, color: "#035938" },
+              { key: "jouf", count: "49", value: 49, color: "#F1BC28" },
+              { key: "northernBorders", count: "5", value: 5, color: "#035938" },
             ].map((region, index) => {
+              const regionName = t(region.key);
               const maxValue = 3984;
               const percentage = (region.value / maxValue) * 100;
               const isTop3 = index < 3;
 
               return (
                 <div 
-                  key={region.name}
+                  key={region.key}
                   className="group relative"
-                  onMouseEnter={() => setHoveredRegion(region.name)}
+                  onMouseEnter={() => setHoveredRegion(region.key)}
                   onMouseLeave={() => setHoveredRegion(null)}
                 >
                   {/* Row Container */}
@@ -156,7 +151,7 @@ export function FruitsStatsCreative({ t, language }: FruitsStatsCreativeProps) {
 
                     {/* Region Name */}
                     <div className="flex-shrink-0 w-32 md:w-40 text-sm font-semibold text-gray-700">
-                      {region.name}
+                      {regionName}
                     </div>
 
                     {/* Bar Chart */}
@@ -175,7 +170,7 @@ export function FruitsStatsCreative({ t, language }: FruitsStatsCreativeProps) {
                         style={{
                           width: `${percentage}%`,
                           background: `linear-gradient(90deg, ${region.color}, ${region.color}dd)`,
-                          boxShadow: hoveredRegion === region.name ? `0 4px 20px ${region.color}40` : 'none',
+                          boxShadow: hoveredRegion === region.key ? `0 4px 20px ${region.color}40` : 'none',
                           transitionDelay: `${index * 50}ms`,
                         }}
                       >
@@ -211,12 +206,12 @@ export function FruitsStatsCreative({ t, language }: FruitsStatsCreativeProps) {
                   </div>
 
                   {/* Hover Tooltip */}
-                  {hoveredRegion === region.name && (
+                  {hoveredRegion === region.key && (
                     <div 
                       className="absolute left-1/2 -top-12 transform -translate-x-1/2 px-4 py-2 rounded-lg text-xs font-semibold text-white shadow-xl z-50 whitespace-nowrap animate-fade-in"
                       style={{ backgroundColor: region.color }}
                     >
-                      {region.name}: {region.count} {language === 'ar' ? 'مستفيد' : 'beneficiaries'}
+                      {regionName}: {region.count} {t("fruitsBeneficiaryUnit")}
                       <div 
                         className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 rotate-45 w-2 h-2"
                         style={{ backgroundColor: region.color }}
@@ -228,25 +223,8 @@ export function FruitsStatsCreative({ t, language }: FruitsStatsCreativeProps) {
             })}
           </div>
 
-          {/* Chart Legend/Summary */}
-          <div className="mt-8 pt-6 border-t border-gray-200 flex flex-wrap items-center justify-between gap-4 text-sm">
-            <div className="flex items-center gap-6">
-              <div className="flex items-center gap-2">
-                <div className="w-3 h-3 rounded-sm bg-[#035938]"></div>
-                <span className="text-gray-600 text-xs">{language === 'ar' ? 'فئة أ' : 'Category A'}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-3 h-3 rounded-sm bg-[#52BC88]"></div>
-                <span className="text-gray-600 text-xs">{language === 'ar' ? 'فئة ب' : 'Category B'}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-3 h-3 rounded-sm bg-[#F1BC28]"></div>
-                <span className="text-gray-600 text-xs">{language === 'ar' ? 'فئة ج' : 'Category C'}</span>
-              </div>
-            </div>
-            <div className="text-gray-500 text-xs">
-              {language === 'ar' ? 'إجمالي المستفيدين: 9,060' : 'Total Beneficiaries: 9,060'}
-            </div>
+          <div className="mt-8 pt-6 border-t border-gray-200 text-center text-sm text-gray-500">
+            {t("fruitsTotalBeneficiariesSummary")}
           </div>
         </div>
       </div>
@@ -263,63 +241,18 @@ export function FruitsStatsCreative({ t, language }: FruitsStatsCreativeProps) {
         {/* Hexagon Grid */}
         <div className="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto">
           {[
-            { 
-              ar: 'اللوز البجلي', 
-              en: 'Bajali Almonds', 
-              color: '#035938',
-              image: 'https://images.unsplash.com/photo-1756361947189-29e0baae7bcd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhbG1vbmRzJTIwbnV0cyUyMGNsb3NldXB8ZW58MXx8fHwxNzcwMjIyNDcxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
-            },
-            { 
-              ar: 'البخارى', 
-              en: 'Al-Bukhara', 
-              color: '#52BC88',
-              image: 'https://images.unsplash.com/photo-1663871221888-4ea37abb285b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwbHVtcyUyMGZyZXNoJTIwZnJ1aXR8ZW58MXx8fHwxNzcwMjIyNDcyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
-            },
-            { 
-              ar: 'الخوخ', 
-              en: 'Peach', 
-              color: '#F1BC28',
-              image: 'https://images.unsplash.com/photo-1642372849486-f88b963cb734?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwZWFjaCUyMGZyZXNoJTIwZnJ1aXR8ZW58MXx8fHwxNzcwMTIzNjgwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
-            },
-            { 
-              ar: 'المشمش', 
-              en: 'Apricot', 
-              color: '#035938',
-              image: 'https://images.unsplash.com/photo-1636043979306-e21033b4dc24?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcHJpY290JTIwZnJlc2glMjBmcnVpdHxlbnwxfHx8fDE3NzAyMjI0NzJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
-            },
-            { 
-              ar: 'المانجو', 
-              en: 'Mango', 
-              color: '#52BC88',
-              image: 'https://images.unsplash.com/photo-1734163075572-8948e799e42c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYW5nbyUyMGZyZXNoJTIwdHJvcGljYWx8ZW58MXx8fHwxNzcwMjIyNDcyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
-            },
-            { 
-              ar: 'الفراولة', 
-              en: 'Strawberry', 
-              color: '#F1BC28',
-              image: 'https://images.unsplash.com/photo-1710528184650-fc75ae862c13?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHJhd2JlcnJ5JTIwZnJlc2glMjByZWR8ZW58MXx8fHwxNzcwMjIyNDczfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
-            },
-            { 
-              ar: 'العنب', 
-              en: 'Grapes', 
-              color: '#035938',
-              image: 'https://images.unsplash.com/photo-1745670922388-cc34082bb8cb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxncmFwZXMlMjB2aW5leWFyZCUyMGZyZXNofGVufDF8fHx8MTc3MDIyMjQ3M3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
-            },
-            { 
-              ar: 'الليمون', 
-              en: 'Lemon', 
-              color: '#52BC88',
-              image: 'https://images.unsplash.com/photo-1761925280217-ab1323e40d06?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsZW1vbiUyMGZyZXNoJTIwY2l0cnVzfGVufDF8fHx8MTc3MDIyMjQ3M3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
-            },
-            { 
-              ar: 'الرمان', 
-              en: 'Pomegranate', 
-              color: '#F1BC28',
-              image: 'https://images.unsplash.com/photo-1709605534654-c0ef47902b62?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwb21lZ3JhbmF0ZSUyMGZyZXNoJTIwZnJ1aXR8ZW58MXx8fHwxNzcwMjIyNDc0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
-            },
+            { key: "fruitsProduct1", color: "#035938", image: "https://images.unsplash.com/photo-1756361947189-29e0baae7bcd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhbG1vbmRzJTIwbnV0cyUyMGNsb3NldXB8ZW58MXx8fHwxNzcwMjIyNDcxfDA&ixlib=rb-4.1.0&q=80&w=1080" },
+            { key: "fruitsProduct2", color: "#52BC88", image: "https://images.unsplash.com/photo-1663871221888-4ea37abb285b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwbHVtcyUyMGZyZXNoJTIwZnJ1aXR8ZW58MXx8fHwxNzcwMjIyNDcyfDA&ixlib=rb-4.1.0&q=80&w=1080" },
+            { key: "fruitsProduct3", color: "#F1BC28", image: "https://images.unsplash.com/photo-1642372849486-f88b963cb734?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwZWFjaCUyMGZyZXNoJTIwZnJ1aXR8ZW58MXx8fHwxNzcwMTIzNjgwfDA&ixlib=rb-4.1.0&q=80&w=1080" },
+            { key: "fruitsProduct4", color: "#035938", image: "https://images.unsplash.com/photo-1636043979306-e21033b4dc24?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcHJpY290JTIwZnJlc2glMjBmcnVpdHxlbnwxfHx8fDE3NzAyMjI0NzJ8MA&ixlib=rb-4.1.0&q=80&w=1080" },
+            { key: "fruitsProduct5", color: "#52BC88", image: "https://images.unsplash.com/photo-1734163075572-8948e799e42c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYW5nbyUyMGZyZXNoJTIwdHJvcGljYWx8ZW58MXx8fHwxNzcwMjIyNDcyfDA&ixlib=rb-4.1.0&q=80&w=1080" },
+            { key: "fruitsProduct6", color: "#F1BC28", image: "https://images.unsplash.com/photo-1710528184650-fc75ae862c13?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHJhd2JlcnJ5JTIwZnJlc2glMjByZWR8ZW58MXx8fHwxNzcwMjIyNDczfDA&ixlib=rb-4.1.0&q=80&w=1080" },
+            { key: "fruitsProduct7", color: "#035938", image: "https://images.unsplash.com/photo-1745670922388-cc34082bb8cb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxncmFwZXMlMjB2aW5leWFyZCUyMGZyZXNofGVufDF8fHx8MTc3MDIyMjQ3M3ww&ixlib=rb-4.1.0&q=80&w=1080" },
+            { key: "fruitsProduct8", color: "#52BC88", image: "https://images.unsplash.com/photo-1761925280217-ab1323e40d06?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsZW1vbiUyMGZyZXNoJTIwY2l0cnVzfGVufDF8fHx8MTc3MDIyMjQ3M3ww&ixlib=rb-4.1.0&q=80&w=1080" },
+            { key: "fruitsProduct9", color: "#F1BC28", image: "https://images.unsplash.com/photo-1709605534654-c0ef47902b62?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwb21lZ3JhbmF0ZSUyMGZyZXNoJTIwZnJ1aXR8ZW58MXx8fHwxNzcwMjIyNDc0fDA&ixlib=rb-4.1.0&q=80&w=1080" },
           ].map((product, index) => (
             <div 
-              key={index}
+              key={product.key}
               className="group relative"
               style={{ animationDelay: `${index * 50}ms` }}
             >
@@ -369,9 +302,43 @@ export function FruitsStatsCreative({ t, language }: FruitsStatsCreativeProps) {
                   className="px-4 py-2 rounded-full text-xs font-bold text-white shadow-lg"
                   style={{ backgroundColor: product.color }}
                 >
-                  {language === 'ar' ? product.ar : product.en}
+                  {t(product.key)}
                 </div>
               </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="max-w-5xl mx-auto px-4 relative z-10">
+        <div className="text-center mb-8">
+          <h3 className="text-2xl md:text-3xl font-bold text-[#035938] mb-2">
+            {t("fruitsProductionEvolution")}
+          </h3>
+          <p className="text-sm text-[#035938]/60">{t("fruitsStatsNote")}</p>
+        </div>
+        <div className="grid md:grid-cols-3 gap-6">
+          {[
+            { year: "2020", value: t("fruitsProduction2020") },
+            { year: "2024", value: t("fruitsProduction2024"), growth: t("fruitsGrowthRate") },
+            { year: "2026", value: t("fruitsProduction2026"), target: true },
+          ].map((item) => (
+            <div
+              key={item.year}
+              className="bg-white rounded-2xl p-6 shadow-lg border border-[#52BC88]/20 text-center"
+            >
+              <div className="text-sm font-semibold text-[#035938]/50 mb-2">
+                {t("fruitsYear")}: {item.year}
+                {item.target && (
+                  <span className="ms-2 text-[#F1BC28]">{t("fruitsTarget")}</span>
+                )}
+              </div>
+              <div className="text-2xl font-bold text-[#035938]">{item.value}</div>
+              {item.growth && (
+                <div className="text-sm text-[#52BC88] font-semibold mt-2">
+                  {item.growth}
+                </div>
+              )}
             </div>
           ))}
         </div>

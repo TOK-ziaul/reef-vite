@@ -1,35 +1,34 @@
 import { useLanguage } from '../context/LanguageContext';
 import { motion } from 'motion/react';
-import { Sprout, Beaker, BookOpen, Calendar, MapPin, Users, GraduationCap, Lightbulb } from 'lucide-react';
+import { Sprout, Beaker, BookOpen, Calendar, MapPin, GraduationCap, Lightbulb } from 'lucide-react';
 
 export function RainfedImplementedWorks() {
-  const { language } = useLanguage();
+  const { language, t } = useLanguage();
   const isRTL = language === 'ar';
 
   const mountainTrialDetails = [
     {
       label: language === 'ar' ? 'بدء التجارب' : 'Trial Start',
-      value: language === 'ar' ? '٩ مايو ٢٠٢٤' : 'May 9, 2024',
+      value: language === 'ar' ? '9 مايو 2024' : 'May 9, 2024',
       icon: Calendar,
       color: '#035938'
     },
     {
       label: language === 'ar' ? 'عدد الأصناف' : 'Number of Varieties',
-      value: language === 'ar' ? '٢٤ صنفاً' : '24 Varieties',
-      subtext: language === 'ar' ? '(٢٤ صنف ذرة رفيعة)' : '(24 Sorghum)',
+      value: t('rainfedWork1Varieties'),
+      subtext: t('rainfedWork1VarietiesDetail'),
       icon: Sprout,
       color: '#52BC88'
     },
     {
       label: language === 'ar' ? 'الموقع' : 'Location',
-      value: language === 'ar' ? 'محطة إكثار البذور – مركز البذور والتقاوي – الرياض' : 'Seed Multiplication Station - Seeds and Seedlings Center - Riyadh',
-      subtext: language === 'ar' ? '(موقع تجريبي في عسير)' : '(Experimental site in Asir)',
+      value: t('rainfedWork1Location'),
       icon: MapPin,
       color: '#F1BC28'
     },
     {
       label: language === 'ar' ? 'اكتمال الحصاد' : 'Harvest Completion',
-      value: language === 'ar' ? '٠٠ أكتوبر ٢٠٢٤' : 'October 10, 2024',
+      value: language === 'ar' ? '10 أكتوبر 2024' : 'October 10, 2024',
       icon: Calendar,
       color: '#035938'
     }
@@ -57,33 +56,25 @@ export function RainfedImplementedWorks() {
   const scientificWorks = [
     {
       title: language === 'ar' ? 'دليل إرشادي للأمراض والآفات' : 'Guide for Diseases and Pests',
-      description: language === 'ar' 
-        ? 'إعداد دليل إرشادي للأمراض والآفات التي تصيب المحاصيل المستهدفة بالتعاون مع المركز الدولي لبحوث المحاصيل للمناطق الرطبة شبه الجافة (اكرسات).'
-        : 'Preparation of a guide for diseases and pests affecting target crops in collaboration with the International Crops Research Institute for the Semi-Arid Tropics (ICRISAT).',
+      description: t('rainfedWork3Item1'),
       icon: BookOpen,
       color: '#035938'
     },
     {
       title: language === 'ar' ? 'الخطة التنفيذية للمحاصيل البعلية' : 'Executive Plan for Rainfed Crops',
-      description: language === 'ar' 
-        ? 'إعداد الخطة التنفيذية للمحاصيل البعلية.'
-        : 'Preparation of the executive plan for rainfed crops.',
+      description: t('rainfedWork3Item2'),
       icon: Lightbulb,
       color: '#52BC88'
     },
     {
       title: language === 'ar' ? 'مبادرة بنك البذور المجتمعي' : 'Community Seed Bank Initiative',
-      description: language === 'ar' 
-        ? 'إطلاق مبادرة بنك البذور المجتمعي.'
-        : 'Launch of the community seed bank initiative.',
+      description: t('rainfedWork3Item3'),
       icon: Sprout,
       color: '#F1BC28'
     },
     {
       title: language === 'ar' ? 'مبادرة إنتاج السيلاج' : 'Silage Production Initiative',
-      description: language === 'ar' 
-        ? 'إطلاق مبادرة إنتاج السيلاج من المجموع الخضري للذرة الرفيعة والدخن.'
-        : 'Launch of silage production initiative from sorghum and millet green biomass.',
+      description: t('rainfedWork3Item4'),
       icon: Sprout,
       color: '#035938'
     }
@@ -92,15 +83,13 @@ export function RainfedImplementedWorks() {
   const trainingPrograms = [
     {
       title: language === 'ar' ? 'دورة تدريبية في خصوبة التربة والري الزراعي' : 'Training Course in Soil Fertility and Agricultural Irrigation',
-      location: language === 'ar' ? 'جازان والنماص' : 'Jazan and Al-Namas',
-      participants: language === 'ar' ? '٧٠ مزارعاً وموظفاً' : '70 farmers and employees',
+      description: t('rainfedWork3Item5'),
       icon: GraduationCap,
       color: '#52BC88'
     },
     {
       title: language === 'ar' ? 'دورة تدريبية في إدارة البنوك الجينية' : 'Training Course in Gene Bank Management',
-      location: language === 'ar' ? 'موظفي وزارة البيئة والمياه والزراعة' : 'Ministry of Environment, Water and Agriculture staff',
-      participants: language === 'ar' ? '٢٧ متدرباً' : '27 trainees',
+      description: t('rainfedWork3Item6'),
       icon: Beaker,
       color: '#F1BC28'
     }
@@ -118,7 +107,7 @@ export function RainfedImplementedWorks() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-[#035938] mb-6">
-            {language === 'ar' ? 'أهم الأعمال المنفذة' : 'Key Implemented Works'}
+            {t('rainfedKeyWorksTitle')}
           </h2>
           <div className="w-24 h-1 bg-[#52BC88] mx-auto" />
         </motion.div>
@@ -133,12 +122,10 @@ export function RainfedImplementedWorks() {
         >
           <div className={`flex items-center gap-4 mb-8 ${isRTL ? 'flex-row-reverse text-right' : 'text-left'}`}>
             <div className="w-12 h-12 rounded-xl bg-[#035938] flex items-center justify-center text-white font-bold text-xl">
-              {language === 'ar' ? '٢' : '2'}
+              1
             </div>
             <h3 className="text-2xl md:text-3xl font-bold text-[#035938]">
-              {language === 'ar' 
-                ? 'تجارب الأصناف المحسنة – البيئة الجبلية (أبها في منطقة عسير)' 
-                : 'Improved Varieties Trials - Mountain Environment (Abha in Asir Region)'}
+              {t('rainfedWork1Title')}
             </h3>
           </div>
 
@@ -190,9 +177,7 @@ export function RainfedImplementedWorks() {
             <p className={`text-base text-[#052F2A] flex items-center gap-2 ${isRTL ? 'text-right flex-row-reverse' : 'text-left'}`}>
               <Lightbulb className="w-5 h-5 text-[#035938] flex-shrink-0" />
               <span>
-                {language === 'ar' 
-                  ? 'تعد هذه التجارب امتداداً لتجارب بدأت عام ٢٠٢٣ في جازان'
-                  : 'These trials are an extension of trials that began in 2023 in Jazan'}
+                {t('rainfedWork1Note')}
               </span>
             </p>
           </motion.div>
@@ -208,12 +193,10 @@ export function RainfedImplementedWorks() {
         >
           <div className={`flex items-center gap-4 mb-8 ${isRTL ? 'flex-row-reverse text-right' : 'text-left'}`}>
             <div className="w-12 h-12 rounded-xl bg-[#52BC88] flex items-center justify-center text-white font-bold text-xl">
-              {language === 'ar' ? '٢' : '2'}
+              2
             </div>
             <h3 className="text-2xl md:text-3xl font-bold text-[#035938]">
-              {language === 'ar' 
-                ? 'تجارب الأصناف المحسنة – البيئة الساحلية (جازان)' 
-                : 'Improved Varieties Trials - Coastal Environment (Jazan)'}
+              {t('rainfedWork2Title')}
             </h3>
           </div>
 
@@ -221,13 +204,11 @@ export function RainfedImplementedWorks() {
             <div className={`inline-flex items-center gap-2 px-4 py-2 bg-[#F1BC28]/20 rounded-full mb-6 ${isRTL ? 'flex-row-reverse' : ''}`}>
               <Calendar className="w-5 h-5 text-[#F1BC28]" />
               <span className="text-sm font-semibold text-[#F1BC28]">
-                {language === 'ar' ? '٠٨-٠٩ سبتمبر ٢٠٢٤' : 'September 18-19, 2024'}
+                {t('rainfedWork2Date')}
               </span>
             </div>
             <p className={`text-lg text-[#052F2A] mb-8 ${isRTL ? 'text-right' : 'text-left'}`}>
-              {language === 'ar'
-                ? 'أُجريت أربع تجارب جديدة شملت تجربتين للحبوب والأعلاف لمحصول الذرة الرفيعة وتجربتين للحبوب والأعلاف لمحصول الدخن، بهدف تحديد الأصناف الأكثر ملاءمة لبيئة منطقة جازان.'
-                : 'Four new trials were conducted, including two grain and fodder trials for sorghum and two grain and fodder trials for millet, aiming to identify the most suitable varieties for the Jazan region environment.'}
+              {t('rainfedWork2Desc')}
             </p>
           </div>
 
@@ -261,10 +242,10 @@ export function RainfedImplementedWorks() {
         >
           <div className={`flex items-center gap-4 mb-8 ${isRTL ? 'flex-row-reverse text-right' : 'text-left'}`}>
             <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center text-white font-bold text-xl">
-              {language === 'ar' ? '٣' : '3'}
+              3
             </div>
             <h3 className="text-2xl md:text-3xl font-bold text-white">
-              {language === 'ar' ? 'أدلة وإجراءات علمية' : 'Scientific Guides and Procedures'}
+              {t('rainfedWork3Title')}
             </h3>
           </div>
 
@@ -331,16 +312,9 @@ export function RainfedImplementedWorks() {
                           {program.title}
                         </h5>
                       </div>
-                      <div className="space-y-2">
-                        <div className={`flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
-                          <MapPin className="w-4 h-4 text-[#52BC88]" />
-                          <p className="text-sm text-[#052F2A]">{program.location}</p>
-                        </div>
-                        <div className={`flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
-                          <Users className="w-4 h-4 text-[#F1BC28]" />
-                          <p className="text-sm text-[#052F2A]">{program.participants}</p>
-                        </div>
-                      </div>
+                      <p className="text-sm text-[#052F2A] leading-relaxed">
+                        {program.description}
+                      </p>
                     </div>
                   </motion.div>
                 );

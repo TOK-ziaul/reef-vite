@@ -16,7 +16,6 @@ import {
 export function CoffeeProjects() {
   const { t, language } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
-  const [activeCard, setActiveCard] = useState<number | null>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -36,70 +35,26 @@ export function CoffeeProjects() {
     return () => observer.disconnect();
   }, []);
 
-  const projects = [
-    { 
-      icon: Factory, 
-      title: language === 'ar' ? 'مصنع معالجة وتجهيز القهوة' : 'Coffee Processing Factory', 
-      location: language === 'ar' ? 'الباحة' : 'Al-Baha',
-      color: '#035938',
-      image: 'https://images.unsplash.com/photo-1741994043827-6d847a04ea60?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2ZmZWUlMjBmYWN0b3J5JTIwcHJvY2Vzc2luZyUyMHJvYXN0aW5nfGVufDF8fHx8MTc2OTk0NTI5NHww&ixlib=rb-4.1.0&q=80&w=1080'
-    },
-    { 
-      icon: Sprout, 
-      title: language === 'ar' ? 'مشاتل نموذجية للقهوة' : 'Model Coffee Nurseries', 
-      location: language === 'ar' ? 'جازان، عسير، الباحة' : 'Jazan, Asir, Al-Baha',
-      color: '#52BC88',
-      image: 'https://images.unsplash.com/photo-1757803985709-2d6acfb9e4fb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2ZmZWUlMjBwbGFudCUyMG51cnNlcnklMjBzZWVkbGluZ3N8ZW58MXx8fHwxNzY5OTQ1Mjk1fDA&ixlib=rb-4.1.0&q=80&w=1080'
-    },
-    { 
-      icon: Factory, 
-      title: language === 'ar' ? 'مصنع معالجة وتجهيز القهوة' : 'Coffee Processing Factory', 
-      location: language === 'ar' ? 'عسير' : 'Asir',
-      color: '#F1BC28',
-      image: 'https://images.unsplash.com/photo-1585435247026-1d8560423d52?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2ZmZWUlMjBwcm9kdWN0aW9uJTIwcXVhbGl0eSUyMHRlc3Rpbmd8ZW58MXx8fHwxNzY5OTQ1Mjk2fDA&ixlib=rb-4.1.0&q=80&w=1080'
-    },
-    { 
-      icon: Leaf, 
-      title: language === 'ar' ? 'مزارع نموذجية بديلة' : 'Alternative Model Farms', 
-      location: language === 'ar' ? 'جازان' : 'Jazan',
-      color: '#035938',
-      image: 'https://images.unsplash.com/photo-1567726843492-df0484bb0b05?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2ZmZWUlMjBmYXJtJTIwdGVycmFjZXMlMjBtb3VudGFpbnN8ZW58MXx8fHwxNzY5OTQ1Mjk0fDA&ixlib=rb-4.1.0&q=80&w=1080'
-    },
-    { 
-      icon: Factory, 
-      title: language === 'ar' ? 'مصنع معالجة وتجهيز القهوة' : 'Coffee Processing Factory', 
-      location: language === 'ar' ? 'جازان (الدائر)' : 'Jazan (Ad-Daer)',
-      color: '#52BC88',
-      image: 'https://images.unsplash.com/photo-1729627271729-20b56711f034?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2ZmZWUlMjBiZWFucyUyMGhhcnZlc3QlMjBoYW5kc3xlbnwxfHx8fDE3Njk5NDUyOTV8MA&ixlib=rb-4.1.0&q=80&w=1080'
-    },
-    { 
-      icon: Droplets, 
-      title: language === 'ar' ? 'أنظمة ري مستدامة' : 'Sustainable Irrigation Systems', 
-      location: language === 'ar' ? 'الباحة' : 'Al-Baha',
-      color: '#F1BC28',
-      image: 'https://images.unsplash.com/photo-1743742566156-f1745850281a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpcnJpZ2F0aW9uJTIwc3lzdGVtJTIwZHJpcCUyMGZhcm1pbmd8ZW58MXx8fHwxNzY5OTQ1Mjk1fDA&ixlib=rb-4.1.0&q=80&w=1080'
-    },
-    { 
-      icon: Droplets, 
-      title: language === 'ar' ? 'أنظمة ري مستدامة' : 'Sustainable Irrigation Systems', 
-      location: language === 'ar' ? 'جازان' : 'Jazan',
-      color: '#035938',
-      image: 'https://images.unsplash.com/photo-1761201509055-30c04b68901c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdXN0YWluYWJsZSUyMGZhcm1pbmclMjB3YXRlciUyMGNvbnNlcnZhdGlvbnxlbnwxfHx8fDE3Njk5NDUyOTZ8MA&ixlib=rb-4.1.0&q=80&w=1080'
-    },
-    { 
-      icon: Droplets, 
-      title: language === 'ar' ? 'أنظمة ري مستدامة' : 'Sustainable Irrigation Systems', 
-      location: language === 'ar' ? 'عسير' : 'Asir',
-      color: '#52BC88',
-      image: 'https://images.unsplash.com/photo-1761839257144-297ce252742e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBhZ3JpY3VsdHVyZSUyMHRlY2hub2xvZ3l8ZW58MXx8fHwxNzY5ODY2OTUzfDA&ixlib=rb-4.1.0&q=80&w=1080'
-    },
-  ];
+  const projectKeys = [
+    "coffeeProject1",
+    "coffeeProject2",
+    "coffeeProject3",
+    "coffeeProject4",
+    "coffeeProject5",
+    "coffeeProject6",
+    "coffeeProject7",
+    "coffeeProject8",
+  ] as const;
 
   const feasibilityItems = [
-    { icon: Users, text: t('coffeeFeasibility1') },
-    { icon: Sprout, text: t('coffeeFeasibility2') },
-    { icon: Droplets, text: t('coffeeFeasibility3') },
-    { icon: TrendingUp, text: t('coffeeFeasibility4') },
+    { icon: Users, text: t("coffeeFeasibility1") },
+    { icon: Sprout, text: t("coffeeFeasibility2") },
+    { icon: Droplets, text: t("coffeeFeasibility3") },
+    { icon: TrendingUp, text: t("coffeeFeasibility4") },
+    { icon: Leaf, text: t("coffeeFeasibility5") },
+    { icon: Sparkles, text: t("coffeeFeasibility6") },
+    { icon: Factory, text: t("coffeeFeasibility7") },
+    { icon: MapPin, text: t("coffeeFeasibility8") },
   ];
 
   const objectives = [
@@ -120,10 +75,6 @@ export function CoffeeProjects() {
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         {/* Section Title */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-3 mb-4 px-6 py-2 bg-white/60 backdrop-blur-sm rounded-full border border-[#52BC88]/20">
-            <Sparkles className="w-5 h-5 text-[#F1BC28]" />
-            <span className="text-sm text-[#035938]/70">{language === 'ar' ? 'مشاريع استثمارية' : 'Investment Projects'}</span>
-          </div>
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#035938] mb-4">
             {t('coffeeProjectsTitle')}
           </h2>
@@ -148,8 +99,10 @@ export function CoffeeProjects() {
               <div className="inline-flex p-4 bg-gradient-to-br from-[#035938] to-[#52BC88] rounded-2xl mb-4">
                 <Building2 className="w-8 h-8 text-white" />
               </div>
-              <div className="text-6xl font-bold text-[#035938] mb-2">8</div>
-              <p className="text-[#035938]/70">{t('coffeeProjects')}</p>
+              <div className="text-4xl font-bold text-[#035938] mb-2">
+                {t("coffeeProjectsCountLabel")}
+              </div>
+              <p className="text-[#035938]/70">{t("coffeeNumberOfProjects")}</p>
             </div>
           </div>
 
@@ -167,164 +120,33 @@ export function CoffeeProjects() {
               <div className="inline-flex p-4 bg-gradient-to-br from-[#F1BC28] to-[#52BC88] rounded-2xl mb-4">
                 <TrendingUp className="w-8 h-8 text-white" />
               </div>
-              <div className="text-6xl font-bold text-[#035938] mb-2">155.8</div>
-              <p className="text-[#035938]/70">{language === 'ar' ? 'مليون ريال' : 'Million SAR'}</p>
+              <div className="text-4xl font-bold text-[#035938] mb-2">
+                {t("coffeeProjectsValueLabel")}
+              </div>
+              <p className="text-[#035938]/70">{t("coffeeTotalValue")}</p>
             </div>
           </div>
         </div>
 
-        {/* Projects Grid - Bento Style */}
-        <div className="mb-20">
-          <h3 className="text-2xl md:text-3xl font-bold text-[#035938] mb-10">
-            {t('coffeeKeyProjects')}
+        <div className="mb-20 bg-white rounded-2xl shadow-xl p-8 md:p-12">
+          <h3 className="text-2xl md:text-3xl font-bold text-[#035938] mb-8 flex items-center gap-3">
+            <div className="w-2 h-8 bg-gradient-to-b from-[#035938] to-[#52BC88] rounded-full"></div>
+            {t("coffeeKeyProjects")}
           </h3>
-          
-          {/* Asymmetric Bento Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* Row 1 - Three equal cards */}
-            {projects.slice(1, 4).map((project, index) => {
-              const Icon = project.icon;
-              const actualIndex = index + 1;
-              return (
-                <div 
-                  key={actualIndex}
-                  className="relative h-72 rounded-3xl overflow-hidden group cursor-pointer"
-                  style={{
-                    transform: isVisible ? 'translateY(0) scale(1)' : 'translateY(30px) scale(0.95)',
-                    opacity: isVisible ? 1 : 0,
-                    transition: `all 0.6s ease-out ${actualIndex * 0.1 + 0.3}s`,
-                  }}
-                  onMouseEnter={() => setActiveCard(actualIndex)}
-                  onMouseLeave={() => setActiveCard(null)}
-                >
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
-                  
-                  <div className="absolute inset-0 p-6 flex flex-col justify-between">
-                    <div className="flex justify-end">
-                      <div 
-                        className="p-3 rounded-xl backdrop-blur-xl border border-white/20 transition-all duration-300"
-                        style={{ 
-                          background: activeCard === actualIndex 
-                            ? `${project.color}` 
-                            : `${project.color}40`,
-                        }}
-                      >
-                        <Icon className="w-6 h-6 text-white" />
-                      </div>
-                    </div>
-
-                    <div>
-                      <h4 className="text-white text-lg font-bold mb-3 leading-tight">
-                        {project.title}
-                      </h4>
-                      <div className="flex items-center gap-2 text-white/90">
-                        <MapPin className="w-4 h-4 flex-shrink-0 text-[#52BC88]" />
-                        <span className="text-sm">{project.location}</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-
-            {/* Row 2 - One wide + One regular */}
-            <div 
-              className="md:col-span-2 relative h-72 rounded-3xl overflow-hidden group cursor-pointer"
-              style={{
-                transform: isVisible ? 'translateY(0) scale(1)' : 'translateY(30px) scale(0.95)',
-                opacity: isVisible ? 1 : 0,
-                transition: 'all 0.6s ease-out 0.7s',
-              }}
-              onMouseEnter={() => setActiveCard(4)}
-              onMouseLeave={() => setActiveCard(null)}
-            >
-              <img 
-                src={projects[4].image} 
-                alt={projects[4].title}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent"></div>
-              
-              <div className="absolute inset-0 p-8 flex items-end">
-                <div className="flex items-center gap-8 w-full">
-                  <div 
-                    className="p-5 rounded-2xl backdrop-blur-xl border border-white/20 transition-all duration-300"
-                    style={{ 
-                      background: activeCard === 4 
-                        ? projects[4].color 
-                        : `${projects[4].color}40`,
-                    }}
-                  >
-                    <Factory className="w-10 h-10 text-white" />
-                  </div>
-                  
-                  <div className="flex-1">
-                    <h4 className="text-white text-2xl font-bold mb-2 leading-tight">
-                      {projects[4].title}
-                    </h4>
-                    <div className="flex items-center gap-2 text-white/90">
-                      <MapPin className="w-5 h-5 flex-shrink-0 text-[#52BC88]" />
-                      <span className="text-base">{projects[4].location}</span>
-                    </div>
-                  </div>
+          <div className="space-y-4">
+            {projectKeys.map((key, index) => (
+              <div key={key} className="relative group">
+                <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#035938] to-[#52BC88] rounded-full group-hover:w-2 transition-all duration-300"></div>
+                <div className="pl-8 py-4 bg-gradient-to-r from-[#035938]/5 to-transparent rounded-r-xl group-hover:from-[#035938]/10 transition-all duration-300">
+                  <p className="text-gray-700 leading-relaxed text-lg">
+                    <span className="font-bold text-[#035938] me-2">
+                      {index + 1}-
+                    </span>
+                    {t(key)}
+                  </p>
                 </div>
               </div>
-            </div>
-
-            {projects.slice(5).map((project, index) => {
-              const Icon = project.icon;
-              const actualIndex = index + 5;
-              return (
-                <div 
-                  key={actualIndex}
-                  className="relative h-72 rounded-3xl overflow-hidden group cursor-pointer"
-                  style={{
-                    transform: isVisible ? 'translateY(0) scale(1)' : 'translateY(30px) scale(0.95)',
-                    opacity: isVisible ? 1 : 0,
-                    transition: `all 0.6s ease-out ${actualIndex * 0.1 + 0.3}s`,
-                  }}
-                  onMouseEnter={() => setActiveCard(actualIndex)}
-                  onMouseLeave={() => setActiveCard(null)}
-                >
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
-                  
-                  <div className="absolute inset-0 p-6 flex flex-col justify-between">
-                    <div className="flex justify-end">
-                      <div 
-                        className="p-3 rounded-xl backdrop-blur-xl border border-white/20 transition-all duration-300"
-                        style={{ 
-                          background: activeCard === actualIndex 
-                            ? project.color 
-                            : `${project.color}40`,
-                        }}
-                      >
-                        <Icon className="w-6 h-6 text-white" />
-                      </div>
-                    </div>
-
-                    <div>
-                      <h4 className="text-white text-lg font-bold mb-3 leading-tight">
-                        {project.title}
-                      </h4>
-                      <div className="flex items-center gap-2 text-white/90">
-                        <MapPin className="w-4 h-4 flex-shrink-0 text-[#52BC88]" />
-                        <span className="text-sm">{project.location}</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
+            ))}
           </div>
         </div>
 

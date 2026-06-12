@@ -19,9 +19,8 @@ export function FruitsWorkAxesFlowing({ t }: FruitsWorkAxesFlowingProps) {
     <div className="mb-20 relative">
       {/* Section Title */}
       <div className="text-center mb-20">
-        <p className="text-[#52BC88] text-sm tracking-widest uppercase mb-2">OUR STRATEGIC APPROACH</p>
         <h2 className="text-3xl md:text-5xl font-bold text-[#035938] mb-4">
-          We Execute Every <span className="text-[#52BC88]">{t('workAxes')}</span> Carefully
+          {t("fruitsWorkAxesTitle")}
         </h2>
       </div>
 
