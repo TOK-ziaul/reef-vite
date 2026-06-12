@@ -5,82 +5,19 @@ import { useLanguage } from "../context/LanguageContext";
 import { ChevronDown, HelpCircle } from "lucide-react";
 
 export const FAQsPage: React.FC = () => {
-  const { language } = useLanguage();
+  const { t, language } = useLanguage();
   const isRTL = language === "ar";
   const heroRef = useRef<HTMLDivElement>(null);
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const faqs = [
-    {
-      question:
-        language === "ar"
-          ? "من يمكنه التقديم على دعم برنامج ريف السعودية؟"
-          : "Who can apply for Reef Saudi program support?",
-      answer:
-        language === "ar"
-          ? "يمكن للمزارعين وصغار المنتجين والأسر الريفية ورواد الأعمال في الأنشطة الزراعية والغذائية والريفية التقديم، بشرط أن يكون سعودي الجنسية ويقيم في المناطق المشمولة بدعم البرنامج."
-          : "Farmers, small producers, rural families, and entrepreneurs in agricultural, food, and rural activities can apply, provided they are Saudi nationals residing in areas covered by program support.",
-    },
-    {
-      question:
-        language === "ar"
-          ? "هل يمكن التقديم إذا كان لدي وظيفة أخرى؟"
-          : "Can I apply if I have another job?",
-      answer:
-        language === "ar"
-          ? "نعم، يمكن التقديم بشرط ألا يتجاوز الدخل الشهري الحد الأعلى المسموح به، وأن يكون النشاط الريفي فعلياً ومثبتاً على أرض الواقع."
-          : "Yes, you can apply provided that your monthly income does not exceed the maximum allowed limit, and that the rural activity is actual and established on the ground.",
-    },
-    {
-      question:
-        language === "ar"
-          ? "ما هي أنواع الأنشطة التي يشملها الدعم؟"
-          : "What types of activities does the support cover?",
-      answer:
-        language === "ar"
-          ? "يشمل الدعم 8 قطاعات هي:\n\n• تطوير وتربية النحل وإنتاج العسل\n• تطوير وإنتاج وتسويق القهوة السعودية\n• تنمية زراعة وإنتاج الورد والنباتات العطرية\n• تطوير وإنتاج وتسويق الفاكهة\n• زراعة المحاصيل البعلية\n• الصيد والاستزراع السمكي\n• القيمة المضافة\n• تعزيز قدرات صغار مربي الماشية"
-          : "The support includes 8 sectors:\n\n• Beekeeping development and honey production\n• Saudi coffee development, production and marketing\n• Rose cultivation and aromatic plants production\n• Fruit development, production and marketing\n• Rain-fed crops cultivation\n• Fishing and aquaculture\n• Added value\n• Enhancing the capabilities of small livestock breeders",
-    },
-    {
-      question:
-        language === "ar"
-          ? "كم يستغرق الرد على الطلب؟"
-          : "How long does it take to respond to the application?",
-      answer:
-        language === "ar"
-          ? "تمر الطلبات بمراحل مراجعة وتقييم متعددة، وقد يستغرق الرد من عدة أسابيع حتى شهرين بحسب نوع المشروع وحجم الطلبات."
-          : "Applications go through multiple review and evaluation stages, and the response may take from several weeks to two months depending on the project type and volume of applications.",
-    },
-    {
-      question:
-        language === "ar"
-          ? "هل يمكن تعديل بيانات الطلب بعد إرساله؟"
-          : "Can I modify the application data after submitting it?",
-      answer:
-        language === "ar"
-          ? "نعم، في بعض المراحل يمكن تعديل البيانات عبر الحساب الشخصي قبل اعتماد الطلب بشكل نهائي."
-          : "Yes, at some stages you can modify the data through your personal account before the application is finally approved.",
-    },
-    {
-      question:
-        language === "ar"
-          ? "هل الدعم مستمر أم لمرة واحدة؟"
-          : "Is the support continuous or one-time?",
-      answer:
-        language === "ar"
-          ? "يعتمد ذلك على نوع النشاط، فبعض المشاريع تحصل على دعم دوري، وأخرى تحصل على دعم تأسيسي لمرة واحدة."
-          : "It depends on the type of activity; some projects receive periodic support, while others receive one-time foundational support.",
-    },
-    {
-      question:
-        language === "ar"
-          ? "كيف أعرف حالة طلبي؟"
-          : "How do I know my application status?",
-      answer:
-        language === "ar"
-          ? "يمكن متابعة الطلب عبر لوحة التحكم في المنصة باستخدام رقم الهوية وكلمة المرور."
-          : "You can track your application through the platform dashboard using your ID number and password.",
-    },
+    { question: t("faq1Q"), answer: t("faq1A") },
+    { question: t("faq2Q"), answer: t("faq2A") },
+    { question: t("faq3Q"), answer: t("faq3A") },
+    { question: t("faq4Q"), answer: t("faq4A") },
+    { question: t("faq5Q"), answer: t("faq5A") },
+    { question: t("faq6Q"), answer: t("faq6A") },
+    { question: t("faq7Q"), answer: t("faq7A") },
   ];
 
   useEffect(() => {
@@ -126,9 +63,7 @@ export const FAQsPage: React.FC = () => {
                   textShadow: "0 2px 40px rgba(0,0,0,0.3)",
                 }}
               >
-                {language === "ar"
-                  ? "الأسئلة الشائعة"
-                  : "Frequently Asked Questions"}
+                {t("faqsHeroTitle")}
               </h1>
             </div>
           </div>
@@ -161,22 +96,18 @@ export const FAQsPage: React.FC = () => {
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#035938]/10 to-[#52BC88]/10 rounded-full mb-6">
                 <div className="w-2 h-2 rounded-full bg-[#035938] animate-pulse" />
                 <span className="text-[#035938] font-semibold text-sm">
-                  {language === "ar" ? "مقدمة" : "Introduction"}
+                  {t("faqsIntroBadge")}
                 </span>
               </div>
 
               <h2 className="text-4xl md:text-5xl font-bold text-[#035938] mb-8 leading-tight">
-                {language === "ar"
-                  ? "نجيب على جميع تساؤلاتك"
-                  : "We Answer All Your Questions"}
+                {t("faqsIntroHeading")}
               </h2>
 
               <p
                 className={`text-lg md:text-xl leading-relaxed text-[#052F2A]/70 max-w-4xl ${isRTL ? "text-right" : "text-left"}`}
               >
-                {language === "ar"
-                  ? "في هذه الصفحة يتم تجميع أكثر الأسئلة التي يطرحها المستفيدون، والإجابة عنها بشكل تفصيلي لتوضيح جميع الجوانب المتعلقة بخدمات برنامج ريف السعودية."
-                  : "On this page, we compile the most frequently asked questions by beneficiaries and answer them in detail to clarify all aspects related to the Reef Saudi program services."}
+                {t("faqsIntro")}
               </p>
             </div>
           </div>
@@ -194,14 +125,12 @@ export const FAQsPage: React.FC = () => {
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#035938]/10 to-[#52BC88]/10 rounded-full mb-6">
                 <div className="w-2 h-2 rounded-full bg-[#035938] animate-pulse" />
                 <span className="text-[#035938] font-semibold text-sm">
-                  {language === "ar" ? "أسئلة متكررة" : "FAQs"}
+                  {t("faqsSectionBadge")}
                 </span>
               </div>
 
               <h2 className="text-4xl md:text-5xl font-bold text-[#035938] mb-8 leading-tight">
-                {language === "ar"
-                  ? "أسئلة متكررة"
-                  : "Frequently Asked Questions"}
+                {t("faqsSectionTitle")}
               </h2>
 
               <div className="space-y-4">

@@ -2,7 +2,7 @@ import { useLanguage } from "../context/LanguageContext";
 import { motion } from "motion/react";
 
 export function ContactHero() {
-  const { language } = useLanguage();
+  const { t, language } = useLanguage();
   const isRTL = language === "ar";
 
   return (
@@ -28,9 +28,7 @@ export function ContactHero() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6 }}
           >
-            {language === "ar"
-              ? "خدمة الاستفسارات والتواصل"
-              : "Inquiry and Communication Service"}
+            {t("contactServiceHeroTitle")}
           </motion.h1>
 
           <motion.p
@@ -39,9 +37,7 @@ export function ContactHero() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            {language === "ar"
-              ? "نافذتك المباشرة للتواصل مع برنامج ريف السعودية"
-              : "Your Direct Window to Connect with Reef Saudi Arabia"}
+            {t("contactServiceHeroSubtitle")}
           </motion.p>
         </div>
       </div>

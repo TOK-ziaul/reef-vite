@@ -253,8 +253,6 @@ export function SectorPage({ sectorId: sectorIdProp }: SectorPageProps = {}) {
             </div>
           )}
 
-          {sectorId === "beekeeping" && <BeekeepingStatsSection />}
-
           {/* Introduction Section - Coffee */}
           {sectorId === "coffee" && (
             <div className="max-w-6xl mx-auto mb-16">
@@ -350,14 +348,14 @@ export function SectorPage({ sectorId: sectorIdProp }: SectorPageProps = {}) {
             </div>
           )}
 
-          {/* Stats Section - Coffee */}
-          {sectorId === "coffee" && <CoffeeStats />}
-
           {/* Main Objectives Section - Coffee */}
           {sectorId === "coffee" && <CoffeeObjectives />}
 
           {/* Key Areas of Action - Coffee */}
           {sectorId === "coffee" && <CoffeeKeyAreas />}
+
+          {/* Stats Section - Coffee */}
+          {sectorId === "coffee" && <CoffeeStats />}
 
           {/* Projects Section - Coffee */}
           {sectorId === "coffee" && <CoffeeProjects />}
@@ -367,9 +365,6 @@ export function SectorPage({ sectorId: sectorIdProp }: SectorPageProps = {}) {
 
           {/* Tissue Culture Section - Coffee */}
           {sectorId === "coffee" && <CoffeeTissueCulture />}
-
-          {/* Figures and Indicators - Roses & Aromatic Plants */}
-          {sectorId === "flowers" && <RosesFiguresIndicators />}
 
           {/* Main Objectives Section - Roses & Aromatic Plants */}
           {sectorId === "flowers" && (
@@ -464,6 +459,9 @@ export function SectorPage({ sectorId: sectorIdProp }: SectorPageProps = {}) {
           {/* Key Areas of Action - Roses & Aromatic Plants */}
           {sectorId === "flowers" && <RosesKeyAreas />}
 
+          {/* Figures and Indicators - Roses & Aromatic Plants */}
+          {sectorId === "flowers" && <RosesFiguresIndicators />}
+
           {/* Sector Projects - Roses & Aromatic Plants */}
           {sectorId === "flowers" && <RosesProjects />}
 
@@ -475,11 +473,6 @@ export function SectorPage({ sectorId: sectorIdProp }: SectorPageProps = {}) {
                 <p className="text-xl leading-relaxed">{t("fruitsIntro2")}</p>
               </div>
             </div>
-          )}
-
-          {/* Numbers and Indicators Section - Fruits */}
-          {sectorId === "fruits" && (
-            <FruitsStatsCreative t={t} />
           )}
 
           {/* Main Objectives Section - Fruits */}
@@ -585,6 +578,9 @@ export function SectorPage({ sectorId: sectorIdProp }: SectorPageProps = {}) {
 
           {/* Work Axes Section - Fruits */}
           {sectorId === "fruits" && <FruitsWorkAxesFlowing t={t} />}
+
+          {/* Numbers and Indicators Section - Fruits */}
+          {sectorId === "fruits" && <FruitsStatsCreative t={t} />}
 
           {/* Fruit Sector Projects Section */}
           {sectorId === "fruits" && <FruitsProjectsCreative />}
@@ -795,6 +791,68 @@ export function SectorPage({ sectorId: sectorIdProp }: SectorPageProps = {}) {
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+          )}
+
+          {/* Page CTA - Fruits */}
+          {sectorId === "fruits" && (
+            <div className="mb-16">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button
+                  type="button"
+                  onClick={() =>
+                    navigateTo("home", undefined, "interactive-map")
+                  }
+                  className="bg-gradient-to-r from-[#035938] to-[#52BC88] text-white px-8 py-4 rounded-xl font-bold hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center gap-2 group cursor-pointer"
+                  style={{
+                    fontFamily:
+                      language === "ar"
+                        ? "'Loew Next Arabic', sans-serif"
+                        : "inherit",
+                  }}
+                >
+                  <svg
+                    className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
+                    />
+                  </svg>
+                  {t("exploreInteractiveMap")}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => navigateTo("supportApplication")}
+                  className="bg-[#F1BC28] text-white px-8 py-4 rounded-xl font-bold hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center gap-2 group cursor-pointer"
+                  style={{
+                    fontFamily:
+                      language === "ar"
+                        ? "'Loew Next Arabic', sans-serif"
+                        : "inherit",
+                  }}
+                >
+                  <svg
+                    className="w-5 h-5 group-hover:scale-110 transition-transform duration-300"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
+                  </svg>
+                  {t("exploreSupportPrograms")}
+                </button>
               </div>
             </div>
           )}
@@ -1914,6 +1972,8 @@ export function SectorPage({ sectorId: sectorIdProp }: SectorPageProps = {}) {
             </div>
           )}
 
+          {/* Stats Section - Beekeeping */}
+          {sectorId === "beekeeping" && <BeekeepingStatsSection />}
 
           {/* Projects Section - Beekeeping & Honey Production */}
           {sectorId === "beekeeping" && (

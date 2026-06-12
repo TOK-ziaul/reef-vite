@@ -3,112 +3,57 @@ import { motion } from "motion/react";
 import { FileText, Headphones, Globe, Users } from "lucide-react";
 
 export function ContactMethods() {
-  const { language } = useLanguage();
+  const { t, language } = useLanguage();
   const isRTL = language === "ar";
 
   const methods = [
     {
       icon: FileText,
       color: "#52BC88",
-      title:
-        language === "ar"
-          ? "نموذج التواصل الإلكتروني"
-          : "Electronic Contact Form",
-      description:
-        language === "ar"
-          ? "يمكن للمستفيد إرسال استفسارك عبر نموذج يحتوي على:"
-          : "Beneficiaries can send their inquiries through a form containing:",
-      fields:
-        language === "ar"
-          ? [
-              "الاسم الكامل",
-              "رقم الهوية",
-              "رقم الجوال",
-              "المنطقة",
-              "موضوع الاستفسار",
-              "تفاصيل الرسالة",
-            ]
-          : [
-              "Full Name",
-              "ID Number",
-              "Mobile Number",
-              "Region",
-              "Inquiry Subject",
-              "Message Details",
-            ],
-      footer:
-        language === "ar"
-          ? "يتم الرد خلال فترة قصيرة من قبل فريق متخصص."
-          : "Responses are provided within a short period by a specialized team.",
+      title: t("contactMethod1Title"),
+      description: t("contactMethod1Desc"),
+      fields: [
+        t("contactMethod1Field1"),
+        t("contactMethod1Field2"),
+        t("contactMethod1Field3"),
+        t("contactMethod1Field4"),
+        t("contactMethod1Field5"),
+        t("contactMethod1Field6"),
+      ],
+      footer: t("contactMethod1Footer"),
     },
     {
       icon: Headphones,
       color: "#F1BC28",
-      title:
-        language === "ar"
-          ? "مركز خدمة المستفيدين"
-          : "Beneficiaries Service Center",
-      description:
-        language === "ar"
-          ? 'يوفر برنامج "ريف السعودية" مركز دعم يتولى:'
-          : "Reef Saudi Arabia program provides a support center that handles:",
-      fields:
-        language === "ar"
-          ? [
-              "الرد على الاستفسارات العامة",
-              "متابعة الطلبات المتأخرة",
-              "توجيه المستفيد للخطوات اللازمة",
-              "المساعدة في حل المشكلات التقنية",
-            ]
-          : [
-              "Responding to general inquiries",
-              "Following up on delayed requests",
-              "Guiding beneficiaries through necessary steps",
-              "Assisting with technical problems",
-            ],
+      title: t("contactMethod2Title"),
+      description: t("contactMethod2Desc"),
+      fields: [
+        t("contactMethod2Field1"),
+        t("contactMethod2Field2"),
+        t("contactMethod2Field3"),
+        t("contactMethod2Field4"),
+      ],
       footer: null,
     },
     {
       icon: Globe,
       color: "#035938",
-      title:
-        language === "ar"
-          ? "قنوات التواصل الرقمية"
-          : "Digital Communication Channels",
-      description:
-        language === "ar"
-          ? "يتيح البرنامج أيضاً التواصل عبر:"
-          : "The program also enables communication through:",
-      fields:
-        language === "ar"
-          ? [
-              "البريد الإلكتروني الرسمي",
-              "منصات التواصل الاجتماعي",
-              "(LinkedIn / Instagram / X / Facebook)",
-            ]
-          : [
-              "Official Email",
-              "Social Media Platforms",
-              "(LinkedIn / Instagram / X / Facebook)",
-            ],
-      footer:
-        language === "ar"
-          ? "يلتزم البرنامج بنشر التحديثات والتنبيهات والفرص والمبادرات والبرامج الجديدة عبر موقعه الرسمي وكافة منصاته وحساباته التواصل الاجتماعي."
-          : "The program is committed to publishing updates, alerts, opportunities, initiatives and new programs through its official website and all its social media platforms and accounts.",
+      title: t("contactMethod3Title"),
+      description: t("contactMethod3Desc"),
+      fields: [
+        t("contactMethod3Field1"),
+        t("contactMethod3Field2"),
+        t("contactMethod3Field3"),
+      ],
+      footer: t("contactMethod3Footer"),
     },
     {
       icon: Users,
       color: "#52BC88",
-      title: language === "ar" ? "الدعم الميداني" : "Field Support",
-      description:
-        language === "ar"
-          ? "يوفر البرنامج زيارات ميدانية تقوم بها فرق متخصصة لمساندة المستفيدين على أرض الواقع، خاصة في المناطق الريفية البعيدة."
-          : "The program provides field visits conducted by specialized teams to support beneficiaries on the ground, especially in remote rural areas.",
+      title: t("contactMethod4Title"),
+      description: t("contactMethod4Desc"),
       fields: [],
-      footer:
-        language === "ar"
-          ? "يهدف هذا النظام المتكامل إلى ضمان وجود قناة مفتوحة، دائمة، وفعالة بين البرنامج والمستفيدين، بما يعزز الشفافية والثقة ويخدم مسار التنمية المستدامة."
-          : "This integrated system aims to ensure an open, permanent, and effective channel between the program and beneficiaries, enhancing transparency and trust while serving the path of sustainable development.",
+      footer: t("contactMethod4Footer"),
     },
   ];
 
@@ -145,10 +90,9 @@ export function ContactMethods() {
                   <p className="text-lg text-[#052F2A] leading-relaxed mb-6">
                     {method.description}
                   </p>
-
                   {/* Fields List */}
                   {method.fields.length > 0 && (
-                    <ul className={`space-y-3 mb-6 ${isRTL ? "mr-0" : "ml-0"}`}>
+                    <ul dir={isRTL ? "rtl" : "ltr"} className={`space-y-3 mb-6 ${isRTL ? "mr-0" : "ml-0"}`}>
                       {method.fields.map((field, idx) => (
                         <li key={idx} className="flex items-start gap-3">
                           <div

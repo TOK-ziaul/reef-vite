@@ -5,7 +5,7 @@ import { useLanguage } from "../context/LanguageContext";
 import { Check } from "lucide-react";
 
 export const BeneficiariesGuidePage: React.FC = () => {
-  const { language } = useLanguage();
+  const { t, language } = useLanguage();
   const isRTL = language === "ar";
   const heroRef = useRef<HTMLDivElement>(null);
 
@@ -23,121 +23,73 @@ export const BeneficiariesGuidePage: React.FC = () => {
 
   const guides = [
     {
-      title:
-        language === "ar"
-          ? "فهم طبيعة المشروع"
-          : "Understanding Project Nature",
+      title: t("beneficiariesGuide1Title"),
       image: "/guides/1.jpg",
       color: "from-[#035938] to-[#52BC88]",
-      intro:
-        language === "ar"
-          ? "على المستفيد تحديد طبيعة مشروعه بدقة، وهل هو:"
-          : "The beneficiary must accurately define their project nature, whether it is:",
+      intro: t("beneficiariesGuide1Intro"),
       items: [
-        language === "ar" ? "إنتاجي" : "Productive",
-        language === "ar" ? "تسويقي" : "Marketing",
-        language === "ar" ? "خدمي" : "Service-based",
-        language === "ar" ? "حرفي" : "Artisanal",
-        language === "ar" ? "قائم على موارد طبيعية" : "Natural resource-based",
+        t("beneficiariesGuide1Item1"),
+        t("beneficiariesGuide1Item2"),
+        t("beneficiariesGuide1Item3"),
+        t("beneficiariesGuide1Item4"),
+        t("beneficiariesGuide1Item5"),
       ],
-      conclusion:
-        language === "ar"
-          ? "هذا التصنيف يساعد في اختيار نوع الدعم المناسب."
-          : "This classification helps in selecting the appropriate type of support.",
+      conclusion: t("beneficiariesGuide1Conclusion"),
     },
     {
-      title:
-        language === "ar"
-          ? "الالتزام بالمعايير الفنية"
-          : "Commitment to Technical Standards",
+      title: t("beneficiariesGuide2Title"),
       image: "/guides/2.jpg",
       color: "from-[#52BC88] to-[#F1BC28]",
-      intro:
-        language === "ar"
-          ? "يجب على المستفيد الالتزام بالممارسات الجيدة في:"
-          : "The beneficiary must adhere to good practices in:",
+      intro: t("beneficiariesGuide2Intro"),
       items: [
-        language === "ar" ? "الري" : "Irrigation",
-        language === "ar" ? "التسميد" : "Fertilization",
-        language === "ar" ? "مكافحة الآفات" : "Pest control",
-        language === "ar" ? "إدارة المخلفات" : "Waste management",
-        language === "ar" ? "حفظ المنتجات" : "Product preservation",
+        t("beneficiariesGuide2Item1"),
+        t("beneficiariesGuide2Item2"),
+        t("beneficiariesGuide2Item3"),
+        t("beneficiariesGuide2Item4"),
+        t("beneficiariesGuide2Item5"),
       ],
-      conclusion:
-        language === "ar"
-          ? "ويتم دعم ذلك من خلال الدورات التدريبية والزيارات الإرشادية."
-          : "This is supported through training courses and guidance visits.",
+      conclusion: t("beneficiariesGuide2Conclusion"),
     },
     {
-      title:
-        language === "ar"
-          ? "إدارة الموارد المالية"
-          : "Financial Resource Management",
+      title: t("beneficiariesGuide3Title"),
       image: "/guides/3.jpg",
       color: "from-[#F1BC28] to-[#035938]",
-      intro:
-        language === "ar"
-          ? "يتعلم المستفيد كيفية:"
-          : "The beneficiary learns how to:",
+      intro: t("beneficiariesGuide3Intro"),
       items: [
-        language === "ar"
-          ? "توزيع ميزانية المشروع"
-          : "Distribute project budget",
-        language === "ar" ? "تقليل الهدر" : "Reduce waste",
-        language === "ar" ? "رفع الكفاءة" : "Increase efficiency",
-        language === "ar" ? "إعادة استثمار الأرباح" : "Reinvest profits",
-        language === "ar"
-          ? "إعداد تقارير مالية مبسطة"
-          : "Prepare simplified financial reports",
+        t("beneficiariesGuide3Item1"),
+        t("beneficiariesGuide3Item2"),
+        t("beneficiariesGuide3Item3"),
+        t("beneficiariesGuide3Item4"),
+        t("beneficiariesGuide3Item5"),
       ],
-      conclusion:
-        language === "ar"
-          ? 'يؤكد برنامج "ريف السعودية" على أن الإدارة الجيدة للموارد ترفع من فرص الاستدامة.'
-          : "Reef Saudi program emphasizes that good resource management increases sustainability opportunities.",
+      conclusion: t("beneficiariesGuide3Conclusion"),
     },
     {
-      title: language === "ar" ? "التسويق والترويج" : "Marketing and Promotion",
+      title: t("beneficiariesGuide4Title"),
       image: "/guides/4.jpg",
       color: "from-[#035938] to-[#F1BC28]",
-      intro:
-        language === "ar"
-          ? "يتم توجيه المستفيد إلى:"
-          : "The beneficiary is guided to:",
+      intro: t("beneficiariesGuide4Intro"),
       items: [
-        language === "ar" ? "كيفية تغليف المنتج" : "Product packaging methods",
-        language === "ar" ? "التسعير المناسب" : "Appropriate pricing",
-        language === "ar"
-          ? "استخدام المنصات الرقمية"
-          : "Using digital platforms",
-        language === "ar"
-          ? "الدخول إلى نقاط البيع والمعارض"
-          : "Accessing retail points and exhibitions",
-        language === "ar" ? "الاستفادة من الشراكات" : "Leveraging partnerships",
+        t("beneficiariesGuide4Item1"),
+        t("beneficiariesGuide4Item2"),
+        t("beneficiariesGuide4Item3"),
+        t("beneficiariesGuide4Item4"),
+        t("beneficiariesGuide4Item5"),
       ],
       conclusion: "",
     },
     {
-      title: language === "ar" ? "التقييم المستمر" : "Continuous Evaluation",
+      title: t("beneficiariesGuide5Title"),
       image: "/guides/5.jpg",
       color: "from-[#52BC88] to-[#035938]",
-      intro:
-        language === "ar"
-          ? 'يشجّع برنامج "ريف السعودية" عبر الدعم والأدلة والندوات الإرشادية المستفيد على:'
-          : "Reef Saudi program encourages beneficiaries through support, guides and seminars to:",
+      intro: t("beneficiariesGuide5Intro"),
       items: [
-        language === "ar"
-          ? "قياس تطور إنتاجه"
-          : "Measure production development",
-        language === "ar" ? "تطوير أساليبه" : "Develop methods",
-        language === "ar" ? "تحسين الجودة" : "Improve quality",
-        language === "ar"
-          ? "الاستعداد للتوسع مستقبلاً"
-          : "Prepare for future expansion",
+        t("beneficiariesGuide5Item1"),
+        t("beneficiariesGuide5Item2"),
+        t("beneficiariesGuide5Item3"),
+        t("beneficiariesGuide5Item4"),
       ],
-      conclusion:
-        language === "ar"
-          ? "بهذا يصبح المستفيد شريكاً في التنمية وليس مجرد متلقٍ للدعم."
-          : "Thus, the beneficiary becomes a partner in development, not just a support recipient.",
+      conclusion: t("beneficiariesGuide5Conclusion"),
     },
   ];
 
@@ -172,7 +124,7 @@ export const BeneficiariesGuidePage: React.FC = () => {
                   textShadow: "0 2px 40px rgba(0,0,0,0.3)",
                 }}
               >
-                {language === "ar" ? "دليل المستفيدين" : "Beneficiaries Guide"}
+                {t("beneficiariesGuideHeroTitle")}
               </h1>
             </div>
           </div>
@@ -204,9 +156,7 @@ export const BeneficiariesGuidePage: React.FC = () => {
             <p
               className={`text-2xl md:text-3xl leading-relaxed text-[#035938] font-bold mb-8 ${isRTL ? "text-right" : "text-left"}`}
             >
-              {language === "ar"
-                ? 'تم إعداد دليل المستفيدين ليكون مرجعاً عملياً يساعد المستفيدين في الاستفادة القصوى من خدمات برنامج "ريف السعودية" وتحقيق الاستدامة لمشاريعهم.'
-                : 'The Beneficiaries Guide has been prepared as a practical reference to help beneficiaries maximize their benefit from "Reef Saudi" program services and achieve sustainability for their projects.'}
+              {t("beneficiariesGuideIntro1")}
             </p>
 
             <div className="w-24 h-1 bg-[#52BC88] rounded-full mb-8" />
@@ -214,9 +164,7 @@ export const BeneficiariesGuidePage: React.FC = () => {
             <p
               className={`text-xl md:text-2xl leading-relaxed text-[#052F2A]/80 ${isRTL ? "text-right" : "text-left"}`}
             >
-              {language === "ar"
-                ? "يقدّم الدليل مجموعة من الإرشادات والخطوات العملية، تشمل:"
-                : "The guide provides a set of practical guidelines and steps, including:"}
+              {t("beneficiariesGuideIntro2")}
             </p>
           </div>
         </div>

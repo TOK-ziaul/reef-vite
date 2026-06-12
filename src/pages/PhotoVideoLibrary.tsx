@@ -259,14 +259,10 @@ export const PhotoVideoLibraryPage: React.FC = () => {
               {t("photoVideo")}
             </h2>
             <p className="text-lg leading-relaxed text-[#052F2A]/80 mb-6">
-              {language === "ar"
-                ? "مكتبة شاملة تضم كل المواد الصحفية والعناصر الجاهزة للإعلاميين والباحثين. تشمل الفيديوهات، والإنفوجرافيك، والنصوص التعريفية المعتمدة، مع إمكانية التحميل المباشر للاستخدام الإعلامي."
-                : "A comprehensive library containing all press materials and ready-made elements for media professionals and researchers. Includes videos, infographics, and approved introductory texts, with direct download capability for media use."}
+              {t("photoVideoIntro")}
             </p>
             <p className="text-base text-[#052F2A]/70 mb-8">
-              {language === "ar"
-                ? "هنا تُضاف روابط تحميل الملفات، والفيديوهات:"
-                : "Download links for files and videos are added here:"}
+              {t("photoVideoLinksNote")}
             </p>
 
             {/* Back to Media Center Link */}
@@ -277,11 +273,7 @@ export const PhotoVideoLibraryPage: React.FC = () => {
               className="inline-flex items-center gap-2 text-[#035938] hover:text-[#52BC88] transition-colors font-bold"
             >
               <span className="text-2xl">➜</span>
-              <span>
-                {language === "ar"
-                  ? "الرجوع إلى المركز الإعلامي"
-                  : "Back to Media Center"}
-              </span>
+              <span>{t("backToMediaCenter")}</span>
             </button>
           </div>
 

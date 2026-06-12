@@ -185,16 +185,16 @@ export const NewsPressPage: React.FC = () => {
               >
                 {t("newsPress")}
               </h1>
-              <p
-                className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto"
-                style={{
-                  animation: "fadeInUp 0.8s ease-out 0.2s backwards",
-                }}
-              >
-                {language === "ar"
-                  ? "آخر الأخبار والبيانات الصحفية من برنامج ريف السعودية"
-                  : "Latest news and press releases from Reef Saudi program"}
-              </p>
+              {t("newsPressHeroSubtitle").trim() ? (
+                <p
+                  className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto"
+                  style={{
+                    animation: "fadeInUp 0.8s ease-out 0.2s backwards",
+                  }}
+                >
+                  {t("newsPressHeroSubtitle")}
+                </p>
+              ) : null}
             </div>
           </div>
         </div>
@@ -229,14 +229,10 @@ export const NewsPressPage: React.FC = () => {
               {t("newsPress")}
             </h2>
             <p className="text-lg leading-relaxed text-[#052F2A]/80 mb-6">
-              {language === "ar"
-                ? 'صفحة مخصّصة لعرض أحدث أخبار برنامج "ريف السعودية"، تشمل البيانات الرسمية، وآخر المستجدات، وقصص النجاح، وتغطيات المبادرات، لمعرفة جهود البرنامج في دعم المجتمعات الريفية وتحقيق مستهدفات التنمية المستدامة ورؤية المملكة 2030.'
-                : 'A dedicated page to display the latest news from "Reef Saudi" program, including official statements, latest updates, success stories, and initiative coverage, to learn about the program\'s efforts in supporting rural communities and achieving sustainable development goals and Saudi Vision 2030.'}
+              {t("newsPressIntro")}
             </p>
             <p className="text-base text-[#052F2A]/70 mb-8">
-              {language === "ar"
-                ? "هنا تُضاف روابط الأخبار الكاملة والتغطيات الإعلامية:"
-                : "Full news links and media coverage are added here:"}
+              {t("newsPressLinksNote")}
             </p>
 
             {/* Back to Media Center Link */}
@@ -248,11 +244,7 @@ export const NewsPressPage: React.FC = () => {
               className="inline-flex items-center gap-2 text-[#035938] hover:text-[#52BC88] transition-colors font-bold"
             >
               <span className="text-2xl">➜</span>
-              <span>
-                {language === "ar"
-                  ? "الرجوع إلى المركز الإعلامي"
-                  : "Back to Media Center"}
-              </span>
+              <span>{t("backToMediaCenter")}</span>
             </button>
           </div>
 

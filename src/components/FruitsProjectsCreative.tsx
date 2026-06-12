@@ -1,13 +1,9 @@
 import { useLanguage } from "../context/LanguageContext";
-import { useNavigation } from "../context/NavigationContext";
 import {
   Building2,
   TrendingUp,
   CheckCircle2,
   Target,
-  Map,
-  Award,
-  ChevronRight,
 } from "lucide-react";
 
 const marketingCenterRegionKeys = [
@@ -34,7 +30,6 @@ const irrigationRegionKeys = [
 
 export function FruitsProjectsCreative() {
   const { t } = useLanguage();
-  const { navigateTo } = useNavigation();
 
   const projectKeys = [
     "fruitsProject1",
@@ -185,28 +180,6 @@ export function FruitsProjectsCreative() {
           </div>
         </div>
 
-        <div className="mt-16 flex flex-wrap items-center justify-center gap-6">
-          <button
-            type="button"
-            onClick={() => navigateTo("home", undefined, "interactive-map")}
-            className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#035938] to-[#52BC88] text-white rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
-          >
-            <Map className="w-5 h-5" />
-            <span className="font-semibold">{t("exploreInteractiveMap")}</span>
-            <ChevronRight className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" />
-          </button>
-          <button
-            type="button"
-            onClick={() => navigateTo("supportApplication")}
-            className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#52BC88] to-[#F1BC28] text-white rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
-          >
-            <Award className="w-5 h-5" />
-            <span className="font-semibold">
-              {t("exploreSupportPrograms")}
-            </span>
-            <ChevronRight className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" />
-          </button>
-        </div>
       </div>
     </div>
   );

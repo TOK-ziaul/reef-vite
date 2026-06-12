@@ -281,29 +281,19 @@ export const PhotosFromReefPage: React.FC = () => {
               {t("galleryBook")}
             </h2>
             <p className="text-lg leading-relaxed text-[#052F2A]/80 mb-8">
-              {language === "ar"
-                ? 'رحلة التنمية المستدامة عبر عدسة الكاميرا، من خلال معرض يبرز جمال المناطق الريفية في المملكة العربية السعودية، وجهود برنامج "ريف السعودية" في دعم المزارعين والمشاريع الريفية.'
-                : 'A journey of sustainable development through the camera lens, through a gallery showcasing the beauty of rural areas in the Kingdom of Saudi Arabia, and the efforts of the "Reef Saudi" program in supporting farmers and rural projects.'}
+              {t("galleryBookIntro")}
             </p>
 
             {/* Action Links */}
             <div className="flex flex-wrap gap-4">
               <button className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#035938] to-[#52BC88] text-white rounded-full font-bold hover:shadow-2xl hover:scale-105 transition-all duration-300">
                 <span className="text-lg">➜</span>
-                <span>
-                  {language === "ar"
-                    ? "شاهد القصص المصورة"
-                    : "Watch Photo Stories"}
-                </span>
+                <span>{t("galleryBookWatchStories")}</span>
               </button>
 
               <button className="inline-flex items-center gap-2 px-6 py-3 bg-white border-2 border-[#035938] text-[#035938] rounded-full font-bold hover:bg-[#035938] hover:text-white hover:shadow-xl transition-all duration-300">
                 <span className="text-lg">↗</span>
-                <span>
-                  {language === "ar"
-                    ? "استكشف المعرض الكامل"
-                    : "Explore Full Gallery"}
-                </span>
+                <span>{t("galleryBookExploreGallery")}</span>
               </button>
 
               <button
@@ -313,11 +303,7 @@ export const PhotosFromReefPage: React.FC = () => {
                 className="inline-flex items-center gap-2 text-[#035938] hover:text-[#52BC88] transition-colors font-bold px-4 py-3"
               >
                 <span className="text-lg">➜</span>
-                <span>
-                  {language === "ar"
-                    ? "الرجوع إلى المركز الإعلامي"
-                    : "Back to Media Center"}
-                </span>
+                <span>{t("backToMediaCenter")}</span>
               </button>
             </div>
           </div>

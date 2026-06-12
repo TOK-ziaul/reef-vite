@@ -13,9 +13,45 @@ import {
 } from "lucide-react";
 
 export const SupportApplicationPage: React.FC = () => {
-  const { language } = useLanguage();
+  const { t, language } = useLanguage();
   const isRTL = language === "ar";
   const heroRef = useRef<HTMLDivElement>(null);
+
+  const step1Fields = [
+    t("supportApplyStep1Field1"),
+    t("supportApplyStep1Field2"),
+    t("supportApplyStep1Field3"),
+    t("supportApplyStep1Field4"),
+  ];
+  const step2Fields = [
+    t("supportApplyStep2Field1"),
+    t("supportApplyStep2Field2"),
+    t("supportApplyStep2Field3"),
+    t("supportApplyStep2Field4"),
+    t("supportApplyStep2Field5"),
+    t("supportApplyStep2Field6"),
+    t("supportApplyStep2Field7"),
+    t("supportApplyStep2Field8"),
+  ];
+  const step3Fields = [
+    t("supportApplyStep3Field1"),
+    t("supportApplyStep3Field2"),
+    t("supportApplyStep3Field3"),
+    t("supportApplyStep3Field4"),
+    t("supportApplyStep3Field5"),
+    t("supportApplyStep3Field6"),
+  ];
+  const step4Fields = [
+    t("supportApplyStep4Field1"),
+    t("supportApplyStep4Field2"),
+    t("supportApplyStep4Field3"),
+  ];
+  const step5Support = [
+    { text: t("supportApplyStep5Support1"), icon: "🌱" },
+    { text: t("supportApplyStep5Support2"), icon: "📚" },
+    { text: t("supportApplyStep5Support3"), icon: "📈" },
+    { text: t("supportApplyStep5Support4"), icon: "🤝" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -60,9 +96,7 @@ export const SupportApplicationPage: React.FC = () => {
                   textShadow: "0 2px 40px rgba(0,0,0,0.3)",
                 }}
               >
-                {language === "ar"
-                  ? "آلية التقديم على الدعم"
-                  : "Support Application Mechanism"}
+                {t("supportApplyHeroTitle")}
               </h1>
             </div>
           </div>
@@ -95,29 +129,23 @@ export const SupportApplicationPage: React.FC = () => {
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#035938]/10 to-[#52BC88]/10 rounded-full mb-6">
                 <div className="w-2 h-2 rounded-full bg-[#035938] animate-pulse" />
                 <span className="text-[#035938] font-semibold text-sm">
-                  {language === "ar" ? "مقدمة" : "Introduction"}
+                  {t("supportApplyIntroBadge")}
                 </span>
               </div>
 
               <h2 className="text-4xl md:text-5xl font-bold text-[#035938] mb-8 leading-tight">
-                {language === "ar"
-                  ? "آلية مصممة بعناية لخدمتك"
-                  : "A Carefully Designed Mechanism to Serve You"}
+                {t("supportApplyIntroHeading")}
               </h2>
 
               <div className="grid md:grid-cols-2 gap-8 mb-8">
                 <div className={isRTL ? "text-right" : "text-left"}>
                   <p className="text-lg md:text-xl leading-relaxed text-[#052F2A]/70">
-                    {language === "ar"
-                      ? 'تم تصميم آلية التقديم على دعم برنامج "ريف السعودية" لتكون سهلة، واضحة، وعادلة، وتضمن وصول الدعم إلى مستحقيه من الأسر المنتجة وصغار المزارعين والعاملين في الأنشطة الريفية المستدامة.'
-                      : "The Reef Saudi program support application mechanism has been designed to be easy, clear, and fair, ensuring support reaches deserving productive families, small farmers, and those working in sustainable rural activities."}
+                    {t("supportApplyIntro1")}
                   </p>
                 </div>
                 <div className={isRTL ? "text-right" : "text-left"}>
                   <p className="text-lg md:text-xl leading-relaxed text-[#052F2A]/70">
-                    {language === "ar"
-                      ? "تمر عملية التقديم عبر مراحل منظمة تهدف إلى التحقق من أهلية المتقدم، ودراسة المشروع، ثم ربطه بخدمات الدعم المناسبة، بما يحقق أعلى أثر تنموي."
-                      : "The application process goes through organized stages aimed at verifying applicant eligibility, studying the project, then connecting it with appropriate support services to achieve the highest developmental impact."}
+                    {t("supportApplyIntro2")}
                   </p>
                 </div>
               </div>
@@ -129,12 +157,10 @@ export const SupportApplicationPage: React.FC = () => {
                   </div>
                   <div className={isRTL ? "text-right" : "text-left"}>
                     <p className="font-semibold text-[#035938]">
-                      {language === "ar" ? "سهل وواضح" : "Easy & Clear"}
+                      {t("supportApplyIntroEasy")}
                     </p>
                     <p className="text-sm text-[#052F2A]/60">
-                      {language === "ar"
-                        ? "إجراءات بسيطة"
-                        : "Simple procedures"}
+                      {t("supportApplyIntroEasyDesc")}
                     </p>
                   </div>
                 </div>
@@ -144,10 +170,10 @@ export const SupportApplicationPage: React.FC = () => {
                   </div>
                   <div className={isRTL ? "text-right" : "text-left"}>
                     <p className="font-semibold text-[#035938]">
-                      {language === "ar" ? "عادل وشفاف" : "Fair & Transparent"}
+                      {t("supportApplyIntroFair")}
                     </p>
                     <p className="text-sm text-[#052F2A]/60">
-                      {language === "ar" ? "معايير واضحة" : "Clear criteria"}
+                      {t("supportApplyIntroFairDesc")}
                     </p>
                   </div>
                 </div>
@@ -157,12 +183,10 @@ export const SupportApplicationPage: React.FC = () => {
                   </div>
                   <div className={isRTL ? "text-right" : "text-left"}>
                     <p className="font-semibold text-[#035938]">
-                      {language === "ar" ? "دعم شامل" : "Comprehensive Support"}
+                      {t("supportApplyIntroComprehensive")}
                     </p>
                     <p className="text-sm text-[#052F2A]/60">
-                      {language === "ar"
-                        ? "مالي وفني"
-                        : "Financial & Technical"}
+                      {t("supportApplyIntroComprehensiveDesc")}
                     </p>
                   </div>
                 </div>
@@ -180,18 +204,14 @@ export const SupportApplicationPage: React.FC = () => {
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-lg mb-6">
               <div className="w-2 h-2 rounded-full bg-[#52BC88] animate-pulse" />
               <span className="text-[#035938] font-semibold text-sm">
-                {language === "ar" ? "مراحل التقديم" : "Application Stages"}
+                {t("supportApplyStagesBadge")}
               </span>
             </div>
             <h2 className="text-4xl md:text-6xl font-bold text-[#035938] mb-6">
-              {language === "ar"
-                ? "رحلتك نحو الدعم"
-                : "Your Journey to Support"}
+              {t("supportApplyStagesHeading")}
             </h2>
             <p className="text-xl text-[#052F2A]/70 max-w-3xl mx-auto">
-              {language === "ar"
-                ? "خمس مراحل متتالية تضمن لك تجربة سلسة من التسجيل حتى الحصول على الدعم"
-                : "Five consecutive stages ensuring you a smooth experience from registration to receiving support"}
+              {t("supportApplyStagesSub")}
             </p>
           </div>
 
@@ -211,19 +231,15 @@ export const SupportApplicationPage: React.FC = () => {
                       </div>
                       <div>
                         <span className="text-sm font-semibold text-[#52BC88]">
-                          {language === "ar" ? "المرحلة 01" : "Stage 01"}
+                          {t("supportApplyStep1Label")}
                         </span>
                         <h3 className="text-2xl md:text-3xl font-bold text-[#035938]">
-                          {language === "ar"
-                            ? "التسجيل في المنصة"
-                            : "Platform Registration"}
+                          {t("supportApplyStep1Title")}
                         </h3>
                       </div>
                     </div>
                     <p className="text-lg text-[#052F2A]/70 leading-relaxed">
-                      {language === "ar"
-                        ? "يبدأ المستفيد رحلته بالتسجيل عبر منصة ريف السعودية الإلكترونية، حيث يقوم بإنشاء حساب باستخدام بياناته الأساسية."
-                        : "The beneficiary begins their journey by registering through the Reef Saudi electronic platform, creating an account using their basic information."}
+                      {t("supportApplyStep1Desc")}
                     </p>
                   </div>
                 </div>
@@ -232,23 +248,10 @@ export const SupportApplicationPage: React.FC = () => {
               <div className="md:col-span-7">
                 <div className="backdrop-blur-xl bg-gradient-to-br from-white to-[#52BC88]/5 rounded-[40px] p-8 md:p-10 shadow-xl border border-white/60">
                   <h4 className="text-xl font-bold text-[#035938] mb-6">
-                    {language === "ar"
-                      ? "البيانات المطلوبة:"
-                      : "Required Information:"}
+                    {t("supportApplyStep1FieldsHeading")}
                   </h4>
                   <div className="grid sm:grid-cols-2 gap-4">
-                    {[
-                      { ar: "رقم الهوية الوطنية", en: "National ID number" },
-                      { ar: "تاريخ الميلاد", en: "Date of birth" },
-                      {
-                        ar: "رقم الجوال المسجل باسمه",
-                        en: "Mobile number registered in their name",
-                      },
-                      {
-                        ar: "العنوان والمنطقة الإدارية",
-                        en: "Address and administrative region",
-                      },
-                    ].map((item, idx) => (
+                    {step1Fields.map((item, idx) => (
                       <div
                         key={idx}
                         className="flex items-start gap-3 p-4 rounded-2xl bg-white/80 border border-[#035938]/10 hover:border-[#52BC88]/40 transition-all duration-300"
@@ -256,20 +259,16 @@ export const SupportApplicationPage: React.FC = () => {
                         <ArrowRight
                           className={`w-5 h-5 text-[#52BC88] flex-shrink-0 mt-0.5 ${isRTL ? "rotate-180" : ""}`}
                         />
-                        <p className="text-[#052F2A]/80">
-                          {language === "ar" ? item.ar : item.en}
-                        </p>
+                        <p className="text-[#052F2A]/80">{item}</p>
                       </div>
                     ))}
                   </div>
                   <div className="mt-6 p-5 rounded-2xl bg-gradient-to-r from-[#035938]/5 to-[#52BC88]/5 border border-[#035938]/10">
                     <p className="text-[#052F2A]/70">
                       <span className="font-semibold text-[#035938]">
-                        {language === "ar" ? "ملاحظة: " : "Note: "}
+                        {t("supportApplyNoteLabel")}{" "}
                       </span>
-                      {language === "ar"
-                        ? "يتم بعد ذلك تفعيل الحساب عبر رسالة نصية مرسلة إلى رقم الجوال، لضمان صحة البيانات."
-                        : "The account is then activated via a text message sent to the mobile number, to ensure data accuracy."}
+                      {t("supportApplyStep1Note")}
                     </p>
                   </div>
                 </div>
@@ -295,19 +294,15 @@ export const SupportApplicationPage: React.FC = () => {
                       </div>
                       <div>
                         <span className="text-sm font-semibold text-[#52BC88]">
-                          {language === "ar" ? "المرحلة 02" : "Stage 02"}
+                          {t("supportApplyStep2Label")}
                         </span>
                         <h3 className="text-2xl md:text-3xl font-bold text-[#035938]">
-                          {language === "ar"
-                            ? "إدخال بيانات المشروع"
-                            : "Project Data Entry"}
+                          {t("supportApplyStep2Title")}
                         </h3>
                       </div>
                     </div>
                     <p className="text-lg text-[#052F2A]/70 leading-relaxed">
-                      {language === "ar"
-                        ? "بعد تسجيل الدخول إلى المنصة، ينتقل المستفيد لإدخال تفاصيل مشروعه الشاملة."
-                        : "After logging into the platform, the beneficiary proceeds to enter their comprehensive project details."}
+                      {t("supportApplyStep2Desc")}
                     </p>
                   </div>
                 </div>
@@ -318,33 +313,10 @@ export const SupportApplicationPage: React.FC = () => {
               >
                 <div className="backdrop-blur-xl bg-gradient-to-br from-white to-[#F1BC28]/5 rounded-[40px] p-8 md:p-10 shadow-xl border border-white/60">
                   <h4 className="text-xl font-bold text-[#035938] mb-6">
-                    {language === "ar"
-                      ? "معلومات المشروع:"
-                      : "Project Information:"}
+                    {t("supportApplyStep2FieldsHeading")}
                   </h4>
                   <div className="grid sm:grid-cols-2 gap-4">
-                    {[
-                      {
-                        ar: "نوع النشاط الزراعي أو الريفي",
-                        en: "Type of agricultural or rural activity",
-                      },
-                      { ar: "موقع المشروع", en: "Project location" },
-                      { ar: "المساحة التقريبية", en: "Approximate area" },
-                      { ar: "مراحل الإنتاج", en: "Production stages" },
-                      {
-                        ar: "حجم الإنتاج الحالي والمتوقع",
-                        en: "Current and expected production volume",
-                      },
-                      {
-                        ar: "الأدوات والمعدات المستخدمة",
-                        en: "Tools and equipment used",
-                      },
-                      { ar: "التحديات القائمة", en: "Current challenges" },
-                      {
-                        ar: "الأهداف المستقبلية للمشروع",
-                        en: "Future project objectives",
-                      },
-                    ].map((item, idx) => (
+                    {step2Fields.map((item, idx) => (
                       <div
                         key={idx}
                         className="flex items-start gap-3 p-4 rounded-2xl bg-white/80 border border-[#035938]/10 hover:border-[#F1BC28]/40 transition-all duration-300"
@@ -352,20 +324,16 @@ export const SupportApplicationPage: React.FC = () => {
                         <ArrowRight
                           className={`w-5 h-5 text-[#F1BC28] flex-shrink-0 mt-0.5 ${isRTL ? "rotate-180" : ""}`}
                         />
-                        <p className="text-[#052F2A]/80 text-sm">
-                          {language === "ar" ? item.ar : item.en}
-                        </p>
+                        <p className="text-[#052F2A]/80 text-sm">{item}</p>
                       </div>
                     ))}
                   </div>
                   <div className="mt-6 p-5 rounded-2xl bg-gradient-to-r from-[#52BC88]/5 to-[#F1BC28]/5 border border-[#52BC88]/10">
                     <p className="text-[#052F2A]/70">
                       <span className="font-semibold text-[#035938]">
-                        {language === "ar" ? "الهدف: " : "Goal: "}
+                        {t("supportApplyGoalLabel")}{" "}
                       </span>
-                      {language === "ar"
-                        ? "هذه البيانات تساعد الجهات المختصة على تقييم المشروع بدقة وربطه بنوع الدعم المناسب."
-                        : "This data helps the relevant authorities to accurately assess the project and connect it with the appropriate type of support."}
+                      {t("supportApplyStep2Goal")}
                     </p>
                   </div>
                 </div>
@@ -389,19 +357,15 @@ export const SupportApplicationPage: React.FC = () => {
                       </div>
                       <div>
                         <span className="text-sm font-semibold text-[#F1BC28]">
-                          {language === "ar" ? "المرحلة 03" : "Stage 03"}
+                          {t("supportApplyStep3Label")}
                         </span>
                         <h3 className="text-2xl md:text-3xl font-bold text-[#035938]">
-                          {language === "ar"
-                            ? "رفع الوثائق المطلوبة"
-                            : "Upload Required Documents"}
+                          {t("supportApplyStep3Title")}
                         </h3>
                       </div>
                     </div>
                     <p className="text-lg text-[#052F2A]/70 leading-relaxed">
-                      {language === "ar"
-                        ? "يتطلب التقديم إرفاق عدد من الوثائق، والتي تختلف حسب نوع النشاط."
-                        : "The application requires attaching a number of documents, which vary depending on the type of activity."}
+                      {t("supportApplyStep3Desc")}
                     </p>
                   </div>
                 </div>
@@ -410,37 +374,10 @@ export const SupportApplicationPage: React.FC = () => {
               <div className="md:col-span-7">
                 <div className="backdrop-blur-xl bg-gradient-to-br from-white to-[#F1BC28]/5 rounded-[40px] p-8 md:p-10 shadow-xl border border-white/60">
                   <h4 className="text-xl font-bold text-[#035938] mb-6">
-                    {language === "ar"
-                      ? "الوثائق المطلوبة:"
-                      : "Required Documents:"}
+                    {t("supportApplyStep3FieldsHeading")}
                   </h4>
                   <div className="grid sm:grid-cols-2 gap-4">
-                    {[
-                      {
-                        ar: "نسخة من الهوية الوطنية",
-                        en: "Copy of national ID",
-                      },
-                      {
-                        ar: "إثبات السكن أو موقع المشروع",
-                        en: "Proof of residence or project location",
-                      },
-                      {
-                        ar: "صورة للمزرعة أو موقع الإنتاج",
-                        en: "Photo of the farm or production site",
-                      },
-                      {
-                        ar: "رخصة النحل في حال كان النشاط مرتبطًا بالعسل",
-                        en: "Beekeeping license if the activity is related to honey",
-                      },
-                      {
-                        ar: "شهادة العمل الحر (إن توفرت)",
-                        en: "Freelance certificate (if available)",
-                      },
-                      {
-                        ar: "حساب بنكي باسم المتقدم",
-                        en: "Bank account in the applicant's name",
-                      },
-                    ].map((item, idx) => (
+                    {step3Fields.map((item, idx) => (
                       <div
                         key={idx}
                         className="flex items-start gap-3 p-4 rounded-2xl bg-white/80 border border-[#035938]/10 hover:border-[#F1BC28]/40 transition-all duration-300"
@@ -448,20 +385,16 @@ export const SupportApplicationPage: React.FC = () => {
                         <ArrowRight
                           className={`w-5 h-5 text-[#F1BC28] flex-shrink-0 mt-0.5 ${isRTL ? "rotate-180" : ""}`}
                         />
-                        <p className="text-[#052F2A]/80 text-sm">
-                          {language === "ar" ? item.ar : item.en}
-                        </p>
+                        <p className="text-[#052F2A]/80 text-sm">{item}</p>
                       </div>
                     ))}
                   </div>
                   <div className="mt-6 p-5 rounded-2xl bg-gradient-to-r from-[#F1BC28]/5 to-[#035938]/5 border border-[#F1BC28]/10">
                     <p className="text-[#052F2A]/70">
                       <span className="font-semibold text-[#035938]">
-                        {language === "ar" ? "ملاحظة: " : "Note: "}
+                        {t("supportApplyNoteLabel")}{" "}
                       </span>
-                      {language === "ar"
-                        ? "تخضع هذه الوثائق للمراجعة من قبل الفرق المختصة في البرنامج."
-                        : "These documents are subject to review by the program's specialized teams."}
+                      {t("supportApplyStep3Note")}
                     </p>
                   </div>
                 </div>
@@ -487,19 +420,15 @@ export const SupportApplicationPage: React.FC = () => {
                       </div>
                       <div>
                         <span className="text-sm font-semibold text-[#52BC88]">
-                          {language === "ar" ? "المرحلة 04" : "Stage 04"}
+                          {t("supportApplyStep4Label")}
                         </span>
                         <h3 className="text-2xl md:text-3xl font-bold text-[#035938]">
-                          {language === "ar"
-                            ? "التقييم والمعاينة"
-                            : "Evaluation and Inspection"}
+                          {t("supportApplyStep4Title")}
                         </h3>
                       </div>
                     </div>
                     <p className="text-lg text-[#052F2A]/70 leading-relaxed">
-                      {language === "ar"
-                        ? "بعد اكتمال الطلب، يتم تحويله إلى الجهات المختصة لإجراء التقييم الشامل."
-                        : "After the application is completed, it is transferred to the relevant authorities for comprehensive evaluation."}
+                      {t("supportApplyStep4Desc")}
                     </p>
                   </div>
                 </div>
@@ -510,25 +439,10 @@ export const SupportApplicationPage: React.FC = () => {
               >
                 <div className="backdrop-blur-xl bg-gradient-to-br from-white to-[#52BC88]/5 rounded-[40px] p-8 md:p-10 shadow-xl border border-white/60">
                   <h4 className="text-xl font-bold text-[#035938] mb-6">
-                    {language === "ar"
-                      ? "إجراءات التقييم:"
-                      : "Evaluation Procedures:"}
+                    {t("supportApplyStep4FieldsHeading")}
                   </h4>
                   <div className="space-y-4">
-                    {[
-                      {
-                        ar: "مراجعة فنية للبيانات",
-                        en: "Technical review of data",
-                      },
-                      {
-                        ar: "تقييم اقتصادي للمشروع",
-                        en: "Economic evaluation of the project",
-                      },
-                      {
-                        ar: "في بعض الحالات: زيارة ميدانية للتحقق من صحة المعلومات",
-                        en: "In some cases: field visit to verify information accuracy",
-                      },
-                    ].map((item, idx) => (
+                    {step4Fields.map((item, idx) => (
                       <div
                         key={idx}
                         className="flex items-start gap-4 p-5 rounded-2xl bg-white/80 border border-[#035938]/10 hover:border-[#52BC88]/40 transition-all duration-300"
@@ -538,20 +452,16 @@ export const SupportApplicationPage: React.FC = () => {
                             {idx + 1}
                           </span>
                         </div>
-                        <p className="text-[#052F2A]/80">
-                          {language === "ar" ? item.ar : item.en}
-                        </p>
+                        <p className="text-[#052F2A]/80">{item}</p>
                       </div>
                     ))}
                   </div>
                   <div className="mt-6 p-5 rounded-2xl bg-gradient-to-r from-[#52BC88]/5 to-[#035938]/5 border border-[#52BC88]/10">
                     <p className="text-[#052F2A]/70">
                       <span className="font-semibold text-[#035938]">
-                        {language === "ar" ? "الهدف: " : "Goal: "}
+                        {t("supportApplyGoalLabel")}{" "}
                       </span>
-                      {language === "ar"
-                        ? "ضمان جاهزية المشروع للاستفادة من الدعم وتنميته بشكل مستدام."
-                        : "Ensure the project's readiness to benefit from support and develop it sustainably."}
+                      {t("supportApplyStep4Goal")}
                     </p>
                   </div>
                 </div>
@@ -576,19 +486,13 @@ export const SupportApplicationPage: React.FC = () => {
                   </div>
                   <div className="flex-1">
                     <span className="inline-block px-4 py-1 bg-gradient-to-r from-[#035938] to-[#52BC88] text-white rounded-full text-sm font-semibold mb-3">
-                      {language === "ar"
-                        ? "المرحلة 05 - المرحلة النهائية"
-                        : "Stage 05 - Final Stage"}
+                      {t("supportApplyStep5Label")}
                     </span>
                     <h3 className="text-3xl md:text-4xl font-bold text-[#035938] mb-3">
-                      {language === "ar"
-                        ? "اعتماد الطلب وصرف الدعم"
-                        : "Application Approval and Support Disbursement"}
+                      {t("supportApplyStep5Title")}
                     </h3>
                     <p className="text-xl text-[#052F2A]/70 leading-relaxed">
-                      {language === "ar"
-                        ? "في حال استيفاء جميع الشروط، يتم اعتماد الطلب وإبلاغ المستفيد بالقبول، ثم يبدأ صرف الدعم المالي وفق خطة زمنية محددة."
-                        : "If all conditions are met, the application is approved and the beneficiary is notified of acceptance, then financial support disbursement begins according to a specific timeline."}
+                      {t("supportApplyStep5Desc")}
                     </p>
                   </div>
                 </div>
@@ -597,39 +501,16 @@ export const SupportApplicationPage: React.FC = () => {
                 <div className="grid md:grid-cols-2 gap-8">
                   <div className="space-y-4">
                     <h4 className="text-xl font-bold text-[#035938] mb-4">
-                      {language === "ar"
-                        ? "أنواع الدعم المقدم:"
-                        : "Types of Support Provided:"}
+                      {t("supportApplyStep5NonFinancial")}
                     </h4>
-                    {[
-                      {
-                        ar: "الإرشاد الزراعي",
-                        en: "Agricultural guidance",
-                        icon: "🌱",
-                      },
-                      {
-                        ar: "التدريب والتأهيل",
-                        en: "Training and qualification",
-                        icon: "📚",
-                      },
-                      {
-                        ar: "الدعم التسويقي",
-                        en: "Marketing support",
-                        icon: "📈",
-                      },
-                      {
-                        ar: "الربط مع الأسواق والمنصات",
-                        en: "Connection with markets and platforms",
-                        icon: "🤝",
-                      },
-                    ].map((item, idx) => (
+                    {step5Support.map((item, idx) => (
                       <div
                         key={idx}
                         className="flex items-center gap-4 p-5 rounded-2xl bg-white/80 border border-[#035938]/10 hover:shadow-lg hover:border-[#52BC88]/40 transition-all duration-300"
                       >
                         <div className="text-3xl">{item.icon}</div>
                         <p className="text-lg text-[#052F2A]/80 font-medium">
-                          {language === "ar" ? item.ar : item.en}
+                          {item.text}
                         </p>
                       </div>
                     ))}
@@ -643,12 +524,10 @@ export const SupportApplicationPage: React.FC = () => {
                           <Sparkles className="w-8 h-8 text-[#F1BC28]" />
                         </div>
                         <h4 className="text-2xl font-bold text-white mb-4">
-                          {language === "ar" ? "التزامنا" : "Our Commitment"}
+                          {t("supportApplyStep5Commitment")}
                         </h4>
                         <p className="text-lg text-white/90 leading-relaxed">
-                          {language === "ar"
-                            ? 'بهذه الآلية، يضمن برنامج "ريف السعودية" وصول الدعم إلى المشاريع الأكثر قدرة على الاستدامة وتحقيق الأثر الاقتصادي والاجتماعي.'
-                            : 'Through this mechanism, the "Reef Saudi" program ensures that support reaches projects most capable of sustainability and achieving economic and social impact.'}
+                          {t("supportApplyStep5Closing")}
                         </p>
                       </div>
                     </div>

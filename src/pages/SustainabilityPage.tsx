@@ -2,10 +2,17 @@ import React, { useRef, useEffect, useState } from "react";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import { useLanguage } from "../context/LanguageContext";
+import { useNavigation } from "../context/NavigationContext";
 import { ArrowRight } from "lucide-react";
+import {
+  SustainabilityIntroSection,
+  SustainabilityExtensionSection,
+  SustainabilityMarketingSection,
+} from "../components/SustainabilityInitiativesSections";
 
 export const SustainabilityPage: React.FC = () => {
   const { t, language } = useLanguage();
+  const { navigateTo } = useNavigation();
   const isRTL = language === "ar";
   const heroImageRef = useRef<HTMLDivElement>(null);
   const partnersCarouselRef = useRef<HTMLDivElement>(null);
@@ -236,8 +243,10 @@ export const SustainabilityPage: React.FC = () => {
         </div>
       </section>
 
+      <SustainabilityIntroSection />
+
       {/* Model Farms Project Section */}
-      <section className="relative -mt-1 py-20 bg-gradient-to-b from-[#F9F7EF] to-white overflow-hidden">
+      <section className="relative py-20 bg-gradient-to-b from-[#F9F7EF] to-white overflow-hidden">
         {/* Background decorative elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-40 -left-20 w-[500px] h-[500px] bg-gradient-to-br from-[#035938]/5 to-transparent rounded-full blur-3xl" />
@@ -272,91 +281,94 @@ export const SustainabilityPage: React.FC = () => {
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-br from-[#035938]/70 via-[#035938]/50 to-transparent" />
-
-              {/* Floating Badge */}
-              <div className="absolute top-8 right-8 backdrop-blur-md bg-white/90 px-8 py-4 rounded-full border border-white/40">
-                <span className="text-[#035938] font-bold text-xl">
-                  {t("modelFarmsBadge")}
-                </span>
-              </div>
-
-              {/* Achievement Title Overlay */}
-              <div className="absolute bottom-8 left-8 right-8">
-                <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                  {t("modelFarmsAchievementTitle")}
-                </h3>
-              </div>
-            </div>
-
-            {/* Floating Stats Cards - Positioned below the image */}
-            <div className="absolute -bottom-20 left-0 right-0 px-6">
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-                {/* Stat 1 */}
-                <div className="group">
-                  <div className="backdrop-blur-xl bg-gradient-to-br from-[#035938]/95 to-[#52BC88]/95 p-6 rounded-[30px] border border-white/40 shadow-2xl hover:scale-110 hover:-translate-y-2 transition-all duration-500">
-                    <div className="text-[#F1BC28] text-4xl font-bold mb-1">
-                      5
-                    </div>
-                    <div className="text-white text-sm">
-                      {t("modelFarmsRegions")}
-                    </div>
+              <div className="absolute inset-0 ">
+                <div className="relative h-[100%] w-full p-8  flex  flex-col justify-between ">
+                  {/* Floating Badge */}
+                  <div className="w-fit ms-auto backdrop-blur-md bg-white/90 px-8 py-4 rounded-full border border-white/40">
+                    <span className="text-[#035938] font-bold text-xl">
+                      {t("modelFarmsBadge")}
+                    </span>
                   </div>
-                </div>
 
-                {/* Stat 2 */}
-                <div className="group">
-                  <div className="backdrop-blur-xl bg-gradient-to-br from-[#52BC88]/95 to-[#F1BC28]/95 p-6 rounded-[30px] border border-white/40 shadow-2xl hover:scale-110 hover:-translate-y-2 transition-all duration-500">
-                    <div className="text-white text-4xl font-bold mb-1">43</div>
-                    <div className="text-[#035938] text-sm font-semibold">
-                      {t("modelFarmsCount")}
-                    </div>
-                  </div>
-                </div>
+                  {/* Achievement Title Overlay */}
+                  <div className=" w-fit">
+                    <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                      {t("modelFarmsAchievementTitle")}
+                    </h3>
 
-                {/* Stat 3 */}
-                <div className="group">
-                  <div className="backdrop-blur-xl bg-gradient-to-br from-[#F1BC28]/95 to-[#035938]/95 p-6 rounded-[30px] border border-white/40 shadow-2xl hover:scale-110 hover:-translate-y-2 transition-all duration-500">
-                    <div className="text-white text-4xl font-bold mb-1">
-                      748
-                    </div>
-                    <div className="text-white text-sm">
-                      {t("modelFarmsTrainees")}
-                    </div>
-                  </div>
-                </div>
+                    {/* Floating Stats Cards - Positioned below the image */}
+                    <div className=" grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                      {/* Stat 1 */}
+                      <div className="group">
+                        <div className="backdrop-blur-xl bg-gradient-to-br from-[#035938]/95 to-[#52BC88]/95 p-6 rounded-[30px] border border-white/40 shadow-2xl hover:scale-110 hover:-translate-y-2 transition-all duration-500">
+                          <div className="text-[#F1BC28] text-4xl font-bold mb-1">
+                            5
+                          </div>
+                          <div className="text-white text-sm">
+                            {t("modelFarmsRegions")}
+                          </div>
+                        </div>
+                      </div>
 
-                {/* Stat 4 */}
-                <div className="group">
-                  <div className="backdrop-blur-xl bg-gradient-to-br from-[#035938]/95 to-[#F1BC28]/95 p-6 rounded-[30px] border border-white/40 shadow-2xl hover:scale-110 hover:-translate-y-2 transition-all duration-500">
-                    <div className="text-[#F1BC28] text-4xl font-bold mb-1">
-                      20
-                    </div>
-                    <div className="text-white text-sm">
-                      {t("modelFarmsWorkshops")}
-                    </div>
-                  </div>
-                </div>
+                      {/* Stat 2 */}
+                      <div className="group">
+                        <div className="backdrop-blur-xl bg-gradient-to-br from-[#52BC88]/95 to-[#F1BC28]/95 p-6 rounded-[30px] border border-white/40 shadow-2xl hover:scale-110 hover:-translate-y-2 transition-all duration-500">
+                          <div className="text-white text-4xl font-bold mb-1">
+                            43
+                          </div>
+                          <div className="text-[#035938] text-sm font-semibold">
+                            {t("modelFarmsCount")}
+                          </div>
+                        </div>
+                      </div>
 
-                {/* Stat 5 */}
-                <div className="group">
-                  <div className="backdrop-blur-xl bg-gradient-to-br from-[#52BC88]/95 to-[#035938]/95 p-6 rounded-[30px] border border-white/40 shadow-2xl hover:scale-110 hover:-translate-y-2 transition-all duration-500">
-                    <div className="text-white text-4xl font-bold mb-1">
-                      305
-                    </div>
-                    <div className="text-white text-sm">
-                      {t("modelFarmsDonums")}
-                    </div>
-                  </div>
-                </div>
+                      {/* Stat 3 */}
+                      <div className="group">
+                        <div className="backdrop-blur-xl bg-gradient-to-br from-[#F1BC28]/95 to-[#035938]/95 p-6 rounded-[30px] border border-white/40 shadow-2xl hover:scale-110 hover:-translate-y-2 transition-all duration-500">
+                          <div className="text-white text-4xl font-bold mb-1">
+                            748
+                          </div>
+                          <div className="text-white text-sm">
+                            {t("modelFarmsTrainees")}
+                          </div>
+                        </div>
+                      </div>
 
-                {/* Stat 6 */}
-                <div className="group">
-                  <div className="backdrop-blur-xl bg-gradient-to-br from-[#F1BC28]/95 to-[#52BC88]/95 p-6 rounded-[30px] border border-white/40 shadow-2xl hover:scale-110 hover:-translate-y-2 transition-all duration-500">
-                    <div className="text-[#035938] text-4xl font-bold mb-1">
-                      726
-                    </div>
-                    <div className="text-[#035938] text-sm font-semibold">
-                      {t("modelFarmsVisits")}
+                      {/* Stat 4 */}
+                      <div className="group">
+                        <div className="backdrop-blur-xl bg-gradient-to-br from-[#035938]/95 to-[#F1BC28]/95 p-6 rounded-[30px] border border-white/40 shadow-2xl hover:scale-110 hover:-translate-y-2 transition-all duration-500">
+                          <div className="text-[#F1BC28] text-4xl font-bold mb-1">
+                            20
+                          </div>
+                          <div className="text-white text-sm">
+                            {t("modelFarmsWorkshops")}
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Stat 5 */}
+                      <div className="group">
+                        <div className="backdrop-blur-xl bg-gradient-to-br from-[#52BC88]/95 to-[#035938]/95 p-6 rounded-[30px] border border-white/40 shadow-2xl hover:scale-110 hover:-translate-y-2 transition-all duration-500">
+                          <div className="text-white text-4xl font-bold mb-1">
+                            305
+                          </div>
+                          <div className="text-white text-sm">
+                            {t("modelFarmsDonums")}
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Stat 6 */}
+                      <div className="group">
+                        <div className="backdrop-blur-xl bg-gradient-to-br from-[#F1BC28]/95 to-[#52BC88]/95 p-6 rounded-[30px] border border-white/40 shadow-2xl hover:scale-110 hover:-translate-y-2 transition-all duration-500">
+                          <div className="text-[#035938] text-4xl font-bold mb-1">
+                            726
+                          </div>
+                          <div className="text-[#035938] text-sm font-semibold">
+                            {t("modelFarmsVisits")}
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -404,6 +416,9 @@ export const SustainabilityPage: React.FC = () => {
           </div>
         </div>
       </section>
+
+      <SustainabilityExtensionSection />
+      <SustainabilityMarketingSection />
 
       {/* Impact and Statistics Section */}
       <section className="relative py-20 bg-white overflow-hidden">
@@ -691,7 +706,7 @@ export const SustainabilityPage: React.FC = () => {
                           <div className="grid grid-cols-2 gap-4 text-white">
                             <div>
                               <div className="text-sm opacity-80 mb-1">
-                                داخلية
+                                {t("studyToursInternal")}
                               </div>
                               <div className="text-3xl font-bold text-[#F1BC28]">
                                 111
@@ -699,7 +714,7 @@ export const SustainabilityPage: React.FC = () => {
                             </div>
                             <div>
                               <div className="text-sm opacity-80 mb-1">
-                                خارجية
+                                {t("studyToursExternal")}
                               </div>
                               <div className="text-3xl font-bold text-[#F1BC28]">
                                 53
@@ -713,6 +728,17 @@ export const SustainabilityPage: React.FC = () => {
                 </div>
               </div>
             </div>
+          </div>
+
+          <div className="flex justify-center mt-12">
+            <button
+              type="button"
+              onClick={() => navigateTo("sectors")}
+              className="flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#035938] to-[#52BC88] text-white rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-300"
+            >
+              {t("sustImpactCTA")}
+              <ArrowRight className="w-5 h-5" />
+            </button>
           </div>
         </div>
       </section>
@@ -902,21 +928,24 @@ export const SustainabilityPage: React.FC = () => {
                 {t("partnershipGoalsTitle")}
               </h3>
               <div className="space-y-3">
-                {[t("partnershipGoal1"), t("partnershipGoal2")].map(
-                  (goal, index) => (
-                    <div
-                      key={index}
-                      className="backdrop-blur-lg bg-white p-4 rounded-2xl border-l-4 border-[#52BC88] shadow-sm hover:shadow-md transition-all duration-300"
+                {[
+                  t("partnershipGoal1"),
+                  t("partnershipGoal2"),
+                  t("partnershipGoal3"),
+                  t("partnershipGoal4"),
+                ].map((goal, index) => (
+                  <div
+                    key={index}
+                    className="backdrop-blur-lg bg-white p-4 rounded-2xl border-l-4 border-[#52BC88] shadow-sm hover:shadow-md transition-all duration-300"
+                  >
+                    <p
+                      className="text-[#035938] text-sm leading-relaxed"
+                      style={{ lineHeight: "1.8" }}
                     >
-                      <p
-                        className="text-[#035938] text-sm leading-relaxed"
-                        style={{ lineHeight: "1.8" }}
-                      >
-                        {goal}
-                      </p>
-                    </div>
-                  ),
-                )}
+                      {goal}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
 
@@ -925,21 +954,24 @@ export const SustainabilityPage: React.FC = () => {
                 {t("partnershipImpactTitle")}
               </h3>
               <div className="space-y-3">
-                {[t("partnershipImpact1"), t("partnershipImpact2")].map(
-                  (impact, index) => (
-                    <div
-                      key={index}
-                      className="backdrop-blur-lg bg-white p-4 rounded-2xl border-l-4 border-[#F1BC28] shadow-sm hover:shadow-md transition-all duration-300"
+                {[
+                  t("partnershipImpact1"),
+                  t("partnershipImpact2"),
+                  t("partnershipImpact3"),
+                  t("partnershipImpact4"),
+                ].map((impact, index) => (
+                  <div
+                    key={index}
+                    className="backdrop-blur-lg bg-white p-4 rounded-2xl border-l-4 border-[#F1BC28] shadow-sm hover:shadow-md transition-all duration-300"
+                  >
+                    <p
+                      className="text-[#035938] text-sm leading-relaxed"
+                      style={{ lineHeight: "1.8" }}
                     >
-                      <p
-                        className="text-[#035938] text-sm leading-relaxed"
-                        style={{ lineHeight: "1.8" }}
-                      >
-                        {impact}
-                      </p>
-                    </div>
-                  ),
-                )}
+                      {impact}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -952,11 +984,20 @@ export const SustainabilityPage: React.FC = () => {
               boxShadow: "0 15px 40px rgba(3, 89, 56, 0.1)",
             }}
           >
-            <h3 className="text-2xl font-bold text-[#035938] mb-6">
-              {t("additionalMeetingsTitle")}
-            </h3>
+            {t("additionalMeetingsTitle").trim() ? (
+              <h3 className="text-2xl font-bold text-[#035938] mb-6">
+                {t("additionalMeetingsTitle")}
+              </h3>
+            ) : null}
 
-            <div className="grid md:grid-cols-2 gap-4 mb-6">
+            <p
+              className="text-lg text-[#052F2A] mb-6 leading-relaxed"
+              style={{ lineHeight: "2" }}
+            >
+              {t("additionalMeetingsIntro")}
+            </p>
+
+            <div className="grid md:grid-cols-2 gap-4 mb-8">
               {[
                 t("meetingPartner1"),
                 t("meetingPartner2"),
@@ -977,23 +1018,71 @@ export const SustainabilityPage: React.FC = () => {
                 </div>
               ))}
             </div>
+
+            <h4 className="text-xl font-bold text-[#035938] mb-4">
+              {t("meetingResultsTitle")}
+            </h4>
+            <div className="grid md:grid-cols-2 gap-3 mb-8">
+              {[
+                t("meetingResult1"),
+                t("meetingResult2"),
+                t("meetingResult3"),
+                t("meetingResult4"),
+                t("meetingResult5"),
+                t("meetingResult6"),
+              ].map((result, index) => (
+                <div
+                  key={index}
+                  className="flex items-start gap-3 bg-white p-4 rounded-2xl border border-[#52BC88]/10"
+                >
+                  <span className="text-[#52BC88] mt-0.5">•</span>
+                  <p className="text-[#035938] text-sm leading-relaxed">
+                    {result}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <h4 className="text-xl font-bold text-[#035938] mb-4">
+              {t("implementationTitle")}
+            </h4>
+            <div className="space-y-3">
+              {[
+                t("implementation1"),
+                t("implementation2"),
+                t("implementation3"),
+                t("implementation4"),
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className="flex items-start gap-3 bg-white p-4 rounded-2xl border border-[#F1BC28]/20"
+                >
+                  <span className="text-[#F1BC28] mt-0.5">•</span>
+                  <p className="text-[#035938] text-sm leading-relaxed">
+                    {item}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-16">
-          <a
-            href="#interactive-map"
-            className="flex items-center gap-2 px-8 py-4 bg-[#035938] !text-white rounded-xl hover:bg-[#52BC88] transition-all duration-300 hover:shadow-lg hover:scale-105"
+          <button
+            type="button"
+            onClick={() => navigateTo("sectors")}
+            className="flex items-center gap-2 px-8 py-4 bg-[#035938] text-white rounded-xl hover:bg-[#52BC88] transition-all duration-300 hover:shadow-lg hover:scale-105"
           >
-            {t("exploreInteractiveMap")}
+            {t("sustPartnersCTA1")}
             <ArrowRight className="w-5 h-5" />
-          </a>
-          <a
-            href="#support-programs"
-            className="flex items-center gap-2 px-8 py-4 bg-yellow-400 text-[#035938] rounded-xl hover:bg-[#035938] hover:!text-white transition-all duration-300 hover:shadow-lg hover:scale-105"
+          </button>
+          <button
+            type="button"
+            onClick={() => navigateTo("sustainability")}
+            className="flex items-center gap-2 px-8 py-4 bg-[#F1BC28] text-[#035938] rounded-xl hover:bg-[#035938] hover:text-white transition-all duration-300 hover:shadow-lg hover:scale-105"
           >
-            {t("exploreSupportPrograms")}
+            {t("sustPartnersCTA2")}
             <ArrowRight className="w-5 h-5" />
-          </a>
+          </button>
         </div>
       </section>
 

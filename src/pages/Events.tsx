@@ -248,14 +248,10 @@ export const EventsPage: React.FC = () => {
               {t("events")}
             </h2>
             <p className="text-lg leading-relaxed text-[#052F2A]/80 mb-6">
-              {language === "ar"
-                ? "تعرف على جميع الأنشطة والمناسبات والفعاليات التي ينظمها برنامج ريف السعودية أو يشارك بها بما في ذلك الملتقيات الريفية والمؤتمرات والندوات وورش العمل واللقاءات الميدانية."
-                : "Learn about all the activities, occasions, and events organized by or participated in by Reef Saudi program, including rural forums, conferences, seminars, workshops, and field meetings."}
+              {t("eventsIntro")}
             </p>
             <p className="text-base text-[#052F2A]/70 mb-8">
-              {language === "ar"
-                ? "هنا تُضاف روابط الفعاليات والمواد المرافقة:"
-                : "Event links and accompanying materials are added here:"}
+              {t("eventsLinksNote")}
             </p>
 
             {/* Back to Media Center Link */}
@@ -266,11 +262,7 @@ export const EventsPage: React.FC = () => {
               className="inline-flex items-center gap-2 text-[#035938] hover:text-[#52BC88] transition-colors font-bold"
             >
               <span className="text-2xl">➜</span>
-              <span>
-                {language === "ar"
-                  ? "الرجوع إلى المركز الإعلامي"
-                  : "Back to Media Center"}
-              </span>
+              <span>{t("backToMediaCenter")}</span>
             </button>
           </div>
 

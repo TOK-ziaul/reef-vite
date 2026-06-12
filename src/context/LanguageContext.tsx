@@ -52,19 +52,19 @@ const translations = {
       "The program focuses on investing in latent rural potential, through supporting small holdings, improving the quality of production chains, and enhancing skills and knowledge, through an integrated system of programs and projects that balance the economic, social and environmental dimensions, and place people and the environment at the heart of the development process.",
 
     // Model Farms Project
-    modelFarmsTitle: "First: Model Farms Project",
+    modelFarmsTitle: "Firstly: Model Farms Project",
     modelFarmsBadge: "Model Farms",
     modelFarmsP1:
       "The project targets the selection of a group of leading farmers and the rehabilitation of the infrastructure of their farms, especially with regard to rationalized irrigation networks, in addition to providing them with the necessary agricultural inputs to become capable of adopting the best modern and sustainable agricultural practices.",
     modelFarmsP2:
       "These model farms are also used as field training centers through holding field workshops to train the rest of the farmers on modern techniques in sustainable agriculture, rationalizing water use, increasing productivity and improving product quality.",
     modelFarmsAchievementTitle: "The project has achieved the following:",
-    modelFarmsRegions: "different regions",
-    modelFarmsCount: "model farms",
-    modelFarmsTrainees: "trainees",
-    modelFarmsWorkshops: "training workshop",
-    modelFarmsDonums: "donums",
-    modelFarmsVisits: "supervision visits",
+    modelFarmsRegions: "Different regions",
+    modelFarmsCount: "Model farms",
+    modelFarmsTrainees: "Trainees",
+    modelFarmsWorkshops: "Field training workshops",
+    modelFarmsDonums: "Donums implemented",
+    modelFarmsVisits: "Support and supervision field visits",
 
     // Agricultural Extension
     agricExtensionTitle: "Second: Agricultural Extension",
@@ -75,30 +75,39 @@ const translations = {
     digitalFieldSchoolsTitle: "1. Digital Field Schools:",
     digitalFieldSchoolsDesc:
       "The areas and activities of digital field schools have been identified, numbering 39 schools distributed across:",
-    digitalFieldSchoolsCrops: "Field crops: Wheat, Corn, Millet",
+    digitalFieldSchoolsCrops: "Field crops: Wheat, sorghum, millet",
     digitalFieldSchoolsFruits: "Fruits: Subtropical fruits",
     digitalFieldSchoolsBeekeeping: "Beekeeping and honey production",
     digitalFieldSchoolsRoses: "Roses",
     digitalFieldSchoolsFish: "Fish",
     digitalFieldSchoolsAromatics: "Aromatic plants",
-    digitalFieldSchoolsFarms: "farms selected as application points",
+    digitalFieldSchoolsFarms:
+      "About 650 farms were selected as application points for digital field schools.",
     digitalFieldSchoolsPlatform:
-      "Electronic platform and website designed for broadcasting workshops",
+      "An electronic platform and website were designed to broadcast workshops, organize training content, and enable later reference.",
     digitalFieldSchoolsTraining:
-      "Farmers trained on workshop implementation and professional photography",
+      "Farmers were trained on workshop implementation, professional photography, and participation through the platform.",
 
     // Extension Messages
     extensionMessagesTitle: "2. Extension Messages:",
     extensionMessagesDesc:
-      "Preparing comprehensive extension messages for various agricultural and livestock activities, in coordination with the General Administration of Agricultural Extension.",
-    extensionMessagesApp: "Development of the Agricultural Guide app",
-    extensionMessagesPublished: "extension messages published",
-    extensionMessagesBeneficiaries: "members benefited",
-    extensionMessagesPrograms: "training programs developed",
-    extensionMessagesLeaders: "association leaders trained",
+      "Comprehensive extension messages were prepared for various agricultural and livestock activities, in coordination with the General Administration of Agricultural Extension.",
+    extensionMessagesApp:
+      "Development of the Murshiduk Agricultural Guide app and publishing messages through it.",
+    extensionMessagesPublished:
+      "Preparation and publication of 74 extension messages on agricultural cooperatives.",
+    extensionMessagesBeneficiaries:
+      "More than 500 cooperative members benefited.",
+    extensionMessagesPrograms:
+      "Development of 7 training programs for cooperatives.",
+    extensionMessagesLeaders:
+      "Training of 9 association leaders in Makkah, Jazan, and Northern Borders regions.",
 
     // Extension Meetings
     extensionMeetingsTitle: "3. Extension Meetings and Visits:",
+    extensionMeetingsIntro:
+      "Implementation of 22 field sessions for approximately 602 farmers.",
+    extensionMeetingsTopicsTitle: "Sessions covered:",
     extensionMeetingsSessions: "field sessions implemented",
     extensionMeetingsFarmers: "farmers",
     extensionMeetingsTopic1: "Modern irrigation techniques",
@@ -113,13 +122,16 @@ const translations = {
       "Creation of 4 digital groups for knowledge exchange between farmers via social media.",
     knowledgeNetworksBeekeeping: "Beekeeping",
     knowledgeNetworksBeekeepingParticipants:
-      "participants (Al-Baha, Asir, Jazan)",
-    knowledgeNetworksOrganic: "Organic Beekeeping",
-    knowledgeNetworksOrganicParticipants: "participants (Medina, Mecca)",
-    knowledgeNetworksRoses: "Rose Cultivation",
-    knowledgeNetworksRosesParticipants: "participants (Taif)",
+      "Beekeeping (17 participants – Al-Baha, Asir, Jazan)",
+    knowledgeNetworksOrganic: "Organic beekeeping",
+    knowledgeNetworksOrganicParticipants:
+      "Organic beekeeping (13 participants – Medina and Makkah)",
+    knowledgeNetworksRoses: "Rose cultivation",
+    knowledgeNetworksRosesParticipants:
+      "Rose cultivation (18 participants – Taif)",
     knowledgeNetworksFruits: "Fruits",
-    knowledgeNetworksFruitsParticipants: "participants (Al-Baha)",
+    knowledgeNetworksFruitsParticipants:
+      "Fruits (8 participants – Al-Baha)",
 
     // Agricultural Marketing
     agricMarketingTitle: "Third: Agricultural Marketing",
@@ -156,7 +168,7 @@ const translations = {
     salesPoint2: "Rural café at Al-Afia Farm - Taif Governorate",
     salesPoint3: "Coffee roastery in Al-Dayer Bani Malik Governorate",
     salesPoint4: "Honey exhibition in Dumat Al-Jandal Governorate",
-    salesPoint5: "Jasmine exhibition in Abu Arish Governorate",
+    salesPoint5: "Jasmine (fila) exhibition in Abu Arish Governorate",
     salesPoint6: "Rainfed crops exhibition in Al-Lith Governorate",
     salesPointsImpact:
       "These points have contributed to enhancing income, diversifying its sources, and connecting producers directly with consumers.",
@@ -194,15 +206,21 @@ const translations = {
     studyToursInternal: "Internal",
     studyToursExternal: "External",
 
+    sustImpactCTA: "Explore supported agricultural sectors",
+    sustMarketingCTA1: "Review program objectives",
+    sustMarketingCTA2: "Explore supported sectors",
+    sustPartnersCTA1: "Explore agricultural sectors",
+    sustPartnersCTA2: "Learn about Reef sustainable initiatives",
+
     // Strategic Partnerships
-    partnershipsTitle: "Strategic Partnerships",
+    partnershipsTitle: "Sustainability Partners",
     partnershipsIntro:
       "In the context of enhancing integrated work between government entities, the private sector, academic, sports and community institutions, Reef Saudi Arabia program signed 12 strategic cooperation memoranda aimed at expanding sustainable development impact in rural areas, and raising efficiency of productive, financial and marketing projects for families, farmers and entrepreneurs.",
     partnershipsSubtitle:
       "Cooperation memoranda included the following entities:",
 
     // Partners
-    partnerNadec: "NADEC Company",
+    partnerNadec: "Nadec Company",
     partnerNadecDesc:
       "Supporting agricultural activities and developing sustainable supply chains.",
     partnerDan: "DAN Company",
@@ -261,9 +279,9 @@ const translations = {
     partnershipImpact4: "Expanding the scope of benefiting from Reef programs.",
 
     // Additional Meetings
-    additionalMeetingsTitle: "Additional Strategic Collaborations",
+    additionalMeetingsTitle: "",
     additionalMeetingsIntro:
-      "Within the framework of enhancing integration between relevant entities, Reef Saudi Arabia program held a number of meetings with local partners, government agencies and relevant institutions, including:",
+      "Also, within the framework of enhancing integration between relevant entities, the Reef Saudi Arabia Program held a number of meetings and sessions with local partners, government agencies and concerned institutions, including:",
     meetingPartner1: "Agricultural Development Fund",
     meetingPartner2: "Saudi Food and Drug Authority",
     meetingPartner3: "Saudi Coffee Company",
@@ -2197,7 +2215,7 @@ const translations = {
     reefAcademy: "Reef Academy",
 
     supportResources: "Support & Resources",
-    howToApply: "How to Apply",
+    howToApply: "Support Application Mechanism",
     termsConditions: "Terms & Conditions",
     faqs: "Frequently Asked Questions",
     submitComplaint: "Submit a Complaint",
@@ -2211,7 +2229,228 @@ const translations = {
     eParticipation: "E-Participation",
     mewa: "Ministry of Environment, Water & Agriculture",
     interactiveMap: "Interactive Map",
-    galleryBook: "Gallery & Visual Book",
+    galleryBook: "Photos from Reef",
+    newsPressHeroSubtitle: "",
+    newsPressIntro:
+      'A dedicated page to display the latest news from the "Reef Saudi Arabia" Program, including official statements, latest updates, success stories, and initiative coverage, to learn about the program\'s efforts in supporting rural communities and achieving sustainable development targets and Saudi Vision 2030.',
+    newsPressLinksNote:
+      "Full news links and media coverage are added here:",
+    photoVideoIntro:
+      "A comprehensive library containing all press materials and ready-made elements for media professionals and researchers. Includes videos, infographics, and approved introductory texts, with direct download capability for media use.",
+    photoVideoLinksNote:
+      "Download links for files and videos are added here:",
+    eventsIntro:
+      "Learn about all activities, occasions, and events organized by or participated in by the Reef Saudi Arabia Program, including rural forums, conferences, seminars, workshops, and field meetings.",
+    eventsLinksNote:
+      "Event links and accompanying materials are added here:",
+    galleryBookIntro:
+      'A journey of sustainable development through the camera lens, through a gallery showcasing the beauty of rural areas in the Kingdom of Saudi Arabia, and the efforts of the "Reef Saudi Arabia" Program in supporting farmers and rural projects.',
+    galleryBookWatchStories: "Watch Photo Stories",
+    galleryBookExploreGallery: "Explore Full Gallery",
+    backToMediaCenter: "Back to Media Center",
+
+    // Support pages
+    supportApplyHeroTitle: "Support Application Mechanism",
+    supportApplyIntroBadge: "Overview",
+    supportApplyIntroHeading: "A Carefully Designed Mechanism to Serve You",
+    supportApplyIntro1:
+      'The Reef Saudi program support application mechanism has been designed to be easy, clear, and fair, ensuring support reaches deserving productive families, small farmers, and those working in sustainable rural activities.',
+    supportApplyIntro2:
+      "The application process goes through organized stages aimed at verifying applicant eligibility, studying the project, then connecting it with appropriate support services to achieve the highest developmental impact.",
+    supportApplyIntroEasy: "Easy & Clear",
+    supportApplyIntroEasyDesc: "Simple procedures",
+    supportApplyIntroFair: "Fair & Transparent",
+    supportApplyIntroFairDesc: "Clear criteria",
+    supportApplyIntroComprehensive: "Comprehensive Support",
+    supportApplyIntroComprehensiveDesc: "Financial & Technical",
+    supportApplyStagesBadge: "Application Stages",
+    supportApplyStagesHeading: "Your Journey to Support",
+    supportApplyStagesSub:
+      "Five consecutive stages ensuring you a smooth experience from registration to receiving support",
+    supportApplyStep1Label: "Stage 01",
+    supportApplyStep1Title: "Platform Registration",
+    supportApplyStep1Desc:
+      "The beneficiary begins their journey by registering through the Reef Saudi electronic platform, creating an account using their basic information such as:",
+    supportApplyStep1FieldsHeading: "Required Information:",
+    supportApplyStep1Field1: "National ID number",
+    supportApplyStep1Field2: "Date of birth",
+    supportApplyStep1Field3: "Mobile number registered in their name",
+    supportApplyStep1Field4: "Address and administrative region",
+    supportApplyStep1Note:
+      "The account is then activated via a text message sent to the mobile number, to ensure data accuracy.",
+    supportApplyStep2Label: "Stage 02",
+    supportApplyStep2Title: "Project Data Entry",
+    supportApplyStep2Desc:
+      "After logging into the platform, the beneficiary proceeds to enter their project details, including:",
+    supportApplyStep2FieldsHeading: "Project Information:",
+    supportApplyStep2Field1: "Type of agricultural or rural activity",
+    supportApplyStep2Field2: "Project location",
+    supportApplyStep2Field3: "Approximate area",
+    supportApplyStep2Field4: "Production stages",
+    supportApplyStep2Field5: "Current and expected production volume",
+    supportApplyStep2Field6: "Tools and equipment used",
+    supportApplyStep2Field7: "Current challenges",
+    supportApplyStep2Field8: "Future project objectives",
+    supportApplyStep2Goal:
+      "This data helps the relevant authorities to accurately assess the project and connect it with the appropriate type of support.",
+    supportApplyStep3Label: "Stage 03",
+    supportApplyStep3Title: "Upload Required Documents",
+    supportApplyStep3Desc:
+      "The application requires attaching a number of documents, which vary depending on the type of activity, including:",
+    supportApplyStep3FieldsHeading: "Required Documents:",
+    supportApplyStep3Field1: "Copy of national ID",
+    supportApplyStep3Field2: "Proof of residence or project location",
+    supportApplyStep3Field3: "Photo of the farm or production site",
+    supportApplyStep3Field4:
+      "Beekeeping license if the activity is related to honey",
+    supportApplyStep3Field5: "Freelance certificate (if available)",
+    supportApplyStep3Field6: "Bank account in the applicant's name",
+    supportApplyStep3Note:
+      "These documents are subject to review by the program's specialized teams.",
+    supportApplyStep4Label: "Stage 04",
+    supportApplyStep4Title: "Evaluation and Inspection",
+    supportApplyStep4Desc:
+      "After the application is completed, it is transferred to the relevant authorities to conduct:",
+    supportApplyStep4FieldsHeading: "Evaluation Procedures:",
+    supportApplyStep4Field1: "Technical review of data",
+    supportApplyStep4Field2: "Economic evaluation of the project",
+    supportApplyStep4Field3:
+      "In some cases: field visit to verify information accuracy",
+    supportApplyStep4Goal:
+      "Ensure the project's readiness to benefit from support and develop it sustainably.",
+    supportApplyStep5Label: "Stage 05 - Final Stage",
+    supportApplyStep5Title: "Application Approval and Support Disbursement",
+    supportApplyStep5Desc:
+      "If all conditions are met, the application is approved and the beneficiary is notified of acceptance, then financial support disbursement begins according to a specific timeline, often linked to implementation stages and project progress.",
+    supportApplyStep5NonFinancial:
+      "Support is not limited to financial assistance only, but also includes:",
+    supportApplyStep5Support1: "Agricultural guidance",
+    supportApplyStep5Support2: "Training and qualification",
+    supportApplyStep5Support3: "Marketing support",
+    supportApplyStep5Support4: "Connection with markets and platforms",
+    supportApplyStep5Commitment: "Our Commitment",
+    supportApplyStep5Closing:
+      'Through this mechanism, the "Reef Saudi" program ensures that support reaches projects most capable of sustainability and achieving economic and social impact.',
+    supportApplyNoteLabel: "Note:",
+    supportApplyGoalLabel: "Goal:",
+    faqsHeroTitle: "Frequently Asked Questions",
+    faqsIntroBadge: "Overview",
+    faqsIntroHeading: "We Answer All Your Questions",
+    faqsIntro:
+      "On this page, we compile the most frequently asked questions by beneficiaries and answer them in detail to clarify all aspects related to the Reef Saudi program services.",
+    faqsSectionBadge: "FAQs",
+    faqsSectionTitle: "Frequently Asked Questions",
+    faq1Q: "Who can apply for Reef Saudi program support?",
+    faq1A:
+      "Farmers, small producers, rural families, and entrepreneurs in agricultural, food, and rural activities can apply, provided they are Saudi nationals residing in areas covered by program support.",
+    faq2Q: "Can I apply if I have another job?",
+    faq2A:
+      "Yes, you can apply provided that your monthly income does not exceed the maximum allowed limit, and that the rural activity is actual and established on the ground.",
+    faq3Q: "What types of activities does the support cover?",
+    faq3A:
+      "The support includes 8 sectors:\n\n• Beekeeping development and honey production\n• Saudi coffee development, production and marketing\n• Rose cultivation and aromatic plants production\n• Fruit development, production and marketing\n• Rain-fed crops cultivation\n• Fishing and aquaculture\n• Added value\n• Enhancing the capabilities of small livestock breeders",
+    faq4Q: "How long does it take to respond to the application?",
+    faq4A:
+      "Applications go through multiple review and evaluation stages, and the response may take from several weeks to two months depending on the project type and volume of applications.",
+    faq5Q: "Can I modify the application data after submitting it?",
+    faq5A:
+      "Yes, at some stages you can modify the data through your personal account before the application is finally approved.",
+    faq6Q: "Is the support continuous or one-time?",
+    faq6A:
+      "It depends on the type of activity; some projects receive periodic support, while others receive one-time foundational support.",
+    faq7Q: "How do I know my application status?",
+    faq7A:
+      "You can track your application through the platform dashboard using your ID number and password.",
+    beneficiariesGuideHeroTitle: "Beneficiaries Guide",
+    beneficiariesGuideIntro1:
+      'The Beneficiaries Guide has been prepared as a practical reference to help beneficiaries maximize their benefit from "Reef Saudi" program services and achieve sustainability for their projects.',
+    beneficiariesGuideIntro2:
+      "The guide provides a set of practical guidelines and steps, including:",
+    beneficiariesGuide1Title: "Understanding Project Nature",
+    beneficiariesGuide1Intro:
+      "The beneficiary must accurately define their project nature, whether it is:",
+    beneficiariesGuide1Item1: "Productive",
+    beneficiariesGuide1Item2: "Marketing",
+    beneficiariesGuide1Item3: "Service-based",
+    beneficiariesGuide1Item4: "Artisanal",
+    beneficiariesGuide1Item5: "Natural resource-based",
+    beneficiariesGuide1Conclusion:
+      "This classification helps in selecting the appropriate type of support.",
+    beneficiariesGuide2Title: "Commitment to Technical Standards",
+    beneficiariesGuide2Intro:
+      "The beneficiary must adhere to good practices in:",
+    beneficiariesGuide2Item1: "Irrigation",
+    beneficiariesGuide2Item2: "Fertilization",
+    beneficiariesGuide2Item3: "Pest control",
+    beneficiariesGuide2Item4: "Waste management",
+    beneficiariesGuide2Item5: "Product preservation",
+    beneficiariesGuide2Conclusion:
+      "This is supported through training courses and guidance visits.",
+    beneficiariesGuide3Title: "Financial Resource Management",
+    beneficiariesGuide3Intro: "The beneficiary learns how to:",
+    beneficiariesGuide3Item1: "Distribute project budget",
+    beneficiariesGuide3Item2: "Reduce waste",
+    beneficiariesGuide3Item3: "Increase efficiency",
+    beneficiariesGuide3Item4: "Reinvest profits",
+    beneficiariesGuide3Item5: "Prepare simplified financial reports",
+    beneficiariesGuide3Conclusion:
+      'Reef Saudi program emphasizes that good resource management increases sustainability opportunities.',
+    beneficiariesGuide4Title: "Marketing and Promotion",
+    beneficiariesGuide4Intro: "The beneficiary is guided to:",
+    beneficiariesGuide4Item1: "Product packaging methods",
+    beneficiariesGuide4Item2: "Appropriate pricing",
+    beneficiariesGuide4Item3: "Using digital platforms",
+    beneficiariesGuide4Item4: "Accessing retail points and exhibitions",
+    beneficiariesGuide4Item5: "Leveraging partnerships",
+    beneficiariesGuide5Title: "Continuous Evaluation",
+    beneficiariesGuide5Intro:
+      'Reef Saudi program encourages beneficiaries through support, guides and advisory seminars to:',
+    beneficiariesGuide5Item1: "Measure production development",
+    beneficiariesGuide5Item2: "Develop methods",
+    beneficiariesGuide5Item3: "Improve quality",
+    beneficiariesGuide5Item4: "Prepare for future expansion",
+    beneficiariesGuide5Conclusion:
+      "Thus, the beneficiary becomes a partner in development, not just a support recipient.",
+
+    // Inquiries & Communication Service
+    contactServiceHeroTitle: "Inquiries & Communication Service",
+    contactServiceHeroSubtitle:
+      "Your direct window to connect with the Reef Saudi Arabia program",
+    contactServiceIntroTitle: "Inquiries & Communication Service",
+    contactServiceIntro1:
+      'This page has been dedicated as a direct window between the "Reef Saudi Arabia" program and beneficiaries, with the aim of providing support, advice, and responding to all inquiries professionally and quickly.',
+    contactServiceIntro2:
+      "The inquiries service provides several communication channels, including:",
+    contactMethod1Title: "Electronic Contact Form:",
+    contactMethod1Desc:
+      "Beneficiaries can send their inquiry through a form containing:",
+    contactMethod1Field1: "Full name",
+    contactMethod1Field2: "ID number",
+    contactMethod1Field3: "Mobile number",
+    contactMethod1Field4: "Region",
+    contactMethod1Field5: "Inquiry subject",
+    contactMethod1Field6: "Message details",
+    contactMethod1Footer:
+      "A response is provided within a short period by a specialized team.",
+    contactMethod2Title: "Beneficiaries Service Center:",
+    contactMethod2Desc:
+      'The "Reef Saudi Arabia" program provides a support center that handles:',
+    contactMethod2Field1: "Responding to general inquiries",
+    contactMethod2Field2: "Following up on delayed applications",
+    contactMethod2Field3: "Guiding beneficiaries through necessary steps",
+    contactMethod2Field4: "Assisting with technical issues",
+    contactMethod3Title: "Digital Communication Channels:",
+    contactMethod3Desc: "The program also enables communication through:",
+    contactMethod3Field1: "Official email",
+    contactMethod3Field2: "Social media platforms",
+    contactMethod3Field3: "(LinkedIn / Instagram / X / Facebook)",
+    contactMethod3Footer:
+      "The program is committed to publishing updates, alerts, opportunities, initiatives, and new programs through its official website and all its social media platforms and accounts.",
+    contactMethod4Title: "Field Support:",
+    contactMethod4Desc:
+      "The program provides field visits conducted by specialized teams to support beneficiaries on the ground, especially in remote rural areas.",
+    contactMethod4Footer:
+      "This integrated system aims to ensure an open, permanent, and effective channel between the program and beneficiaries, enhancing transparency and trust while serving the path of sustainable development.",
 
     accessibilityTools: "Accessibility Tools",
     copyrightFull:
@@ -2503,9 +2742,455 @@ const translations = {
     // Header dropdowns (additional)
     initiatives: "المبادرات",
     impactStats: "الأثر والإحصائيات",
-    newsPress: "الأخبار والصحافة",
+
+    sustainabilityHeroTitle: "المبادرات المستدامة",
+    sustainabilityHeroSubtitle:
+      "التزامنا بالحفاظ على البيئة وترشيد الموارد وتحقيق الاستدامة الزراعية طويلة الأمد في المجتمعات الريفية بالمملكة",
+    sustIntroP1:
+      'تُجسّد المبادرات المستدامة أحد الأعمدة الرئيسية في توجهات برنامج "ريف السعودية" نحو تحقيق تنمية ريفية طويلة الأمد، تقوم على تمكين المجتمعات المحلية، وتعزيز كفاءة الإنتاج الزراعي، وربط الموارد الطبيعية بقيم اقتصادية واجتماعية مستدامة. وتنطلق هذه المبادرات من رؤية شاملة تهدف إلى تحويل النشاط الزراعي من ممارسة تقليدية إلى منظومة إنتاجية متكاملة تواكب متطلبات الأمن الغذائي والاستدامة البيئية والتمكين الاقتصادي.',
+    sustIntroP2:
+      "يركّز البرنامج على استثمار الإمكانات الريفية الكامنة، عبر دعم الحيازات الصغيرة، وتحسين جودة سلاسل الإنتاج، وتعزيز المهارات والمعرفة، وذلك من خلال منظومة متكاملة من البرامج والمشاريع التي توازن بين البعد الاقتصادي والاجتماعي والبيئي، وتضع الإنسان والبيئة في قلب عملية التنمية.",
+
+    modelFarmsTitle: "أولاً: مشروع المزارع النموذجية",
+    modelFarmsBadge: "المزارع النموذجية",
+    modelFarmsP1:
+      "يستهدف المشروع اختيار مجموعة من المزارعين القياديين وتأهيل البنية التحتية لمزارعهم، وبالذات فيما يتعلق بشبكات الري المرشدة، إلى جانب تزويدهم بالمدخلات الزراعية اللازمة ليصبحوا قادرين على تبني أفضل الممارسات الزراعية الحديثة والمستدامة.",
+    modelFarmsP2:
+      "كما تُستخدم هذه المزارع النموذجية كمراكز تدريب ميداني من خلال إقامة ورش عمل حقلية لتدريب بقية المزارعين على التقنيات الحديثة في الزراعة المستدامة وترشيد استخدام المياه وزيادة الإنتاجية وتحسين جودة المنتجات.",
+    modelFarmsAchievementTitle: "وقد حقق المشروع ما يلي:",
+    modelFarmsRegions: "مناطق مختلفة",
+    modelFarmsCount: "مزرعة نموذجية",
+    modelFarmsTrainees: "متدرباً",
+    modelFarmsWorkshops: "ورشة تدريبية ميدانية",
+    modelFarmsDonums: "دونم",
+    modelFarmsVisits: "زيارة دعم وإشراف ميداني",
+
+    agricExtensionTitle: "ثانياً: الإرشاد الزراعي",
+    agricExtensionIntro:
+      "جرى العمل على تطوير منظومة متكاملة للإرشاد الزراعي تشمل الرقمنة، التوعية، التدريب المباشر، والمنتجات المعرفية المخصصة لصغار المزارعين، وذلك من خلال عدة مسارات مترابطة:",
+
+    digitalFieldSchoolsTitle: "1- المدارس الحقلية الرقمية:",
+    digitalFieldSchoolsDesc:
+      "تم تحديد مجالات وأنشطة المدارس الحقلية الرقمية، وعددها 39 مدرسة موزعة على:",
+    digitalFieldSchoolsCrops: "محاصيل حقلية: القمح، الذرة، الدخن",
+    digitalFieldSchoolsFruits: "الفاكهة: الفواكه شبه الاستوائية",
+    digitalFieldSchoolsBeekeeping: "تربية النحل وإنتاج العسل",
+    digitalFieldSchoolsRoses: "الورد",
+    digitalFieldSchoolsFish: "الأسماك",
+    digitalFieldSchoolsAromatics: "النباتات العطرية",
+    digitalFieldSchoolsFarms:
+      "تم اختيار نحو 650 مزرعة كنقاط تطبيق للمدارس الحقلية الرقمية.",
+    digitalFieldSchoolsPlatform:
+      "تم تصميم منصة إلكترونية وموقع إلكتروني لبث الورش وتنظيم المحتوى التدريبي والرجوع إليه لاحقاً.",
+    digitalFieldSchoolsTraining:
+      "جرى تدريب المزارعين على كيفية تنفيذ الورش والتصوير الاحترافي والمشاركة عبر المنصة.",
+
+    extensionMessagesTitle: "2- الرسائل الإرشادية:",
+    extensionMessagesDesc:
+      "إعداد رسائل إرشادية شاملة لمختلف الأنشطة الزراعية والحيوانية، بالتنسيق مع الإدارة العامة للإرشاد الزراعي.",
+    extensionMessagesApp: "تطوير تطبيق مرشدك الزراعي ونشر الرسائل من خلاله.",
+    extensionMessagesPublished:
+      "إعداد ونشر 74 رسالة إرشادية حول التعاونيات الزراعية.",
+    extensionMessagesBeneficiaries:
+      "استفاد منها أكثر من 500 عضو في الجمعيات التعاونية.",
+    extensionMessagesPrograms:
+      "تطوير 7 برامج تدريبية للتعاونيات.",
+    extensionMessagesLeaders:
+      "تدريب 9 قادة جمعيات في مناطق مكة، جازان، والحدود الشمالية.",
+
+    extensionMeetingsTitle: "3- اللقاءات والزيارات الإرشادية:",
+    extensionMeetingsIntro:
+      "تنفيذ 22 جلسة ميدانية لحوالي 602 مزارع.",
+    extensionMeetingsTopicsTitle: "شملت الجلسات:",
+    extensionMeetingsSessions: "جلسة ميدانية",
+    extensionMeetingsFarmers: "مزارع",
+    extensionMeetingsTopic1: "تقنيات الري الحديثة",
+    extensionMeetingsTopic2: "الممارسات الزراعية الجيدة",
+    extensionMeetingsTopic3: "التقليم والتسميد",
+    extensionMeetingsTopic4: "تحسين إنتاجية النحل والعسل",
+    extensionMeetingsTopic5:
+      "التقنيات الحديثة في الإنتاج النباتي والحيواني",
+
+    knowledgeNetworksTitle: "4- شبكات تبادل الخبرات:",
+    knowledgeNetworksDesc:
+      "إنشاء 4 مجموعات رقمية لتبادل الخبرات بين المزارعين عبر وسائل التواصل الاجتماعي.",
+    knowledgeNetworksBeekeeping: "تربية النحل",
+    knowledgeNetworksBeekeepingParticipants:
+      "تربية النحل (17 مشاركاً – الباحة، عسير، جازان)",
+    knowledgeNetworksOrganic: "النحل العضوي",
+    knowledgeNetworksOrganicParticipants:
+      "النحل العضوي (13 مشاركاً – المدينة المنورة ومكة المكرمة)",
+    knowledgeNetworksRoses: "زراعة الورد",
+    knowledgeNetworksRosesParticipants:
+      "زراعة الورد (18 مشاركاً – الطائف)",
+    knowledgeNetworksFruits: "الفاكهة",
+    knowledgeNetworksFruitsParticipants:
+      "الفاكهة (8 مشاركين – الباحة)",
+
+    agricMarketingTitle: "ثالثاً: التسويق الزراعي",
+    digitalMarketSystemTitle:
+      "1- النظام والتطبيق الرقمي لمعلومات الأسواق الزراعية:",
+    digitalMarketSystemItem1:
+      "تجهيز وثائق طرح المشروع وربطه بمنصة الوزارة.",
+    digitalMarketSystemItem2: "الإعلان عن المنافسة للشركات المؤهلة.",
+    digitalMarketSystemItem3: "فرز العروض واختيار الجهة المنفذة للنظام.",
+    digitalMarketSystemItem4: "استقطاب خبير متخصص في التسويق الزراعي.",
+    digitalMarketSystemGoalsTitle: "يهدف النظام إلى:",
+    digitalMarketSystemGoal1: "دعم قرارات البيع",
+    digitalMarketSystemGoal2: "تحسين وصول المنتجين إلى الأسواق",
+    digitalMarketSystemGoal3: "توفير معلومات أسعار ومواقع ونقاط بيع",
+
+    postHarvestTitle: "2- عمليات ما بعد الحصاد:",
+    postHarvestItem1: "دراسة واقع عمليات ما بعد الحصاد لدى صغار المنتجين",
+    postHarvestItem2: "إعداد خطة تطوير خدمات التسويق الزراعي",
+    postHarvestItem3: "حصر المعدات المطلوبة",
+    postHarvestItem4: "إعداد الأدلة الفنية الخاصة بعمليات ما بعد الحصاد",
+
+    salesPointsTitle: "3- نقاط البيع:",
+    salesPointsIntro:
+      "تم إنشاء نقاط بيع مخصصة لدعم وتسويق منتجات الأسر الريفية في عدة مناطق، منها:",
+    salesPoint1: "مقهى ريفي في مزرعة قلف – الدائر بني مالك",
+    salesPoint2: "مقهى ريفي في مزرعة العافية – محافظة الطائف",
+    salesPoint3: "محمصة بن في محافظة الدائر بني مالك",
+    salesPoint4: "معرض لبيع العسل في محافظة دومة الجندل",
+    salesPoint5: "معرض لبيع الفل في محافظة أبو عريش",
+    salesPoint6: "معرض لبيع المحاصيل البعلية في محافظة الليث",
+    salesPointsImpact:
+      "وقد ساهمت هذه النقاط في تعزيز الدخل وتنويع مصادره وربط المنتج مباشرة بالمستهلكين.",
+
+    impactStatsTitle: "الأثر والإحصاءات",
+    impactStatsSubtitle: "أثر اقتصادي مباشر ومتنام",
+    impactStatsIntro:
+      'تم قياس الأثر الاجتماعي والاقتصادي والبيئي لمبادرات برنامج "ريف السعودية" من خلال نتائج كمية ومؤشرات دقيقة، من أبرزها:',
+
+    trainingCapacityTitle: "1- التدريب وبناء القدرات:",
+    trainingCourses: "دورة تدريبية في عام 2024",
+    trainingParticipants: "مشاركاً في مختلف مجالات القطاع الريفي",
+    trainingMen: "رجال",
+    trainingWomen: "نساء",
+    trainingFieldsTitle: "شملت المجالات:",
+    trainingBeekeeping: "تربية النحل وإنتاج العسل",
+    trainingRainfed: "الحبوب البعلية",
+    trainingLivestock: "الثروة الحيوانية",
+    trainingFisheries: "الأسماك",
+    trainingValueAdded: "القيمة المضافة",
+    trainingCooperatives: "التعاونيات الزراعية",
+    trainingExtension: "الإرشاد الزراعي",
+    trainingCapacityBuilding: "التدريب وبناء القدرة",
+    trainingCategoriesTitle: "كما تم تصنيف المتدربين إلى:",
+    trainingEmployees: "موظفون",
+    trainingFarmers: "مزارعون وأعضاء تعاونيات",
+
+    studyToursTitle: "2- الجولات الدراسية:",
+    studyToursDesc: "عدد الجولات الدراسية خلال 2024:",
+    studyToursTotal: "جولة",
+    studyToursInternal: "داخلية",
+    studyToursExternal: "خارجية",
+
+    sustImpactCTA: "استكشف القطاعات الزراعية المدعومة",
+    sustMarketingCTA1: "اطّلع على أهداف البرنامج",
+    sustMarketingCTA2: "استكشف القطاعات المدعومة",
+    sustPartnersCTA1: "استكشف القطاعات الزراعية",
+    sustPartnersCTA2: "تعرّف على مبادرات ريف مستدام",
+
+    partnershipsTitle: "شركاء الاستدامة",
+    partnershipsIntro:
+      "في إطار تعزيز العمل التكاملي بين الجهات الحكومية والقطاع الخاص والمؤسسات الأكاديمية والرياضية والمجتمعية، وقّع برنامج ريف السعودية 12 مذكرة تعاون استراتيجية تهدف إلى توسيع الأثر التنموي المستدام في المناطق الريفية، ورفع كفاءة المشاريع الإنتاجية والتمويلية والتسويقية للأسر والمزارعين ورواد الأعمال.",
+    partnershipsSubtitle: "شملت مذكرات التعاون الجهات التالية:",
+
+    partnerNadec: "شركة نادك",
+    partnerNadecDesc:
+      "دعم الأنشطة الزراعية وتطوير سلاسل الإمداد المستدامة.",
+    partnerDan: "شركة دان (DAN)",
+    partnerDanDesc: "تعزيز الابتكار الغذائي والتنمية الريفية.",
+    partnerRivana: "الجمعية التعاونية للسياحة الريفية والبيئية (ريفنا)",
+    partnerRivanaDesc: "دعم السياحة الريفية المسؤولة بيئياً.",
+    partnerJahez: "شركة جاهز الدولية (Jahez Group)",
+    partnerJahezDesc:
+      "تمكين وصول المنتجات الريفية للأسواق الرقمية الحديثة.",
+    partnerKFU: "جامعة الملك فيصل",
+    partnerKFUDesc: "التعاون في البحث والتطوير الزراعي المستدام.",
+    partnerAlhasa: "هيئة تطوير الأحساء",
+    partnerAlhasaDesc:
+      "دعم المشاريع الريفية المرتبطة بالتنمية المناطقية.",
+    partnerFateh: "نادي الفتح الرياضي",
+    partnerFatehDesc:
+      "تمكين المبادرات المجتمعية والتنموية في المناطق المستهدفة.",
+    partnerShabab: "نادي الشباب",
+    partnerShababDesc:
+      "دعم أنشطة التوعية والتنمية بين فئة الشباب.",
+    partnerCateron: "شركة كاتريون",
+    partnerCateronDesc:
+      "دعم سلاسل الإمداد والخدمات اللوجستية للقطاعات الريفية.",
+    partnerIrrigation: "المؤسسة العامة للري",
+    partnerIrrigationDesc:
+      "تعزيز استدامة الموارد المائية في الزراعة الريفية.",
+    partnerCoopCouncil: "مجلس الجمعيات التعاونية",
+    partnerCoopCouncilDesc:
+      "تطوير قدرات الجمعيات التعاونية وتمكينها إدارياً وإنتاجياً.",
+    partnerTVTC: "المؤسسة العامة للتدريب التقني والمهني",
+    partnerTVTCDesc: "بناء القدرات وتأهيل الكفاءات المحلية.",
+
+    partnershipGoalsTitle: "أهداف شراكات الاستدامة:",
+    partnershipGoalsIntro: "تركز هذه الشراكات على تحقيق أربعة مسارات رئيسية:",
+    partnershipGoal1: "رفع كفاءة الإنتاج في المزارع والأسر الريفية.",
+    partnershipGoal2: "تحسين فرص الوصول إلى الأسواق المحلية والدولية.",
+    partnershipGoal3: "توطين المعرفة والخبرة الزراعية المستدامة.",
+    partnershipGoal4:
+      "خلق فرص عمل جديدة تعزز الاستقرار الاقتصادي في المناطق الريفية.",
+
+    partnershipImpactTitle: "أثر الشراكات على ريف مستدام:",
+    partnershipImpactIntro: "أسهمت هذه الاتفاقيات في:",
+    partnershipImpact1: "تعزيز التكامل بين الجهات الحكومية والخاصة.",
+    partnershipImpact2: "تسريع تنفيذ المبادرات والمشاريع.",
+    partnershipImpact3: "دعم الابتكار في الزراعة والممارسات المستدامة.",
+    partnershipImpact4: "توسيع نطاق الاستفادة من برامج ريف.",
+
+    additionalMeetingsTitle: "",
+    additionalMeetingsIntro:
+      "كذلك وضمن إطار تعزيز التكامل بين الجهات ذات العلاقة، عقد برنامج ريف السعودية عدداً من اللقاءات والاجتماعات مع شركاء محليين وجهات حكومية ومؤسسات معنية، من بينها:",
+    meetingPartner1: "صندوق التنمية الزراعية",
+    meetingPartner2: "الهيئة العامة للغذاء والدواء",
+    meetingPartner3: "شركة القهوة السعودية",
+    meetingPartner4: "مركز الاستدامة",
+    meetingPartner5: "هيئة المنشآت الصغيرة والمتوسطة",
+
+    meetingResultsTitle: "وقد نتج عن هذه الشراكات:",
+    meetingResult1: "دعم تنفيذ الخطط التشغيلية",
+    meetingResult2: "مواءمة المشاريع مع رؤية المملكة 2030",
+    meetingResult3: "تطوير فرص استثمارية جديدة",
+    meetingResult4: "تعزيز تمكين الأسر الريفية",
+    meetingResult5: "نقل المعرفة والخبرات",
+    meetingResult6: "توسيع نطاق التأثير التنموي",
+
+    implementationTitle: "كما تم:",
+    implementation1: "إعداد خطط تنفيذية للفترة (2025 – 2030)",
+    implementation2: "متابعة استقطاب خبرات وطنية ودولية",
+    implementation3: "تشكيل لجنة تنفيذية برئاسة وكيل الوزارة",
+    implementation4:
+      "عقد اجتماعات دورية لتقييم الأداء وتحسين مستوى الإنجاز",
+
+    newsPress: "الأخبار والبيانات الصحفية",
     photoVideo: "مكتبة الصور والفيديو",
     events: "الفعاليات",
+    galleryBook: "صور من الريف",
+    newsPressHeroSubtitle: "",
+    newsPressIntro:
+      'صفحة مخصّصة لعرض أحدث أخبار برنامج "ريف السعودية"، تشمل البيانات الرسمية، وآخر المستجدات، وقصص النجاح، وتغطيات المبادرات، لمعرفة جهود البرنامج في دعم المجتمعات الريفية وتحقيق مستهدفات التنمية المستدامة ورؤية المملكة 2030.',
+    newsPressLinksNote: "هنا تُضاف روابط الأخبار الكاملة والتغطيات الإعلامية:",
+    photoVideoIntro:
+      "مكتبة شاملة تضم كل المواد الصحفية والعناصر الجاهزة للإعلاميين والباحثين. تشمل الفيديوهات، والإنفوجرافيك، والنصوص التعريفية المعتمدة، مع إمكانية التحميل المباشر للاستخدام الإعلامي.",
+    photoVideoLinksNote: "هنا تُضاف روابط تحميل الملفات، والفيديوهات:",
+    eventsIntro:
+      "تعرف على جميع الأنشطة والمناسبات والفعاليات التي ينظمها برنامج ريف السعودية أو يشارك بها بما في ذلك الملتقيات الريفية والمؤتمرات والندوات وورش العمل واللقاءات الميدانية.",
+    eventsLinksNote: "هنا تُضاف روابط الفعاليات والمواد المرافقة:",
+    galleryBookIntro:
+      'رحلة التنمية المستدامة عبر عدسة الكاميرا، من خلال معرض يبرز جمال المناطق الريفية في المملكة العربية السعودية، وجهود برنامج "ريف السعودية" في دعم المزارعين والمشاريع الريفية.',
+    galleryBookWatchStories: "شاهد القصص المصورة",
+    galleryBookExploreGallery: "استكشف المعرض الكامل",
+    backToMediaCenter: "الرجوع إلى المركز الإعلامي",
+
+    // Support pages
+    supportApplyHeroTitle: "آلية التقديم على الدعم",
+    supportApplyIntroBadge: "نبذة",
+    supportApplyIntroHeading: "آلية مصممة بعناية لخدمتك",
+    supportApplyIntro1:
+      'تم تصميم آلية التقديم على دعم برنامج "ريف السعودية" لتكون سهلة، واضحة، وعادلة، وتضمن وصول الدعم إلى مستحقيه من الأسر المنتجة وصغار المزارعين والعاملين في الأنشطة الريفية المستدامة.',
+    supportApplyIntro2:
+      "تمر عملية التقديم عبر مراحل منظمة تهدف إلى التحقق من أهلية المتقدم، ودراسة المشروع، ثم ربطه بخدمات الدعم المناسبة، بما يحقق أعلى أثر تنموي.",
+    supportApplyIntroEasy: "سهل وواضح",
+    supportApplyIntroEasyDesc: "إجراءات بسيطة",
+    supportApplyIntroFair: "عادل وشفاف",
+    supportApplyIntroFairDesc: "معايير واضحة",
+    supportApplyIntroComprehensive: "دعم شامل",
+    supportApplyIntroComprehensiveDesc: "مالي وفني",
+    supportApplyStagesBadge: "مراحل التقديم",
+    supportApplyStagesHeading: "رحلتك نحو الدعم",
+    supportApplyStagesSub:
+      "خمس مراحل متتالية تضمن لك تجربة سلسة من التسجيل حتى الحصول على الدعم",
+    supportApplyStep1Label: "المرحلة 01",
+    supportApplyStep1Title: "التسجيل في المنصة",
+    supportApplyStep1Desc:
+      "يبدأ المستفيد رحلته بالتسجيل عبر منصة ريف السعودية الإلكترونية، حيث يقوم بإنشاء حساب باستخدام بياناته الأساسية مثل:",
+    supportApplyStep1FieldsHeading: "البيانات المطلوبة:",
+    supportApplyStep1Field1: "رقم الهوية الوطنية",
+    supportApplyStep1Field2: "تاريخ الميلاد",
+    supportApplyStep1Field3: "رقم الجوال المسجل باسمه",
+    supportApplyStep1Field4: "العنوان والمنطقة الإدارية",
+    supportApplyStep1Note:
+      "يتم بعد ذلك تفعيل الحساب عبر رسالة نصية مرسلة إلى رقم الجوال، لضمان صحة البيانات.",
+    supportApplyStep2Label: "المرحلة 02",
+    supportApplyStep2Title: "إدخال بيانات المشروع",
+    supportApplyStep2Desc:
+      "بعد تسجيل الدخول إلى المنصة، ينتقل المستفيد لإدخال تفاصيل مشروعه، وتشمل:",
+    supportApplyStep2FieldsHeading: "معلومات المشروع:",
+    supportApplyStep2Field1: "نوع النشاط الزراعي أو الريفي",
+    supportApplyStep2Field2: "موقع المشروع",
+    supportApplyStep2Field3: "المساحة التقريبية",
+    supportApplyStep2Field4: "مراحل الإنتاج",
+    supportApplyStep2Field5: "حجم الإنتاج الحالي والمتوقع",
+    supportApplyStep2Field6: "الأدوات والمعدات المستخدمة",
+    supportApplyStep2Field7: "التحديات القائمة",
+    supportApplyStep2Field8: "الأهداف المستقبلية للمشروع",
+    supportApplyStep2Goal:
+      "هذه البيانات تساعد الجهات المختصة على تقييم المشروع بدقة وربطه بنوع الدعم المناسب.",
+    supportApplyStep3Label: "المرحلة 03",
+    supportApplyStep3Title: "رفع الوثائق المطلوبة",
+    supportApplyStep3Desc:
+      "يتطلب التقديم إرفاق عدد من الوثائق، والتي تختلف حسب نوع النشاط، ومن أهمها:",
+    supportApplyStep3FieldsHeading: "الوثائق المطلوبة:",
+    supportApplyStep3Field1: "نسخة من الهوية الوطنية",
+    supportApplyStep3Field2: "إثبات السكن أو موقع المشروع",
+    supportApplyStep3Field3: "صورة للمزرعة أو موقع الإنتاج",
+    supportApplyStep3Field4: "رخصة النحل في حال كان النشاط مرتبطًا بالعسل",
+    supportApplyStep3Field5: "شهادة العمل الحر (إن توفرت)",
+    supportApplyStep3Field6: "حساب بنكي باسم المتقدم",
+    supportApplyStep3Note:
+      "تخضع هذه الوثائق للمراجعة من قبل الفرق المختصة في البرنامج.",
+    supportApplyStep4Label: "المرحلة 04",
+    supportApplyStep4Title: "التقييم والمعاينة",
+    supportApplyStep4Desc:
+      "بعد اكتمال الطلب، يتم تحويله إلى الجهات المختصة لإجراء:",
+    supportApplyStep4FieldsHeading: "إجراءات التقييم:",
+    supportApplyStep4Field1: "مراجعة فنية للبيانات",
+    supportApplyStep4Field2: "تقييم اقتصادي للمشروع",
+    supportApplyStep4Field3:
+      "في بعض الحالات: زيارة ميدانية للتحقق من صحة المعلومات",
+    supportApplyStep4Goal:
+      "ضمان جاهزية المشروع للاستفادة من الدعم وتنميته بشكل مستدام.",
+    supportApplyStep5Label: "المرحلة 05 - المرحلة النهائية",
+    supportApplyStep5Title: "اعتماد الطلب وصرف الدعم",
+    supportApplyStep5Desc:
+      "في حال استيفاء جميع الشروط، يتم اعتماد الطلب وإبلاغ المستفيد بالقبول، ثم يبدأ صرف الدعم المالي وفق خطة زمنية محددة، ترتبط غالباً بمراحل التنفيذ والتقدم في المشروع.",
+    supportApplyStep5NonFinancial:
+      "لا يقتصر الدعم على الجانب المالي فقط، بل يشمل أيضاً:",
+    supportApplyStep5Support1: "الإرشاد الزراعي",
+    supportApplyStep5Support2: "التدريب والتأهيل",
+    supportApplyStep5Support3: "الدعم التسويقي",
+    supportApplyStep5Support4: "الربط مع الأسواق والمنصات",
+    supportApplyStep5Commitment: "التزامنا",
+    supportApplyStep5Closing:
+      'بهذه الآلية، يضمن برنامج "ريف السعودية" وصول الدعم إلى المشاريع الأكثر قدرة على الاستدامة وتحقيق الأثر الاقتصادي والاجتماعي.',
+    supportApplyNoteLabel: "ملاحظة:",
+    supportApplyGoalLabel: "الهدف:",
+    faqsHeroTitle: "الأسئلة الشائعة",
+    faqsIntroBadge: "نبذة",
+    faqsIntroHeading: "نجيب على جميع تساؤلاتك",
+    faqsIntro:
+      "في هذه الصفحة يتم تجميع أكثر الأسئلة التي يطرحها المستفيدون، والإجابة عنها بشكل تفصيلي لتوضيح جميع الجوانب المتعلقة بخدمات برنامج ريف السعودية.",
+    faqsSectionBadge: "أسئلة متكررة",
+    faqsSectionTitle: "أسئلة متكررة",
+    faq1Q: "من يمكنه التقديم على دعم برنامج ريف السعودية؟",
+    faq1A:
+      "يمكن للمزارعين وصغار المنتجين والأسر الريفية ورواد الأعمال في الأنشطة الزراعية والغذائية والريفية التقديم، بشرط أن يكون سعودي الجنسية ويقيم في المناطق المشمولة بدعم البرنامج.",
+    faq2Q: "هل يمكن التقديم إذا كان لدي وظيفة أخرى؟",
+    faq2A:
+      "نعم، يمكن التقديم بشرط ألا يتجاوز الدخل الشهري الحد الأعلى المسموح به، وأن يكون النشاط الريفي فعلياً ومثبتاً على أرض الواقع.",
+    faq3Q: "ما هي أنواع الأنشطة التي يشملها الدعم؟",
+    faq3A:
+      "يشمل الدعم 8 قطاعات هي:\n\n• تطوير وتربية النحل وإنتاج العسل\n• تطوير وإنتاج وتسويق القهوة السعودية\n• تنمية زراعة وإنتاج الورد والنباتات العطرية\n• تطوير وإنتاج وتسويق الفاكهة\n• زراعة المحاصيل البعلية\n• الصيد والاستزراع السمكي\n• القيمة المضافة\n• تعزيز قدرات صغار مربي الماشية",
+    faq4Q: "كم يستغرق الرد على الطلب؟",
+    faq4A:
+      "تمر الطلبات بمراحل مراجعة وتقييم متعددة، وقد يستغرق الرد من عدة أسابيع حتى شهرين بحسب نوع المشروع وحجم الطلبات.",
+    faq5Q: "هل يمكن تعديل بيانات الطلب بعد إرساله؟",
+    faq5A:
+      "نعم، في بعض المراحل يمكن تعديل البيانات عبر الحساب الشخصي قبل اعتماد الطلب بشكل نهائي.",
+    faq6Q: "هل الدعم مستمر أم لمرة واحدة؟",
+    faq6A:
+      "يعتمد ذلك على نوع النشاط، فبعض المشاريع تحصل على دعم دوري، وأخرى تحصل على دعم تأسيسي لمرة واحدة.",
+    faq7Q: "كيف أعرف حالة طلبي؟",
+    faq7A:
+      "يمكن متابعة الطلب عبر لوحة التحكم في المنصة باستخدام رقم الهوية وكلمة المرور.",
+    beneficiariesGuideHeroTitle: "دليل المستفيدين",
+    beneficiariesGuideIntro1:
+      'تم إعداد دليل المستفيدين ليكون مرجعاً عملياً يساعد المستفيدين في الاستفادة القصوى من خدمات برنامج "ريف السعودية" وتحقيق الاستدامة لمشاريعهم.',
+    beneficiariesGuideIntro2:
+      "يقدّم الدليل مجموعة من الإرشادات والخطوات العملية، تشمل:",
+    beneficiariesGuide1Title: "فهم طبيعة المشروع",
+    beneficiariesGuide1Intro:
+      "على المستفيد تحديد طبيعة مشروعه بدقة، وهل هو:",
+    beneficiariesGuide1Item1: "إنتاجي",
+    beneficiariesGuide1Item2: "تسويقي",
+    beneficiariesGuide1Item3: "خدمي",
+    beneficiariesGuide1Item4: "حرفي",
+    beneficiariesGuide1Item5: "قائم على موارد طبيعية",
+    beneficiariesGuide1Conclusion:
+      "هذا التصنيف يساعد في اختيار نوع الدعم المناسب.",
+    beneficiariesGuide2Title: "الالتزام بالمعايير الفنية",
+    beneficiariesGuide2Intro:
+      "يجب على المستفيد الالتزام بالممارسات الجيدة في:",
+    beneficiariesGuide2Item1: "الري",
+    beneficiariesGuide2Item2: "التسميد",
+    beneficiariesGuide2Item3: "مكافحة الآفات",
+    beneficiariesGuide2Item4: "إدارة المخلفات",
+    beneficiariesGuide2Item5: "حفظ المنتجات",
+    beneficiariesGuide2Conclusion:
+      "ويتم دعم ذلك من خلال الدورات التدريبية والزيارات الإرشادية.",
+    beneficiariesGuide3Title: "إدارة الموارد المالية",
+    beneficiariesGuide3Intro: "يتعلم المستفيد كيفية:",
+    beneficiariesGuide3Item1: "توزيع ميزانية المشروع",
+    beneficiariesGuide3Item2: "تقليل الهدر",
+    beneficiariesGuide3Item3: "رفع الكفاءة",
+    beneficiariesGuide3Item4: "إعادة استثمار الأرباح",
+    beneficiariesGuide3Item5: "إعداد تقارير مالية مبسطة",
+    beneficiariesGuide3Conclusion:
+      'يؤكد برنامج "ريف السعودية" على أن الإدارة الجيدة للموارد ترفع من فرص الاستدامة.',
+    beneficiariesGuide4Title: "التسويق والترويج",
+    beneficiariesGuide4Intro: "يتم توجيه المستفيد إلى:",
+    beneficiariesGuide4Item1: "كيفية تغليف المنتج",
+    beneficiariesGuide4Item2: "التسعير المناسب",
+    beneficiariesGuide4Item3: "استخدام المنصات الرقمية",
+    beneficiariesGuide4Item4: "الدخول إلى نقاط البيع والمعارض",
+    beneficiariesGuide4Item5: "الاستفادة من الشراكات",
+    beneficiariesGuide5Title: "التقييم المستمر",
+    beneficiariesGuide5Intro:
+      'يشجّع برنامج "ريف السعودية" عبر الدعم والأدلة والندوات الإرشادية المستفيد على:',
+    beneficiariesGuide5Item1: "قياس تطور إنتاجه",
+    beneficiariesGuide5Item2: "تطوير أساليبه",
+    beneficiariesGuide5Item3: "تحسين الجودة",
+    beneficiariesGuide5Item4: "الاستعداد للتوسع مستقبلاً",
+    beneficiariesGuide5Conclusion:
+      "بهذا يصبح المستفيد شريكاً في التنمية وليس مجرد متلقٍ للدعم.",
+
+    // Inquiries & Communication Service
+    contactServiceHeroTitle: "خدمة الاستفسارات والتواصل",
+    contactServiceHeroSubtitle:
+      "نافذتك المباشرة للتواصل مع برنامج ريف السعودية",
+    contactServiceIntroTitle: "خدمة الاستفسارات والتواصل",
+    contactServiceIntro1:
+      'تم تخصيص هذه الصفحة لتكون نافذة مباشرة بين برنامج "ريف السعودية" والمستفيدين، بهدف تقديم الدعم والمشورة والاستجابة لجميع التساؤلات باحترافية وسرعة.',
+    contactServiceIntro2:
+      "توفر خدمة الاستفسارات عدة قنوات تواصل، منها:",
+    contactMethod1Title: "نموذج التواصل الإلكتروني",
+    contactMethod1Desc:
+      "يمكن للمستفيد إرسال استفسارك عبر نموذج يحتوي على:",
+    contactMethod1Field1: "الاسم الكامل",
+    contactMethod1Field2: "رقم الهوية",
+    contactMethod1Field3: "رقم الجوال",
+    contactMethod1Field4: "المنطقة",
+    contactMethod1Field5: "موضوع الاستفسار",
+    contactMethod1Field6: "تفاصيل الرسالة",
+    contactMethod1Footer:
+      "يتم الرد خلال فترة قصيرة من قبل فريق متخصص.",
+    contactMethod2Title: "مركز خدمة المستفيدين",
+    contactMethod2Desc:
+      'يوفر برنامج "ريف السعودية" مركز دعم يتولى:',
+    contactMethod2Field1: "الرد على الاستفسارات العامة",
+    contactMethod2Field2: "متابعة الطلبات المتأخرة",
+    contactMethod2Field3: "توجيه المستفيد للخطوات اللازمة",
+    contactMethod2Field4: "المساعدة في حل المشكلات التقنية",
+    contactMethod3Title: "قنوات التواصل الرقمية",
+    contactMethod3Desc: "يتيح البرنامج أيضاً التواصل عبر:",
+    contactMethod3Field1: "البريد الإلكتروني الرسمي",
+    contactMethod3Field2: "منصات التواصل الاجتماعي",
+    contactMethod3Field3: "(LinkedIn / Instagram / X / Facebook)",
+    contactMethod3Footer:
+      "يلتزم البرنامج بنشر التحديثات والتنبيهات والفرص والمبادرات والبرامج الجديدة عبر موقعه الرسمي وكافة منصاته وحساباته التواصل الاجتماعي.",
+    contactMethod4Title: "الدعم الميداني",
+    contactMethod4Desc:
+      "يوفر البرنامج زيارات ميدانية تقوم بها فرق متخصصة لمساندة المستفيدين على أرض الواقع، خاصة في المناطق الريفية البعيدة.",
+    contactMethod4Footer:
+      "يهدف هذا النظام المتكامل إلى ضمان وجود قناة مفتوحة، دائمة، وفعالة بين البرنامج والمستفيدين، بما يعزز الشفافية والثقة ويخدم مسار التنمية المستدامة.",
     beneficiariesGuide: "دليل المستفيدين",
     // Sectors (nav)
     flowers: "الورد والزهور",
@@ -4194,9 +4879,9 @@ const translations = {
     reefAcademy: "كليات ريف",
 
     supportResources: "الدعم والموارد",
-    howToApply: "كيفية التقديم",
+    howToApply: "آلية التقديم على الدعم",
     termsConditions: "الشروط والأحكام",
-    faqs: "أسئلة شائعة",
+    faqs: "الأسئلة الشائعة",
     submitComplaint: "تقديم شكوى",
     reportCorruption: "الإبلاغ عن الفساد",
     askSpokesperson: "سؤال المتحدث الرسمي",
@@ -4208,7 +4893,6 @@ const translations = {
     eParticipation: "مشاركة إلكترونية",
     mewa: "وزارة البيئة والمياه والزراعة",
     interactiveMap: "خريطة تفاعلية",
-    galleryBook: "معرض وكتاب بصري",
 
     accessibilityTools: "أدوات الوصول",
     copyrightFull: "جميع حقوق الملكية الفكرية محجوزة لبرنامج ريف السعودية",

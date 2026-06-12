@@ -6,16 +6,13 @@ interface DropdownContactProps {
 }
 
 export function DropdownContact({ onClose }: DropdownContactProps) {
-  const { language } = useLanguage();
+  const { t, language } = useLanguage();
   const { navigateTo } = useNavigation();
   const isRTL = language === "ar";
 
   const contactItems = [
     {
-      title:
-        language === "ar"
-          ? "خدمة الاستفسارات والتواصل"
-          : "Inquiry and Communication Service",
+      title: t("contactServiceHeroTitle"),
       page: "contact" as const,
     },
   ];
