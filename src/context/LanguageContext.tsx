@@ -130,8 +130,7 @@ const translations = {
     knowledgeNetworksRosesParticipants:
       "Rose cultivation (18 participants – Taif)",
     knowledgeNetworksFruits: "Fruits",
-    knowledgeNetworksFruitsParticipants:
-      "Fruits (8 participants – Al-Baha)",
+    knowledgeNetworksFruitsParticipants: "Fruits (8 participants – Al-Baha)",
 
     // Agricultural Marketing
     agricMarketingTitle: "Third: Agricultural Marketing",
@@ -503,24 +502,27 @@ const translations = {
     coffeeProject8:
       "Application of sustainable irrigation systems for small coffee farmers in Asir",
     coffeeKeyAchievementsTitle: "Key Accomplishments",
-    coffeeAchievement1: "Raising the number of coffee trees to 1.2 million trees",
-    coffeeAchievement1Sub:
-      "(Target: reaching 5–6 million trees by 2030)",
+    coffeeAchievement1:
+      "Raising the number of coffee trees to 1.2 million trees",
+    coffeeAchievement1Sub: "(Target: reaching 5–6 million trees by 2030)",
     coffeeAchievement2:
       "Increasing expected productivity per tree from 0.4 kg to 1.5 kg annually",
     coffeeAchievement3:
       "Introducing 5 modern technologies and practices in coffee cultivation",
-    coffeeAchievement4: "Successfully transferring 8,000 high-quality coffee seedlings",
+    coffeeAchievement4:
+      "Successfully transferring 8,000 high-quality coffee seedlings",
     coffeeAchievement5:
       "Supporting nurseries with a production capacity of 50,000 seedlings per year",
-    coffeeAchievement6: "Conducting training workshops for more than 200 beneficiaries",
+    coffeeAchievement6:
+      "Conducting training workshops for more than 200 beneficiaries",
     coffeeAchievement7: "Carrying out field visits to more than 100 farms",
     coffeeAchievement8:
       "Participating in specialized international conferences and exhibitions",
     coffeeTissueCultureTitle: "Tissue Culture and Seedling Development Project",
     coffeeTissueCultureIntro:
-      'In cooperation with the Reef Program and Estidama Center, a tissue culture project was implemented that included:',
-    coffeeTissueStage1: "Selecting 6 distinguished genetic samples from coffee trees",
+      "In cooperation with the Reef Program and Estidama Center, a tissue culture project was implemented that included:",
+    coffeeTissueStage1:
+      "Selecting 6 distinguished genetic samples from coffee trees",
     coffeeTissueStage2: "Germinating 17,000 somatic coffee embryos",
     coffeeTissueStage3: "4,000 plants in the rooting stage",
     coffeeTissueStage4: "2,800 plants in the transfer-to-weaning stage",
@@ -721,7 +723,8 @@ const translations = {
     fruitsWork3Title: "Thirdly: Characterization of fruit varieties",
     fruitsWork3Desc:
       "Six imported varieties of grapes, figs, apricots, and almonds were described in the extension field in Baljurashi in cooperation with the Seed and Seedling Center in Al-Baha, with the aim of determining morphological and production specifications, measuring variety compatibility with the regional climate, and propagating suitable varieties with high productivity.",
-    fruitsWork4Title: "Fourthly: Developing women's agricultural entrepreneurship",
+    fruitsWork4Title:
+      "Fourthly: Developing women's agricultural entrepreneurship",
     fruitsWork4Duration:
       "Implementation of a 3-month training program that included:",
     fruitsWork4Point1:
@@ -955,7 +958,7 @@ const translations = {
     handicraftsKeyWorksSolarUnitsDetails:
       "Mobile cooling units operating on solar energy for efficient product transport",
     handicraftsKeyWorksConclusion:
-      'Through these integrated efforts, the value-added development sector from small holdings in the Reef Saudi Arabia Program continues its pivotal role in promoting sustainable rural development, raising productive families\' living standards, and transforming small holdings from limited traditional activities into projects of sustainable economic and social value that effectively contribute to achieving the Kingdom\'s Vision targets.',
+      "Through these integrated efforts, the value-added development sector from small holdings in the Reef Saudi Arabia Program continues its pivotal role in promoting sustainable rural development, raising productive families' living standards, and transforming small holdings from limited traditional activities into projects of sustainable economic and social value that effectively contribute to achieving the Kingdom's Vision targets.",
     handicraftsCTA1Full: "Explore the Interactive Map of Our Rural Sectors",
     handicraftsCTA1Desc:
       "Discover the geographical distribution of projects and initiatives across different regions of the Kingdom",
@@ -1140,8 +1143,7 @@ const translations = {
     sector6Point1: "Natural Irrigation Systems Support",
     sector6Point2: "Farmer Training",
     sector6Point3: "Local Grain Marketing",
-    rainfedHeroTitle:
-      'Rainfed Crops Cultivation Sector "Rainfed".',
+    rainfedHeroTitle: 'Rainfed Crops Cultivation Sector "Rainfed".',
     rainfedIntro1:
       'The Rainfed Crops Sector in the "Reef Saudi Arabia" Program aims to increase self-sufficiency in these strategic crops, substitute a portion of imports, and raise productivity in areas with comparative advantages through rainwater harvesting techniques and modern irrigation methods, improving production quality, increasing smallholder farmers\' income, and promoting natural resource sustainability for rural community development.',
     rainfedObj1:
@@ -1207,12 +1209,10 @@ const translations = {
       "Improving local field crop varieties for farmers in southwestern Saudi Arabia.",
     rainfedProject5:
       "Operating the Jazan research unit to strengthen integration between agricultural research and field applications.",
-    rainfedProject6:
-      "Establishing model rainfed grain crop farms in Madinah.",
+    rainfedProject6: "Establishing model rainfed grain crop farms in Madinah.",
     rainfedProject7:
       "Establishing model rainfed grain crop farms in Asir and Jazan.",
-    rainfedProject8:
-      "Supply of modern harvesting equipment for rainfed crops.",
+    rainfedProject8: "Supply of modern harvesting equipment for rainfed crops.",
     rainfedProject9:
       "Supply of soil preparation and modern farming equipment for rainfed crop farmers.",
     rainfedProject10:
@@ -1235,7 +1235,8 @@ const translations = {
     rainfedFeasibility6: "Improving utilization of available water resources.",
     rainfedFeasibility7:
       "Applying modern agricultural techniques to improve crop quality and productivity.",
-    rainfedFeasibility8: "Supporting expansion of quality agricultural holdings.",
+    rainfedFeasibility8:
+      "Supporting expansion of quality agricultural holdings.",
     rainfedFeasibility9:
       "Designing and implementing irrigation networks suited to the region and crop.",
     rainfedFeasibility10:
@@ -1263,8 +1264,7 @@ const translations = {
     rainfedWork1Location:
       "Seed multiplication station – Seeds and Seedlings Center – Riyadh (experimental site in Asir)",
     rainfedWork1Harvest: "Harvest completed: October 10, 2024",
-    rainfedWork1Note:
-      "These trials extend trials that began in 2023 in Jazan.",
+    rainfedWork1Note: "These trials extend trials that began in 2023 in Jazan.",
     rainfedWork2Title:
       "Secondly: Improved variety trials – coastal environment (Jazan)",
     rainfedWork2Date: "September 18–19, 2024",
@@ -1273,8 +1273,7 @@ const translations = {
     rainfedWork3Title: "Thirdly: Scientific guides and procedures",
     rainfedWork3Item1:
       "Preparation of a guide for diseases and pests affecting target crops in collaboration with ICRISAT.",
-    rainfedWork3Item2:
-      "Preparation of the executive plan for rainfed crops.",
+    rainfedWork3Item2: "Preparation of the executive plan for rainfed crops.",
     rainfedWork3Item3: "Launch of the community seed bank initiative.",
     rainfedWork3Item4:
       "Launch of silage production from finger millet and millet green biomass.",
@@ -1304,7 +1303,8 @@ const translations = {
     rainfedMechProcessing2:
       "Development of cactus pear processing and washing before packaging",
     rainfedMechProcessing3: "Development of almond peeling and sorting",
-    rainfedMechProcessing4: "Development of wool thread processing and spinning",
+    rainfedMechProcessing4:
+      "Development of wool thread processing and spinning",
     rainfedMechEquipmentHighlight:
       "Various agricultural equipment imported to serve smallholder farmers",
 
@@ -1419,8 +1419,7 @@ const translations = {
     fishingImplementedSubtitle: "",
 
     // Project 1: Digital Monitoring
-    fishingDigitalMonitoringTitle:
-      "Firstly: Digital Monitoring of Fisheries",
+    fishingDigitalMonitoringTitle: "Firstly: Digital Monitoring of Fisheries",
     fishingDigitalMonitoringDesc:
       "Installation of 4 digital cameras on 4 fishing boats (volunteers) in the Eastern Region and Jazan Region",
 
@@ -2233,16 +2232,13 @@ const translations = {
     newsPressHeroSubtitle: "",
     newsPressIntro:
       'A dedicated page to display the latest news from the "Reef Saudi Arabia" Program, including official statements, latest updates, success stories, and initiative coverage, to learn about the program\'s efforts in supporting rural communities and achieving sustainable development targets and Saudi Vision 2030.',
-    newsPressLinksNote:
-      "Full news links and media coverage are added here:",
+    newsPressLinksNote: "Full news links and media coverage are added here:",
     photoVideoIntro:
       "A comprehensive library containing all press materials and ready-made elements for media professionals and researchers. Includes videos, infographics, and approved introductory texts, with direct download capability for media use.",
-    photoVideoLinksNote:
-      "Download links for files and videos are added here:",
+    photoVideoLinksNote: "Download links for files and videos are added here:",
     eventsIntro:
       "Learn about all activities, occasions, and events organized by or participated in by the Reef Saudi Arabia Program, including rural forums, conferences, seminars, workshops, and field meetings.",
-    eventsLinksNote:
-      "Event links and accompanying materials are added here:",
+    eventsLinksNote: "Event links and accompanying materials are added here:",
     galleryBookIntro:
       'A journey of sustainable development through the camera lens, through a gallery showcasing the beauty of rural areas in the Kingdom of Saudi Arabia, and the efforts of the "Reef Saudi Arabia" Program in supporting farmers and rural projects.',
     galleryBookWatchStories: "Watch Photo Stories",
@@ -2254,7 +2250,7 @@ const translations = {
     supportApplyIntroBadge: "Overview",
     supportApplyIntroHeading: "A Carefully Designed Mechanism to Serve You",
     supportApplyIntro1:
-      'The Reef Saudi program support application mechanism has been designed to be easy, clear, and fair, ensuring support reaches deserving productive families, small farmers, and those working in sustainable rural activities.',
+      "The Reef Saudi program support application mechanism has been designed to be easy, clear, and fair, ensuring support reaches deserving productive families, small farmers, and those working in sustainable rural activities.",
     supportApplyIntro2:
       "The application process goes through organized stages aimed at verifying applicant eligibility, studying the project, then connecting it with appropriate support services to achieve the highest developmental impact.",
     supportApplyIntroEasy: "Easy & Clear",
@@ -2394,7 +2390,7 @@ const translations = {
     beneficiariesGuide3Item4: "Reinvest profits",
     beneficiariesGuide3Item5: "Prepare simplified financial reports",
     beneficiariesGuide3Conclusion:
-      'Reef Saudi program emphasizes that good resource management increases sustainability opportunities.',
+      "Reef Saudi program emphasizes that good resource management increases sustainability opportunities.",
     beneficiariesGuide4Title: "Marketing and Promotion",
     beneficiariesGuide4Intro: "The beneficiary is guided to:",
     beneficiariesGuide4Item1: "Product packaging methods",
@@ -2404,7 +2400,7 @@ const translations = {
     beneficiariesGuide4Item5: "Leveraging partnerships",
     beneficiariesGuide5Title: "Continuous Evaluation",
     beneficiariesGuide5Intro:
-      'Reef Saudi program encourages beneficiaries through support, guides and advisory seminars to:',
+      "Reef Saudi program encourages beneficiaries through support, guides and advisory seminars to:",
     beneficiariesGuide5Item1: "Measure production development",
     beneficiariesGuide5Item2: "Develop methods",
     beneficiariesGuide5Item3: "Improve quality",
@@ -2722,6 +2718,7 @@ const translations = {
       "Strengthening partnerships with research centers and universities to develop the sector.",
     beekeepingFuture4:
       "Expanding export opportunities for Saudi honey to global markets.",
+    kg: "kg",
   },
   ar: {
     // Header
@@ -2793,14 +2790,12 @@ const translations = {
       "إعداد ونشر 74 رسالة إرشادية حول التعاونيات الزراعية.",
     extensionMessagesBeneficiaries:
       "استفاد منها أكثر من 500 عضو في الجمعيات التعاونية.",
-    extensionMessagesPrograms:
-      "تطوير 7 برامج تدريبية للتعاونيات.",
+    extensionMessagesPrograms: "تطوير 7 برامج تدريبية للتعاونيات.",
     extensionMessagesLeaders:
       "تدريب 9 قادة جمعيات في مناطق مكة، جازان، والحدود الشمالية.",
 
     extensionMeetingsTitle: "3- اللقاءات والزيارات الإرشادية:",
-    extensionMeetingsIntro:
-      "تنفيذ 22 جلسة ميدانية لحوالي 602 مزارع.",
+    extensionMeetingsIntro: "تنفيذ 22 جلسة ميدانية لحوالي 602 مزارع.",
     extensionMeetingsTopicsTitle: "شملت الجلسات:",
     extensionMeetingsSessions: "جلسة ميدانية",
     extensionMeetingsFarmers: "مزارع",
@@ -2808,8 +2803,7 @@ const translations = {
     extensionMeetingsTopic2: "الممارسات الزراعية الجيدة",
     extensionMeetingsTopic3: "التقليم والتسميد",
     extensionMeetingsTopic4: "تحسين إنتاجية النحل والعسل",
-    extensionMeetingsTopic5:
-      "التقنيات الحديثة في الإنتاج النباتي والحيواني",
+    extensionMeetingsTopic5: "التقنيات الحديثة في الإنتاج النباتي والحيواني",
 
     knowledgeNetworksTitle: "4- شبكات تبادل الخبرات:",
     knowledgeNetworksDesc:
@@ -2821,17 +2815,14 @@ const translations = {
     knowledgeNetworksOrganicParticipants:
       "النحل العضوي (13 مشاركاً – المدينة المنورة ومكة المكرمة)",
     knowledgeNetworksRoses: "زراعة الورد",
-    knowledgeNetworksRosesParticipants:
-      "زراعة الورد (18 مشاركاً – الطائف)",
+    knowledgeNetworksRosesParticipants: "زراعة الورد (18 مشاركاً – الطائف)",
     knowledgeNetworksFruits: "الفاكهة",
-    knowledgeNetworksFruitsParticipants:
-      "الفاكهة (8 مشاركين – الباحة)",
+    knowledgeNetworksFruitsParticipants: "الفاكهة (8 مشاركين – الباحة)",
 
     agricMarketingTitle: "ثالثاً: التسويق الزراعي",
     digitalMarketSystemTitle:
       "1- النظام والتطبيق الرقمي لمعلومات الأسواق الزراعية:",
-    digitalMarketSystemItem1:
-      "تجهيز وثائق طرح المشروع وربطه بمنصة الوزارة.",
+    digitalMarketSystemItem1: "تجهيز وثائق طرح المشروع وربطه بمنصة الوزارة.",
     digitalMarketSystemItem2: "الإعلان عن المنافسة للشركات المؤهلة.",
     digitalMarketSystemItem3: "فرز العروض واختيار الجهة المنفذة للنظام.",
     digitalMarketSystemItem4: "استقطاب خبير متخصص في التسويق الزراعي.",
@@ -2899,32 +2890,27 @@ const translations = {
     partnershipsSubtitle: "شملت مذكرات التعاون الجهات التالية:",
 
     partnerNadec: "شركة نادك",
-    partnerNadecDesc:
-      "دعم الأنشطة الزراعية وتطوير سلاسل الإمداد المستدامة.",
+    partnerNadecDesc: "دعم الأنشطة الزراعية وتطوير سلاسل الإمداد المستدامة.",
     partnerDan: "شركة دان (DAN)",
     partnerDanDesc: "تعزيز الابتكار الغذائي والتنمية الريفية.",
     partnerRivana: "الجمعية التعاونية للسياحة الريفية والبيئية (ريفنا)",
     partnerRivanaDesc: "دعم السياحة الريفية المسؤولة بيئياً.",
     partnerJahez: "شركة جاهز الدولية (Jahez Group)",
-    partnerJahezDesc:
-      "تمكين وصول المنتجات الريفية للأسواق الرقمية الحديثة.",
+    partnerJahezDesc: "تمكين وصول المنتجات الريفية للأسواق الرقمية الحديثة.",
     partnerKFU: "جامعة الملك فيصل",
     partnerKFUDesc: "التعاون في البحث والتطوير الزراعي المستدام.",
     partnerAlhasa: "هيئة تطوير الأحساء",
-    partnerAlhasaDesc:
-      "دعم المشاريع الريفية المرتبطة بالتنمية المناطقية.",
+    partnerAlhasaDesc: "دعم المشاريع الريفية المرتبطة بالتنمية المناطقية.",
     partnerFateh: "نادي الفتح الرياضي",
     partnerFatehDesc:
       "تمكين المبادرات المجتمعية والتنموية في المناطق المستهدفة.",
     partnerShabab: "نادي الشباب",
-    partnerShababDesc:
-      "دعم أنشطة التوعية والتنمية بين فئة الشباب.",
+    partnerShababDesc: "دعم أنشطة التوعية والتنمية بين فئة الشباب.",
     partnerCateron: "شركة كاتريون",
     partnerCateronDesc:
       "دعم سلاسل الإمداد والخدمات اللوجستية للقطاعات الريفية.",
     partnerIrrigation: "المؤسسة العامة للري",
-    partnerIrrigationDesc:
-      "تعزيز استدامة الموارد المائية في الزراعة الريفية.",
+    partnerIrrigationDesc: "تعزيز استدامة الموارد المائية في الزراعة الريفية.",
     partnerCoopCouncil: "مجلس الجمعيات التعاونية",
     partnerCoopCouncilDesc:
       "تطوير قدرات الجمعيات التعاونية وتمكينها إدارياً وإنتاجياً.",
@@ -2967,8 +2953,7 @@ const translations = {
     implementation1: "إعداد خطط تنفيذية للفترة (2025 – 2030)",
     implementation2: "متابعة استقطاب خبرات وطنية ودولية",
     implementation3: "تشكيل لجنة تنفيذية برئاسة وكيل الوزارة",
-    implementation4:
-      "عقد اجتماعات دورية لتقييم الأداء وتحسين مستوى الإنجاز",
+    implementation4: "عقد اجتماعات دورية لتقييم الأداء وتحسين مستوى الإنجاز",
 
     newsPress: "الأخبار والبيانات الصحفية",
     photoVideo: "مكتبة الصور والفيديو",
@@ -3107,8 +3092,7 @@ const translations = {
     beneficiariesGuideIntro2:
       "يقدّم الدليل مجموعة من الإرشادات والخطوات العملية، تشمل:",
     beneficiariesGuide1Title: "فهم طبيعة المشروع",
-    beneficiariesGuide1Intro:
-      "على المستفيد تحديد طبيعة مشروعه بدقة، وهل هو:",
+    beneficiariesGuide1Intro: "على المستفيد تحديد طبيعة مشروعه بدقة، وهل هو:",
     beneficiariesGuide1Item1: "إنتاجي",
     beneficiariesGuide1Item2: "تسويقي",
     beneficiariesGuide1Item3: "خدمي",
@@ -3117,8 +3101,7 @@ const translations = {
     beneficiariesGuide1Conclusion:
       "هذا التصنيف يساعد في اختيار نوع الدعم المناسب.",
     beneficiariesGuide2Title: "الالتزام بالمعايير الفنية",
-    beneficiariesGuide2Intro:
-      "يجب على المستفيد الالتزام بالممارسات الجيدة في:",
+    beneficiariesGuide2Intro: "يجب على المستفيد الالتزام بالممارسات الجيدة في:",
     beneficiariesGuide2Item1: "الري",
     beneficiariesGuide2Item2: "التسميد",
     beneficiariesGuide2Item3: "مكافحة الآفات",
@@ -3159,22 +3142,18 @@ const translations = {
     contactServiceIntroTitle: "خدمة الاستفسارات والتواصل",
     contactServiceIntro1:
       'تم تخصيص هذه الصفحة لتكون نافذة مباشرة بين برنامج "ريف السعودية" والمستفيدين، بهدف تقديم الدعم والمشورة والاستجابة لجميع التساؤلات باحترافية وسرعة.',
-    contactServiceIntro2:
-      "توفر خدمة الاستفسارات عدة قنوات تواصل، منها:",
+    contactServiceIntro2: "توفر خدمة الاستفسارات عدة قنوات تواصل، منها:",
     contactMethod1Title: "نموذج التواصل الإلكتروني",
-    contactMethod1Desc:
-      "يمكن للمستفيد إرسال استفسارك عبر نموذج يحتوي على:",
+    contactMethod1Desc: "يمكن للمستفيد إرسال استفسارك عبر نموذج يحتوي على:",
     contactMethod1Field1: "الاسم الكامل",
     contactMethod1Field2: "رقم الهوية",
     contactMethod1Field3: "رقم الجوال",
     contactMethod1Field4: "المنطقة",
     contactMethod1Field5: "موضوع الاستفسار",
     contactMethod1Field6: "تفاصيل الرسالة",
-    contactMethod1Footer:
-      "يتم الرد خلال فترة قصيرة من قبل فريق متخصص.",
+    contactMethod1Footer: "يتم الرد خلال فترة قصيرة من قبل فريق متخصص.",
     contactMethod2Title: "مركز خدمة المستفيدين",
-    contactMethod2Desc:
-      'يوفر برنامج "ريف السعودية" مركز دعم يتولى:',
+    contactMethod2Desc: 'يوفر برنامج "ريف السعودية" مركز دعم يتولى:',
     contactMethod2Field1: "الرد على الاستفسارات العامة",
     contactMethod2Field2: "متابعة الطلبات المتأخرة",
     contactMethod2Field3: "توجيه المستفيد للخطوات اللازمة",
@@ -3377,8 +3356,7 @@ const translations = {
     coffeeProject8: "تطبيق نظم الري المستدامة لصغار مزارعي البن في عسير.",
     coffeeKeyAchievementsTitle: "أبرز المنجزات",
     coffeeAchievement1: "رفع عدد أشجار البن إلى 1.2 مليون شجرة",
-    coffeeAchievement1Sub:
-      "(مستهدف الوصول إلى 5 – 6 ملايين شجرة بحلول 2030)",
+    coffeeAchievement1Sub: "(مستهدف الوصول إلى 5 – 6 ملايين شجرة بحلول 2030)",
     coffeeAchievement2:
       "زيادة الإنتاجية المتوقعة للشجرة من 0.4 كجم إلى 1.5 كجم سنوياً",
     coffeeAchievement3: "إدخال 5 تقنيات وممارسات حديثة في زراعة البن",
@@ -3396,8 +3374,7 @@ const translations = {
     coffeeTissueStage4: "2,800 نبتة في مرحلة النقل للفطام",
     coffeeTissueStage5: "1,200 نبتة في البيت المحمي للفطام",
     coffeeTissueStage6: "400 شتلة في مرحلة التقسية",
-    coffeeBioreactorDesc:
-      'تركيب جهاز "Bioreactor" لزيادة الإنتاجية بنسبة 30%',
+    coffeeBioreactorDesc: 'تركيب جهاز "Bioreactor" لزيادة الإنتاجية بنسبة 30%',
     coffeeTissueTarget: "مستهدف إنتاج 50 ألف شتلة بنهاية 2025",
     coffeeProjectsIntro:
       'يعمل برنامج "ريف السعودية" على تنفيذ حزمة من المشاريع الاستراتيجية في قطاع القهوة السعودية، بهدف تطوير سلسلة القيمة من الزراعة وحتى المعالجة والتسويق، وتعزيز تنافسية البن السعودي محلياً وعالمياً.',
@@ -3671,8 +3648,7 @@ const translations = {
       "إنشاء نماذج متقدمة للمزارع النموذجية يُحتذى بها للمستثمرين في قطاع الثروة الحيوانية وإمكانية تكرارها.",
     livestockProjectsFeasibility10:
       "المساهمة في تحقيق الأمن الغذائي وزيادة مصادر البروتين الحيواني.",
-    livestockProjectsFeasibility11:
-      "تعزيز كفاءة الإنتاج الحيواني ورفع جودته.",
+    livestockProjectsFeasibility11: "تعزيز كفاءة الإنتاج الحيواني ورفع جودته.",
     livestockProjectsGoalsTitle: "أهداف المشاريع",
     livestockProjectsGoalsIntro:
       'تركز مشاريع قطاع الماشية في برنامج "ريف السعودية" على:',
@@ -3771,7 +3747,8 @@ const translations = {
       'يهدف قطاع زراعة المحاصيل البعلية ببرنامج "ريف السعودية" إلى زيادة نسبة الاكتفاء الذاتي من هذه المحاصيل الاستراتيجية، وإحلال نسبة من الواردات، مع رفع إنتاجيتها في المناطق ذات الميزات النسبية، وذلك عبر توظيف تقنيات حصاد المياه وأساليب الري الحديثة، وتحسين جودة الإنتاج، وزيادة دخل صغار المزارعين، وتعزيز استدامة الموارد الطبيعية بما ينعكس على تنمية المجتمعات الريفية وتحسين سبل معيشتها.',
     rainfedObj1:
       "زيادة ورفع إنتاجية المحاصيل البعلية في المناطق ذات الميزة النسبية باستخدام تقنيات حصاد المياه وأساليب الري الحديثة.",
-    rainfedObj2: "زيادة نسبة الاكتفاء الذاتي من هذه المحاصيل وإحلال نسبة من الواردات.",
+    rainfedObj2:
+      "زيادة نسبة الاكتفاء الذاتي من هذه المحاصيل وإحلال نسبة من الواردات.",
     rainfedObj3: "زيادة دخل صغار المزارعين وتحسين سبل معيشتهم.",
     rainfedWorkAxesTitle: "محاور عمل قطاع المحاصيل البعلية",
     rainfedWorkAxis1:
@@ -3787,7 +3764,8 @@ const translations = {
       "تطوير وتنفيذ برامج لمحاصيل: الذرة الرفيعة، السمسم، الدخن، وتوفير خدمات تقنية متقدمة لعمليات ما بعد الحصاد.",
     rainfedWorkAxis7: "تقديم دعم مالي لتشجيع المزارعين على إنتاج المحاصيل.",
     rainfedWorkAxis8: "زراعة الأشجار الغابية في حقول المزارعين.",
-    rainfedWorkAxis9: "إنشاء جمعيات تعاونية لتقديم خدمات الإنتاج وما بعد الحصاد.",
+    rainfedWorkAxis9:
+      "إنشاء جمعيات تعاونية لتقديم خدمات الإنتاج وما بعد الحصاد.",
     rainfedWorkAxis10: "تطوير القدرات الفنية للمزارعين.",
     rainfedStatsTitle: "أرقام ومؤشرات",
     rainfedTotalSupport: "إجمالي قيمة الدعم",
@@ -3820,13 +3798,16 @@ const translations = {
     rainfedProject1: "توريد معدات زراعية متنوعة في مكة المكرمة وجازان.",
     rainfedProject2:
       "إنشاء مصنع لمنتجات السمسم والذرة الرفيعة والدخن في منطقة جازان.",
-    rainfedProject3: "توريد معدات الحصاد لخدمة الزراعة البعلية في مكة المكرمة وجازان.",
+    rainfedProject3:
+      "توريد معدات الحصاد لخدمة الزراعة البعلية في مكة المكرمة وجازان.",
     rainfedProject4:
       "تحسين أصناف المحاصيل الحقلية المحلية لدى المزارعين في جنوب غرب المملكة.",
     rainfedProject5:
       "تشغيل وحدة أبحاث جازان لتعزيز التكامل بين الأبحاث الزراعية والتطبيقات الميدانية.",
-    rainfedProject6: "إنشاء مزارع نموذجية لمحاصيل الحبوب البعلية في المدينة المنورة.",
-    rainfedProject7: "إنشاء مزارع نموذجية لمحاصيل الحبوب البعلية في عسير وجازان.",
+    rainfedProject6:
+      "إنشاء مزارع نموذجية لمحاصيل الحبوب البعلية في المدينة المنورة.",
+    rainfedProject7:
+      "إنشاء مزارع نموذجية لمحاصيل الحبوب البعلية في عسير وجازان.",
     rainfedProject8: "توريد معدات الحصاد الحديثة لخدمة المحاصيل البعلية.",
     rainfedProject9:
       "توريد معدات إعداد التربة والزراعة الحديثة لخدمة مزارعي المحاصيل البعلية.",
@@ -3841,7 +3822,8 @@ const translations = {
     rainfedFeasibility2: "تقليل الجهد والتكاليف عبر إدخال تقنيات وميكنة حديثة.",
     rainfedFeasibility3:
       "تعزيز التعاون بين المزارعين من خلال العمل الجماعي واستخدام المعدات المشتركة.",
-    rainfedFeasibility4: "رفع كفاءة إنتاج المحاصيل الحقلية لتحقيق الأمن الغذائي.",
+    rainfedFeasibility4:
+      "رفع كفاءة إنتاج المحاصيل الحقلية لتحقيق الأمن الغذائي.",
     rainfedFeasibility5: "زيادة استدامة وإنتاجية المحاصيل المطرية المحلية.",
     rainfedFeasibility6: "تحسين توظيف الموارد المائية المتاحة.",
     rainfedFeasibility7:
@@ -3849,8 +3831,7 @@ const translations = {
     rainfedFeasibility8: "دعم توسع الحيازات الزراعية النوعية.",
     rainfedFeasibility9:
       "تصميم وتنفيذ شبكات ري تتوافق مع طبيعة المنطقة والمحصول.",
-    rainfedFeasibility10:
-      "تنظيم سلاسل القيمة من الإنتاج إلى التصنيع والتسويق.",
+    rainfedFeasibility10: "تنظيم سلاسل القيمة من الإنتاج إلى التصنيع والتسويق.",
     rainfedProjectObjectivesTitle: "أهداف المشاريع",
     rainfedProjectObjectivesIntro:
       'تركز مشاريع قطاع المحاصيل البعلية في برنامج "ريف السعودية" على تحقيق الأهداف التالية:',
@@ -3932,8 +3913,7 @@ const translations = {
       "دعم رواد الأعمال الشباب لإنشاء وتشغيل المنشآت الصغيرة للصيد.",
     fishingObjective3: "خلق وظائف للسعوديين خاصة فئة الشباب.",
     fishingWorkAreasTitle: "محاور العمل في قطاع الأسماك",
-    fishingWorkArea1:
-      "تطوير مجالات وتقنيات الاستزراع السمكي ورفع الإنتاجية",
+    fishingWorkArea1: "تطوير مجالات وتقنيات الاستزراع السمكي ورفع الإنتاجية",
     fishingWorkArea2:
       "تطوير خدمات الإرشاد والدعم الفني لصغار الصيادين ومالكي المزارع السمكية الصغيرة",
     fishingWorkArea3: "إنشاء وتطوير مرافق للصيادين",
@@ -3967,12 +3947,10 @@ const translations = {
     fishingProjectsTotalValueAmount: "69.5 مليون ريال",
     fishingProjectsIntro:
       'يعمل برنامج "ريف السعودية" في قطاع الأسماك على تطوير البنية التحتية للصيد البحري، ورفع كفاءة الصيادين السعوديين، وتحسين جودة وسلامة المنتجات البحرية، بما يسهم في تعزيز الأمن الغذائي الوطني وخلق فرص عمل مستدامة في المجتمعات الساحلية.',
-    fishingProject1:
-      "توريد محركات للقوارب الصغيرة لصغار الصيادين السعوديين.",
+    fishingProject1: "توريد محركات للقوارب الصغيرة لصغار الصيادين السعوديين.",
     fishingProject2:
       "توريد أجهزة استغاثة بالأقمار الصناعية (EPIRB) لتعزيز سلامة الصيادين في البحر.",
-    fishingProject3:
-      "توريد صناديق تبريد لحفظ الأسماك وتقليل الفاقد بعد الصيد",
+    fishingProject3: "توريد صناديق تبريد لحفظ الأسماك وتقليل الفاقد بعد الصيد",
     fishingFishAuctionsTitle: "إنشاء وتجهيز مزادات الأسماك في:",
     fishingQatif: "القطيف",
     fishingRayis: "الرايس",
@@ -3999,10 +3977,8 @@ const translations = {
       "تعزيز سلامة الصيادين في البحر من خلال أجهزة استغاثة فعالة ودقيقة.",
     fishingFeasibility6:
       "رفع القدرة التنافسية وجودة المنتجات البحرية في الأسواق.",
-    fishingFeasibility7:
-      "توطين مهنة الصيد وتوفير فرص عمل للمواطنين.",
-    fishingFeasibility8:
-      "دعم الصيادين المحليين ورفع مستوى الأمن البحري.",
+    fishingFeasibility7: "توطين مهنة الصيد وتوفير فرص عمل للمواطنين.",
+    fishingFeasibility8: "دعم الصيادين المحليين ورفع مستوى الأمن البحري.",
     fishingFeasibility9:
       "تقليل التكاليف التشغيلية من خلال تحسين عمليات الصيانة.",
     fishingFeasibility10:
@@ -4047,13 +4023,11 @@ const translations = {
       'تنفيذ نموذج يقوده شباب وشابات سعوديون في منطقة مكة المكرمة بالتعاون بين شركة نقوا ووزارة البيئة والمياه والزراعة ومنظمة "الفاو".',
     fishingSeaweedPoint3:
       "تدريب أكثر من 50 شاباً وشابة على تقنيات الاستزراع والحصاد.",
-    fishingSeaweedPoint4:
-      "التخطيط للتوسع في موقع آخر على ساحل البحر الأحمر.",
+    fishingSeaweedPoint4: "التخطيط للتوسع في موقع آخر على ساحل البحر الأحمر.",
     fishingHatcheryTitle: "خامساً: تفعيل مفرخ أسماك المياه العذبة في القطيف",
     fishingHatcheryPoint1: "إعادة تأهيل المفرخ بأنظمة حديثة.",
     fishingHatcheryPoint2: "تشغيل نظام تدوير المياه المغلقة.",
-    fishingHatcheryPoint3:
-      "إدخال الأمهات قريباً لتعزيز الإنتاج والاستدامة.",
+    fishingHatcheryPoint3: "إدخال الأمهات قريباً لتعزيز الإنتاج والاستدامة.",
     fishingCTA1: "استكشف الخريطة التفاعلية لقطاعاتنا الريفية",
     fishingCTA2: "استكشف برامج الدعم",
 
@@ -4102,8 +4076,7 @@ const translations = {
       "تدعيم الزراعة التعاقدية بين صغار المزارعين والشركات وإنشاء نظام معلومات التنمية الريفية الزراعية",
     handicraftsWorkAxis10:
       "إعداد وتفعيل سياسات واستراتيجيات وطنية داعمة لتطوير وتنفيذ برامج التنمية الريفية الزراعية",
-    handicraftsWorkAxis11:
-      "إنشاء وحدات متخصصة لتنمية المرأة الريفية الزراعية",
+    handicraftsWorkAxis11: "إنشاء وحدات متخصصة لتنمية المرأة الريفية الزراعية",
     handicraftsTotalSupport: "إجمالي قيمة الدعم",
     handicraftsTotalSupportValue: "+1.85 مليار ريال",
     handicraftsTotalBeneficiaries: "إجمالي عدد المستفيدين",
@@ -4863,6 +4836,7 @@ const translations = {
 
     // Footer - Detailed
     overview: "نظرة عامة",
+    achievements: "إنجازات البرنامج",
     mediaCenter: "مركز الإعلام",
 
     sectorsServices: "القطاعات والخدمات",
@@ -5142,6 +5116,7 @@ const translations = {
     beekeepingFuture3:
       "تعزيز الشراكات مع المراكز البحثية والجامعات لتطوير القطاع.",
     beekeepingFuture4: "توسيع فرص التصدير للعسل السعودي إلى الأسواق العالمية.",
+    kg: "كجم",
   },
 };
 

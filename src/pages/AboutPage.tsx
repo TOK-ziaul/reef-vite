@@ -5,10 +5,10 @@ import { AboutEstablishment } from "../components/AboutEstablishment";
 import { AboutVision2030 } from "../components/AboutVision2030";
 import { AboutVisionMission } from "../components/AboutVisionMission";
 import { AboutStrategicObjectives } from "../components/AboutStrategicObjectives";
-import { AboutWhatWeOffer } from "../components/AboutWhatWeOffer";
+// import { AboutWhatWeOffer } from "../components/AboutWhatWeOffer";
 import { AboutOrganizationalStructure } from "../components/AboutOrganizationalStructure";
 import { AboutPartners } from "../components/AboutPartners";
-import { AboutMilestones } from "../components/AboutMilestones";
+// import { AboutMilestones } from "../components/AboutMilestones";
 import { AboutAchievements } from "../components/AboutAchievements";
 import { AboutAnnualReports } from "../components/AboutAnnualReports";
 import { Footer } from "../components/Footer";
@@ -23,10 +23,10 @@ export function AboutPage() {
       <AboutVision2030 />
       <AboutVisionMission />
       <AboutStrategicObjectives />
-      <AboutWhatWeOffer />
+      {/* <AboutWhatWeOffer /> */}
       <AboutOrganizationalStructure />
       <AboutPartners />
-      <AboutMilestones />
+      {/* <AboutMilestones /> */}
       <AboutAchievements />
       <AboutAnnualReports />
       <Footer />

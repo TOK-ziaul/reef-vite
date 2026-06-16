@@ -23,15 +23,15 @@ import {
   Sparkles,
 } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-const unAwardImage = "https://placehold.co/400x300?text=Award";
-const princessAwardImage = "https://placehold.co/400x300?text=Award";
-const innovationAwardImage = "https://placehold.co/400x300?text=Award";
-const digitalAwardImage = "https://placehold.co/400x300?text=Award";
-const hailAwardImage = "https://placehold.co/400x300?text=Award";
-const guinnessLogo = "https://placehold.co/200x200?text=Logo";
-const isoLogo = "https://placehold.co/200x200?text=Logo";
-const iso9001Image = "https://placehold.co/400x300?text=ISO";
-const iso56002Image = "https://placehold.co/400x300?text=ISO";
+const unAwardImage = "/awards/award-1.png";
+const princessAwardImage = "/awards/award-2.png";
+const innovationAwardImage = "/awards/award-3.png";
+const digitalAwardImage = "/awards/award-4.png";
+const hailAwardImage = "/awards/award-5.png";
+const guinnessLogo = "/awards/award-6.png";
+const isoLogo = "/iso/iso-2.png";
+const iso9001Image = "/iso/iso-1.png";
+const iso56002Image = "/iso/iso-3.png";
 
 gsap.registerPlugin(ScrollTrigger);
 

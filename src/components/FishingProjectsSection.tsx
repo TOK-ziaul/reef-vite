@@ -573,7 +573,7 @@ export const FishingProjectsSection: React.FC = () => {
 
                         {/* Floating number badge */}
                         <div
-                          className={`absolute -top-4 -left-4 w-14 h-14 rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center shadow-2xl transform group-hover:rotate-12 group-hover:scale-110 transition-all duration-500 z-10`}
+                          className={`absolute -top-1 -left-1 w-10 h-10 rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center shadow-2xl transform group-hover:rotate-12 group-hover:scale-110 transition-all duration-500 z-10`}
                         >
                           <span className="text-white text-xl font-bold">
                             {index + 1}
@@ -637,7 +637,7 @@ export const FishingProjectsSection: React.FC = () => {
                         ></div>
 
                         <div
-                          className={`absolute -top-4 -left-4 w-14 h-14 rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center shadow-2xl transform group-hover:rotate-12 group-hover:scale-110 transition-all duration-500 z-10`}
+                          className={`absolute -top-1 -left-1 w-10 h-10 rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center shadow-2xl transform group-hover:rotate-12 group-hover:scale-110 transition-all duration-500 z-10`}
                         >
                           <span className="text-white text-xl font-bold">
                             {index + 4}
@@ -694,7 +694,7 @@ export const FishingProjectsSection: React.FC = () => {
                         ></div>
 
                         <div
-                          className={`absolute -top-4 -left-4 w-14 h-14 rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center shadow-2xl transform group-hover:rotate-12 group-hover:scale-110 transition-all duration-500 z-10`}
+                          className={`absolute -top-1 -left-1 w-10 h-10 rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center shadow-2xl transform group-hover:rotate-12 group-hover:scale-110 transition-all duration-500 z-10`}
                         >
                           <span className="text-white text-xl font-bold">
                             {index + 8}

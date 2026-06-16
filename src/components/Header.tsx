@@ -14,6 +14,7 @@ const reefLogo = "/logo.png";
 export function Header() {
   const { language, toggleLanguage, t } = useLanguage();
   const { navigateTo } = useNavigation();
+  const isRTL = language === "ar";
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileActiveMenu, setMobileActiveMenu] = useState<string | null>(null);
@@ -127,7 +128,11 @@ export function Header() {
   ];
 
   return (
-    <header className="bg-white shadow-md sticky top-0 z-50">
+    <header
+      dir={isRTL ? "rtl" : "ltr"}
+      lang={language}
+      className="bg-white shadow-md sticky top-0 z-50"
+    >
       <div className="h-20 max-w-[1440px] mx-auto px-4 md:px-8 flex items-center justify-between">
         {/* Logo */}
         <a
@@ -179,7 +184,7 @@ export function Header() {
                   </span>
                   {activeMenu === item.key && item.component && (
                     <div
-                      className="absolute left-0 top-[46px] pt-1 z-50"
+                      className="absolute start-0 top-[46px] pt-1 z-50"
                       onMouseEnter={handleDropdownPanelEnter}
                       onMouseLeave={handleMouseLeave}
                     >
@@ -253,10 +258,15 @@ export function Header() {
 
       {/* Mobile Menu Drawer */}
       <div
-        className={`fixed top-20 right-0 h-[calc(100vh-80px)] w-80 bg-white shadow-2xl z-50 transform transition-transform duration-300 lg:hidden overflow-y-auto ${
-          mobileMenuOpen ? "translate-x-0" : "translate-x-full"
+        className={`fixed top-20 h-[calc(100vh-80px)] w-80 bg-white shadow-2xl z-50 transform transition-transform duration-300 lg:hidden overflow-y-auto ${
+          isRTL ? "start-0" : "end-0"
+        } ${
+          mobileMenuOpen
+            ? "translate-x-0"
+            : isRTL
+              ? "-translate-x-full"
+              : "translate-x-full"
         }`}
-        style={{ direction: language === "ar" ? "rtl" : "ltr" }}
       >
         <div className="p-6">
           {/* Mobile Navigation Items */}
@@ -300,13 +310,13 @@ export function Header() {
                       </button>
                     </div>
                     {mobileActiveMenu === item.key && item.mobileItems && (
-                      <div className="pl-4 space-y-2 pb-2">
+                      <div className="ps-4 space-y-2 pb-2">
                         {item.mobileItems.map((subItem) => (
                           <button
                             key={subItem}
                             type="button"
                             onClick={() => handleMobileSubItemClick(item.key, subItem)}
-                            className="block w-full text-left py-2 text-sm text-[#052F2A]/70 hover:text-[#035938] transition-colors"
+                            className="block w-full text-start py-2 text-sm text-[#052F2A]/70 hover:text-[#035938] transition-colors"
                           >
                             {t(subItem)}
                           </button>

@@ -2663,7 +2663,7 @@ export function SectorPage({ sectorId: sectorIdProp }: SectorPageProps = {}) {
                               <div className="text-4xl font-bold text-white">
                                 {t("honeyKeyWorksTraditionalKg")}
                               </div>
-                              <div className="text-sm text-white/80">kg</div>
+                              <div className="text-sm text-white/80">{t("kg")}</div>
                             </div>
                           </div>
                           <div className="absolute -top-2 -right-2 w-10 h-10 bg-gray-500 rounded-full flex items-center justify-center shadow-lg">
@@ -2696,7 +2696,7 @@ export function SectorPage({ sectorId: sectorIdProp }: SectorPageProps = {}) {
                               <div className="text-4xl font-bold text-white">
                                 {t("honeyKeyWorksModernKg")}
                               </div>
-                              <div className="text-sm text-white/80">kg</div>
+                              <div className="text-sm text-white/80">{t("kg")}</div>
                             </div>
                           </div>
                           <div className="absolute -top-2 -right-2 w-10 h-10 bg-[#F1BC28] rounded-full flex items-center justify-center shadow-lg">
@@ -2773,7 +2773,7 @@ export function SectorPage({ sectorId: sectorIdProp }: SectorPageProps = {}) {
                               <div className="text-3xl font-bold text-white">
                                 2.2
                               </div>
-                              <div className="text-sm text-white/80">kg</div>
+                              <div className="text-sm text-white/80">{t("kg")}</div>
                             </div>
                           </div>
                         </div>
@@ -2811,7 +2811,7 @@ export function SectorPage({ sectorId: sectorIdProp }: SectorPageProps = {}) {
                               <div className="text-3xl font-bold text-white">
                                 4.75
                               </div>
-                              <div className="text-sm text-white/80">kg</div>
+                              <div className="text-sm text-white/80">{t("kg")}</div>
                             </div>
                           </div>
                           <div className="absolute -top-2 -right-2 w-10 h-10 bg-[#F1BC28] rounded-full flex items-center justify-center shadow-lg">
