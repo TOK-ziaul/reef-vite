@@ -17,9 +17,6 @@ export function LivestockMainGoals() {
         <div className="mb-12">
           <h2 
             className="text-3xl md:text-4xl font-bold text-[#035938] mb-2"
-            style={{
-              fontFamily: language === 'ar' ? "'Loew Next Arabic', sans-serif" : "inherit",
-            }}
             dir={language === 'ar' ? 'rtl' : 'ltr'}
           >
             {t('livestockMainGoalsTitle')}
@@ -49,9 +46,6 @@ export function LivestockMainGoals() {
                 {/* Goal Text */}
                 <p 
                   className="flex-1 text-lg leading-relaxed text-[#035938]/80 pt-2"
-                  style={{
-                    fontFamily: language === 'ar' ? "'Loew Next Arabic', sans-serif" : "inherit",
-                  }}
                 >
                   {goal.text}
                 </p>

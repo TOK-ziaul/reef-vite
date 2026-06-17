@@ -217,10 +217,6 @@ export function AboutEstablishment() {
         <h2
           ref={titleRef}
           className="text-4xl md:text-5xl lg:text-6xl mb-16 text-center text-white fw-heading"
-          style={{
-            fontFamily:
-              language === "ar" ? "'Loew Next Arabic', sans-serif" : "inherit",
-          }}
         >
           {t("aboutEstablishmentTitle")}
         </h2>
@@ -236,24 +232,12 @@ export function AboutEstablishment() {
 
               <p
                 className="relative z-10 text-lg md:text-xl text-white/95 leading-relaxed mb-6"
-                style={{
-                  fontFamily:
-                    language === "ar"
-                      ? "'Loew Next Arabic', sans-serif"
-                      : "inherit",
-                }}
               >
                 {t("aboutEstablishmentPara1")}
               </p>
 
               <p
                 className="relative z-10 text-lg md:text-xl text-white/95 leading-relaxed"
-                style={{
-                  fontFamily:
-                    language === "ar"
-                      ? "'Loew Next Arabic', sans-serif"
-                      : "inherit",
-                }}
               >
                 {t("aboutEstablishmentPara2")}
               </p>
@@ -273,12 +257,6 @@ export function AboutEstablishment() {
                   </div>
                   <p
                     className="text-lg md:text-xl text-white fw-heading leading-relaxed"
-                    style={{
-                      fontFamily:
-                        language === "ar"
-                          ? "'Loew Next Arabic', sans-serif"
-                          : "inherit",
-                    }}
                   >
                     {t("aboutEstablishmentPara3")}
                   </p>
@@ -307,12 +285,6 @@ export function AboutEstablishment() {
               <div className="absolute bottom-6 left-6 right-6 backdrop-blur-xl bg-white/90 rounded-2xl p-4 border border-white/50 shadow-xl">
                 <p
                   className="text-[#035938] text-sm md:text-base fw-heading text-center"
-                  style={{
-                    fontFamily:
-                      language === "ar"
-                        ? "'Loew Next Arabic', sans-serif"
-                        : "inherit",
-                  }}
                 >
                   {t("establishmentImageCaption")}
                 </p>
@@ -344,12 +316,6 @@ export function AboutEstablishment() {
 
                 <p
                   className="text-xs md:text-sm text-white/90"
-                  style={{
-                    fontFamily:
-                      language === "ar"
-                        ? "'Loew Next Arabic', sans-serif"
-                        : "inherit",
-                  }}
                 >
                   {t(stat.labelKey)}
                 </p>

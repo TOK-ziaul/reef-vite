@@ -1,0 +1,100 @@
+/* Font faces + font-family variables used across the app. */
+
+@font-face {
+  font-family: "Loew Next";
+  src: url("/fonts/loew-next/loew-next-thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Loew Next";
+  src: url("/fonts/loew-next/loew-next-medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Loew Next";
+  src: url("/fonts/loew-next/loew-next-bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Loew Next";
+  src: url("/fonts/loew-next/loew-next-black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Loew Next";
+  src: url("/fonts/loew-next/loew-next-extra-bold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Loew Next";
+  src: url("/fonts/loew-next/loew-next-heavy.ttf") format("truetype");
+  font-weight: 850;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Loew Next Arabic";
+  src: url("/fonts/Loew Next Arabic/Loew Next Arabic Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Loew Next Arabic";
+  src: url("/fonts/Loew Next Arabic/Loew Next Arabic Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Loew Next Arabic";
+  src: url("/fonts/Loew Next Arabic/Loew Next Arabic Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Loew Next Arabic";
+  src: url("/fonts/Loew Next Arabic/Loew Next Arabic ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Loew Next Arabic";
+  src: url("/fonts/Loew Next Arabic/Loew Next Arabic Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-sans: "Loew Next", system-ui, -apple-system, "Segoe UI", Roboto, Arial,
+    "Noto Sans", "Liberation Sans", sans-serif;
+  --font-arabic: "Loew Next Arabic", var(--font-sans);
+}
+
+.font-arabic {
+  font-family: var(--font-arabic) !important;
+}
+

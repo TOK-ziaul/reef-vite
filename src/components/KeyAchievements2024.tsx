@@ -86,7 +86,6 @@ export function KeyAchievements2024() {
             </div>
             <h2 
               className="text-3xl md:text-4xl font-bold text-[#035938]"
-              style={{ fontFamily: language === 'ar' ? "'Loew Next Arabic', sans-serif" : "inherit" }}
             >
               {t('livestockKeyWorksTitle')}
             </h2>
@@ -127,7 +126,6 @@ export function KeyAchievements2024() {
                   <motion.h3 
                     key={`title-${activeIndex}`}
                     className="text-3xl md:text-4xl font-bold text-white mb-8 leading-tight"
-                    style={{ fontFamily: language === 'ar' ? "'Loew Next Arabic', sans-serif" : "inherit" }}
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.5, delay: 0.3 }}
@@ -146,7 +144,6 @@ export function KeyAchievements2024() {
                         <div className="text-3xl font-bold text-white">{t(stat.valueKey)}</div>
                         <div 
                           className="text-sm text-white/95 mt-1"
-                          style={{ fontFamily: language === 'ar' ? "'Loew Next Arabic', sans-serif" : "inherit" }}
                         >
                           {t(stat.labelKey)}
                         </div>
@@ -173,7 +170,6 @@ export function KeyAchievements2024() {
 
                     <p 
                       className="text-lg text-[#035938] leading-relaxed whitespace-pre-line"
-                      style={{ fontFamily: language === 'ar' ? "'Loew Next Arabic', sans-serif" : "inherit" }}
                     >
                       {t(achievements[activeIndex].descKey)}
                     </p>
@@ -233,7 +229,6 @@ export function KeyAchievements2024() {
             <Map className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
             <span 
               className="font-semibold"
-              style={{ fontFamily: language === 'ar' ? "'Loew Next Arabic', sans-serif" : "inherit" }}
             >
               {t('exploreInteractiveMap')}
             </span>
@@ -247,7 +242,6 @@ export function KeyAchievements2024() {
             <Gift className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
             <span 
               className="font-semibold"
-              style={{ fontFamily: language === 'ar' ? "'Loew Next Arabic', sans-serif" : "inherit" }}
             >
               {t('exploreSupportPrograms')}
             </span>

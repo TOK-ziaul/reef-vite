@@ -111,10 +111,6 @@ export function AboutOrganizationalStructure() {
         <h2
           ref={titleRef}
           className="text-3xl md:text-4xl lg:text-5xl mb-12 text-[#035938] text-center fw-heading px-4"
-          style={{
-            fontFamily:
-              language === "ar" ? "'Loew Next Arabic', sans-serif" : "inherit",
-          }}
         >
           {t("orgStructureTitle")}
         </h2>
@@ -132,23 +128,11 @@ export function AboutOrganizationalStructure() {
           <div className="relative z-10 space-y-6">
             <p
               className="text-lg md:text-xl text-[#035938]/90 leading-relaxed"
-              style={{
-                fontFamily:
-                  language === "ar"
-                    ? "'Loew Next Arabic', sans-serif"
-                    : "inherit",
-              }}
             >
               {t("orgStructureParagraph1")}
             </p>
             <p
               className="text-lg md:text-xl text-[#035938]/90 leading-relaxed"
-              style={{
-                fontFamily:
-                  language === "ar"
-                    ? "'Loew Next Arabic', sans-serif"
-                    : "inherit",
-              }}
             >
               {t("orgStructureParagraph2")}
             </p>

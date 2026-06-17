@@ -67,12 +67,6 @@ export function LivestockProjects() {
         >
           <h2
             className="text-4xl md:text-5xl font-bold text-[#035938] mb-6"
-            style={{
-              fontFamily:
-                language === "ar"
-                  ? "'Loew Next Arabic', sans-serif"
-                  : "inherit",
-            }}
             dir={language === "ar" ? "rtl" : "ltr"}
           >
             {t("livestockProjectsTitle")}
@@ -105,12 +99,6 @@ export function LivestockProjects() {
               <div className="text-5xl font-bold text-[#035938] mb-1">8</div>
               <p
                 className="text-lg text-[#035938]/90"
-                style={{
-                  fontFamily:
-                    language === "ar"
-                      ? "'Loew Next Arabic', sans-serif"
-                      : "inherit",
-                }}
               >
                 {t("livestockProjectsCountLabel")}
               </p>
@@ -141,12 +129,6 @@ export function LivestockProjects() {
               </div>
               <p
                 className="text-lg text-[#035938]/90"
-                style={{
-                  fontFamily:
-                    language === "ar"
-                      ? "'Loew Next Arabic', sans-serif"
-                      : "inherit",
-                }}
               >
                 {t("livestockProjectsTotalValueLabel")}
               </p>
@@ -163,12 +145,6 @@ export function LivestockProjects() {
         >
           <p
             className="text-xl md:text-2xl leading-relaxed text-[#035938] text-center"
-            style={{
-              fontFamily:
-                language === "ar"
-                  ? "'Loew Next Arabic', sans-serif"
-                  : "inherit",
-            }}
             dir={language === "ar" ? "rtl" : "ltr"}
           >
             {t("livestockProjectsIntro")}
@@ -184,12 +160,6 @@ export function LivestockProjects() {
         >
           <h3
             className="text-3xl md:text-4xl font-bold text-[#035938] mb-8 text-center"
-            style={{
-              fontFamily:
-                language === "ar"
-                  ? "'Loew Next Arabic', sans-serif"
-                  : "inherit",
-            }}
             dir={language === "ar" ? "rtl" : "ltr"}
           >
             {t("livestockProjectsKeyTitle")}
@@ -198,12 +168,6 @@ export function LivestockProjects() {
           <div className="bg-gradient-to-br from-white/80 to-[#F9F7EF] backdrop-blur-sm rounded-3xl p-8 md:p-10 border border-[#035938]/10">
             <p
               className="text-xl md:text-2xl text-[#035938] mb-8"
-              style={{
-                fontFamily:
-                  language === "ar"
-                    ? "'Loew Next Arabic', sans-serif"
-                    : "inherit",
-              }}
               dir={language === "ar" ? "rtl" : "ltr"}
             >
               {t("livestockProjectsLocationsIntro")}
@@ -226,12 +190,6 @@ export function LivestockProjects() {
                   />
                   <p
                     className="text-xl font-bold text-white"
-                    style={{
-                      fontFamily:
-                        language === "ar"
-                          ? "'Loew Next Arabic', sans-serif"
-                          : "inherit",
-                    }}
                   >
                     {location}
                   </p>
@@ -255,12 +213,6 @@ export function LivestockProjects() {
                 />
                 <p
                   className="text-xl md:text-2xl text-[#035938]"
-                  style={{
-                    fontFamily:
-                      language === "ar"
-                        ? "'Loew Next Arabic', sans-serif"
-                        : "inherit",
-                  }}
                 >
                   {t("livestockProjectsTagging")}
                 </p>
@@ -278,12 +230,6 @@ export function LivestockProjects() {
         >
           <h3
             className="text-3xl md:text-4xl font-bold text-[#035938] mb-6 text-center"
-            style={{
-              fontFamily:
-                language === "ar"
-                  ? "'Loew Next Arabic', sans-serif"
-                  : "inherit",
-            }}
             dir={language === "ar" ? "rtl" : "ltr"}
           >
             {t("livestockProjectsFeasibilityTitle")}
@@ -291,12 +237,6 @@ export function LivestockProjects() {
 
           <p
             className="text-lg text-[#035938]/80 mb-8 text-center max-w-3xl mx-auto"
-            style={{
-              fontFamily:
-                language === "ar"
-                  ? "'Loew Next Arabic', sans-serif"
-                  : "inherit",
-            }}
             dir={language === "ar" ? "rtl" : "ltr"}
           >
             {t("livestockProjectsFeasibilityIntro")}
@@ -336,12 +276,6 @@ export function LivestockProjects() {
                   <div dir={language === "ar" ? "rtl" : "ltr"}>
                     <p
                       className="text-base text-[#035938] leading-relaxed"
-                      style={{
-                        fontFamily:
-                          language === "ar"
-                            ? "'Loew Next Arabic', sans-serif"
-                            : "inherit",
-                      }}
                     >
                       {benefit}
                     </p>
@@ -375,12 +309,6 @@ export function LivestockProjects() {
         >
           <h3
             className="text-3xl md:text-4xl font-bold text-[#035938] mb-8 text-center"
-            style={{
-              fontFamily:
-                language === "ar"
-                  ? "'Loew Next Arabic', sans-serif"
-                  : "inherit",
-            }}
             dir={language === "ar" ? "rtl" : "ltr"}
           >
             {t("livestockProjectsGoalsTitle")}
@@ -389,12 +317,6 @@ export function LivestockProjects() {
           <div className="bg-gradient-to-br from-white/80 to-[#F9F7EF] backdrop-blur-sm rounded-3xl p-8 md:p-10 border border-[#035938]/10">
             <p
               className="text-xl md:text-2xl text-[#035938] mb-8"
-              style={{
-                fontFamily:
-                  language === "ar"
-                    ? "'Loew Next Arabic', sans-serif"
-                    : "inherit",
-              }}
               dir={language === "ar" ? "rtl" : "ltr"}
             >
               {t("livestockProjectsGoalsIntro")}
@@ -423,12 +345,6 @@ export function LivestockProjects() {
                     </div>
                     <p
                       className="text-lg md:text-xl text-[#035938] leading-relaxed"
-                      style={{
-                        fontFamily:
-                          language === "ar"
-                            ? "'Loew Next Arabic', sans-serif"
-                            : "inherit",
-                      }}
                     >
                       {goal}
                     </p>

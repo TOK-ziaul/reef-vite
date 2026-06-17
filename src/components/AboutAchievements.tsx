@@ -409,23 +409,11 @@ export function AboutAchievements() {
         <div className="text-center mb-16">
           <h2
             className="text-3xl md:text-4xl lg:text-5xl mb-6 text-[#035938] fw-heading"
-            style={{
-              fontFamily:
-                language === "ar"
-                  ? "'Loew Next Arabic', sans-serif"
-                  : "inherit",
-            }}
           >
             {t("achievementsPageTitle")}
           </h2>
           <p
             className="text-base md:text-lg text-[#035938]/70 max-w-4xl mx-auto leading-relaxed"
-            style={{
-              fontFamily:
-                language === "ar"
-                  ? "'Loew Next Arabic', sans-serif"
-                  : "inherit",
-            }}
           >
             {t("achievementsPageIntro")}
           </p>
@@ -435,23 +423,11 @@ export function AboutAchievements() {
         <div ref={figuresRef}>
           <h2
             className="text-3xl md:text-4xl lg:text-5xl mb-4 text-[#035938] text-center fw-heading"
-            style={{
-              fontFamily:
-                language === "ar"
-                  ? "'Loew Next Arabic', sans-serif"
-                  : "inherit",
-            }}
           >
             {t("achievementsFiguresTitle")}
           </h2>
           <p
             className="text-base md:text-lg text-[#035938]/70 text-center max-w-4xl mx-auto mb-12"
-            style={{
-              fontFamily:
-                language === "ar"
-                  ? "'Loew Next Arabic', sans-serif"
-                  : "inherit",
-            }}
           >
             {t("achievementsFiguresSubtitle")}
           </p>
@@ -476,24 +452,12 @@ export function AboutAchievements() {
 
                   <div
                     className="text-3xl md:text-4xl fw-heading text-[#035938] mb-2"
-                    style={{
-                      fontFamily:
-                        language === "ar"
-                          ? "'Loew Next Arabic', sans-serif"
-                          : "inherit",
-                    }}
                   >
                     {stat.value}
                   </div>
 
                   <div
                     className="text-sm md:text-base text-[#035938]/70"
-                    style={{
-                      fontFamily:
-                        language === "ar"
-                          ? "'Loew Next Arabic', sans-serif"
-                          : "inherit",
-                    }}
                   >
                     {t(stat.labelKey)}
                   </div>
@@ -511,23 +475,11 @@ export function AboutAchievements() {
         <div ref={indicatorsRef} className="mb-20">
           <h3
             className="text-2xl md:text-3xl lg:text-4xl mb-8 text-[#035938] text-center fw-heading"
-            style={{
-              fontFamily:
-                language === "ar"
-                  ? "'Loew Next Arabic', sans-serif"
-                  : "inherit",
-            }}
           >
             {t("achievementsIndicatorsTitle")}
           </h3>
           <p
             className="text-base md:text-lg text-[#035938]/70 text-center max-w-4xl mx-auto mb-10"
-            style={{
-              fontFamily:
-                language === "ar"
-                  ? "'Loew Next Arabic', sans-serif"
-                  : "inherit",
-            }}
           >
             {t("achievementsIndicatorsSubtitle")}
           </p>
@@ -552,23 +504,11 @@ export function AboutAchievements() {
                   <div>
                     <div
                       className="text-2xl md:text-3xl fw-heading text-[#035938] mb-1"
-                      style={{
-                        fontFamily:
-                          language === "ar"
-                            ? "'Loew Next Arabic', sans-serif"
-                            : "inherit",
-                      }}
                     >
                       {indicator.value}
                     </div>
                     <div
                       className="text-sm text-[#035938]/70"
-                      style={{
-                        fontFamily:
-                          language === "ar"
-                            ? "'Loew Next Arabic', sans-serif"
-                            : "inherit",
-                      }}
                     >
                       {t(indicator.labelKey)}
                     </div>
@@ -583,24 +523,12 @@ export function AboutAchievements() {
         <div ref={highlightsRef} className="relative my-20">
           <h3
             className="text-2xl md:text-3xl lg:text-4xl mb-4 text-[#035938] text-center fw-heading"
-            style={{
-              fontFamily:
-                language === "ar"
-                  ? "'Loew Next Arabic', sans-serif"
-                  : "inherit",
-            }}
           >
             {t("achievementsHighlightsTitle")}
           </h3>
 
           <p
             className="text-base md:text-lg text-[#035938]/70 text-center max-w-3xl mx-auto mb-12"
-            style={{
-              fontFamily:
-                language === "ar"
-                  ? "'Loew Next Arabic', sans-serif"
-                  : "inherit",
-            }}
           >
             {t("achievementsHighlightsSubtitle")}
           </p>
@@ -672,12 +600,6 @@ export function AboutAchievements() {
                     >
                       <h4
                         className="text-white drop-shadow-lg text-base md:text-lg fw-heading line-clamp-2"
-                        style={{
-                          fontFamily:
-                            language === "ar"
-                              ? "'Loew Next Arabic', sans-serif"
-                              : "inherit",
-                        }}
                       >
                         {title}
                       </h4>
@@ -700,12 +622,6 @@ export function AboutAchievements() {
                           </div>
                           <h5
                             className="text-base md:text-lg fw-heading text-white max-w-[430px]"
-                            style={{
-                              fontFamily:
-                                language === "ar"
-                                  ? "'Loew Next Arabic', sans-serif"
-                                  : "inherit",
-                            }}
                           >
                             {title}
                           </h5>
@@ -713,12 +629,6 @@ export function AboutAchievements() {
 
                         <p
                           className="text-xs md:text-sm text-white/90 leading-relaxed"
-                          style={{
-                            fontFamily:
-                              language === "ar"
-                                ? "'Loew Next Arabic', sans-serif"
-                                : "inherit",
-                          }}
                         >
                           {description}
                         </p>
@@ -738,23 +648,11 @@ export function AboutAchievements() {
         <div ref={awardsRef} className="mb-20">
           <h2
             className="text-3xl md:text-4xl lg:text-5xl mb-4 text-[#035938] text-center fw-heading"
-            style={{
-              fontFamily:
-                language === "ar"
-                  ? "'Loew Next Arabic', sans-serif"
-                  : "inherit",
-            }}
           >
             {t("achievementsAwardsTitle")}
           </h2>
           <p
             className="text-base md:text-lg text-[#035938]/70 text-center max-w-4xl mx-auto mb-12"
-            style={{
-              fontFamily:
-                language === "ar"
-                  ? "'Loew Next Arabic', sans-serif"
-                  : "inherit",
-            }}
           >
             {t("achievementsAwardsSubtitle")}
           </p>
@@ -816,24 +714,12 @@ export function AboutAchievements() {
 
                         <h4
                           className="text-xl md:text-2xl fw-heading text-white mb-3 text-center"
-                          style={{
-                            fontFamily:
-                              language === "ar"
-                                ? "'Loew Next Arabic', sans-serif"
-                                : "inherit",
-                          }}
                         >
                           {t(award.titleKey)}
                         </h4>
 
                         <p
                           className="text-sm md:text-base text-white/90 text-center leading-relaxed"
-                          style={{
-                            fontFamily:
-                              language === "ar"
-                                ? "'Loew Next Arabic', sans-serif"
-                                : "inherit",
-                          }}
                         >
                           {t(award.descKey)}
                         </p>
@@ -904,34 +790,16 @@ export function AboutAchievements() {
 
                     <h4
                       className="text-xl md:text-2xl fw-heading text-white mb-3 text-center"
-                      style={{
-                        fontFamily:
-                          language === "ar"
-                            ? "'Loew Next Arabic', sans-serif"
-                            : "inherit",
-                      }}
                     >
                       {t("achievementsGuinnessTitle")}
                     </h4>
 
                     <div className="space-y-3 text-sm md:text-base text-white/90 text-center leading-relaxed">
                       <p
-                        style={{
-                          fontFamily:
-                            language === "ar"
-                              ? "'Loew Next Arabic', sans-serif"
-                              : "inherit",
-                        }}
                       >
                         {t("achievementsGuinness1")}
                       </p>
                       <p
-                        style={{
-                          fontFamily:
-                            language === "ar"
-                              ? "'Loew Next Arabic', sans-serif"
-                              : "inherit",
-                        }}
                       >
                         {t("achievementsGuinness2")}
                       </p>
@@ -950,23 +818,11 @@ export function AboutAchievements() {
         <div ref={isoRef} className="mb-16">
           <h2
             className="text-3xl md:text-4xl lg:text-5xl mb-4 text-[#035938] text-center fw-heading"
-            style={{
-              fontFamily:
-                language === "ar"
-                  ? "'Loew Next Arabic', sans-serif"
-                  : "inherit",
-            }}
           >
             {t("achievementsISOTitle")}
           </h2>
           <p
             className="text-base md:text-lg text-[#035938]/70 text-center max-w-4xl mx-auto mb-12"
-            style={{
-              fontFamily:
-                language === "ar"
-                  ? "'Loew Next Arabic', sans-serif"
-                  : "inherit",
-            }}
           >
             {t("achievementsISOSubtitle")}
           </p>
@@ -1030,24 +886,12 @@ export function AboutAchievements() {
 
                     <h4
                       className="text-xl md:text-2xl fw-heading text-white mb-3 text-center"
-                      style={{
-                        fontFamily:
-                          language === "ar"
-                            ? "'Loew Next Arabic', sans-serif"
-                            : "inherit",
-                      }}
                     >
                       {t("achievementsISO1Title")}
                     </h4>
 
                     <p
                       className="text-sm md:text-base text-white/90 text-center leading-relaxed"
-                      style={{
-                        fontFamily:
-                          language === "ar"
-                            ? "'Loew Next Arabic', sans-serif"
-                            : "inherit",
-                      }}
                     >
                       {t("achievementsISO1Desc")}
                     </p>
@@ -1116,24 +960,12 @@ export function AboutAchievements() {
 
                     <h4
                       className="text-xl md:text-2xl fw-heading text-white mb-3 text-center"
-                      style={{
-                        fontFamily:
-                          language === "ar"
-                            ? "'Loew Next Arabic', sans-serif"
-                            : "inherit",
-                      }}
                     >
                       {t("achievementsISO2Title")}
                     </h4>
 
                     <p
                       className="text-sm md:text-base text-white/90 text-center leading-relaxed"
-                      style={{
-                        fontFamily:
-                          language === "ar"
-                            ? "'Loew Next Arabic', sans-serif"
-                            : "inherit",
-                      }}
                     >
                       {t("achievementsISO2Desc")}
                     </p>
@@ -1202,24 +1034,12 @@ export function AboutAchievements() {
 
                     <h4
                       className="text-xl md:text-2xl fw-heading text-white mb-3 text-center"
-                      style={{
-                        fontFamily:
-                          language === "ar"
-                            ? "'Loew Next Arabic', sans-serif"
-                            : "inherit",
-                      }}
                     >
                       {t("achievementsISO3Title")}
                     </h4>
 
                     <p
                       className="text-sm md:text-base text-white/90 text-center leading-relaxed"
-                      style={{
-                        fontFamily:
-                          language === "ar"
-                            ? "'Loew Next Arabic', sans-serif"
-                            : "inherit",
-                      }}
                     >
                       {t("achievementsISO3Desc")}
                     </p>
@@ -1245,12 +1065,6 @@ export function AboutAchievements() {
           >
             <span
               className="relative z-10 flex items-center gap-2"
-              style={{
-                fontFamily:
-                  language === "ar"
-                    ? "'Loew Next Arabic', sans-serif"
-                    : "inherit",
-              }}
             >
               {t("achievementsCTA1")}
               <ArrowRight
@@ -1269,12 +1083,6 @@ export function AboutAchievements() {
           >
             <span
               className="relative z-10 flex items-center gap-2"
-              style={{
-                fontFamily:
-                  language === "ar"
-                    ? "'Loew Next Arabic', sans-serif"
-                    : "inherit",
-              }}
             >
               {t("achievementsCTA2")}
               <ArrowRight

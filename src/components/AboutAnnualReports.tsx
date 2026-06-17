@@ -134,12 +134,6 @@ export function AboutAnnualReports() {
             type="button"
             onClick={() => navigateTo("about", undefined, "achievements")}
             className="inline-flex items-center gap-2 px-8 py-4 bg-[#035938] text-white rounded-xl hover:bg-[#52BC88] transition-all duration-300 hover:shadow-lg"
-            style={{
-              fontFamily:
-                language === "ar"
-                  ? "'Loew Next Arabic', sans-serif"
-                  : "inherit",
-            }}
           >
             {t("annualReportsCTA1")}
             <ArrowRight
@@ -150,12 +144,6 @@ export function AboutAnnualReports() {
             type="button"
             onClick={() => navigateTo("sectors")}
             className="inline-flex items-center gap-2 px-8 py-4 bg-white border-2 border-[#035938] text-[#035938] rounded-xl hover:bg-[#035938] hover:text-white transition-all duration-300 hover:shadow-lg"
-            style={{
-              fontFamily:
-                language === "ar"
-                  ? "'Loew Next Arabic', sans-serif"
-                  : "inherit",
-            }}
           >
             {t("annualReportsCTA2")}
             <ArrowRight

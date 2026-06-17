@@ -204,10 +204,6 @@ export function AboutVision2030() {
         <h2
           ref={titleRef}
           className="text-3xl md:text-4xl lg:text-5xl mb-16 text-[#035938] text-center fw-heading px-4"
-          style={{
-            fontFamily:
-              language === "ar" ? "'Loew Next Arabic', sans-serif" : "inherit",
-          }}
         >
           {t("vision2030SectionTitle")}
         </h2>
@@ -277,12 +273,6 @@ export function AboutVision2030() {
                     >
                       <span
                         className="text-white text-2xl fw-heading"
-                        style={{
-                          fontFamily:
-                            language === "ar"
-                              ? "'Loew Next Arabic', sans-serif"
-                              : "inherit",
-                        }}
                       >
                         {point.number}
                       </span>
@@ -291,23 +281,11 @@ export function AboutVision2030() {
                     {/* Content */}
                     <h3
                       className="text-xl md:text-2xl text-[#035938] mb-4 fw-heading flex-shrink-0"
-                      style={{
-                        fontFamily:
-                          language === "ar"
-                            ? "'Loew Next Arabic', sans-serif"
-                            : "inherit",
-                      }}
                     >
                       {t(point.titleKey)}
                     </h3>
                     <p
                       className="text-base md:text-lg text-[#035938]/70 leading-relaxed flex-grow"
-                      style={{
-                        fontFamily:
-                          language === "ar"
-                            ? "'Loew Next Arabic', sans-serif"
-                            : "inherit",
-                      }}
                     >
                       {t(point.textKey)}
                     </p>
@@ -349,12 +327,6 @@ export function AboutVision2030() {
           <button
             onClick={() => scrollToSection("objectives")}
             className="group relative px-8 py-4 bg-gradient-to-r from-[#035938] to-[#52BC88] text-white rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 flex items-center gap-3 overflow-hidden"
-            style={{
-              fontFamily:
-                language === "ar"
-                  ? "'Loew Next Arabic', sans-serif"
-                  : "inherit",
-            }}
           >
             <div className="absolute inset-0 bg-gradient-to-r from-[#52BC88] to-[#035938] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <Target className="w-5 h-5 relative z-10" />
@@ -371,12 +343,6 @@ export function AboutVision2030() {
           <button
             onClick={() => navigate("/sectors")}
             className="group relative px-8 py-4 bg-white text-[#035938] border-2 border-[#035938] rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 flex items-center gap-3 overflow-hidden"
-            style={{
-              fontFamily:
-                language === "ar"
-                  ? "'Loew Next Arabic', sans-serif"
-                  : "inherit",
-            }}
           >
             <div className="absolute inset-0 bg-[#035938] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <Leaf className="w-5 h-5 relative z-10 group-hover:text-white transition-colors" />

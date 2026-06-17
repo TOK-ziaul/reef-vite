@@ -107,9 +107,6 @@ export function LivestockKeyAreas() {
         <div className="text-center mb-16">
           <h2
             className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#035938] mb-4"
-            style={{
-              fontFamily: language === 'ar' ? "'Loew Next Arabic', sans-serif" : 'inherit',
-            }}
           >
             {t('keyAreasOfAction')}
           </h2>
@@ -146,17 +143,11 @@ export function LivestockKeyAreas() {
                 <div className="p-8">
                   <h3
                     className="text-xl md:text-2xl font-bold text-[#035938] mb-4"
-                    style={{
-                      fontFamily: language === 'ar' ? "'Loew Next Arabic', sans-serif" : 'inherit',
-                    }}
                   >
                     {t(area.titleKey)}
                   </h3>
                   <p
                     className="text-gray-600 leading-relaxed"
-                    style={{
-                      fontFamily: language === 'ar' ? "'Loew Next Arabic', sans-serif" : 'inherit',
-                    }}
                   >
                     {t(area.descKey)}
                   </p>

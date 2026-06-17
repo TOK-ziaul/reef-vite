@@ -252,12 +252,6 @@ export function LivestockWorkAxes() {
         >
           <h2
             className="text-3xl md:text-4xl font-bold text-[#035938] mb-6"
-            style={{
-              fontFamily:
-                language === "ar"
-                  ? "'Loew Next Arabic', sans-serif"
-                  : "inherit",
-            }}
             dir={language === "ar" ? "rtl" : "ltr"}
           >
             {t("livestockWorkAxesTitle")}
@@ -367,12 +361,6 @@ export function LivestockWorkAxes() {
                       <div className="space-y-4">
                         <p
                           className="text-lg leading-relaxed text-[#035938]"
-                          style={{
-                            fontFamily:
-                              language === "ar"
-                                ? "'Loew Next Arabic', sans-serif"
-                                : "inherit",
-                          }}
                         >
                           {axis.text}
                         </p>

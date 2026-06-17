@@ -10,9 +10,6 @@ export function LivestockIntro() {
         <div className="bg-white rounded-3xl p-10 md:p-16 shadow-lg">
           <div 
             className="space-y-6 text-xl leading-relaxed text-[#035938]/80 text-center max-w-6xl mx-auto"
-            style={{
-              fontFamily: language === 'ar' ? "'Loew Next Arabic', sans-serif" : "inherit",
-            }}
             dir={language === 'ar' ? 'rtl' : 'ltr'}
           >
             <p>{t('livestockIntro1')}</p>

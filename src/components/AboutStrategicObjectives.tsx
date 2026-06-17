@@ -227,23 +227,11 @@ export function AboutStrategicObjectives() {
           <h2
             ref={titleRef}
             className="text-4xl md:text-6xl text-white fw-heading mb-6"
-            style={{
-              fontFamily:
-                language === "ar"
-                  ? "'Loew Next Arabic', sans-serif"
-                  : "inherit",
-            }}
           >
             <span className="text-[#F1BC28]">{t("strategicObjectivesTitle")}</span>
           </h2>
           <p
             className="text-base md:text-lg text-white/80 max-w-4xl mx-auto leading-relaxed"
-            style={{
-              fontFamily:
-                language === "ar"
-                  ? "'Loew Next Arabic', sans-serif"
-                  : "inherit",
-            }}
           >
             {t("strategicObjectivesIntro")}
           </p>
@@ -273,22 +261,12 @@ export function AboutStrategicObjectives() {
                   className="text-base fw-heading mb-1 text-center leading-tight"
                   style={{
                     color: "#035938",
-                    fontFamily:
-                      language === "ar"
-                        ? "'Loew Next Arabic', sans-serif"
-                        : "inherit",
                   }}
                 >
                   {t(objective.titleKey)}
                 </h3>
                 <p
                   className="text-xs text-gray-600 text-center leading-snug mt-1"
-                  style={{
-                    fontFamily:
-                      language === "ar"
-                        ? "'Loew Next Arabic', sans-serif"
-                        : "inherit",
-                  }}
                 >
                   {t(objective.textKey)}
                 </p>
@@ -418,10 +396,6 @@ export function AboutStrategicObjectives() {
                     className="text-base fw-heading mb-1 text-center leading-tight"
                     style={{
                       color: "#035938",
-                      fontFamily:
-                        language === "ar"
-                          ? "'Loew Next Arabic', sans-serif"
-                          : "inherit",
                     }}
                   >
                     {t(objective.titleKey)}
@@ -430,12 +404,6 @@ export function AboutStrategicObjectives() {
                   {/* Description - smaller and condensed */}
                   <p
                     className="text-xs text-gray-600 text-center leading-snug line-clamp-3"
-                    style={{
-                      fontFamily:
-                        language === "ar"
-                          ? "'Loew Next Arabic', sans-serif"
-                          : "inherit",
-                    }}
                   >
                     {t(objective.textKey)}
                   </p>
@@ -459,12 +427,6 @@ export function AboutStrategicObjectives() {
             type="button"
             onClick={() => navigateTo("sustainability")}
             className="group relative px-8 py-4 bg-gradient-to-r from-[#F1BC28] to-[#52BC88] text-[#035938] rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 flex items-center gap-3 overflow-hidden"
-            style={{
-              fontFamily:
-                language === "ar"
-                  ? "'Loew Next Arabic', sans-serif"
-                  : "inherit",
-            }}
           >
             <Sprout className="w-5 h-5 relative z-10" />
             <span className="text-lg fw-heading relative z-10">
@@ -481,12 +443,6 @@ export function AboutStrategicObjectives() {
             type="button"
             onClick={() => navigateTo("sectors")}
             className="group relative px-8 py-4 bg-white/10 text-white border-2 border-white/40 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 flex items-center gap-3 overflow-hidden hover:bg-white hover:text-[#035938]"
-            style={{
-              fontFamily:
-                language === "ar"
-                  ? "'Loew Next Arabic', sans-serif"
-                  : "inherit",
-            }}
           >
             <Leaf className="w-5 h-5 relative z-10" />
             <span className="text-lg fw-heading relative z-10">

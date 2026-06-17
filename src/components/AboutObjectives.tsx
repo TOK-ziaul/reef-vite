@@ -215,9 +215,6 @@ export function AboutObjectives() {
           <h2
             ref={titleRef}
             className="text-4xl md:text-6xl text-white fw-heading mb-4"
-            style={{
-              fontFamily: language === "ar" ? "'Loew Next Arabic', sans-serif" : "inherit",
-            }}
           >
             {language === "ar" ? (
               <>
@@ -356,7 +353,6 @@ export function AboutObjectives() {
                       className="text-lg fw-heading mb-2 text-center leading-tight"
                       style={{
                         color: objective.color,
-                        fontFamily: language === "ar" ? "'Loew Next Arabic', sans-serif" : "inherit",
                       }}
                     >
                       {objective.title}
@@ -365,9 +361,6 @@ export function AboutObjectives() {
                     {/* Description */}
                     <p
                       className="text-sm text-gray-600 text-center leading-relaxed"
-                      style={{
-                        fontFamily: language === "ar" ? "'Loew Next Arabic', sans-serif" : "inherit",
-                      }}
                     >
                       {objective.text}
                     </p>

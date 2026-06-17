@@ -102,12 +102,6 @@ export function AboutIntro() {
               <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-[#035938] to-[#52BC88] rounded-tl-2xl rounded-bl-2xl" />
               <p
                 className="relative z-10 text-lg md:text-xl text-[#035938] leading-relaxed"
-                style={{
-                  fontFamily:
-                    language === "ar"
-                      ? "'Loew Next Arabic', sans-serif"
-                      : "inherit",
-                }}
               >
                 {t("aboutIntroPara1")}
               </p>
@@ -121,12 +115,6 @@ export function AboutIntro() {
               <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-[#52BC88] to-[#F1BC28] rounded-tl-2xl rounded-bl-2xl" />
               <p
                 className="relative z-10 text-lg md:text-xl text-[#035938] leading-relaxed"
-                style={{
-                  fontFamily:
-                    language === "ar"
-                      ? "'Loew Next Arabic', sans-serif"
-                      : "inherit",
-                }}
               >
                 {t("aboutIntroPara2")}
               </p>
@@ -206,12 +194,6 @@ export function AboutIntro() {
                   </div>
                   <p
                     className="text-lg md:text-xl text-white/95 fw-heading"
-                    style={{
-                      fontFamily:
-                        language === "ar"
-                          ? "'Loew Next Arabic', sans-serif"
-                          : "inherit",
-                    }}
                   >
                     {language === "ar"
                       ? "التنمية الزراعية المستدامة"

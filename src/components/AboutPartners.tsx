@@ -51,12 +51,6 @@ function PartnerLogoCard({
       >
         <p
           className="text-white text-sm md:text-base text-center fw-heading leading-snug"
-          style={{
-            fontFamily:
-              language === "ar"
-                ? "'Loew Next Arabic', sans-serif"
-                : "inherit",
-          }}
         >
           {t(partnerKey)}
         </p>
@@ -259,12 +253,6 @@ export function AboutPartners() {
           <h2
             ref={titleRef}
             className="text-3xl md:text-4xl lg:text-5xl mb-4 text-[#035938] fw-heading px-4"
-            style={{
-              fontFamily:
-                language === "ar"
-                  ? "'Loew Next Arabic', sans-serif"
-                  : "inherit",
-            }}
           >
             {t("partnersTitle")}
           </h2>
@@ -273,12 +261,6 @@ export function AboutPartners() {
           <p
             ref={introRef}
             className="text-base md:text-lg text-[#035938]/80 max-w-4xl mx-auto mb-4 leading-relaxed px-4"
-            style={{
-              fontFamily:
-                language === "ar"
-                  ? "'Loew Next Arabic', sans-serif"
-                  : "inherit",
-            }}
           >
             {t("partnersIntro")}
           </p>
@@ -294,12 +276,6 @@ export function AboutPartners() {
               </div>
               <h3
                 className="text-2xl md:text-3xl text-[#035938] fw-heading"
-                style={{
-                  fontFamily:
-                    language === "ar"
-                      ? "'Loew Next Arabic', sans-serif"
-                      : "inherit",
-                }}
               >
                 {t("partnersGovernmentTitle")}
               </h3>
@@ -343,12 +319,6 @@ export function AboutPartners() {
               </div>
               <h3
                 className="text-2xl md:text-3xl text-[#035938] fw-heading"
-                style={{
-                  fontFamily:
-                    language === "ar"
-                      ? "'Loew Next Arabic', sans-serif"
-                      : "inherit",
-                }}
               >
                 {t("partnersDevelopmentTitle")}
               </h3>
@@ -383,12 +353,6 @@ export function AboutPartners() {
               </div>
               <h3
                 className="text-xl md:text-2xl text-[#035938] fw-heading"
-                style={{
-                  fontFamily:
-                    language === "ar"
-                      ? "'Loew Next Arabic', sans-serif"
-                      : "inherit",
-                }}
               >
                 {t("partnersResearchTitle")}
               </h3>
@@ -414,12 +378,6 @@ export function AboutPartners() {
 
                     <span
                       className="text-base md:text-lg text-[#035938]/90 group-hover/card:text-[#035938] transition-colors duration-300 flex-1"
-                      style={{
-                        fontFamily:
-                          language === "ar"
-                            ? "'Loew Next Arabic', sans-serif"
-                            : "inherit",
-                      }}
                     >
                       {t(typeof partner === "string" ? partner : partner.key)}
                     </span>
@@ -444,12 +402,6 @@ export function AboutPartners() {
               </div>
               <h3
                 className="text-xl md:text-2xl text-[#035938] fw-heading"
-                style={{
-                  fontFamily:
-                    language === "ar"
-                      ? "'Loew Next Arabic', sans-serif"
-                      : "inherit",
-                }}
               >
                 {t("partnersPrivateTitle")}
               </h3>
@@ -473,12 +425,6 @@ export function AboutPartners() {
 
                     <span
                       className="text-sm md:text-base text-[#035938]/90 group-hover/card:text-[#035938] transition-colors duration-300 leading-snug"
-                      style={{
-                        fontFamily:
-                          language === "ar"
-                            ? "'Loew Next Arabic', sans-serif"
-                            : "inherit",
-                      }}
                     >
                       {t(typeof partner === "string" ? partner : partner.key)}
                     </span>
@@ -507,12 +453,6 @@ export function AboutPartners() {
           >
             <span
               className="relative z-10 flex items-center gap-2"
-              style={{
-                fontFamily:
-                  language === "ar"
-                    ? "'Loew Next Arabic', sans-serif"
-                    : "inherit",
-              }}
             >
               {t("partnersCTA1")}
               <ArrowRight
@@ -531,12 +471,6 @@ export function AboutPartners() {
           >
             <span
               className="relative z-10 flex items-center gap-2"
-              style={{
-                fontFamily:
-                  language === "ar"
-                    ? "'Loew Next Arabic', sans-serif"
-                    : "inherit",
-              }}
             >
               {t("partnersCTA2")}
               <ArrowRight

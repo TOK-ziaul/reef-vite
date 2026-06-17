@@ -296,12 +296,6 @@ export function SectorPage({ sectorId: sectorIdProp }: SectorPageProps = {}) {
                     navigateTo("home", undefined, "interactive-map")
                   }
                   className="bg-gradient-to-r from-[#035938] to-[#52BC88] text-white px-8 py-4 rounded-xl font-bold hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center gap-2 group cursor-pointer"
-                  style={{
-                    fontFamily:
-                      language === "ar"
-                        ? "'Loew Next Arabic', sans-serif"
-                        : "inherit",
-                  }}
                 >
                   <svg
                     className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300"
@@ -322,12 +316,6 @@ export function SectorPage({ sectorId: sectorIdProp }: SectorPageProps = {}) {
                   type="button"
                   onClick={() => navigateTo("supportApplication")}
                   className="bg-[#F1BC28] text-white px-8 py-4 rounded-xl font-bold hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center gap-2 group cursor-pointer"
-                  style={{
-                    fontFamily:
-                      language === "ar"
-                        ? "'Loew Next Arabic', sans-serif"
-                        : "inherit",
-                  }}
                 >
                   <svg
                     className="w-5 h-5 group-hover:scale-110 transition-transform duration-300"
@@ -805,12 +793,6 @@ export function SectorPage({ sectorId: sectorIdProp }: SectorPageProps = {}) {
                     navigateTo("home", undefined, "interactive-map")
                   }
                   className="bg-gradient-to-r from-[#035938] to-[#52BC88] text-white px-8 py-4 rounded-xl font-bold hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center gap-2 group cursor-pointer"
-                  style={{
-                    fontFamily:
-                      language === "ar"
-                        ? "'Loew Next Arabic', sans-serif"
-                        : "inherit",
-                  }}
                 >
                   <svg
                     className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300"
@@ -831,12 +813,6 @@ export function SectorPage({ sectorId: sectorIdProp }: SectorPageProps = {}) {
                   type="button"
                   onClick={() => navigateTo("supportApplication")}
                   className="bg-[#F1BC28] text-white px-8 py-4 rounded-xl font-bold hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center gap-2 group cursor-pointer"
-                  style={{
-                    fontFamily:
-                      language === "ar"
-                        ? "'Loew Next Arabic', sans-serif"
-                        : "inherit",
-                  }}
                 >
                   <svg
                     className="w-5 h-5 group-hover:scale-110 transition-transform duration-300"
