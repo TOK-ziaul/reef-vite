@@ -183,14 +183,14 @@ export function Footer() {
                           onClick={() =>
                             navigateTo(link.page, link.sectorId, link.hash)
                           }
-                          className="text-white/80 hover:text-white transition-colors text-sm inline-flex items-center gap-2"
+                          className="text-white/80! hover:text-white! transition-colors text-sm inline-flex items-center gap-2 cursor-pointer"
                         >
                           {link.label}
                         </button>
                       ) : (
                         <a
                           href={link.href}
-                          className="text-white/80 hover:text-white transition-colors text-sm inline-flex items-center gap-2"
+                          className="text-white/80 hover:text-white transition-colors text-sm inline-flex items-center gap-2 cursor-pointer"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
